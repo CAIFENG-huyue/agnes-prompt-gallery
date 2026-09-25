@@ -16,5 +16,6 @@
   "output": "assets/image/IMG-002.png",
   "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_1h0A6gM2t8o0cJaZBaOOwklbFcArqMr3/output_7260b38ea3624be5b4b7db63f783d9c4.png",
   "rating": null,
-  "notes": "中文大字渲染测试；「」引号包裹标题文字可提高文字还原"
+  "notes": "观察（待评分确认）：「」引号包裹标题文字或可提高中文文字还原度",
+  "status": "在建"
 }

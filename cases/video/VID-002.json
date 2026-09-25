@@ -19,5 +19,6 @@
   "output": "assets/video/VID-002.mp4",
   "url": "https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-2.5/task_v7adcQVTPxRGvMj8cYKU7imMzFc48Iij.mp4",
   "rating": null,
-  "notes": "2.5-flash reference 模式首验通过；参考图用 IMG-001 CDN URL；发现 video_id==task_id；progress 10→70→完成约2.5分钟"
+  "notes": "技术链路首验通过（2.5-flash reference；video_id==task_id；参考图=IMG-001）；提示词效果待用户评分",
+  "status": "在建"
 }

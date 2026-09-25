@@ -20,5 +20,6 @@
   "output": "assets/video/VID-001.mp4",
   "url": "https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-v2.0/video_ab7c373df2b44e0c91165ef0b4cec49c.mp4",
   "rating": null,
-  "notes": "v2.0 帧制引擎；81帧@24fps 约3.4s；生成约1分钟"
+  "notes": "技术链路验证通过（v2.0 帧制+轮询，81帧@24fps≈3.4s）；提示词效果待用户评分",
+  "status": "在建"
 }

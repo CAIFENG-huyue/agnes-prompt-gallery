@@ -16,5 +16,6 @@
   "output": "assets/image/IMG-001.png",
   "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_5qCoJf1x2uNSZwS67XhTJo18FktXYTms/output_e3857cf81c7b4a0aafa3c00775b2c8e0.png",
   "rating": null,
-  "notes": "首条端到端验证案例；'cinematic soft light'有效"
+  "notes": "技术链路验证通过（key文件+域名+SSL）；提示词效果待用户评分",
+  "status": "在建"
 }

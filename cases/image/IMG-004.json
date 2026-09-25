@@ -16,5 +16,6 @@
   "output": "assets/image/IMG-004.png",
   "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_TBPqHGT2JawtKAH0EQode2F22g58g7ct/output_f3dea1a9178244c988707c88cec0e2f1.png",
   "rating": null,
-  "notes": "中文长 prompt 直出；'低饱和高级质感+浅景深虚化'为电商图常用有效词"
+  "notes": "观察（待评分确认）：低饱和高级质感+浅景深虚化为本例所用电商词组，效果未知",
+  "status": "在建"
 }

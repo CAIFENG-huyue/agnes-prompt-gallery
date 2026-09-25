@@ -54,6 +54,7 @@ def build_html(cases):
   {media_tag(c)}
   <div class="card-body">
     <div class="card-top"><span class="badge {"v" if c["type"]=="video" else "i"}">{badge}</span>
+      <span class="badge {"s2" if c.get("status")=="已确认" else "s"}">{"✅" if c.get("status")=="已确认" else "⏳"} {html.escape(c.get("status","在建"))}</span>
       <span class="cat">{html.escape(c["category"])}</span></div>
     <h3>{html.escape(c["title"])}</h3>
     <p class="meta">{html.escape(c["model"])} · {html.escape(c["date"])}</p>
@@ -95,6 +96,8 @@ overflow:hidden;cursor:pointer;transition:.18s;display:flex;flex-direction:colum
 .badge{{font-size:11px;padding:2px 8px;border-radius:6px;font-weight:600}}
 .badge.i{{background:rgba(110,168,254,.16);color:var(--acc)}}
 .badge.v{{background:rgba(61,220,151,.16);color:var(--acc2)}}
+.badge.s{{background:rgba(255,179,0,.16);color:#ffb300}}
+.badge.s2{{background:rgba(61,220,151,.16);color:var(--acc2)}}
 .cat{{font-size:12px;color:var(--tx2)}}
 .card h3{{font-size:15px;font-weight:600}}
 .meta{{font-size:12px;color:var(--tx2);margin-top:4px}}
@@ -189,7 +192,7 @@ function openCase(i) {{
     : `<video class="media-lg" src="${{esc(c.url)}}" controls autoplay loop playsinline></video>`;
   const tags = [
     ['模型', c.model], ['分类', c.category], ['场景', c.scene], ['风格', c.style],
-    ['日期', c.date]
+    ['日期', c.date], ['状态', c.status || '在建'], ['评分', c.rating ? (c.rating + ' / 5') : '待评分']
   ].map(([k,v]) => v ? `<span class="tag"><b>${{k}}:</b> ${{esc(v)}}</span>` : '').join('');
   const params = Object.entries(c.params||{{}}).map(([k,v]) => `<span class="tag"><b>${{esc(k)}}:</b> ${{esc(v)}}</span>`).join('');
   modal.innerHTML = `
