@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agnes 提示词画廊</title>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--card2:#1e222b;--tx:#e8eaed;--tx2:#9aa0aa;
+--acc:#6ea8fe;--acc2:#3ddc97;--bd:#262b35;--radius:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+header h1{font-size:28px;letter-spacing:1px}
+header .sub{color:var(--tx2);margin-top:6px;font-size:14px}
+header .sub a{color:var(--acc);text-decoration:none}
+.stats{display:flex;gap:18px;margin:18px 0 22px;color:var(--tx2);font-size:13px}
+.stats b{color:var(--tx);font-size:17px;margin-right:4px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{background:var(--card);border:1px solid var(--bd);color:var(--tx2);
+padding:7px 14px;border-radius:999px;cursor:pointer;font-size:13px;transition:.15s}
+.chip:hover{color:var(--tx);border-color:var(--acc)}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#0b1020;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);
+overflow:hidden;cursor:pointer;transition:.18s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);border-color:var(--acc);box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.case-media{width:100%;height:180px;object-fit:cover;display:block;background:#000}
+.card-body{padding:14px 16px 16px}
+.card-top{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.badge{font-size:11px;padding:2px 8px;border-radius:6px;font-weight:600}
+.badge.i{background:rgba(110,168,254,.16);color:var(--acc)}
+.badge.v{background:rgba(61,220,151,.16);color:var(--acc2)}
+.cat{font-size:12px;color:var(--tx2)}
+.card h3{font-size:15px;font-weight:600}
+.meta{font-size:12px;color:var(--tx2);margin-top:4px}
+.params{font-size:12px;color:var(--tx2);margin-top:2px;word-break:break-all;
+display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* 模态 */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;
+align-items:center;justify-content:center;padding:24px;z-index:50}
+.overlay.show{display:flex}
+.modal{background:var(--card2);border:1px solid var(--bd);border-radius:18px;
+max-width:860px;width:100%;max-height:92vh;overflow:auto;padding:22px}
+.modal .media-lg{width:100%;max-height:460px;object-fit:contain;background:#000;
+border-radius:12px;display:block}
+.modal h2{font-size:20px;margin:16px 0 4px}
+.mrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.tag{font-size:12px;background:var(--card);border:1px solid var(--bd);
+color:var(--tx2);padding:4px 10px;border-radius:8px}
+.tag b{color:var(--tx);font-weight:500}
+.prompt-box{position:relative;margin-top:12px}
+.prompt-box pre{background:#0b0d12;border:1px solid var(--bd);border-radius:10px;
+padding:14px;font-size:13px;white-space:pre-wrap;word-break:break-word;color:#cfe3ff;font-family:ui-monospace,Menlo,Consolas,monospace}
+.copy{position:absolute;top:10px;right:10px;background:var(--acc);color:#0b1020;border:0;
+border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;font-weight:600}
+.copy:active{transform:scale(.96)}
+.notes{font-size:13px;color:var(--tx2);margin-top:12px;border-left:3px solid var(--acc2);
+padding-left:10px}
+.close{float:right;background:none;border:0;color:var(--tx2);font-size:22px;cursor:pointer}
+.empty{text-align:center;color:var(--tx2);padding:60px 0;display:none}
+footer{color:var(--tx2);font-size:12px;text-align:center;margin-top:50px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>🎨 Agnes 提示词画廊</h1>
+  <p class="sub">Prompt as Code · 全部案例真实实测 · 灵感来自
+    <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">awesome-gpt-image-2</a></p>
+</header>
+<div class="stats">
+  <span><b>6</b>案例</span>
+  <span><b>4</b>图片</span>
+  <span><b>2</b>视频</span>
+  <span><b>6</b>分类</span>
+</div>
+<div class="filters">
+  <button class="chip on" data-type="all">全部</button>
+  <button class="chip" data-type="image">图片</button>
+  <button class="chip" data-type="video">视频</button>
+  <span style="width:12px"></span>
+  <button class="chip on" data-cat="__all">所有分类</button>
+  <button class="chip" data-cat="参考图动态化">参考图动态化</button><button class="chip" data-cat="风景运镜">风景运镜</button><button class="chip" data-cat="电商产品">电商产品</button><button class="chip" data-cat="插画艺术">插画艺术</button><button class="chip" data-cat="海报排版">海报排版</button><button class="chip" data-cat="摄影写实">摄影写实</button>
+</div>
+<div class="grid" id="grid">
+<article class="card" data-type="video" data-cat="参考图动态化" data-idx="0">
+  <video class="case-media" src="https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-2.5/task_v7adcQVTPxRGvMj8cYKU7imMzFc48Iij.mp4" muted loop preload="metadata" playsinline></video>
+  <div class="card-body">
+    <div class="card-top"><span class="badge v">视频</span>
+      <span class="cat">参考图动态化</span></div>
+    <h3>山湖推镜（参考图钉场景）</h3>
+    <p class="meta">agnes-video-2.5-flash · 2026-09-25</p>
+    <p class="params">seconds=5 · size=720P · reference_image=IMG-001</p>
+  </div>
+</article>
+<article class="card" data-type="video" data-cat="风景运镜" data-idx="1">
+  <video class="case-media" src="https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-v2.0/video_ab7c373df2b44e0c91165ef0b4cec49c.mp4" muted loop preload="metadata" playsinline></video>
+  <div class="card-body">
+    <div class="card-top"><span class="badge v">视频</span>
+      <span class="cat">风景运镜</span></div>
+    <h3>晨雾松林无人机上升</h3>
+    <p class="meta">agnes-video-v2.0 · 2026-09-25</p>
+    <p class="params">width=1152 · height=768 · num_frames=81 · frame_rate=24</p>
+  </div>
+</article>
+<article class="card" data-type="image" data-cat="电商产品" data-idx="2">
+  <img class="case-media" src="https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_TBPqHGT2JawtKAH0EQode2F22g58g7ct/output_f3dea1a9178244c988707c88cec0e2f1.png" loading="lazy" alt="薄荷绿香水瓶">
+  <div class="card-body">
+    <div class="card-top"><span class="badge i">图片</span>
+      <span class="cat">电商产品</span></div>
+    <h3>薄荷绿香水瓶</h3>
+    <p class="meta">agnes-image-2.5-flash · 2026-09-25</p>
+    <p class="params">size=1K · ratio=1:1</p>
+  </div>
+</article>
+<article class="card" data-type="image" data-cat="插画艺术" data-idx="3">
+  <img class="case-media" src="https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_SrhociKOIIBMJ42zzmducRh2x9icLq00/output_8ed4aba9b3b74691aa36b6850f479ba0.png" loading="lazy" alt="吉卜力水彩山间小屋">
+  <div class="card-body">
+    <div class="card-top"><span class="badge i">图片</span>
+      <span class="cat">插画艺术</span></div>
+    <h3>吉卜力水彩山间小屋</h3>
+    <p class="meta">agnes-image-2.5-flash · 2026-09-25</p>
+    <p class="params">size=2K · ratio=16:9</p>
+  </div>
+</article>
+<article class="card" data-type="image" data-cat="海报排版" data-idx="4">
+  <img class="case-media" src="https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_1h0A6gM2t8o0cJaZBaOOwklbFcArqMr3/output_7260b38ea3624be5b4b7db63f783d9c4.png" loading="lazy" alt="夏日限定中文海报">
+  <div class="card-body">
+    <div class="card-top"><span class="badge i">图片</span>
+      <span class="cat">海报排版</span></div>
+    <h3>夏日限定中文海报</h3>
+    <p class="meta">agnes-image-2.5-flash · 2026-09-25</p>
+    <p class="params">size=2K · ratio=2:3</p>
+  </div>
+</article>
+<article class="card" data-type="image" data-cat="摄影写实" data-idx="5">
+  <img class="case-media" src="https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_5qCoJf1x2uNSZwS67XhTJo18FktXYTms/output_e3857cf81c7b4a0aafa3c00775b2c8e0.png" loading="lazy" alt="山湖日出">
+  <div class="card-body">
+    <div class="card-top"><span class="badge i">图片</span>
+      <span class="cat">摄影写实</span></div>
+    <h3>山湖日出</h3>
+    <p class="meta">agnes-image-2.5-flash · 2026-09-25</p>
+    <p class="params">size=1K · ratio=1:1</p>
+  </div>
+</article></div>
+<div class="empty" id="empty">该筛选下暂无案例</div>
+<footer>Agnes Prompt Gallery · MIT License · 数据随实测持续更新</footer>
+</div>
+
+<div class="overlay" id="ov"><div class="modal" id="modal"></div></div>
+
+<script>
+const CASES = [{"id": "VID-002", "type": "video", "date": "2026-09-25", "model": "agnes-video-2.5-flash", "engine": "2.5-flash", "mode": "reference", "category": "参考图动态化", "scene": "山湖日出", "style": "cinematic push-in", "title": "山湖推镜（参考图钉场景）", "prompt": "Slow cinematic push-in over the mountain lake at sunrise, mist drifting across the water surface, gentle ripples catching the golden light, subtle parallax between foreground rocks and background peaks", "negative_prompt": null, "params": {"seconds": "5", "size": "720P", "reference_image": "IMG-001"}, "output": "assets/video/VID-002.mp4", "url": "https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-2.5/task_v7adcQVTPxRGvMj8cYKU7imMzFc48Iij.mp4", "rating": null, "notes": "2.5-flash reference 模式首验通过；参考图用 IMG-001 CDN URL；发现 video_id==task_id；progress 10→70→完成约2.5分钟"}, {"id": "VID-001", "type": "video", "date": "2026-09-25", "model": "agnes-video-v2.0", "engine": "v2.0", "mode": "text", "category": "风景运镜", "scene": "森林航拍", "style": "cinematic drone", "title": "晨雾松林无人机上升", "prompt": "A drone shot slowly rising over a misty pine forest at dawn", "negative_prompt": null, "params": {"width": 1152, "height": 768, "num_frames": 81, "frame_rate": 24}, "output": "assets/video/VID-001.mp4", "url": "https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-v2.0/video_ab7c373df2b44e0c91165ef0b4cec49c.mp4", "rating": null, "notes": "v2.0 帧制引擎；81帧@24fps 约3.4s；生成约1分钟"}, {"id": "IMG-004", "type": "image", "date": "2026-09-25", "model": "agnes-image-2.5-flash", "category": "电商产品", "scene": "美妆香水", "style": "commercial photography", "title": "薄荷绿香水瓶", "prompt": "超写实商业产品摄影：一支薄荷绿玻璃香水瓶居中放置，木质纹理球形瓶盖，瓶颈环绕米色丝带，背景为冷调渐变浅灰留白，柔和逆光，低饱和高级质感，浅景深虚化，电商主图风格", "negative_prompt": null, "params": {"size": "1K", "ratio": "1:1"}, "output": "assets/image/IMG-004.png", "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_TBPqHGT2JawtKAH0EQode2F22g58g7ct/output_f3dea1a9178244c988707c88cec0e2f1.png", "rating": null, "notes": "中文长 prompt 直出；'低饱和高级质感+浅景深虚化'为电商图常用有效词"}, {"id": "IMG-003", "type": "image", "date": "2026-09-25", "model": "agnes-image-2.5-flash", "category": "插画艺术", "scene": "田园风光", "style": "Ghibli watercolor", "title": "吉卜力水彩山间小屋", "prompt": "Studio Ghibli style watercolor illustration, a small red-roofed cottage on a lush green hillside, giant white cumulus clouds in a blue summer sky, warm afternoon light, soft visible brush strokes, hand-painted texture", "negative_prompt": null, "params": {"size": "2K", "ratio": "16:9"}, "output": "assets/image/IMG-003.png", "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_SrhociKOIIBMJ42zzmducRh2x9icLq00/output_8ed4aba9b3b74691aa36b6850f479ba0.png", "rating": null, "notes": "风格词 'watercolor + visible brush strokes + hand-painted texture' 叠加效果待评"}, {"id": "IMG-002", "type": "image", "date": "2026-09-25", "model": "agnes-image-2.5-flash", "category": "海报排版", "scene": "宣传海报", "style": "minimal flat", "title": "夏日限定中文海报", "prompt": "极简风格中文宣传海报：画面中央大字标题「夏日限定」四个黑体字，浅蓝色纯净背景，大量留白，底部一行小字「AGNES GALLERY DEMO」，清爽现代无衬线排版，扁平设计", "negative_prompt": null, "params": {"size": "2K", "ratio": "2:3"}, "output": "assets/image/IMG-002.png", "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_1h0A6gM2t8o0cJaZBaOOwklbFcArqMr3/output_7260b38ea3624be5b4b7db63f783d9c4.png", "rating": null, "notes": "中文大字渲染测试；「」引号包裹标题文字可提高文字还原"}, {"id": "IMG-001", "type": "image", "date": "2026-09-25", "model": "agnes-image-2.5-flash", "category": "摄影写实", "scene": "自然风光", "style": "photorealistic", "title": "山湖日出", "prompt": "A serene mountain lake at sunrise, photorealistic, cinematic soft light, 85mm", "negative_prompt": null, "params": {"size": "1K", "ratio": "1:1"}, "output": "assets/image/IMG-001.png", "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_5qCoJf1x2uNSZwS67XhTJo18FktXYTms/output_e3857cf81c7b4a0aafa3c00775b2c8e0.png", "rating": null, "notes": "首条端到端验证案例；'cinematic soft light'有效"}];
+const ov = document.getElementById('ov'), modal = document.getElementById('modal');
+const state = {type:'all', cat:'__all'};
+
+function applyFilters() {
+  let shown = 0;
+  document.querySelectorAll('.card').forEach(el => {
+    const okT = state.type==='all' || el.dataset.type===state.type;
+    const okC = state.cat==='__all' || el.dataset.cat===state.cat;
+    const show = okT && okC;
+    el.style.display = show ? '' : 'none';
+    if (show) shown++;
+  });
+  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+}
+document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => {
+  if (ch.dataset.type) {
+    state.type = ch.dataset.type;
+    document.querySelectorAll('.chip[data-type]').forEach(x => x.classList.toggle('on', x===ch));
+  } else {
+    state.cat = ch.dataset.cat;
+    document.querySelectorAll('.chip[data-cat]').forEach(x => x.classList.toggle('on', x===ch));
+  }
+  applyFilters();
+}));
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s ?? ''; return d.innerHTML; }
+function openCase(i) {
+  const c = CASES[i];
+  const media = c.type==='image'
+    ? `<img class="media-lg" src="${esc(c.url)}" alt="">`
+    : `<video class="media-lg" src="${esc(c.url)}" controls autoplay loop playsinline></video>`;
+  const tags = [
+    ['模型', c.model], ['分类', c.category], ['场景', c.scene], ['风格', c.style],
+    ['日期', c.date]
+  ].map(([k,v]) => v ? `<span class="tag"><b>${k}:</b> ${esc(v)}</span>` : '').join('');
+  const params = Object.entries(c.params||{}).map(([k,v]) => `<span class="tag"><b>${esc(k)}:</b> ${esc(v)}</span>`).join('');
+  modal.innerHTML = `
+    <button class="close" onclick="closeModal()">✕</button>
+    ${media}
+    <h2>${esc(c.id)} · ${esc(c.title)}</h2>
+    <div class="mrow">${tags}${params}</div>
+    <div class="prompt-box">
+      <button class="copy" onclick="copyPrompt(this, ${i})">复制 Prompt</button>
+      <pre>${esc(c.prompt)}</pre>
+    </div>
+    ${c.notes ? `<div class="notes">📝 ${esc(c.notes)}</div>` : ''}
+    ${c.negative_prompt ? `<div class="notes">🚫 负向: ${esc(c.negative_prompt)}</div>` : ''}
+  `;
+  ov.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() { ov.classList.remove('show'); document.body.style.overflow=''; }
+function copyPrompt(btn, i) {
+  const t = CASES[i].prompt;
+  const done = () => { btn.textContent='✅ 已复制'; setTimeout(()=>btn.textContent='复制 Prompt',1200); };
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(done);
+  else {
+    const ta = document.createElement('textarea'); ta.value = t;
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+    ta.remove(); done();
+  }
+}
+document.querySelectorAll('.card').forEach(el =>
+  el.addEventListener('click', () => openCase(+el.dataset.idx)));
+ov.addEventListener('click', e => { if (e.target===ov) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+// 视频卡片 hover 预览
+document.querySelectorAll('video.case-media').forEach(v => {
+  const card = v.closest('.card');
+  card.addEventListener('mouseenter', () => v.play().catch(()=>{}));
+  card.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
+});
+</script>
+</body>
+</html>

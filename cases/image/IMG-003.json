@@ -1,0 +1,20 @@
+{
+  "id": "IMG-003",
+  "type": "image",
+  "date": "2026-09-25",
+  "model": "agnes-image-2.5-flash",
+  "category": "插画艺术",
+  "scene": "田园风光",
+  "style": "Ghibli watercolor",
+  "title": "吉卜力水彩山间小屋",
+  "prompt": "Studio Ghibli style watercolor illustration, a small red-roofed cottage on a lush green hillside, giant white cumulus clouds in a blue summer sky, warm afternoon light, soft visible brush strokes, hand-painted texture",
+  "negative_prompt": null,
+  "params": {
+    "size": "2K",
+    "ratio": "16:9"
+  },
+  "output": "assets/image/IMG-003.png",
+  "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_SrhociKOIIBMJ42zzmducRh2x9icLq00/output_8ed4aba9b3b74691aa36b6850f479ba0.png",
+  "rating": null,
+  "notes": "风格词 'watercolor + visible brush strokes + hand-painted texture' 叠加效果待评"
+}

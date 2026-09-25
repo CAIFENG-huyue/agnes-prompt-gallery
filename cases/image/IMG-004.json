@@ -1,0 +1,20 @@
+{
+  "id": "IMG-004",
+  "type": "image",
+  "date": "2026-09-25",
+  "model": "agnes-image-2.5-flash",
+  "category": "电商产品",
+  "scene": "美妆香水",
+  "style": "commercial photography",
+  "title": "薄荷绿香水瓶",
+  "prompt": "超写实商业产品摄影：一支薄荷绿玻璃香水瓶居中放置，木质纹理球形瓶盖，瓶颈环绕米色丝带，背景为冷调渐变浅灰留白，柔和逆光，低饱和高级质感，浅景深虚化，电商主图风格",
+  "negative_prompt": null,
+  "params": {
+    "size": "1K",
+    "ratio": "1:1"
+  },
+  "output": "assets/image/IMG-004.png",
+  "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_TBPqHGT2JawtKAH0EQode2F22g58g7ct/output_f3dea1a9178244c988707c88cec0e2f1.png",
+  "rating": null,
+  "notes": "中文长 prompt 直出；'低饱和高级质感+浅景深虚化'为电商图常用有效词"
+}

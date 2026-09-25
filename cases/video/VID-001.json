@@ -1,0 +1,24 @@
+{
+  "id": "VID-001",
+  "type": "video",
+  "date": "2026-09-25",
+  "model": "agnes-video-v2.0",
+  "engine": "v2.0",
+  "mode": "text",
+  "category": "风景运镜",
+  "scene": "森林航拍",
+  "style": "cinematic drone",
+  "title": "晨雾松林无人机上升",
+  "prompt": "A drone shot slowly rising over a misty pine forest at dawn",
+  "negative_prompt": null,
+  "params": {
+    "width": 1152,
+    "height": 768,
+    "num_frames": 81,
+    "frame_rate": 24
+  },
+  "output": "assets/video/VID-001.mp4",
+  "url": "https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-v2.0/video_ab7c373df2b44e0c91165ef0b4cec49c.mp4",
+  "rating": null,
+  "notes": "v2.0 帧制引擎；81帧@24fps 约3.4s；生成约1分钟"
+}

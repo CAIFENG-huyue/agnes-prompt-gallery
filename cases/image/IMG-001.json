@@ -1,0 +1,20 @@
+{
+  "id": "IMG-001",
+  "type": "image",
+  "date": "2026-09-25",
+  "model": "agnes-image-2.5-flash",
+  "category": "摄影写实",
+  "scene": "自然风光",
+  "style": "photorealistic",
+  "title": "山湖日出",
+  "prompt": "A serene mountain lake at sunrise, photorealistic, cinematic soft light, 85mm",
+  "negative_prompt": null,
+  "params": {
+    "size": "1K",
+    "ratio": "1:1"
+  },
+  "output": "assets/image/IMG-001.png",
+  "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_5qCoJf1x2uNSZwS67XhTJo18FktXYTms/output_e3857cf81c7b4a0aafa3c00775b2c8e0.png",
+  "rating": null,
+  "notes": "首条端到端验证案例；'cinematic soft light'有效"
+}

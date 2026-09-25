@@ -1,0 +1,20 @@
+{
+  "id": "IMG-002",
+  "type": "image",
+  "date": "2026-09-25",
+  "model": "agnes-image-2.5-flash",
+  "category": "海报排版",
+  "scene": "宣传海报",
+  "style": "minimal flat",
+  "title": "夏日限定中文海报",
+  "prompt": "极简风格中文宣传海报：画面中央大字标题「夏日限定」四个黑体字，浅蓝色纯净背景，大量留白，底部一行小字「AGNES GALLERY DEMO」，清爽现代无衬线排版，扁平设计",
+  "negative_prompt": null,
+  "params": {
+    "size": "2K",
+    "ratio": "2:3"
+  },
+  "output": "assets/image/IMG-002.png",
+  "url": "https://cos-platform-outputs.agnes-ai.cn/images/t2i/task_1h0A6gM2t8o0cJaZBaOOwklbFcArqMr3/output_7260b38ea3624be5b4b7db63f783d9c4.png",
+  "rating": null,
+  "notes": "中文大字渲染测试；「」引号包裹标题文字可提高文字还原"
+}

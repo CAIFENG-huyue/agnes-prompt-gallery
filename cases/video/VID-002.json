@@ -1,0 +1,23 @@
+{
+  "id": "VID-002",
+  "type": "video",
+  "date": "2026-09-25",
+  "model": "agnes-video-2.5-flash",
+  "engine": "2.5-flash",
+  "mode": "reference",
+  "category": "参考图动态化",
+  "scene": "山湖日出",
+  "style": "cinematic push-in",
+  "title": "山湖推镜（参考图钉场景）",
+  "prompt": "Slow cinematic push-in over the mountain lake at sunrise, mist drifting across the water surface, gentle ripples catching the golden light, subtle parallax between foreground rocks and background peaks",
+  "negative_prompt": null,
+  "params": {
+    "seconds": "5",
+    "size": "720P",
+    "reference_image": "IMG-001"
+  },
+  "output": "assets/video/VID-002.mp4",
+  "url": "https://cos-platform-outputs.agnes-ai.cn/videos/agnes-video-2.5/task_v7adcQVTPxRGvMj8cYKU7imMzFc48Iij.mp4",
+  "rating": null,
+  "notes": "2.5-flash reference 模式首验通过；参考图用 IMG-001 CDN URL；发现 video_id==task_id；progress 10→70→完成约2.5分钟"
+}
