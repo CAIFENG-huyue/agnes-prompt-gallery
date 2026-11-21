@@ -13,10 +13,16 @@ const { page } = Astro.props;
 const { caseData, guide, decisions, prompts, classification, fingerprint } = page;
 ---
 
-<article class="case-page" data-case-id={caseData.case_id}>
+<article class="case-page" data-case-id={caseData.case_id} data-case-page data-active-panel="decisions">
   <CaseHero page={page} />
 
-  <section class="case-section" id="decisions" data-section="decisions" aria-labelledby="decisions-title">
+  <nav class="case-tabs" aria-label="案例内容切换">
+    <button type="button" class="case-tabs__item is-active" data-case-tab="decisions" aria-selected="true">决策卡</button>
+    <button type="button" class="case-tabs__item" data-case-tab="evidence" aria-selected="false">证据</button>
+    <button type="button" class="case-tabs__item" data-case-tab="prompts" aria-selected="false">提示词</button>
+  </nav>
+
+  <section class="case-section" id="decisions" data-section="decisions" data-case-panel="decisions" aria-labelledby="decisions-title">
     <header class="case-section__heading">
       <p>01 / 决策卡</p>
       <div>
@@ -29,7 +35,7 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     </div>
   </section>
 
-  <section class="case-section" id="challenges" data-section="challenges" aria-labelledby="challenges-title">
+  <section class="case-section" id="challenges" data-section="challenges" data-case-panel="decisions" aria-labelledby="challenges-title">
     <header class="case-section__heading">
       <p>02 / 共性难点</p>
       <div>
@@ -47,7 +53,7 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     </ol>
   </section>
 
-  <section class="case-section" id="transfer" data-section="transfer" aria-labelledby="transfer-title">
+  <section class="case-section" id="transfer" data-section="transfer" data-case-panel="decisions" aria-labelledby="transfer-title">
     <div class="transfer-card">
       <p>03 / 一条可迁移写法</p>
       <h2 id="transfer-title">换掉题材时，保留结构契约</h2>
@@ -55,9 +61,9 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     </div>
   </section>
 
-  <section class="case-section" id="evidence" data-section="evidence" aria-labelledby="evidence-title">
+  <section class="case-section" id="evidence" data-section="evidence" data-case-panel="evidence" aria-labelledby="evidence-title">
     <header class="case-section__heading">
-      <p>04 / 可选证据抽屉</p>
+      <p>04 / 证据</p>
       <div>
         <h2 id="evidence-title">从结论回到短证据、Run 与图片</h2>
         <span>默认折叠。实验卡中的数字可继续下钻到当前评分修订和具体结果图。</span>
@@ -68,7 +74,7 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     </div>
   </section>
 
-  <section class="case-section case-sources" id="sources" data-section="sources" aria-labelledby="sources-title">
+  <section class="case-section case-sources" id="sources" data-section="sources" data-case-panel="evidence" aria-labelledby="sources-title">
     <header class="case-section__heading">
       <p>05 / 版本与来源</p>
       <div>
@@ -130,12 +136,22 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
         <code>{fingerprint.fingerprint_version}</code>
       </div>
     </details>
+  </section>
 
-    <section class="prompt-archive" aria-labelledby="prompts-title">
-      <div class="prompt-archive__heading">
-        <h3 id="prompts-title">完整提示词原文</h3>
-        <p>仅作来源证据，各版本默认折叠。</p>
+  <details class="prompt-archive" data-prompt-archive>
+    <summary>
+      <span>完整提示词原文</span>
+      <span>{prompts.length} 个版本 · 默认折叠</span>
+    </summary>
+    <div class="prompt-archive__body">
+      <div class="prompt-archive__bar">
+        <div>
+          <p class="eyebrow">Prompts</p>
+          <h3 id="prompts-title">完整提示词原文</h3>
+        </div>
+        <button type="button" class="prompt-archive__close" data-prompt-close>关闭</button>
       </div>
+      <p class="prompt-archive__hint">仅作来源证据，各版本默认折叠。</p>
       <div class="prompt-list">
         {prompts.map((prompt) => (
           <details
@@ -154,27 +170,94 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
           </details>
         ))}
       </div>
-    </section>
-  </section>
+    </div>
+  </details>
+
+  <button type="button" class="case-prompt-cta" data-prompt-open>
+    <span>查看完整提示词</span>
+    <span class="case-prompt-cta__count">{prompts.length}</span>
+  </button>
+
+  <div class="sheet-backdrop" data-prompt-backdrop hidden></div>
 </article>
+
+<script>
+  const page = document.querySelector<HTMLElement>("[data-case-page]");
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-case-tab]")];
+  const archive = document.querySelector<HTMLDetailsElement>("[data-prompt-archive]");
+  const backdrop = document.querySelector<HTMLElement>("[data-prompt-backdrop]");
+  const openButton = document.querySelector<HTMLButtonElement>("[data-prompt-open]");
+  const closeButton = document.querySelector<HTMLButtonElement>("[data-prompt-close]");
+  const mobile = window.matchMedia("(max-width: 63.99rem)");
+
+  function setPanel(panel: string): void {
+    if (!page) return;
+    page.dataset.activePanel = panel;
+    for (const tab of tabs) {
+      if (tab.dataset.caseTab === "prompts") continue;
+      const active = tab.dataset.caseTab === panel;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", String(active));
+    }
+  }
+
+  function openPrompts(): void {
+    if (!archive) return;
+    archive.open = true;
+    if (mobile.matches) {
+      archive.classList.add("is-sheet");
+      document.body.classList.add("prompt-open");
+      if (backdrop) backdrop.hidden = false;
+      closeButton?.focus();
+    }
+  }
+
+  function closePrompts(): void {
+    if (!archive) return;
+    archive.classList.remove("is-sheet");
+    archive.open = false;
+    document.body.classList.remove("prompt-open");
+    if (backdrop) backdrop.hidden = true;
+    openButton?.focus();
+    if (page) setPanel(page.dataset.activePanel ?? "decisions");
+  }
+
+  for (const tab of tabs) {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.caseTab ?? "decisions";
+      if (target === "prompts") {
+        openPrompts();
+        return;
+      }
+      setPanel(target);
+    });
+  }
+
+  openButton?.addEventListener("click", openPrompts);
+  closeButton?.addEventListener("click", closePrompts);
+  backdrop?.addEventListener("click", closePrompts);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && archive?.classList.contains("is-sheet")) closePrompts();
+  });
+</script>
 
 <style>
   .case-page {
     min-width: 0;
-    padding-top: clamp(1rem, 3vw, 2.5rem);
+    padding-top: var(--space-3);
   }
 
   .case-section {
     min-width: 0;
-    margin-top: clamp(2.25rem, 6vw, 4.5rem);
-    padding-top: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
     border-top: 1px solid var(--color-line);
   }
 
   .case-section__heading {
     display: grid;
-    gap: 0.5rem;
-    margin-bottom: 1.35rem;
+    gap: 0.35rem;
+    margin-bottom: var(--space-3);
   }
 
   .case-section__heading > p,
@@ -182,22 +265,22 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     margin: 0;
     color: var(--color-accent-deep);
     font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 750;
-    letter-spacing: 0.08em;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
   }
 
   .case-section__heading h2,
   .transfer-card h2 {
-    margin-bottom: 0.45rem;
-    font-size: clamp(1.55rem, 4vw, 2.65rem);
+    margin-bottom: 0.25rem;
+    font-size: var(--text-lg);
   }
 
   .case-section__heading div > span {
     display: block;
     max-width: 44rem;
     color: var(--color-muted);
-    font-size: 0.83rem;
+    font-size: var(--text-xs);
     line-height: 1.6;
   }
 
@@ -205,12 +288,12 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
   .evidence-list {
     display: grid;
     min-width: 0;
-    gap: 1rem;
+    gap: var(--space-3);
   }
 
   .challenge-list {
     display: grid;
-    gap: 0.65rem;
+    gap: var(--space-2);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -220,66 +303,64 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     display: grid;
     min-width: 0;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.8rem;
-    padding: 0.95rem;
+    gap: var(--space-3);
+    padding: var(--space-3);
     border: 1px solid var(--color-line);
     border-radius: var(--radius-medium);
-    background: rgb(255 253 248 / 72%);
+    background: var(--color-surface);
   }
 
   .challenge-list li > span {
     color: var(--color-accent);
     font-family: var(--font-mono);
-    font-size: 0.76rem;
-    font-weight: 750;
+    font-size: var(--text-xs);
+    font-weight: 700;
   }
 
   .challenge-list p {
     margin: 0;
-    font-size: 0.88rem;
-    line-height: 1.7;
+    font-size: var(--text-sm);
+    line-height: 1.65;
   }
 
   .transfer-card {
-    padding: clamp(1.3rem, 4vw, 2.4rem);
+    padding: var(--space-4);
     border-radius: var(--radius-large);
-    background:
-      radial-gradient(circle at 100% 0%, rgb(220 236 168 / 18%), transparent 24rem),
-      var(--color-forest-deep);
+    background: var(--color-forest-deep);
     color: #eef3ed;
-    box-shadow: var(--shadow-lift);
   }
 
   .transfer-card > p:first-child {
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-2);
     color: var(--color-lime);
   }
 
   .transfer-card h2 {
     color: white;
+    font-size: var(--text-base);
   }
 
   .transfer-card > p:last-child {
     max-width: 58rem;
     margin: 0;
-    font-size: clamp(0.96rem, 2vw, 1.12rem);
-    line-height: 1.85;
+    font-size: var(--text-sm);
+    line-height: 1.8;
     overflow-wrap: anywhere;
   }
 
   .case-sources {
-    padding-bottom: 1rem;
+    padding-bottom: var(--space-2);
   }
 
   .source-grid {
     display: grid;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
   }
 
   .source-card {
     min-width: 0;
-    padding: 1rem;
+    padding: var(--space-3);
     border: 1px solid var(--color-line);
     border-radius: var(--radius-medium);
     background: var(--color-surface);
@@ -287,28 +368,28 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
 
   .source-card h3,
   .fingerprint-source h3,
-  .prompt-archive__heading h3 {
-    margin-bottom: 0.45rem;
-    font-size: 0.95rem;
+  .prompt-archive h3 {
+    margin-bottom: 0.3rem;
+    font-size: var(--text-sm);
   }
 
   .source-card p {
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.4rem;
     color: var(--color-muted);
-    font-size: 0.78rem;
-    line-height: 1.65;
+    font-size: var(--text-xs);
+    line-height: 1.6;
     overflow-wrap: anywhere;
   }
 
   .source-card a {
     color: var(--color-forest);
-    font-size: 0.76rem;
-    font-weight: 700;
+    font-size: var(--text-xs);
+    font-weight: 650;
   }
 
   code {
     font-family: var(--font-mono);
-    font-size: 0.88em;
+    font-size: 0.9em;
     overflow-wrap: anywhere;
   }
 
@@ -319,110 +400,154 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     border: 1px solid var(--color-line);
     border-radius: var(--radius-medium);
     background: var(--color-surface);
-    scroll-margin-top: 6rem;
+    scroll-margin-top: calc(var(--topbar-height) + 1rem);
   }
 
   .fingerprint-source > summary,
   .prompt-list summary {
-    padding: 0.9rem 1rem;
+    padding: var(--space-3);
     cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: var(--text-xs);
+    font-weight: 650;
   }
 
   .fingerprint-source > div {
     min-width: 0;
-    padding: 0 1rem 1rem;
+    padding: 0 var(--space-3) var(--space-3);
   }
 
   .fingerprint-source dl {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
 
   .fingerprint-source dl > div {
     min-width: 0;
-    padding: 0.65rem;
+    padding: 0.5rem;
+    border-radius: var(--radius-small);
     background: var(--color-surface-muted);
   }
 
   .fingerprint-source dt {
     color: var(--color-muted);
-    font-size: 0.66rem;
+    font-size: 0.6875rem;
   }
 
   .fingerprint-source dd {
-    margin: 0.2rem 0 0;
+    margin: 0.15rem 0 0;
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     overflow-wrap: anywhere;
   }
 
   .fingerprint-source__excerpt {
-    padding: 0.75rem;
+    margin-block: var(--space-3);
+    padding: var(--space-3);
     border-left: 2px solid var(--color-accent);
     color: var(--color-muted);
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     overflow-wrap: anywhere;
   }
 
   .fingerprint-source__columns {
     display: grid;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
   }
 
   .fingerprint-source__columns ul {
     margin: 0;
-    padding-left: 1.2rem;
+    padding-left: 1.1rem;
     color: var(--color-muted);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .fingerprint-source__columns li {
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
     overflow-wrap: anywhere;
   }
 
   .fingerprint-source__columns p {
     color: var(--color-muted);
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
   }
 
   .prompt-archive {
-    margin-top: 2rem;
+    min-width: 0;
+    margin-top: var(--space-5);
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    scroll-margin-top: calc(var(--topbar-height) + 1rem);
   }
 
-  .prompt-archive__heading {
+  .prompt-archive > summary {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    gap: 0.25rem 1rem;
-    margin-bottom: 0.65rem;
+    gap: 0.25rem var(--space-3);
+    padding: var(--space-4);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 700;
   }
 
-  .prompt-archive__heading h3,
-  .prompt-archive__heading p {
-    margin-bottom: 0;
-  }
-
-  .prompt-archive__heading p {
+  .prompt-archive > summary > span:last-child {
     color: var(--color-muted);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
+    font-weight: 500;
+  }
+
+  .prompt-archive__body {
+    min-width: 0;
+    padding: 0 var(--space-4) var(--space-4);
+    border-top: 1px solid var(--color-line);
+  }
+
+  .prompt-archive__bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-3);
+  }
+
+  .prompt-archive__bar h3 {
+    margin-bottom: 0;
+    font-size: var(--text-base);
+  }
+
+  .prompt-archive__close {
+    display: none;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-forest-deep);
+    font-size: var(--text-xs);
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .prompt-archive__hint {
+    margin-block: var(--space-2) var(--space-3);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
   }
 
   .prompt-list {
     display: grid;
-    gap: 0.65rem;
+    gap: var(--space-2);
   }
 
   .prompt-list summary {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 0.35rem 1rem;
+    gap: 0.25rem var(--space-3);
   }
 
   .prompt-list summary > span {
@@ -432,25 +557,26 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
 
   .prompt-list summary > span:last-child {
     color: var(--color-muted);
-    font-size: 0.68rem;
+    font-size: 0.6875rem;
     font-weight: 500;
   }
 
   .prompt-source {
     min-width: 0;
-    padding: 0 1rem 1rem;
+    padding: 0 var(--space-3) var(--space-3);
   }
 
   .prompt-source pre {
     max-width: 100%;
     margin: 0;
-    padding: 1rem;
+    padding: var(--space-3);
     overflow: auto;
+    border: 1px solid var(--color-line);
     border-radius: var(--radius-small);
-    background: var(--color-forest-deep);
-    color: #eff4ef;
+    background: #f4f5f1;
+    color: var(--color-ink);
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     line-height: 1.7;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
@@ -458,26 +584,145 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
   }
 
   .prompt-source p {
-    margin: 0.65rem 0 0;
+    margin: var(--space-2) 0 0;
     color: var(--color-muted);
-    font-size: 0.66rem;
+    font-size: 0.6875rem;
     overflow-wrap: anywhere;
   }
 
-  @media (min-width: 48rem) {
+  /* Mobile tabs */
+  .case-tabs {
+    position: sticky;
+    top: var(--topbar-height);
+    z-index: 15;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3px;
+    margin-top: var(--space-4);
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--color-surface-muted);
+  }
+
+  .case-tabs__item {
+    min-height: 2.25rem;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .case-tabs__item.is-active {
+    background: var(--color-surface);
+    color: var(--color-forest-deep);
+    box-shadow: 0 1px 2px rgb(16 54 44 / 10%);
+  }
+
+  .case-page [data-case-panel] {
+    display: none;
+  }
+
+  .case-page[data-active-panel="decisions"] [data-case-panel="decisions"],
+  .case-page[data-active-panel="evidence"] [data-case-panel="evidence"] {
+    display: block;
+  }
+
+  .case-prompt-cta {
+    position: fixed;
+    right: var(--page-pad);
+    bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom) + 0.65rem);
+    left: var(--page-pad);
+    z-index: 45;
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-forest);
+    color: white;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgb(16 54 44 / 22%);
+  }
+
+  .case-prompt-cta__count {
+    display: grid;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    place-items: center;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 22%);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+
+  .sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: rgb(16 34 27 / 40%);
+  }
+
+  .sheet-backdrop[hidden] {
+    display: none;
+  }
+
+  .prompt-archive.is-sheet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 80;
+    max-height: 86dvh;
+    margin: 0;
+    overflow: auto;
+    border: 0;
+    border-radius: 1.25rem 1.25rem 0 0;
+    background: var(--color-surface);
+    box-shadow: 0 -12px 40px rgb(16 34 27 / 22%);
+    overscroll-behavior: contain;
+  }
+
+  .prompt-archive.is-sheet::before {
+    display: block;
+    width: 2.5rem;
+    height: 0.25rem;
+    margin: 0.55rem auto 0;
+    border-radius: 999px;
+    background: var(--color-line-strong);
+    content: "";
+  }
+
+  .prompt-archive.is-sheet > summary {
+    display: none;
+  }
+
+  .prompt-archive.is-sheet .prompt-archive__close {
+    display: inline-flex;
+  }
+
+  .prompt-archive.is-sheet .prompt-archive__body {
+    padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
+  }
+
+  body.prompt-open {
+    overflow: hidden;
+  }
+
+  @media (min-width: 40rem) {
     .case-section__heading {
-      grid-template-columns: 9rem minmax(0, 1fr);
-      gap: 1rem;
+      grid-template-columns: 8rem minmax(0, 1fr);
+      gap: var(--space-3);
     }
 
     .challenge-list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .challenge-list li {
-      grid-template-columns: minmax(0, 1fr);
-      align-content: start;
-      padding: 1.2rem;
     }
 
     .source-grid {
@@ -490,6 +735,69 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
 
     .fingerprint-source__columns {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .case-page {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      column-gap: var(--space-6);
+      align-items: start;
+      padding-top: var(--space-5);
+    }
+
+    .case-page > :global(.case-hero) {
+      display: contents;
+    }
+
+    .case-page > :global(.case-hero) > :global([data-hero-item]) {
+      grid-column: 2;
+      margin-bottom: var(--space-3);
+    }
+
+    .case-page > :global(.case-hero) > :global(.case-cover) {
+      position: sticky;
+      top: calc(var(--topbar-height) + var(--space-4));
+      grid-row: 1 / span 40;
+      grid-column: 1;
+      align-self: start;
+    }
+
+    .case-page > .case-section,
+    .case-page > .prompt-archive {
+      grid-column: 2;
+    }
+
+    .case-page [data-case-panel] {
+      display: block;
+    }
+
+    .case-tabs,
+    .case-prompt-cta,
+    .sheet-backdrop {
+      display: none !important;
+    }
+
+    .case-section {
+      margin-top: var(--space-6);
+      padding-top: var(--space-5);
+    }
+
+    .case-section:first-of-type {
+      margin-top: var(--space-4);
+    }
+
+    .prompt-archive {
+      margin-top: var(--space-6);
+    }
+
+    .prompt-archive__bar {
+      display: none;
+    }
+
+    .prompt-archive__body {
+      padding-top: var(--space-3);
     }
   }
 </style>

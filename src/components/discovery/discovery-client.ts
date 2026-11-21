@@ -7,6 +7,33 @@ type FilterName = typeof filterNames[number];
 
 type FilterState = Record<FilterName, string>;
 
+const assetPrefix = (() => {
+  const modulePath = new URL(import.meta.url).pathname;
+  const marker = modulePath.indexOf("/_astro/");
+  if (marker >= 0) return modulePath.slice(0, marker);
+  const sample = document.querySelector<HTMLImageElement>('img[src*="assets/"]')?.getAttribute("src") ?? "";
+  const index = sample.indexOf("assets/");
+  return index > 0 ? sample.slice(0, index).replace(/\/$/, "") : "";
+})();
+
+function assetUrl(value: string): string {
+  if (!value.startsWith("/")) return value;
+  const index = value.indexOf("assets/");
+  if (index < 0) return value;
+  const prefix = value.slice(0, index);
+  return prefix === "/" ? `${assetPrefix}${value}` : value;
+}
+
+function assetSrcSet(value: string): string {
+  return value
+    .split(",")
+    .map((part) => {
+      const [url, ...rest] = part.trim().split(/\s+/);
+      return [assetUrl(url), ...rest].join(" ");
+    })
+    .join(", ");
+}
+
 function element<T extends Element>(root: ParentNode, selector: string): T {
   const match = root.querySelector<T>(selector);
   if (!match) throw new Error(`发现组件缺少 ${selector}`);
@@ -49,10 +76,11 @@ function hydrateCard(template: HTMLTemplateElement, card: DiscoveryCard, positio
   setText('[data-field="reason-heading"]', card.reasonHeading);
   element<HTMLElement>(fragment, ".discovery-card__reason").setAttribute("aria-label", card.reasonHeading);
   setText('[data-field="challenge"]', card.challenge);
+  setText('[data-field="challenge-detail"]', card.challenge);
   setText('[data-field="rule"]', card.transferableRule);
   const image = element<HTMLImageElement>(fragment, '[data-field="image"]');
-  image.src = card.image.src;
-  image.srcset = card.image.srcSet;
+  image.src = assetUrl(card.image.src);
+  image.srcset = assetSrcSet(card.image.srcSet);
   image.sizes = card.image.sizes;
   image.width = card.image.width;
   image.height = card.image.height;

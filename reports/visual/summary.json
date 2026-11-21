@@ -1,0 +1,198 @@
+{
+  "generatedAt": "2026-11-21T23:25:45.369Z",
+  "base": "http://127.0.0.1:4390/agnes-prompt-gallery",
+  "viewports": [
+    {
+      "name": "390x844",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "1440x900",
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "pages": 16,
+  "passed": 16,
+  "failed": 0,
+  "pass": true,
+  "results": [
+    {
+      "slug": "home",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/",
+      "screenshots": [
+        "reports/visual/home-390x844-fold.png",
+        "reports/visual/home-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "case-475",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/cases/case-475/",
+      "screenshots": [
+        "reports/visual/case-475-390x844-fold.png",
+        "reports/visual/case-475-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "case-23",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/cases/case-23/",
+      "screenshots": [
+        "reports/visual/case-23-390x844-fold.png",
+        "reports/visual/case-23-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "case-512",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/cases/case-512/",
+      "screenshots": [
+        "reports/visual/case-512-390x844-fold.png",
+        "reports/visual/case-512-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "categories",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/categories/",
+      "screenshots": [
+        "reports/visual/categories-390x844-fold.png",
+        "reports/visual/categories-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "category-subject-form",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/categories/subject-form/",
+      "screenshots": [
+        "reports/visual/category-subject-form-390x844-fold.png",
+        "reports/visual/category-subject-form-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "experiments",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/experiments/",
+      "screenshots": [
+        "reports/visual/experiments-390x844-fold.png",
+        "reports/visual/experiments-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "methods",
+      "viewport": "390x844",
+      "path": "/agnes-prompt-gallery/methods/",
+      "screenshots": [
+        "reports/visual/methods-390x844-fold.png",
+        "reports/visual/methods-390x844.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "home",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/",
+      "screenshots": [
+        "reports/visual/home-1440x900-fold.png",
+        "reports/visual/home-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "case-475",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/cases/case-475/",
+      "screenshots": [
+        "reports/visual/case-475-1440x900-fold.png",
+        "reports/visual/case-475-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "case-23",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/cases/case-23/",
+      "screenshots": [
+        "reports/visual/case-23-1440x900-fold.png",
+        "reports/visual/case-23-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "case-512",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/cases/case-512/",
+      "screenshots": [
+        "reports/visual/case-512-1440x900-fold.png",
+        "reports/visual/case-512-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "categories",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/categories/",
+      "screenshots": [
+        "reports/visual/categories-1440x900-fold.png",
+        "reports/visual/categories-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "category-subject-form",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/categories/subject-form/",
+      "screenshots": [
+        "reports/visual/category-subject-form-1440x900-fold.png",
+        "reports/visual/category-subject-form-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "experiments",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/experiments/",
+      "screenshots": [
+        "reports/visual/experiments-1440x900-fold.png",
+        "reports/visual/experiments-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    },
+    {
+      "slug": "methods",
+      "viewport": "1440x900",
+      "path": "/agnes-prompt-gallery/methods/",
+      "screenshots": [
+        "reports/visual/methods-1440x900-fold.png",
+        "reports/visual/methods-1440x900.png"
+      ],
+      "pass": true,
+      "errors": []
+    }
+  ]
+}

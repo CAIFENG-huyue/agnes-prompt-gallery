@@ -107,6 +107,78 @@ async function measure(page) {
   });
 }
 
+async function loadVisibleImages(page) {
+  await page.evaluate(async () => {
+    const step = Math.max(240, Math.floor(window.innerHeight * 0.75));
+    const limit = document.documentElement.scrollHeight;
+    for (let y = 0; y < limit; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((resolve) => setTimeout(resolve, 70));
+    }
+    window.scrollTo(0, 0);
+    await new Promise((resolve) => setTimeout(resolve, 120));
+  });
+  await page.waitForFunction(
+    () => [...document.images].every((image) => image.complete),
+    undefined,
+    { timeout: 15000 }
+  ).catch(() => {});
+  return page.$$eval("img", (images) => images
+    .filter((image) => image.offsetParent !== null || image.getBoundingClientRect().width > 0)
+    .filter((image) => image.complete && image.naturalWidth === 0)
+    .map((image) => ({ src: image.currentSrc || image.src, alt: image.alt })));
+}
+
+async function checkBottomSpacing(page) {
+  return page.evaluate(() => {
+    const tabbar = document.querySelector(".tabbar");
+    if (!tabbar) return null;
+    const rect = tabbar.getBoundingClientRect();
+    const padding = Number.parseFloat(getComputedStyle(document.body).paddingBottom) || 0;
+    return { tabHeight: Math.round(rect.height), bodyPadding: Math.round(padding) };
+  });
+}
+
+async function checkSearchFlow(page) {
+  const errors = [];
+  const selectors = await page.evaluate(() => {
+    const shell = document.querySelector(".discovery-search-shell");
+    const results = document.querySelector(".discovery-results");
+    if (!shell) return null;
+    const shellRect = shell.getBoundingClientRect();
+    return {
+      position: getComputedStyle(shell).position,
+      shellBottom: Math.round(shellRect.bottom + window.scrollY),
+      resultsTop: results ? Math.round(results.getBoundingClientRect().top + window.scrollY) : null
+    };
+  });
+  if (!selectors) return errors;
+  if (selectors.position === "fixed" || selectors.position === "absolute") {
+    errors.push(`搜索框不得浮层化：position=${selectors.position}`);
+  }
+  if (selectors.resultsTop !== null && selectors.resultsTop + 1 < selectors.shellBottom) {
+    errors.push(`搜索结果压住搜索框：resultsTop=${selectors.resultsTop} < shellBottom=${selectors.shellBottom}`);
+  }
+  const input = page.locator("[data-discovery-query]").first();
+  if ((await input.count()) > 0) {
+    await input.fill("企鹅 结构板");
+    await page.waitForTimeout(450);
+    const after = await page.evaluate(() => {
+      const results = document.querySelector(".discovery-results");
+      const shell = document.querySelector(".discovery-search-shell");
+      const cards = document.querySelectorAll(".discovery-card").length;
+      if (!results || !shell) return null;
+      return {
+        gap: Math.round(results.getBoundingClientRect().top - shell.getBoundingClientRect().bottom),
+        cards
+      };
+    });
+    if (!after) errors.push("搜索输入后结果区缺失");
+    else if (after.gap < -1) errors.push(`搜索输入后结果与搜索区重叠：gap=${after.gap}`);
+  }
+  return errors;
+}
+
 function fail(list, message) {
   list.push(message);
 }
@@ -114,7 +186,7 @@ function fail(list, message) {
 async function checkPage(page, def, shotDir) {
   const errors = [];
   await page.goto(`${ORIGIN}${def.path}`, { waitUntil: "load" });
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(350);
 
   const metrics = await measure(page);
   if (metrics.scrollWidth > VIEWPORT.width) {
@@ -124,7 +196,19 @@ async function checkPage(page, def, shotDir) {
     fail(errors, `视口宽度异常：clientWidth=${metrics.clientWidth}，期望 360`);
   }
 
+  const bottom = await checkBottomSpacing(page);
+  if (!bottom) fail(errors, "缺少底部 Tab Bar");
+  else if (bottom.bodyPadding + 1 < bottom.tabHeight) {
+    fail(errors, `底部 Tab Bar 遮挡正文：bodyPadding=${bottom.bodyPadding} < tabHeight=${bottom.tabHeight}`);
+  }
+
+  if (def.kind === "home" || def.kind === "listing") {
+    const searchErrors = await checkSearchFlow(page);
+    errors.push(...searchErrors);
+  }
+
   if (def.kind === "case") {
+    await page.evaluate(() => window.scrollTo(0, 0));
     const checks = [
       ["标题", "h1"],
       ["通俗分类", "[data-hero-item='category']"],
@@ -136,16 +220,40 @@ async function checkPage(page, def, shotDir) {
       if (!result.visible) fail(errors, `首屏不可见：${label}（${result.reason ?? `top=${result.top}`}）`);
     }
 
-    const promptDetails = page.locator("details[data-prompt-version]").first();
-    if ((await promptDetails.count()) === 0) {
-      fail(errors, "缺少提示词折叠块");
+    const openButton = page.locator("[data-prompt-open]").first();
+    const archive = page.locator("[data-prompt-archive]").first();
+    if ((await openButton.count()) === 0 || (await archive.count()) === 0) {
+      fail(errors, "缺少提示词抽屉");
     } else {
-      const summary = promptDetails.locator("summary").first();
-      await summary.click();
-      if (!(await promptDetails.evaluate((el) => el.open))) fail(errors, "提示词展开失败");
-      await summary.click();
-      if (await promptDetails.evaluate((el) => el.open)) fail(errors, "提示词收起失败");
+      await openButton.click();
+      await page.waitForTimeout(250);
+      const sheetOpen = await archive.evaluate((el) => el.open && el.classList.contains("is-sheet"));
+      if (!sheetOpen) fail(errors, "提示词抽屉打开失败");
+
+      const promptDetails = page.locator("details[data-prompt-version]").first();
+      if ((await promptDetails.count()) === 0) {
+        fail(errors, "缺少提示词折叠块");
+      } else {
+        const summary = promptDetails.locator("summary").first();
+        await summary.click();
+        if (!(await promptDetails.evaluate((el) => el.open))) fail(errors, "提示词展开失败");
+        await summary.click();
+        if (await promptDetails.evaluate((el) => el.open)) fail(errors, "提示词收起失败");
+      }
+
+      await page.locator("[data-prompt-close]").first().click();
+      await page.waitForTimeout(250);
+      const sheetClosed = await archive.evaluate((el) => !el.open && !el.classList.contains("is-sheet"));
+      if (!sheetClosed) fail(errors, "提示词抽屉关闭失败");
     }
+  }
+
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(150);
+
+  const brokenImages = await loadVisibleImages(page);
+  if (brokenImages.length > 0) {
+    fail(errors, `图片未加载：${JSON.stringify(brokenImages.slice(0, 5))}`);
   }
 
   await page.evaluate(() => window.scrollTo(0, 0));

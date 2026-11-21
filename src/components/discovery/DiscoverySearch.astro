@@ -48,10 +48,10 @@ const totalCards = Object.keys(cards).length;
   data-discovery={instanceId}
   aria-label={category ? `${category.name}案例筛选` : "任务检索与结果"}
 >
-  <div class="discovery-search-shell">
+  <div class="discovery-search-shell" id={mode === "search" ? "home-search" : undefined}>
     <form class="discovery-search" data-discovery-form method="get" action={category ? `/categories/${category.category_id}/` : "/"}>
       <label class="discovery-search__label" for={`${instanceId}-query`}>
-        {category ? `在${category.name}里描述任务（可选）` : "我想做……"}
+        {category ? `在${category.name}里描述任务（可选）` : "描述你要做的画面"}
       </label>
       <div class="discovery-search__row">
         <input
@@ -65,8 +65,7 @@ const totalCards = Object.keys(cards).length;
           data-discovery-query
         />
         <button class="button button--primary discovery-search__submit" type="submit">
-          找结构相近的案例
-          <span aria-hidden="true">→</span>
+          搜索
         </button>
       </div>
       <div class="discovery-search__underbar">
@@ -85,9 +84,9 @@ const totalCards = Object.keys(cards).length;
           ))}
         </div>
       )}
-      <details class="discovery-filter-drawer" open={mode === "browse"}>
+      <details class="discovery-filter-drawer">
         <summary>
-          <span>按意图、版式或标注槽位筛选</span>
+          <span>筛选意图 / 版式 / 输入 / 槽位</span>
           <span class="discovery-filter-count" data-filter-count hidden></span>
         </summary>
         <DiscoveryFilters instanceId={instanceId} options={options} />

@@ -13,51 +13,100 @@ const {
   description = "按意图与画面结构查找案例，查看可迁移写法及其证据版本。"
 } = Astro.props;
 const pageTitle = title === "Agnes Bench" ? title : `${title} · Agnes Bench`;
-const navigation = [
-  { href: "/", label: "找案例" },
-  { href: "/methods/", label: "可迁移写法" },
-  { href: "/experiments/", label: "实验证据" }
+const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isHome = pathname === "/";
+const sections = [
+  { href: "/", label: "找案例", match: (path: string) => path === "/" || path.startsWith("/cases") },
+  { href: "/categories/", label: "分类", match: (path: string) => path.startsWith("/categories") },
+  { href: "/experiments/", label: "实验", match: (path: string) => path.startsWith("/experiments") },
+  { href: "/methods/", label: "方法", match: (path: string) => path.startsWith("/methods") }
 ];
+const current = sections.find((item) => item.match(pathname));
 ---
 
 <!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, viewport-fit=cover" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#f4f1e9" />
+    <meta name="theme-color" content="#f7f5ef" />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class:list={{ "is-home": isHome, "is-case": pathname.startsWith("/cases") }}>
     <a class="skip-link" href="#main-content">跳到主要内容</a>
-    <header class="site-header">
-      <div class="site-header__inner">
+
+    <header class="topbar">
+      <div class="topbar__inner">
         <a class="brand" href="/" aria-label="Agnes Bench 首页">
           <span class="brand__mark" aria-hidden="true">AB</span>
           <span class="brand__name">Agnes Bench</span>
         </a>
-        <nav class="site-nav" aria-label="主导航">
-          {navigation.map((item) => (
-            <a
-              href={item.href}
-              aria-current={Astro.url.pathname === item.href ? "page" : undefined}
-            >
-              {item.label}
-            </a>
+
+        <div class="topbar__center">
+          {isHome ? (
+            <div class="segmented" role="group" aria-label="首页内容范围" data-home-switch>
+              <button type="button" class="segmented__item is-active" data-home-mode-value="featured" aria-pressed="true">精选</button>
+              <button type="button" class="segmented__item" data-home-mode-value="all" aria-pressed="false">全部</button>
+            </div>
+          ) : (
+            <span class="topbar__page">{current?.label ?? "Agnes"}</span>
+          )}
+        </div>
+
+        <nav class="desktop-nav" aria-label="主导航">
+          {sections.map((item) => (
+            <a href={item.href} aria-current={current?.href === item.href ? "page" : undefined}>{item.label}</a>
           ))}
         </nav>
+
+        <div class="topbar__actions">
+          <a class="icon-button" href="/#home-search" aria-label="搜索案例">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg>
+          </a>
+          <a class="icon-button" href="/categories/" aria-label="按分类筛选">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>
+          </a>
+        </div>
       </div>
     </header>
+
     <main id="main-content" class="page-shell">
       <slot />
     </main>
+
     <footer class="site-footer">
       <div class="site-footer__inner">
         <span>Agnes Bench</span>
         <span>静态案例索引 · 证据与版本可回溯</span>
       </div>
     </footer>
+
+    <nav class="tabbar" aria-label="移动端导航">
+      {sections.map((item) => (
+        <a
+          class:list={["tabbar__item", { "is-active": current?.href === item.href }]}
+          href={item.href}
+          aria-current={current?.href === item.href ? "page" : undefined}
+        >
+          <span class="tabbar__icon" aria-hidden="true">
+            {item.href === "/" && (
+              <svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-5.5v-5h-5v5H4z"></path></svg>
+            )}
+            {item.href === "/categories/" && (
+              <svg viewBox="0 0 24 24"><path d="M4 5h6v6H4zM14 5h6v6h-6zM4 14h6v5H4zM14 14h6v5h-6z"></path></svg>
+            )}
+            {item.href === "/experiments/" && (
+              <svg viewBox="0 0 24 24"><path d="M9 4h6M10 4v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V4M7 15h10"></path></svg>
+            )}
+            {item.href === "/methods/" && (
+              <svg viewBox="0 0 24 24"><path d="M5 4h9l5 5v11H5zM14 4v5h5M8 13h8M8 17h6"></path></svg>
+            )}
+          </span>
+          <span class="tabbar__label">{item.label}</span>
+        </a>
+      ))}
+    </nav>
   </body>
 </html>
