@@ -220,31 +220,52 @@ async function checkPage(page, def, shotDir) {
       if (!result.visible) fail(errors, `首屏不可见：${label}（${result.reason ?? `top=${result.top}`}）`);
     }
 
-    const openButton = page.locator("[data-prompt-open]").first();
-    const archive = page.locator("[data-prompt-archive]").first();
-    if ((await openButton.count()) === 0 || (await archive.count()) === 0) {
-      fail(errors, "缺少提示词抽屉");
-    } else {
-      await openButton.click();
-      await page.waitForTimeout(250);
-      const sheetOpen = await archive.evaluate((el) => el.open && el.classList.contains("is-sheet"));
-      if (!sheetOpen) fail(errors, "提示词抽屉打开失败");
+    const cover = await page.evaluate(() => {
+      const image = document.querySelector(".case-cover img");
+      const figure = document.querySelector("[data-hero-item='cover']");
+      return {
+        naturalWidth: image ? image.naturalWidth : 0,
+        top: figure ? Math.round(figure.getBoundingClientRect().top) : null
+      };
+    });
+    if (cover.naturalWidth <= 0) fail(errors, "首屏封面未加载：naturalWidth=0");
+    if (cover.top === null || cover.top >= VIEWPORT.height) fail(errors, `首屏封面不可见：top=${cover.top}`);
 
-      const promptDetails = page.locator("details[data-prompt-version]").first();
-      if ((await promptDetails.count()) === 0) {
-        fail(errors, "缺少提示词折叠块");
-      } else {
-        const summary = promptDetails.locator("summary").first();
-        await summary.click();
-        if (!(await promptDetails.evaluate((el) => el.open))) fail(errors, "提示词展开失败");
-        await summary.click();
-        if (await promptDetails.evaluate((el) => el.open)) fail(errors, "提示词收起失败");
+    for (const name of ["decisions", "evidence", "prompts"]) {
+      await page.locator(`[data-case-tab="${name}"]`).first().click();
+      await page.waitForTimeout(250);
+      const state = await page.evaluate(() => {
+        const pageEl = document.querySelector("[data-case-page]");
+        const panels = [...document.querySelectorAll("[data-case-panel]")];
+        const visible = panels.filter((panel) => getComputedStyle(panel).display !== "none");
+        const archive = document.querySelector("[data-prompt-archive]");
+        return {
+          active: pageEl?.dataset.activePanel ?? null,
+          visiblePanels: visible.map((panel) => panel.dataset.casePanel),
+          archiveOpen: archive ? archive.open : null
+        };
+      });
+      if (state.active !== name) fail(errors, `分段未激活：期望 ${name}，实际 ${state.active}`);
+      const visibleGroups = [...new Set(state.visiblePanels)];
+      if (visibleGroups.length !== 1 || visibleGroups[0] !== name) {
+        fail(errors, `分段 ${name} 可见面板异常：${JSON.stringify(state.visiblePanels)}`);
       }
+      if (name === "prompts" && !state.archiveOpen) fail(errors, "提示词面板未展开");
+    }
 
-      await page.locator("[data-prompt-close]").first().click();
-      await page.waitForTimeout(250);
-      const sheetClosed = await archive.evaluate((el) => !el.open && !el.classList.contains("is-sheet"));
-      if (!sheetClosed) fail(errors, "提示词抽屉关闭失败");
+    if ((await page.locator(".case-prompt-cta").count()) !== 0) {
+      fail(errors, "仍存在 fixed 提示词按钮");
+    }
+
+    const promptDetails = page.locator("details[data-prompt-version]").first();
+    if ((await promptDetails.count()) === 0) {
+      fail(errors, "缺少提示词折叠块");
+    } else {
+      const summary = promptDetails.locator("summary").first();
+      await summary.click();
+      if (!(await promptDetails.locator("pre").first().isVisible())) fail(errors, "提示词展开失败");
+      await summary.click();
+      if (await promptDetails.evaluate((el) => el.open)) fail(errors, "提示词收起失败");
     }
   }
 

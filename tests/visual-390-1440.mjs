@@ -222,33 +222,95 @@ async function checkSearch(page, errors) {
 }
 
 async function checkCaseMobile(page, viewport, errors, slug) {
-  const checks = [
-    ["标题", "h1"],
-    ["分类", "[data-hero-item='category']"],
-    ["适合/不适合", "[data-hero-item='fit']"],
-    ["证据级别", "[data-hero-item='evidence'] .evidence-badge"]
-  ];
-  for (const [label, selector] of checks) {
-    const box = await page.locator(selector).first().boundingBox();
-    if (!box || box.width === 0) {
-      errors.push(`首屏缺少${label}`);
-    } else if (box.y >= viewport.height || box.y + Math.min(box.height, 40) > viewport.height) {
-      errors.push(`首屏不可见：${label} top=${Math.round(box.y)} height=${Math.round(box.height)}`);
+  const firstScreen = await page.evaluate(() => {
+    const cover = document.querySelector("[data-hero-item='cover']");
+    const image = document.querySelector(".case-cover img");
+    const heading = document.querySelector("h1");
+    const coverRect = cover ? cover.getBoundingClientRect() : null;
+    return {
+      coverTop: coverRect ? Math.round(coverRect.top) : null,
+      coverWidth: coverRect ? Math.round(coverRect.width) : 0,
+      naturalWidth: image ? image.naturalWidth : 0,
+      headingTop: heading ? Math.round(heading.getBoundingClientRect().top) : null,
+      innerWidth: window.innerWidth
+    };
+  });
+  if (firstScreen.naturalWidth <= 0) errors.push("首屏封面未加载：naturalWidth=0");
+  if (firstScreen.coverTop === null || firstScreen.coverTop >= viewport.height) {
+    errors.push(`首屏封面不可见：top=${firstScreen.coverTop}`);
+  }
+  if (firstScreen.headingTop === null || firstScreen.headingTop >= viewport.height) {
+    errors.push(`首屏标题不可见：top=${firstScreen.headingTop}`);
+  }
+  if (firstScreen.coverWidth < firstScreen.innerWidth - 2) {
+    errors.push(`封面非全宽：width=${firstScreen.coverWidth} < ${firstScreen.innerWidth}`);
+  }
+
+  for (const name of ["decisions", "evidence", "prompts"]) {
+    await page.locator(`[data-case-tab="${name}"]`).first().click();
+    await page.waitForTimeout(300);
+    const state = await page.evaluate(() => {
+      const pageEl = document.querySelector("[data-case-page]");
+      const panels = [...document.querySelectorAll("[data-case-panel]")];
+      const visible = panels.filter((panel) => getComputedStyle(panel).display !== "none");
+      const archive = document.querySelector("[data-prompt-archive]");
+      return {
+        active: pageEl?.dataset.activePanel ?? null,
+        visiblePanels: visible.map((panel) => panel.dataset.casePanel),
+        archiveOpen: archive ? archive.open : null
+      };
+    });
+    if (state.active !== name) errors.push(`分段未激活：期望 ${name}，实际 ${state.active}`);
+    const visibleGroups = [...new Set(state.visiblePanels)];
+    if (visibleGroups.length !== 1 || visibleGroups[0] !== name) {
+      errors.push(`分段 ${name} 可见面板异常：${JSON.stringify(state.visiblePanels)}`);
+    }
+    if (name === "prompts" && !state.archiveOpen) errors.push("提示词面板未展开");
+    if (slug === "case-475") {
+      await page.screenshot({ path: join(OUT, `case-475-${viewport.name}-tab-${name}.png`) });
     }
   }
 
-  const open = page.locator("[data-prompt-open]").first();
-  const archive = page.locator("[data-prompt-archive]").first();
-  await open.click();
+  const prompt = page.locator("details[data-prompt-version]").first();
+  if ((await prompt.count()) === 0) {
+    errors.push("提示词面板缺少版本");
+  } else {
+    await prompt.locator("summary").first().click();
+    await page.waitForTimeout(200);
+    if (!(await prompt.locator("pre").first().isVisible())) errors.push("提示词展开后正文不可见");
+    await page.screenshot({ path: join(OUT, `${slug}-${viewport.name}-prompt.png`) });
+    await prompt.locator("summary").first().click();
+  }
+
+  if ((await page.locator(".case-prompt-cta").count()) !== 0) {
+    errors.push("仍存在 fixed 提示词按钮");
+  }
+
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
   await page.waitForTimeout(300);
-  const opened = await archive.evaluate((el) => el.open && el.classList.contains("is-sheet"));
-  if (!opened) errors.push("提示词抽屉打开失败");
-  await page.screenshot({ path: join(OUT, `${slug}-${viewport.name}-prompt.png`) });
-  const close = page.locator("[data-prompt-close]").first();
-  await close.click();
-  await page.waitForTimeout(300);
-  const closed = await archive.evaluate((el) => !el.open && !el.classList.contains("is-sheet"));
-  if (!closed) errors.push("提示词抽屉关闭失败");
+  const bottom = await page.evaluate(() => {
+    const tabbar = document.querySelector(".tabbar");
+    const footer = document.querySelector(".site-footer");
+    const panels = [...document.querySelectorAll("[data-case-panel]")]
+      .filter((panel) => getComputedStyle(panel).display !== "none");
+    const panel = panels[0] ?? null;
+    const tabbarRect = tabbar ? tabbar.getBoundingClientRect() : null;
+    return {
+      tabbarTop: tabbarRect ? Math.round(tabbarRect.top) : null,
+      panelBottom: panel ? Math.round(panel.getBoundingClientRect().bottom) : null,
+      footerBottom: footer ? Math.round(footer.getBoundingClientRect().bottom) : null
+    };
+  });
+  if (bottom.tabbarTop === null) {
+    errors.push("底部 Tab Bar 缺失");
+  } else {
+    if (bottom.panelBottom !== null && bottom.panelBottom > bottom.tabbarTop + 1) {
+      errors.push(`最后内容与固定底栏交叠：panelBottom=${bottom.panelBottom} > tabbarTop=${bottom.tabbarTop}`);
+    }
+    if (bottom.footerBottom !== null && bottom.footerBottom > bottom.tabbarTop + 1) {
+      errors.push(`页脚与固定底栏交叠：footerBottom=${bottom.footerBottom} > tabbarTop=${bottom.tabbarTop}`);
+    }
+  }
 }
 
 async function checkCaseDesktop(page, viewport, errors, slug) {

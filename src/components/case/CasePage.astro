@@ -138,8 +138,8 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     </details>
   </section>
 
-  <details class="prompt-archive" data-prompt-archive>
-    <summary>
+  <details class="prompt-archive" data-prompt-archive data-case-panel="prompts">
+    <summary class="prompt-archive__summary">
       <span>完整提示词原文</span>
       <span>{prompts.length} 个版本 · 默认折叠</span>
     </summary>
@@ -149,102 +149,120 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
           <p class="eyebrow">Prompts</p>
           <h3 id="prompts-title">完整提示词原文</h3>
         </div>
-        <button type="button" class="prompt-archive__close" data-prompt-close>关闭</button>
       </div>
-      <p class="prompt-archive__hint">仅作来源证据，各版本默认折叠。</p>
+      <p class="prompt-archive__hint">仅作来源证据，点开任一版本查看原文。</p>
       <div class="prompt-list">
-        {prompts.map((prompt) => (
-          <details
-            id={`prompt-${anchorId(prompt.prompt_version_id)}`}
-            data-prompt-version={prompt.prompt_version_id}
-          >
-            <summary>
-              <span>版本 {prompt.version_no} · <code>{prompt.prompt_version_id}</code></span>
-              <span>{prompt.change_note}</span>
-            </summary>
-            <div class="prompt-source">
-              <pre>{prompt.text}</pre>
-              <p>SHA-256 <code>{prompt.content_sha256}</code></p>
-              {prompt.parent_version_id && <p>父版本 <code>{prompt.parent_version_id}</code></p>}
-            </div>
-          </details>
-        ))}
+        {prompts.map((prompt) => {
+          const firstLine = prompt.text
+            .split(/\r?\n/u)
+            .map((line) => line.trim())
+            .find(Boolean) ?? "";
+          const preview = firstLine.length > 30 ? `${firstLine.slice(0, 30)}…` : firstLine;
+          return (
+            <details
+              id={`prompt-${anchorId(prompt.prompt_version_id)}`}
+              data-prompt-version={prompt.prompt_version_id}
+            >
+              <summary>
+                <span class="prompt-list__version">版本 {prompt.version_no}</span>
+                <span class="prompt-list__preview">{preview}</span>
+              </summary>
+              <div class="prompt-source">
+                <pre>{prompt.text}</pre>
+                <p class="prompt-source__meta">版本 <code>{prompt.prompt_version_id}</code> · SHA-256 <code>{prompt.content_sha256}</code></p>
+                {prompt.parent_version_id && <p class="prompt-source__meta">父版本 <code>{prompt.parent_version_id}</code></p>}
+                <p class="prompt-source__meta">{prompt.change_note}</p>
+              </div>
+            </details>
+          );
+        })}
       </div>
     </div>
   </details>
-
-  <button type="button" class="case-prompt-cta" data-prompt-open>
-    <span>查看完整提示词</span>
-    <span class="case-prompt-cta__count">{prompts.length}</span>
-  </button>
-
-  <div class="sheet-backdrop" data-prompt-backdrop hidden></div>
 </article>
 
 <script>
   const page = document.querySelector<HTMLElement>("[data-case-page]");
   const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-case-tab]")];
+  const panels = [...document.querySelectorAll<HTMLElement>("[data-case-panel]")];
   const archive = document.querySelector<HTMLDetailsElement>("[data-prompt-archive]");
-  const backdrop = document.querySelector<HTMLElement>("[data-prompt-backdrop]");
-  const openButton = document.querySelector<HTMLButtonElement>("[data-prompt-open]");
-  const closeButton = document.querySelector<HTMLButtonElement>("[data-prompt-close]");
+  const fit = document.querySelector<HTMLDetailsElement>("[data-case-fit]");
   const mobile = window.matchMedia("(max-width: 63.99rem)");
+  const desktop = window.matchMedia("(min-width: 64rem)");
 
-  function setPanel(panel: string): void {
+  function topOffset(): number {
+    const topbar = document.querySelector(".topbar");
+    const tabsBar = document.querySelector(".case-tabs");
+    return (topbar?.getBoundingClientRect().height ?? 0)
+      + (tabsBar?.getBoundingClientRect().height ?? 0);
+  }
+
+  function scrollToElement(element: Element | null): void {
+    if (!element) return;
+    const top = window.scrollY + element.getBoundingClientRect().top - topOffset() - 8;
+    window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+  }
+
+  function panelFor(name: string): HTMLElement | null {
+    return panels.find((panel) => panel.dataset.casePanel === name) ?? null;
+  }
+
+  function setPanel(name: string, shouldScroll: boolean): void {
     if (!page) return;
-    page.dataset.activePanel = panel;
+    page.dataset.activePanel = name;
     for (const tab of tabs) {
-      if (tab.dataset.caseTab === "prompts") continue;
-      const active = tab.dataset.caseTab === panel;
+      const active = tab.dataset.caseTab === name;
       tab.classList.toggle("is-active", active);
       tab.setAttribute("aria-selected", String(active));
     }
+    if (archive) archive.open = name === "prompts";
+    if (shouldScroll) scrollToElement(panelFor(name));
   }
 
-  function openPrompts(): void {
-    if (!archive) return;
-    archive.open = true;
-    if (mobile.matches) {
-      archive.classList.add("is-sheet");
-      document.body.classList.add("prompt-open");
-      if (backdrop) backdrop.hidden = false;
-      closeButton?.focus();
+  function syncFit(): void {
+    if (fit) fit.open = desktop.matches;
+  }
+
+  function openDetailsWithin(target: Element, boundary: Element): void {
+    let node: Element | null = target;
+    while (node && node !== boundary.parentElement) {
+      if (node instanceof HTMLDetailsElement) node.open = true;
+      node = node.parentElement;
     }
   }
 
-  function closePrompts(): void {
-    if (!archive) return;
-    archive.classList.remove("is-sheet");
-    archive.open = false;
-    document.body.classList.remove("prompt-open");
-    if (backdrop) backdrop.hidden = true;
-    openButton?.focus();
-    if (page) setPanel(page.dataset.activePanel ?? "decisions");
+  function handleAnchorClick(event: Event): void {
+    const anchor = (event.target as Element | null)?.closest?.("a[href^='#']");
+    if (!(anchor instanceof HTMLAnchorElement)) return;
+    const hash = anchor.getAttribute("href") ?? "";
+    if (hash.length < 2) return;
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!target) return;
+    const panel = target.closest<HTMLElement>("[data-case-panel]");
+    if (!panel) return;
+    event.preventDefault();
+    if (mobile.matches) {
+      setPanel(panel.dataset.casePanel ?? "decisions", false);
+      if (archive) archive.open = true;
+    }
+    openDetailsWithin(target, panel);
+    requestAnimationFrame(() => scrollToElement(target));
   }
+
+  syncFit();
+  desktop.addEventListener("change", syncFit);
 
   for (const tab of tabs) {
-    tab.addEventListener("click", () => {
-      const target = tab.dataset.caseTab ?? "decisions";
-      if (target === "prompts") {
-        openPrompts();
-        return;
-      }
-      setPanel(target);
-    });
+    tab.addEventListener("click", () => setPanel(tab.dataset.caseTab ?? "decisions", true));
   }
 
-  openButton?.addEventListener("click", openPrompts);
-  closeButton?.addEventListener("click", closePrompts);
-  backdrop?.addEventListener("click", closePrompts);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && archive?.classList.contains("is-sheet")) closePrompts();
-  });
+  document.addEventListener("click", handleAnchorClick);
 </script>
 
 <style>
   .case-page {
     min-width: 0;
-    padding-top: var(--space-3);
+    padding-top: 0;
   }
 
   .case-section {
@@ -520,18 +538,6 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
     font-size: var(--text-base);
   }
 
-  .prompt-archive__close {
-    display: none;
-    padding: 0.35rem 0.7rem;
-    border: 1px solid var(--color-line);
-    border-radius: 999px;
-    background: var(--color-surface);
-    color: var(--color-forest-deep);
-    font-size: var(--text-xs);
-    font-weight: 650;
-    cursor: pointer;
-  }
-
   .prompt-archive__hint {
     margin-block: var(--space-2) var(--space-3);
     color: var(--color-muted);
@@ -545,20 +551,22 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
 
   .prompt-list summary {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.25rem var(--space-3);
+    align-items: baseline;
+    gap: var(--space-2);
   }
 
-  .prompt-list summary > span {
+  .prompt-list__version {
+    flex: none;
+  }
+
+  .prompt-list__preview {
     min-width: 0;
-    overflow-wrap: anywhere;
-  }
-
-  .prompt-list summary > span:last-child {
+    overflow: hidden;
     color: var(--color-muted);
     font-size: 0.6875rem;
     font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .prompt-source {
@@ -626,93 +634,38 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
   }
 
   .case-page[data-active-panel="decisions"] [data-case-panel="decisions"],
-  .case-page[data-active-panel="evidence"] [data-case-panel="evidence"] {
+  .case-page[data-active-panel="evidence"] [data-case-panel="evidence"],
+  .case-page[data-active-panel="prompts"] [data-case-panel="prompts"] {
     display: block;
   }
 
-  .case-prompt-cta {
-    position: fixed;
-    right: var(--page-pad);
-    bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom) + 0.65rem);
-    left: var(--page-pad);
-    z-index: 45;
-    display: flex;
-    min-height: 2.75rem;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    border: 0;
-    border-radius: 999px;
-    background: var(--color-forest);
-    color: white;
-    font-size: var(--text-sm);
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgb(16 54 44 / 22%);
-  }
+  @media (max-width: 63.99rem) {
+    .prompt-archive {
+      min-height: calc(100dvh - var(--topbar-height) - var(--tabbar-height) - 3.5rem);
+      margin-top: var(--space-4);
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      scroll-margin-top: calc(var(--topbar-height) + 3.5rem);
+    }
 
-  .case-prompt-cta__count {
-    display: grid;
-    min-width: 1.25rem;
-    height: 1.25rem;
-    place-items: center;
-    border-radius: 999px;
-    background: rgb(255 255 255 / 22%);
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-  }
+    .prompt-archive > summary {
+      display: none;
+    }
 
-  .sheet-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 70;
-    background: rgb(16 34 27 / 40%);
-  }
+    .prompt-archive__body {
+      padding: 0;
+      border-top: 0;
+    }
 
-  .sheet-backdrop[hidden] {
-    display: none;
-  }
+    .prompt-archive__bar {
+      padding-top: 0;
+    }
 
-  .prompt-archive.is-sheet {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 80;
-    max-height: 86dvh;
-    margin: 0;
-    overflow: auto;
-    border: 0;
-    border-radius: 1.25rem 1.25rem 0 0;
-    background: var(--color-surface);
-    box-shadow: 0 -12px 40px rgb(16 34 27 / 22%);
-    overscroll-behavior: contain;
-  }
-
-  .prompt-archive.is-sheet::before {
-    display: block;
-    width: 2.5rem;
-    height: 0.25rem;
-    margin: 0.55rem auto 0;
-    border-radius: 999px;
-    background: var(--color-line-strong);
-    content: "";
-  }
-
-  .prompt-archive.is-sheet > summary {
-    display: none;
-  }
-
-  .prompt-archive.is-sheet .prompt-archive__close {
-    display: inline-flex;
-  }
-
-  .prompt-archive.is-sheet .prompt-archive__body {
-    padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
-  }
-
-  body.prompt-open {
-    overflow: hidden;
+    .prompt-archive__bar h3 {
+      font-size: var(--text-lg);
+    }
   }
 
   @media (min-width: 40rem) {
@@ -773,9 +726,7 @@ const { caseData, guide, decisions, prompts, classification, fingerprint } = pag
       display: block;
     }
 
-    .case-tabs,
-    .case-prompt-cta,
-    .sheet-backdrop {
+    .case-tabs {
       display: none !important;
     }
 
