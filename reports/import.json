@@ -1,0 +1,249 @@
+{
+  "task_id": "T03",
+  "status": "passed",
+  "import": {
+    "command": "node tools/import-cases.mjs --check",
+    "mode": "check",
+    "case_count": 541,
+    "prompt_version_count": 541,
+    "source_asset_count": 541,
+    "unique_case_id_count": 541
+  },
+  "source": {
+    "cases_path": "/workspace/repos/awesome-gpt-image-2/data/cases.json",
+    "images_directory": "/workspace/repos/awesome-gpt-image-2/data/images",
+    "mapping_path": "/workspace/agent/agnes/experiments/mapping-h1.jsonl",
+    "cases_sha256": "a9ef652dffdac0802c656e4770f9793315292fa78e955d3e8c6e0e6346eb7da8",
+    "mapping_sha256": "20603eeb8df9bf6adb9a68fcc62d5a6db3bc48c1c9ce153ad4955880245a0116",
+    "mapping_records": 100,
+    "readable_source_images": 541,
+    "source_url_fallback_case_ids": [
+      "case-1",
+      "case-2",
+      "case-3",
+      "case-4",
+      "case-5",
+      "case-6",
+      "case-7",
+      "case-8",
+      "case-9",
+      "case-10",
+      "case-11",
+      "case-13",
+      "case-14",
+      "case-15",
+      "case-16",
+      "case-270",
+      "case-330",
+      "case-331",
+      "case-332",
+      "case-333",
+      "case-334",
+      "case-335",
+      "case-336",
+      "case-337",
+      "case-338"
+    ]
+  },
+  "gold": {
+    "count": 60,
+    "category_count": 13,
+    "selection_method": "按原 13 类比例分配 60 条配额；H1 强制入选；其余按 SHA-256(agnes-bench-t03-gold-v1:case-id) 排序抽取",
+    "h1_case_ids": [
+      "case-23",
+      "case-153",
+      "case-226",
+      "case-270",
+      "case-353",
+      "case-371",
+      "case-379",
+      "case-387",
+      "case-389",
+      "case-475"
+    ],
+    "strata": [
+      {
+        "original_category": "Architecture & Spaces",
+        "population": 12,
+        "quota": 1,
+        "h1_count": 0,
+        "selected_case_ids": [
+          "case-50"
+        ]
+      },
+      {
+        "original_category": "Brand & Logos",
+        "population": 27,
+        "quota": 3,
+        "h1_count": 1,
+        "selected_case_ids": [
+          "case-216",
+          "case-379",
+          "case-510"
+        ]
+      },
+      {
+        "original_category": "Characters & People",
+        "population": 31,
+        "quota": 3,
+        "h1_count": 2,
+        "selected_case_ids": [
+          "case-270",
+          "case-371",
+          "case-480"
+        ]
+      },
+      {
+        "original_category": "Charts & Infographics",
+        "population": 53,
+        "quota": 6,
+        "h1_count": 2,
+        "selected_case_ids": [
+          "case-23",
+          "case-84",
+          "case-102",
+          "case-353",
+          "case-443",
+          "case-494"
+        ]
+      },
+      {
+        "original_category": "Documents & Publishing",
+        "population": 11,
+        "quota": 1,
+        "h1_count": 0,
+        "selected_case_ids": [
+          "case-541"
+        ]
+      },
+      {
+        "original_category": "History & Classical Themes",
+        "population": 16,
+        "quota": 2,
+        "h1_count": 1,
+        "selected_case_ids": [
+          "case-205",
+          "case-226"
+        ]
+      },
+      {
+        "original_category": "Illustration & Art",
+        "population": 59,
+        "quota": 7,
+        "h1_count": 0,
+        "selected_case_ids": [
+          "case-22",
+          "case-34",
+          "case-39",
+          "case-43",
+          "case-233",
+          "case-446",
+          "case-479"
+        ]
+      },
+      {
+        "original_category": "Other Use Cases",
+        "population": 28,
+        "quota": 3,
+        "h1_count": 0,
+        "selected_case_ids": [
+          "case-78",
+          "case-204",
+          "case-290"
+        ]
+      },
+      {
+        "original_category": "Photography & Realism",
+        "population": 78,
+        "quota": 9,
+        "h1_count": 0,
+        "selected_case_ids": [
+          "case-217",
+          "case-366",
+          "case-414",
+          "case-420",
+          "case-466",
+          "case-482",
+          "case-491",
+          "case-499",
+          "case-508"
+        ]
+      },
+      {
+        "original_category": "Posters & Typography",
+        "population": 90,
+        "quota": 10,
+        "h1_count": 2,
+        "selected_case_ids": [
+          "case-15",
+          "case-98",
+          "case-153",
+          "case-291",
+          "case-298",
+          "case-389",
+          "case-417",
+          "case-418",
+          "case-432",
+          "case-474"
+        ]
+      },
+      {
+        "original_category": "Products & E-commerce",
+        "population": 42,
+        "quota": 5,
+        "h1_count": 1,
+        "selected_case_ids": [
+          "case-17",
+          "case-141",
+          "case-237",
+          "case-454",
+          "case-475"
+        ]
+      },
+      {
+        "original_category": "Scenes & Storytelling",
+        "population": 21,
+        "quota": 2,
+        "h1_count": 0,
+        "selected_case_ids": [
+          "case-422",
+          "case-448"
+        ]
+      },
+      {
+        "original_category": "UI & Interfaces",
+        "population": 73,
+        "quota": 8,
+        "h1_count": 1,
+        "selected_case_ids": [
+          "case-57",
+          "case-92",
+          "case-131",
+          "case-133",
+          "case-163",
+          "case-243",
+          "case-258",
+          "case-387"
+        ]
+      }
+    ]
+  },
+  "outputs": {
+    "content/cases.json": "35209e3ffe80eba64fc5e0ba95911fdbfd0607a2e389b6774d3e265f610e57c6",
+    "content/prompt-versions/cases.json": "f491e344a1c6f529173bace34a0271e7d1a0908176f24b617d15f61ec53c6e57",
+    "content/source-assets.json": "fe92e456635eb78e65f7371764dff0c3929ce3de325d3b71154e4a8f2c42fad3",
+    "content/gold-case-ids.json": "fae17a67c46284ab8434034873881ae0d414ce692fc2dcd22d67a6b522dd4125"
+  },
+  "validation": {
+    "command": "node tools/validate-cases.mjs",
+    "status": "passed",
+    "schema_case_count": 541,
+    "schema_prompt_version_count": 541,
+    "schema_source_asset_count": 541,
+    "readable_source_images": 541,
+    "gold_case_count": 60,
+    "gold_category_count": 13,
+    "gold_h1_case_count": 10,
+    "deterministic_output_match": true
+  }
+}
