@@ -1,0 +1,579 @@
+{
+  "task_id": "T14",
+  "generated_at": "2026-11-21T20:59:05.006Z",
+  "status": "passed",
+  "passed": true,
+  "duration_ms": 25543,
+  "environment": {
+    "node": "v24.1.0",
+    "platform": "linux",
+    "arch": "x64",
+    "commit": "7654bc910b73375daffd76515770deeebf2e17d3",
+    "base_commit": "7654bc910b73375daffd76515770deeebf2e17d3",
+    "branch": "master"
+  },
+  "build": {
+    "command": "npx --yes astro build --outDir dist-t14",
+    "out_dir": "dist-t14",
+    "pages": 555,
+    "case_pages": 541,
+    "breakdown": {
+      "cases": 541,
+      "categories": 6,
+      "experiments": 4,
+      "home": 1,
+      "methods": 3
+    },
+    "duration_ms": 5493,
+    "exit_code": 0
+  },
+  "resource_budget": {
+    "asset_count": 1989,
+    "expected_asset_count": 1989,
+    "max_file_bytes": 149982,
+    "max_file_uri": "/assets/cases/case274-960.webp",
+    "max_file_budget_bytes": 150000,
+    "total_bytes": 126032078,
+    "total_mib": 120.19,
+    "missing_count": 0,
+    "missing_asset_ids": [],
+    "report_total_bytes": 126032078,
+    "report_total_matches_disk": true,
+    "tiers": [
+      {
+        "name": "360w",
+        "width": 360,
+        "quality": 72,
+        "max_bytes": 45000,
+        "generated_count": 663,
+        "total_bytes": 15335664,
+        "max_output_bytes": 45000,
+        "initial_over_budget_count": 44,
+        "recompressed_count": 44,
+        "over_budget_count": 0
+      },
+      {
+        "name": "640w",
+        "width": 640,
+        "quality": 78,
+        "max_bytes": 90000,
+        "generated_count": 663,
+        "total_bytes": 39521734,
+        "max_output_bytes": 89998,
+        "initial_over_budget_count": 151,
+        "recompressed_count": 151,
+        "over_budget_count": 0
+      },
+      {
+        "name": "960w",
+        "width": 960,
+        "quality": 80,
+        "max_bytes": 150000,
+        "generated_count": 663,
+        "total_bytes": 71174680,
+        "max_output_bytes": 149982,
+        "initial_over_budget_count": 208,
+        "recompressed_count": 208,
+        "over_budget_count": 0
+      }
+    ]
+  },
+  "summary": {
+    "total_gates": 17,
+    "passed": 17,
+    "failed": 0,
+    "failed_gate_ids": []
+  },
+  "gates": [
+    {
+      "id": "contracts",
+      "name": "契约与五类定义校验",
+      "status": "pass",
+      "summary": "契约校验通过：分类、示例、版本字段和证据字段均有效",
+      "evidence": {
+        "command": "node tools/validate-contracts.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 221,
+        "output_excerpt": "✓ 五类齐全，通俗定义与冲突顺序通过\n✓ 11 个共享实体示例通过\n✓ 跨实体 ID 与证据引用通过\n✓ Decision/Run/Score/Conclusion 的 24 项证据与版本必填反向校验通过\n✓ tested/observed/inferred 证据语义反向校验通过\n契约校验通过：分类、示例、版本字段和证据字段均有效",
+        "error": null
+      }
+    },
+    {
+      "id": "cases",
+      "name": "案例、提示词版本与来源资产校验",
+      "status": "pass",
+      "summary": "案例校验完成，报告：reports/import.json",
+      "evidence": {
+        "command": "node tools/validate-cases.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 776,
+        "output_excerpt": "通过：541 个 Case、541 个 PromptVersion、541 个来源资产符合 Schema 与关联约束\n通过：541 张原图可读，尺寸、格式、哈希与清单一致\n通过：金标 60 条，覆盖 13 个原始类别，包含全部 10 个 H1 case_id\n案例校验完成，报告：reports/import.json",
+        "error": null
+      }
+    },
+    {
+      "id": "classifications",
+      "name": "一级分类与金标一致性",
+      "status": "pass",
+      "summary": "✓ 独立标注 8 条争议记录，Cohen’s κ=0.8262，状态 passed_with_boundary_notes",
+      "evidence": {
+        "command": "node tools/check-classifications.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 216,
+        "output_excerpt": "✓ 覆盖与唯一性：541/541，每条恰好一个五类 primary_category_id\n✓ 金标：60/60，生产一致 60/60，准确率 100.00%\n✓ 非金标同人抽审：49 条，固定哈希可复现\n✓ 各类数量：{\"subject-form\":137,\"scene-narrative\":45,\"graphic-communication\":147,\"information-diagram\":132,\"interface-document\":80}\n✓ 独立标注 8 条争议记录，Cohen’s κ=0.8262，状态 passed_with_boundary_notes",
+        "error": null
+      }
+    },
+    {
+      "id": "fingerprints",
+      "name": "结构指纹、意图与同义词",
+      "status": "pass",
+      "summary": "✓ 双人独立标注、仲裁与外部一致率：空模板，未伪造",
+      "evidence": {
+        "command": "node tools/check-fingerprints.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 215,
+        "output_excerpt": "✓ 覆盖与唯一性：指纹 541/541，意图 541/541，金标 60/60\n✓ subject_count 自评：60/60，100.00%\n✓ layout 自评：60/60，100.00%\n✓ text_slots 自评：60/60，100.00%\n✓ input_mode 自评：60/60，100.00%\n✓ ratio 自评：60/60，100.00%\n✓ relations 自评：TP=111，FP=0，FN=0，F1=1\n✓ 意图与同义词：31 个意图，结构板/尺寸标注/材料说明/技术视图/多视图齐全\n✓ 双人独立标注、仲裁与外部一致率：空模板，未伪造",
+        "error": null
+      }
+    },
+    {
+      "id": "guides",
+      "name": "案例指南、决策卡与实验证据",
+      "status": "pass",
+      "summary": "✓ 无禁用语气、无整段提示词、无孤立证据引用，构建漂移为空",
+      "evidence": {
+        "command": "node tools/check-guides.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 405,
+        "output_excerpt": "✓ 案例指南：541/541；原始提示词 inferred 覆盖 541/541\n✓ H1：10/10，每例 1 张 inferred、1 张 tested、2 张 observed\n✓ 决策：571 张；{\"inferred\":541,\"tested\":10,\"observed\":20}；Run 与当前评分回链有效\n✓ 结构板指南：视图、尺寸、材料 3 条；尺寸单位/箭头与材料部件归属难点齐全\n✓ 方法：2 条；仅引用当前可重算的有效 ConclusionVersion\n✓ 无禁用语气、无整段提示词、无孤立证据引用，构建漂移为空",
+        "error": null
+      }
+    },
+    {
+      "id": "assets",
+      "name": "多档 WebP 资产完整性与档位预算",
+      "status": "pass",
+      "summary": "总体积 126032078 字节，最终超限 0 张，报告：reports/assets.json",
+      "evidence": {
+        "command": "node tools/check-assets.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 1528,
+        "output_excerpt": "通过：541+100+22 张源图全覆盖，1989 张 WebP 的 Schema、尺寸、哈希和体积均有效\n总体积 126032078 字节，最终超限 0 张，报告：reports/assets.json",
+        "error": null
+      }
+    },
+    {
+      "id": "conclusions",
+      "name": "H1/H2 结论重算与 generated/conclusions.json 一致",
+      "status": "pass",
+      "summary": "3 个 ConclusionVersion 重算一致，快照 7b13f2915a41…",
+      "evidence": {
+        "tool": "tools/build-conclusions.mjs#recompute",
+        "generated_count": 3,
+        "recomputed_count": 3,
+        "score_snapshot_hash": "7b13f2915a4191f80cf97b801cfe2c7192c95ea85f401196b1b017d57cbce0b0",
+        "conclusion_versions": [
+          {
+            "conclusion_version_id": "h1-text-fulfillment/cv-001",
+            "estimate": -7.9083638583638605,
+            "ci": [
+              -14.539762667887674,
+              -2.6030853174603195
+            ],
+            "n_cases": 10,
+            "evidence_runs": 100
+          },
+          {
+            "conclusion_version_id": "h1-hard-gate-pass/cv-001",
+            "estimate": -3.9999999999999996,
+            "ci": [
+              -18,
+              6.000000000000001
+            ],
+            "n_cases": 10,
+            "evidence_runs": 100
+          },
+          {
+            "conclusion_version_id": "h2-226-overlay-exact-text/cv-001",
+            "estimate": 6.25,
+            "ci": [
+              6.25,
+              6.25
+            ],
+            "n_cases": 1,
+            "evidence_runs": 10
+          }
+        ],
+        "matches_generated": true
+      }
+    },
+    {
+      "id": "search",
+      "name": "结构优先检索与 25 条金标",
+      "status": "pass",
+      "summary": "排序策略：structure > intent > text（lexicographic）",
+      "evidence": {
+        "command": "node tools/evaluate-search.mjs",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 369,
+        "output_excerpt": "检索评估通过：25/25 条查询达标，命中原因覆盖 125/125\n企鹅题 Top5 同结构命中：3/5（要求 ≥3），案例：case-475、case-512、case-310\n排序策略：structure > intent > text（lexicographic）",
+        "error": null
+      }
+    },
+    {
+      "id": "search_report",
+      "name": "检索评估报告汇总",
+      "status": "pass",
+      "summary": "25/25 查询达标，命中原因覆盖 125/125",
+      "evidence": {
+        "passed": true,
+        "queries_passed": 25,
+        "query_count": 25,
+        "reason_coverage": 1,
+        "mean_confirmed_recall_at_5": 0.822
+      }
+    },
+    {
+      "id": "penguin_top5",
+      "name": "企鹅硬场景 Top5 ≥3 同结构",
+      "status": "pass",
+      "summary": "Top5 命中 3 个同结构：case-475、case-512、case-310",
+      "evidence": {
+        "query": "企鹅饼干礼盒结构板，带尺寸和材料说明",
+        "required_same_structure_hits": 3,
+        "actual_same_structure_hits": 3,
+        "top5_count": 5,
+        "same_structure_case_ids": [
+          "case-475",
+          "case-512",
+          "case-310"
+        ],
+        "all_results_have_reasons": true
+      }
+    },
+    {
+      "id": "build",
+      "name": "静态构建（dist-t14）",
+      "status": "pass",
+      "summary": "555 页构建完成（5493 ms）",
+      "evidence": {
+        "command": "npx --yes astro build --outDir dist-t14",
+        "exit_code": 0,
+        "duration_ms": 5493,
+        "pages_built": 555,
+        "expected_pages": 555,
+        "output_excerpt": "\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/categories/[category].astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/categories/subject-form/index.html\u001b[22m \u001b[2m(+87ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/categories/scene-narrative/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/categories/graphic-communication/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/categories/information-diagram/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/categories/interface-document/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/categories/index.astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/categories/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/experiments/[...id].astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/experiments/h1-text-fulfillment/cv-001/index.html\u001b[22m \u001b[2m(+26ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/experiments/h1-hard-gate-pass/cv-001/index.html\u001b[22m \u001b[2m(+17ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/experiments/h2-226-overlay-exact-text/cv-001/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/experiments/index.astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/experiments/index.html\u001b[22m \u001b[2m(+4ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/index.astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+6ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/methods/[id].astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/methods/prose-contract-exact-text/index.html\u001b[22m \u001b[2m(+5ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/methods/blank-band-deterministic-overlay/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m▶\u001b[39m src/pages/methods/index.astro\n\u001b[2m04:58:48\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/methods/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m04:58:48\u001b[22m \u001b[32m✓ Completed in 886ms.\n\u001b[39m\n\u001b[2m04:58:48\u001b[22m \u001b[34m[build]\u001b[39m 555 page(s) built in \u001b[1m3.57s\u001b[22m\n\u001b[2m04:58:48\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m"
+      }
+    },
+    {
+      "id": "page_count",
+      "name": "页数与案例覆盖（555 页 / 541 案例）",
+      "status": "pass",
+      "summary": "555 页，其中案例页 541；{\"cases\":541,\"categories\":6,\"experiments\":4,\"home\":1,\"methods\":3}",
+      "evidence": {
+        "total_pages": 555,
+        "expected_total_pages": 555,
+        "case_pages": 541,
+        "expected_case_pages": 541,
+        "breakdown": {
+          "cases": 541,
+          "categories": 6,
+          "experiments": 4,
+          "home": 1,
+          "methods": 3
+        }
+      }
+    },
+    {
+      "id": "discovery",
+      "name": "首页发现与企鹅题结果卡",
+      "status": "pass",
+      "summary": "每张企鹅题结果卡均含命中原因、共性难点、一条迁移写法、案例链接和三档 WebP。",
+      "evidence": {
+        "command": "node quality/discovery.check.mjs dist-t14",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 265,
+        "output_excerpt": "发现页验收通过：5 个分类入口，企鹅题 5 张卡，确认同结构 3 个。\n每张企鹅题结果卡均含命中原因、共性难点、一条迁移写法、案例链接和三档 WebP。",
+        "error": null
+      }
+    },
+    {
+      "id": "case_pages",
+      "name": "541 个案例页自解释与移动首屏",
+      "status": "pass",
+      "summary": "全部提示词版本默认折叠、无整段复制入口；实测数字与评分均链接到页内 Run、评分修订和结果图。",
+      "evidence": {
+        "command": "node quality/case-pages.check.mjs dist-t14",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 665,
+        "output_excerpt": "案例页验收通过：541 页全部存在；每页含标题、通俗分类、适合/不适合、3 个关键指纹、响应式封面与证据级别。\n推断/实测可辨：541 张推断卡、10 张受控实验卡、20 张结果观察卡，徽章与卡片样式分别可区分。\n全部提示词版本默认折叠、无整段复制入口；实测数字与评分均链接到页内 Run、评分修订和结果图。",
+        "error": null
+      }
+    },
+    {
+      "id": "evidence_pages",
+      "name": "实验证据页与结论下钻",
+      "status": "pass",
+      "summary": "永久地址与 canonical 一致且不指向 latest；无评分 Run 的 5 处缺口被明确标注，未生成替代评分或结论。",
+      "evidence": {
+        "command": "node quality/evidence-pages.check.mjs dist-t14",
+        "exit_code": 0,
+        "signal": null,
+        "duration_ms": 254,
+        "output_excerpt": "实验页验收通过：3 个 ConclusionVersion 页面，12 个数字下钻链接全部落到页内 case/run/image/score revision。\n估计值、区间、p 值、样本量、快照哈希、检验方法与局限均与 generated/conclusions.json 完全一致。\n永久地址与 canonical 一致且不指向 latest；无评分 Run 的 5 处缺口被明确标注，未生成替代评分或结论。",
+        "error": null
+      }
+    },
+    {
+      "id": "resource_budget",
+      "name": "资源预算：单文件 ≤150KB、总量、缺图=0",
+      "status": "pass",
+      "summary": "1989 张，单张最大 149982 B（/assets/cases/case274-960.webp），总量 120.19 MiB，缺图 0",
+      "evidence": {
+        "asset_count": 1989,
+        "expected_asset_count": 1989,
+        "max_file_bytes": 149982,
+        "max_file_uri": "/assets/cases/case274-960.webp",
+        "max_file_budget_bytes": 150000,
+        "total_bytes": 126032078,
+        "total_mib": 120.19,
+        "missing_count": 0,
+        "missing_asset_ids": [],
+        "report_total_bytes": 126032078,
+        "report_total_matches_disk": true,
+        "tiers": [
+          {
+            "name": "360w",
+            "width": 360,
+            "quality": 72,
+            "max_bytes": 45000,
+            "generated_count": 663,
+            "total_bytes": 15335664,
+            "max_output_bytes": 45000,
+            "initial_over_budget_count": 44,
+            "recompressed_count": 44,
+            "over_budget_count": 0
+          },
+          {
+            "name": "640w",
+            "width": 640,
+            "quality": 78,
+            "max_bytes": 90000,
+            "generated_count": 663,
+            "total_bytes": 39521734,
+            "max_output_bytes": 89998,
+            "initial_over_budget_count": 151,
+            "recompressed_count": 151,
+            "over_budget_count": 0
+          },
+          {
+            "name": "960w",
+            "width": 960,
+            "quality": 80,
+            "max_bytes": 150000,
+            "generated_count": 663,
+            "total_bytes": 71174680,
+            "max_output_bytes": 149982,
+            "initial_over_budget_count": 208,
+            "recompressed_count": 208,
+            "over_budget_count": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "contract_test",
+      "name": "只增数据契约测试（541 → 542 → 541）",
+      "status": "pass",
+      "summary": "合成案例使案例页 541→542 且 src 未变；git restore 后复建 542→541",
+      "evidence": {
+        "temp_dir": "/tmp/agnes-t14-contract-YU5kv8",
+        "baseline": {
+          "pages": 555,
+          "case_pages": 541
+        },
+        "modified_build": {
+          "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-YU5kv8/dist-modified",
+          "exit_code": 0,
+          "pages": "556"
+        },
+        "restored_build": {
+          "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-YU5kv8/dist-restored",
+          "exit_code": 0,
+          "pages": "555"
+        },
+        "restore": {
+          "restore": {
+            "method": "git restore",
+            "attempts": 1,
+            "ok": true,
+            "error": null
+          },
+          "restored_lengths": {
+            "cases": 541,
+            "promptVersions": 541,
+            "classifications": 541,
+            "fingerprints": 541,
+            "guides": 541,
+            "decisions": 571
+          },
+          "baseline_lengths": {
+            "cases": 541,
+            "promptVersions": 541,
+            "classifications": 541,
+            "fingerprints": 541,
+            "guides": 541,
+            "decisions": 571
+          },
+          "bytes_match_originals": true,
+          "git_status_content_generated": "(empty)",
+          "rebuild": {
+            "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-YU5kv8/dist-restored",
+            "exit_code": 0,
+            "pages": 555,
+            "case_pages": 541,
+            "expected_pages": 555,
+            "expected_case_pages": 541
+          }
+        },
+        "checks": [
+          {
+            "id": "data_files_appended",
+            "status": "pass",
+            "evidence": {
+              "synthetic_case_id": "case-9999",
+              "synthetic_prompt_version_id": "case-9999/pv-001",
+              "appended_files": {
+                "content/cases.json": {
+                  "before": 541,
+                  "after": 542
+                },
+                "content/prompt-versions/cases.json": {
+                  "before": 541,
+                  "after": 542
+                },
+                "content/classifications.json": {
+                  "before": 541,
+                  "after": 542
+                },
+                "content/fingerprints.json": {
+                  "before": 541,
+                  "after": 542
+                },
+                "content/case-guides.json": {
+                  "before": 541,
+                  "after": 542
+                },
+                "content/decisions.json": {
+                  "before": 571,
+                  "after": 572
+                }
+              }
+            }
+          },
+          {
+            "id": "rebuild_542_case_pages",
+            "status": "pass",
+            "evidence": {
+              "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-YU5kv8/dist-modified",
+              "exit_code": 0,
+              "pages": 556,
+              "expected_pages": 556,
+              "case_pages": 542,
+              "expected_case_pages": 542
+            }
+          },
+          {
+            "id": "synthetic_case_page_rendered",
+            "status": "pass",
+            "evidence": {
+              "path": "cases/case-9999/index.html",
+              "rendered": true,
+              "contains_title": true
+            }
+          },
+          {
+            "id": "old_case_urls_preserved",
+            "status": "pass",
+            "evidence": {
+              "baseline_case_pages": 541,
+              "preserved_case_pages": 541
+            }
+          },
+          {
+            "id": "src_unchanged",
+            "status": "pass",
+            "evidence": {
+              "before": {
+                "file_count": 48,
+                "sha256": "5a6c02a5fed01e616fad1e5deef9d3288461b29eb56bc90bd72a6bdaa2cff734"
+              },
+              "after": {
+                "file_count": 48,
+                "sha256": "5a6c02a5fed01e616fad1e5deef9d3288461b29eb56bc90bd72a6bdaa2cff734"
+              },
+              "git_status_src_before": "(empty)",
+              "git_status_src_after": "(empty)"
+            }
+          },
+          {
+            "id": "restored_541",
+            "status": "pass",
+            "evidence": {
+              "restore": {
+                "method": "git restore",
+                "attempts": 1,
+                "ok": true,
+                "error": null
+              },
+              "restored_lengths": {
+                "cases": 541,
+                "promptVersions": 541,
+                "classifications": 541,
+                "fingerprints": 541,
+                "guides": 541,
+                "decisions": 571
+              },
+              "baseline_lengths": {
+                "cases": 541,
+                "promptVersions": 541,
+                "classifications": 541,
+                "fingerprints": 541,
+                "guides": 541,
+                "decisions": 571
+              },
+              "bytes_match_originals": true,
+              "git_status_content_generated": "(empty)",
+              "rebuild": {
+                "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-YU5kv8/dist-restored",
+                "exit_code": 0,
+                "pages": 555,
+                "case_pages": 541,
+                "expected_pages": 555,
+                "expected_case_pages": 541
+              }
+            }
+          },
+          {
+            "id": "temp_outside_repo",
+            "status": "pass",
+            "evidence": {
+              "temp_dir": "/tmp/agnes-t14-contract-YU5kv8"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "notes": []
+}

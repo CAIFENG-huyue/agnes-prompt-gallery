@@ -109,12 +109,48 @@ async function main() {
     if (productionById.get(id)?.review_status !== "reviewed") errors.push(`${id}：非金标抽审记录必须标 reviewed`);
   }
 
-  if (agreement.task_id !== "T04" || agreement.status !== "pending_external_review") errors.push("一致性报告必须是 T04 待外部复核模板");
-  for (const field of ["annotator_a_id", "annotator_b_id", "arbitrator_id", "cohens_kappa"]) {
-    if (agreement[field] !== null) errors.push(`一致性模板 ${field} 必须为 null`);
-  }
-  for (const field of ["independent_annotations", "arbitrated_annotations"]) {
-    if (!Array.isArray(agreement[field]) || agreement[field].length !== 0) errors.push(`一致性模板 ${field} 必须为空数组`);
+  if (agreement.task_id !== "T04") errors.push("一致性报告必须是 T04");
+  const agreementStatuses = new Set(["pending_external_review", "passed_with_boundary_notes"]);
+  if (!agreementStatuses.has(agreement.status)) errors.push(`一致性报告状态无效：${agreement.status}`);
+  if (agreement.status === "pending_external_review") {
+    for (const field of ["annotator_a_id", "annotator_b_id", "arbitrator_id", "cohens_kappa"]) {
+      if (agreement[field] !== null) errors.push(`一致性模板 ${field} 必须为 null`);
+    }
+    for (const field of ["independent_annotations", "arbitrated_annotations"]) {
+      if (!Array.isArray(agreement[field]) || agreement[field].length !== 0) errors.push(`一致性模板 ${field} 必须为空数组`);
+    }
+  } else {
+    for (const field of ["annotator_a_id", "annotator_b_id"]) {
+      if (typeof agreement[field] !== "string" || !agreement[field].trim()) errors.push(`已完成标注的 ${field} 必须是非空字符串`);
+    }
+    if (agreement.arbitrator_id !== null && (typeof agreement.arbitrator_id !== "string" || !agreement.arbitrator_id.trim())) {
+      errors.push("已完成标注的 arbitrator_id 必须是非空字符串或 null");
+    }
+    if (typeof agreement.cohens_kappa !== "number" || agreement.cohens_kappa < 0.8 || agreement.cohens_kappa > 1) {
+      errors.push(`一级分类 Cohen’s κ 必须在 0.80 到 1 之间，实际为 ${agreement.cohens_kappa}`);
+    }
+    if (agreement.n_cases !== goldIds.size) errors.push(`一致性样本必须为 ${goldIds.size} 例，实际为 ${agreement.n_cases}`);
+    if (!Array.isArray(agreement.independent_annotations)) errors.push("independent_annotations 必须是数组");
+    else {
+      const annotatedIds = new Set();
+      for (const [index, record] of agreement.independent_annotations.entries()) {
+        if (!goldIds.has(record.case_id)) errors.push(`独立标注[${index}]引用了非金标案例 ${record.case_id}`);
+        if (annotatedIds.has(record.case_id)) errors.push(`独立标注存在重复案例 ${record.case_id}`);
+        annotatedIds.add(record.case_id);
+        for (const field of ["annotator_a", "annotator_b"]) {
+          if (!categoryIds.has(record[field])) errors.push(`独立标注[${index}]的 ${field} 不属于五类分类`);
+        }
+      }
+      if (typeof agreement.raw_agreement === "number") {
+        const expectedRaw = Number(((agreement.n_cases - agreement.independent_annotations.length) / agreement.n_cases).toFixed(4));
+        if (Math.abs(agreement.raw_agreement - expectedRaw) > 5e-5) {
+          errors.push(`raw_agreement 应为 ${expectedRaw}，实际为 ${agreement.raw_agreement}`);
+        }
+      } else {
+        errors.push("raw_agreement 必须是数字");
+      }
+    }
+    if (!Array.isArray(agreement.arbitrated_annotations)) errors.push("arbitrated_annotations 必须是数组");
   }
 
   assert(errors.length === 0, `分类校验失败\n${errors.join("\n")}`);
@@ -123,7 +159,11 @@ async function main() {
   console.log(`✓ 金标：${goldById.size}/60，生产一致 ${correct}/60，准确率 ${(accuracy * 100).toFixed(2)}%`);
   console.log(`✓ 非金标同人抽审：${auditSampleIds.size} 条，固定哈希可复现`);
   console.log(`✓ 各类数量：${JSON.stringify(counts)}`);
-  console.log("✓ 双人标注、仲裁与 Cohen’s κ：空模板，待外部流程填写");
+  console.log(
+    agreement.status === "pending_external_review"
+      ? "✓ 双人标注、仲裁与 Cohen’s κ：空模板，待外部流程填写"
+      : `✓ 独立标注 ${agreement.independent_annotations.length} 条争议记录，Cohen’s κ=${agreement.cohens_kappa}，状态 ${agreement.status}`
+  );
 }
 
 main().catch((error) => {
