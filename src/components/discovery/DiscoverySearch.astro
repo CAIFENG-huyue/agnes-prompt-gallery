@@ -1,0 +1,145 @@
+---
+import type { Category } from "../../lib/content/types.js";
+import DiscoveryFilters from "./DiscoveryFilters.astro";
+import DiscoveryResultCard from "./DiscoveryResultCard.astro";
+import { getFilterOptions } from "./discovery-data.js";
+import type {
+  CategoryIntentLink,
+  DiscoveryCard,
+  DiscoveryMode,
+  DiscoveryPayload
+} from "./discovery-types.js";
+import { PENGUIN_QUERY } from "./discovery-types.js";
+import "./discovery.css";
+
+interface Props {
+  instanceId: string;
+  mode?: DiscoveryMode;
+  category?: Category;
+  initialQuery?: string;
+  initialCards: DiscoveryCard[];
+  cards: Record<string, DiscoveryCard>;
+  categoryIntents?: CategoryIntentLink[];
+}
+
+const {
+  instanceId,
+  mode = "search",
+  category,
+  initialQuery,
+  initialCards,
+  cards,
+  categoryIntents = []
+} = Astro.props;
+const query = initialQuery ?? (mode === "search" ? PENGUIN_QUERY : "");
+const options = getFilterOptions(Object.values(cards));
+const payload: DiscoveryPayload = {
+  mode,
+  categoryId: category?.category_id ?? null,
+  initialQuery: query,
+  cards
+};
+const resultHeadingId = `${instanceId}-result-heading`;
+const totalCards = Object.keys(cards).length;
+---
+
+<section
+  class:list={["discovery", `discovery--${mode}`]}
+  data-discovery={instanceId}
+  aria-label={category ? `${category.name}案例筛选` : "任务检索与结果"}
+>
+  <div class="discovery-search-shell">
+    <form class="discovery-search" data-discovery-form method="get" action={category ? `/categories/${category.category_id}/` : "/"}>
+      <label class="discovery-search__label" for={`${instanceId}-query`}>
+        {category ? `在${category.name}里描述任务（可选）` : "我想做……"}
+      </label>
+      <div class="discovery-search__row">
+        <input
+          id={`${instanceId}-query`}
+          name="q"
+          type="search"
+          value={query}
+          placeholder={category?.intent_examples[0] ?? "例如：企鹅饼干礼盒结构板，带尺寸和材料说明"}
+          autocomplete="off"
+          spellcheck="false"
+          data-discovery-query
+        />
+        <button class="button button--primary discovery-search__submit" type="submit">
+          找结构相近的案例
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+      <div class="discovery-search__underbar">
+        <p>{mode === "search" ? "可写主体、用途、版式，以及必须标出的内容。" : "不输入任务时，直接浏览本类；输入后仍按结构优先排序。"}</p>
+        {mode === "search" && (
+          <button type="button" data-discovery-example data-query={PENGUIN_QUERY}>
+            试试企鹅结构板
+          </button>
+        )}
+      </div>
+      {categoryIntents.length > 0 && (
+        <div class="discovery-quick-intents" aria-label="常用意图">
+          <span>直接选：</span>
+          {categoryIntents.map((intent) => (
+            <button type="button" data-quick-intent={intent.intentId}>{intent.label}</button>
+          ))}
+        </div>
+      )}
+      <details class="discovery-filter-drawer" open={mode === "browse"}>
+        <summary>
+          <span>按意图、版式或标注槽位筛选</span>
+          <span class="discovery-filter-count" data-filter-count hidden></span>
+        </summary>
+        <DiscoveryFilters instanceId={instanceId} options={options} />
+      </details>
+    </form>
+  </div>
+
+  <div class="discovery-results-heading" id={`${instanceId}-results`} data-discovery-summary>
+    <div>
+      <p class="eyebrow">{mode === "search" ? "第 2 步 · 看匹配" : `${totalCards} 个本类案例`}</p>
+      <h2 id={resultHeadingId}>{mode === "search" ? "结构相近，理由摊开" : `${category?.name ?? "分类"}案例`}</h2>
+    </div>
+    <p class="discovery-results-heading__status" role="status" aria-live="polite" data-discovery-status>
+      {mode === "search"
+        ? `${initialCards.length} 张卡，依次比较结构、意图和文本。`
+        : `共 ${totalCards} 个，先显示 ${initialCards.length} 个。`}
+    </p>
+  </div>
+
+  <div class="discovery-results" id={`${instanceId}-cards`} data-discovery-results aria-labelledby={resultHeadingId}>
+    {initialCards.map((card, index) => <DiscoveryResultCard card={card} position={index + 1} />)}
+  </div>
+
+  <div class="discovery-empty" data-discovery-empty hidden>
+    <span class="discovery-empty__mark" aria-hidden="true">0</span>
+    <div>
+      <h3>当前条件下没有可展示的案例</h3>
+      <p>减少一个筛选条件，或换个更具体的画面任务；不会用无关案例补齐。</p>
+    </div>
+    <button class="button button--secondary" type="button" data-discovery-empty-reset>清空条件</button>
+  </div>
+
+  <button class="button button--secondary discovery-more" type="button" data-discovery-more hidden>
+    再显示 5 个
+  </button>
+
+  <noscript>
+    <p class="discovery-noscript">当前展示静态结果，案例链接可直接打开。</p>
+  </noscript>
+
+  <template data-discovery-card-template>
+    <DiscoveryResultCard template />
+  </template>
+  <script
+    type="application/json"
+    data-discovery-data
+    is:inline
+    set:html={JSON.stringify(payload).replaceAll("<", "\\u003c")}
+  ></script>
+</section>
+
+<script>
+  import { initializeDiscovery } from "./discovery-client";
+  initializeDiscovery();
+</script>

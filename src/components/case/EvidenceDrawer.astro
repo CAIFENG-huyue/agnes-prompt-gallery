@@ -1,0 +1,357 @@
+---
+import EvidenceBadge from "../ui/EvidenceBadge.astro";
+import { anchorId } from "./model.js";
+import type { DecisionView } from "./model.js";
+
+interface Props {
+  item: DecisionView;
+  caseTitle: string;
+}
+
+const { item, caseTitle } = Astro.props;
+const { decision, anchor, runs } = item;
+const promptAnchor = `prompt-${anchorId(decision.prompt_version_id)}`;
+const evidenceCopy = {
+  inferred: "以下短证据支持结构推断，不代表生成结果已经实测。",
+  tested: "以下 Run 支撑受控比较；汇总值须回到逐 Run 评分核对。",
+  observed: "以下仅是单次结果观察，不宣称受控因果。"
+};
+---
+
+<details
+  class="evidence-drawer"
+  id={`evidence-${anchor}`}
+  data-decision-id={decision.decision_id}
+  data-evidence-level={decision.evidence_level}
+>
+  <summary>
+    <span>
+      <EvidenceBadge level={decision.evidence_level} compact />
+      <strong>{decision.control_target}</strong>
+    </span>
+    <span>{runs.length > 0 ? `${runs.length} 个 Run 可下钻` : "提示词短证据"}</span>
+  </summary>
+
+  <div class="evidence-drawer__body">
+    <p class="evidence-drawer__note">{evidenceCopy[decision.evidence_level]}</p>
+    <div class="evidence-excerpts">
+      <figure>
+        <figcaption>约束前的提示词短证据</figcaption>
+        <blockquote>{decision.before_excerpt}</blockquote>
+      </figure>
+      <figure>
+        <figcaption>{decision.evidence_level === "inferred" ? "相邻约束的提示词短证据" : "约束或复核短证据"}</figcaption>
+        <blockquote>{decision.after_excerpt}</blockquote>
+      </figure>
+    </div>
+    <a class="evidence-prompt-link" href={`#${promptAnchor}`}>
+      对应提示词版本 <code>{decision.prompt_version_id}</code>
+    </a>
+
+    {runs.length > 0 && (
+      <div class="run-evidence-list" aria-label="逐 Run 数字与图片">
+        {runs.map(({ run, score, images }) => {
+          const runAnchor = `${anchor}--${anchorId(run.run_id)}`;
+          const imageAnchor = `image-${runAnchor}`;
+          return (
+            <article class="run-evidence" id={`run-${runAnchor}`} data-run-id={run.run_id}>
+              <header>
+                <div>
+                  <span>{run.arm_id} / 第 {run.rep} 次</span>
+                  <code>{run.run_id}</code>
+                </div>
+                <span>{run.experiment_version_id}</span>
+              </header>
+
+              {score ? (
+                <div class="run-score" id={`score-${runAnchor}`} data-score-id={score.score_id}>
+                  <dl>
+                    <div>
+                      <dt>文字命中</dt>
+                      <dd><a href={`#${imageAnchor}`}>{score.text_hits}/{score.text_total}</a></dd>
+                    </div>
+                    <div>
+                      <dt>元素命中</dt>
+                      <dd><a href={`#${imageAnchor}`}>{score.elements_hits}/{score.elements_total}</a></dd>
+                    </div>
+                    <div>
+                      <dt>数量错误</dt>
+                      <dd><a href={`#${imageAnchor}`}>{score.count_error}</a></dd>
+                    </div>
+                  </dl>
+                  <p>{score.notes}</p>
+                  <p class="run-score__revision">
+                    当前评分修订 <code>{score.score_id}</code> · revision {score.revision}
+                  </p>
+                </div>
+              ) : (
+                <p class="run-score__missing">此 Run 没有当前评分修订；仅展示结果图，不生成评分数字。</p>
+              )}
+
+              <div class="run-images">
+                {images.map((image, imageIndex) => (
+                  <figure id={imageIndex === 0 ? imageAnchor : `${imageAnchor}-${imageIndex + 1}`} data-result-image={image.sourceAssetId}>
+                    <a href={image.assets[image.assets.length - 1].uri} aria-label={`打开 ${caseTitle} 的 960 像素结果图`}>
+                      <img
+                        src={image.src}
+                        srcset={image.srcSet}
+                        sizes="(min-width: 52rem) 42rem, calc(100vw - 4rem)"
+                        width={image.width}
+                        height={image.height}
+                        alt={`${caseTitle}，${run.arm_id} 第 ${run.rep} 次 Run 的结果图`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                    <figcaption>
+                      <span>结果图 <code>{image.sourceAssetId}</code></span>
+                      <a href={image.assets[image.assets.length - 1].uri}>显式打开 960px WebP</a>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </div>
+</details>
+
+<style>
+  .evidence-drawer {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+    scroll-margin-top: 6rem;
+  }
+
+  .evidence-drawer > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    list-style-position: inside;
+  }
+
+  .evidence-drawer > summary > span:first-child {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .evidence-drawer > summary strong {
+    min-width: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .evidence-drawer > summary > span:last-child {
+    flex: none;
+    color: var(--color-muted);
+    font-size: 0.68rem;
+  }
+
+  .evidence-drawer__body {
+    min-width: 0;
+    padding: 0 1rem 1rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .evidence-drawer__note {
+    margin: 0.9rem 0;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+  }
+
+  .evidence-excerpts {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .evidence-excerpts figure {
+    min-width: 0;
+    margin: 0;
+    padding: 0.8rem;
+    border-left: 2px solid var(--color-line);
+    background: rgb(233 237 226 / 48%);
+  }
+
+  .evidence-excerpts figcaption {
+    margin-bottom: 0.35rem;
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+
+  .evidence-excerpts blockquote {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .evidence-prompt-link {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 0.8rem;
+    color: var(--color-forest);
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    overflow-wrap: anywhere;
+  }
+
+  .run-evidence-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .run-evidence {
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-small);
+    background: #f8f7f1;
+    scroll-margin-top: 6rem;
+  }
+
+  .run-evidence > header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.4rem 0.75rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-muted);
+    font-size: 0.67rem;
+  }
+
+  .run-evidence > header > div {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .run-evidence > header > div > span {
+    color: var(--color-forest-deep);
+    font-weight: 750;
+  }
+
+  .run-evidence code {
+    overflow-wrap: anywhere;
+  }
+
+  .run-score {
+    min-width: 0;
+    scroll-margin-top: 6rem;
+  }
+
+  .run-score dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .run-score dl > div {
+    min-width: 0;
+    padding: 0.55rem;
+    border-radius: 0.45rem;
+    background: var(--color-surface);
+    text-align: center;
+  }
+
+  .run-score dt {
+    color: var(--color-muted);
+    font-size: 0.62rem;
+  }
+
+  .run-score dd {
+    margin: 0.15rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 750;
+  }
+
+  .run-score dd a {
+    text-underline-offset: 0.25em;
+  }
+
+  .run-score > p {
+    margin-bottom: 0.45rem;
+    font-size: 0.76rem;
+    line-height: 1.6;
+  }
+
+  .run-score .run-score__revision,
+  .run-score__missing {
+    color: var(--color-muted);
+    font-size: 0.66rem;
+    overflow-wrap: anywhere;
+  }
+
+  .run-images,
+  .run-images figure {
+    min-width: 0;
+  }
+
+  .run-images figure {
+    margin: 0.8rem 0 0;
+    overflow: hidden;
+    border-radius: var(--radius-small);
+    background: var(--color-forest-deep);
+    scroll-margin-top: 6rem;
+  }
+
+  .run-images figure > a {
+    display: block;
+  }
+
+  .run-images img {
+    width: 100%;
+    height: auto;
+  }
+
+  .run-images figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 0.75rem;
+    padding: 0.6rem;
+    color: #d5dfd8;
+    font-size: 0.63rem;
+  }
+
+  .run-images figcaption a {
+    color: var(--color-lime);
+  }
+
+  @media (min-width: 48rem) {
+    .evidence-excerpts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 31rem) {
+    .evidence-drawer > summary {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .run-evidence {
+      padding: 0.65rem;
+    }
+  }
+</style>

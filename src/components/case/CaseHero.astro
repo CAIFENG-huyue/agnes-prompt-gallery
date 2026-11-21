@@ -1,0 +1,370 @@
+---
+import EvidenceBadge from "../ui/EvidenceBadge.astro";
+import type { CasePageModel } from "./model.js";
+
+interface Props {
+  page: CasePageModel;
+}
+
+const { page } = Astro.props;
+const { caseData, category, guide, fingerprintItems, cover, evidenceLevels } = page;
+const hasExperiments = evidenceLevels.some((level) => level !== "inferred");
+---
+
+<header class="case-hero" data-case-hero>
+  <div class="case-hero__title" data-hero-item="title">
+    <p class="case-kicker">CASE / {caseData.case_id}</p>
+    <h1>{caseData.title}</h1>
+  </div>
+
+  <section class="case-category" aria-label="通俗分类" data-hero-item="category">
+    <span class="case-category__label">通俗分类</span>
+    <div>
+      <strong>{category.name}</strong>
+      <p>{category.plain_explanation}</p>
+    </div>
+  </section>
+
+  <section class="case-fit" aria-label="适合与不适合" data-hero-item="fit">
+    <div class="case-fit__yes">
+      <h2>适合</h2>
+      <ul>
+        {guide.suitable_for.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="case-fit__no">
+      <h2>不适合</h2>
+      <ul>
+        {guide.unsuitable_for.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-fingerprints" aria-labelledby="fingerprint-title" data-hero-item="fingerprints">
+    <h2 id="fingerprint-title" class="visually-hidden">三个关键指纹</h2>
+    <ol>
+      {fingerprintItems.map((item, index) => (
+        <li data-fingerprint-item={item.key}>
+          <a href="#fingerprint-evidence" aria-label={`${item.label}：${item.value}，查看指纹依据`}>
+            <span class="case-fingerprints__index">0{index + 1} / {item.label}</span>
+            <strong>{item.value}</strong>
+            <span>{item.detail}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <figure class="case-cover" data-hero-item="cover">
+    <div class="case-cover__canvas">
+      <img
+        data-case-cover
+        src={cover.src}
+        srcset={cover.srcSet}
+        sizes="(min-width: 56rem) 38rem, calc(100vw - 2rem)"
+        width={cover.width}
+        height={cover.height}
+        alt={caseData.image_alt ?? `${caseData.title}的案例封面`}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+    <figcaption>
+      <span>案例封面</span>
+      <span>{page.fingerprint.ratio} · 来源图，非本页实验结果</span>
+    </figcaption>
+  </figure>
+
+  <section class="case-evidence" aria-label="证据级别" data-hero-item="evidence">
+    <div class="case-evidence__badges" data-page-evidence={evidenceLevels.join(" ")}>
+      {evidenceLevels.map((level) => (
+        <span data-evidence-level={level}><EvidenceBadge level={level} compact /></span>
+      ))}
+    </div>
+    <p>
+      {hasExperiments
+        ? "结构推断、受控实验与单次结果观察分别标注，只在对应决策卡内成立。"
+        : "本页只有结构推断，未做实测；结论来自提示词与结构指纹。"}
+    </p>
+  </section>
+</header>
+
+<style>
+  .case-hero {
+    display: grid;
+    min-width: 0;
+    gap: 0.8rem;
+  }
+
+  .case-hero > * {
+    min-width: 0;
+  }
+
+  .case-kicker {
+    margin-bottom: 0.45rem;
+    color: var(--color-accent-deep);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+  }
+
+  .case-hero__title h1 {
+    max-width: 24ch;
+    margin-bottom: 0;
+    font-size: clamp(2rem, 8vw, 4.7rem);
+    overflow-wrap: anywhere;
+  }
+
+  .case-category {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.75rem 0.9rem;
+    border-left: 3px solid var(--color-accent);
+    background: rgb(255 253 248 / 72%);
+  }
+
+  .case-category__label {
+    flex: none;
+    padding-top: 0.15rem;
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    font-weight: 750;
+  }
+
+  .case-category strong {
+    color: var(--color-forest-deep);
+    font-size: 1.05rem;
+  }
+
+  .case-category p {
+    margin: 0.1rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .case-fit {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+  }
+
+  .case-fit > div {
+    min-width: 0;
+    padding: 0.8rem;
+  }
+
+  .case-fit > div + div {
+    border-left: 1px solid var(--color-line);
+  }
+
+  .case-fit h2 {
+    margin-bottom: 0.4rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+  }
+
+  .case-fit__yes h2 {
+    color: #2e6539;
+  }
+
+  .case-fit__no h2 {
+    color: var(--color-accent-deep);
+  }
+
+  .case-fit ul {
+    margin: 0;
+    padding-left: 1rem;
+    color: var(--color-muted);
+    font-size: 0.76rem;
+    line-height: 1.55;
+  }
+
+  .case-fit li + li {
+    margin-top: 0.35rem;
+  }
+
+  .case-fingerprints ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-fingerprints li {
+    min-width: 0;
+  }
+
+  .case-fingerprints a {
+    display: flex;
+    height: 100%;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.65rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: rgb(255 253 248 / 78%);
+    text-decoration: none;
+  }
+
+  .case-fingerprints a:hover {
+    border-color: var(--color-forest);
+  }
+
+  .case-fingerprints__index {
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    line-height: 1.35;
+  }
+
+  .case-fingerprints strong {
+    color: var(--color-forest-deep);
+    font-size: 0.84rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .case-fingerprints a > span:last-child {
+    color: var(--color-muted);
+    font-size: 0.66rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .case-cover {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgb(220 236 168 / 18%);
+    border-radius: var(--radius-large);
+    background: var(--color-forest-deep);
+    box-shadow: var(--shadow-card);
+  }
+
+  .case-cover__canvas {
+    display: flex;
+    min-width: 0;
+    justify-content: center;
+    padding: 0.55rem;
+    background:
+      linear-gradient(135deg, rgb(220 236 168 / 8%), transparent 55%),
+      var(--color-forest-deep);
+  }
+
+  .case-cover img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 42svh;
+    border-radius: calc(var(--radius-large) - 0.55rem);
+    object-fit: contain;
+  }
+
+  .case-cover figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem 0.75rem;
+    padding: 0.55rem 0.8rem;
+    color: #c9d5ce;
+    font-size: 0.65rem;
+    line-height: 1.45;
+  }
+
+  .case-cover figcaption span:first-child {
+    color: var(--color-lime);
+    font-weight: 750;
+  }
+
+  .case-evidence {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem 0.75rem;
+  }
+
+  .case-evidence__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .case-evidence p {
+    flex: 1 1 15rem;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 56rem) {
+    .case-hero {
+      grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
+      gap: 1rem 2.25rem;
+      align-items: start;
+    }
+
+    .case-hero__title {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .case-category {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .case-fit {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .case-fingerprints {
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    .case-cover {
+      grid-column: 2;
+      grid-row: 1 / span 5;
+    }
+
+    .case-cover img {
+      max-height: 42rem;
+    }
+
+    .case-evidence {
+      grid-column: 1;
+      grid-row: 5;
+    }
+
+    .case-fit > div {
+      padding: 1rem;
+    }
+
+    .case-fit ul {
+      font-size: 0.83rem;
+    }
+  }
+
+  @media (max-width: 23rem) {
+    .case-category {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .case-fingerprints a {
+      padding: 0.5rem;
+    }
+  }
+</style>

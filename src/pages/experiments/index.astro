@@ -1,0 +1,34 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import ButtonLink from "../../components/ui/ButtonLink.astro";
+import ConclusionSummary from "../../components/evidence/ConclusionSummary.astro";
+import { conclusionPath, loadEvidenceData } from "../../components/evidence/evidence-model.js";
+import "../../components/evidence/evidence.css";
+
+const data = await loadEvidenceData();
+const conclusions = [...data.conclusions].sort((a, b) =>
+  a.conclusion_id.localeCompare(b.conclusion_id) || a.version_no - b.version_no
+);
+---
+
+<ContentLayout
+  title="实验证据"
+  eyebrow="Evidence / frozen versions"
+  description="从结论原值回到案例、Run、实验图和评分修订；区间、检验方法与局限和数字一起呈现。"
+  wide
+>
+  <ButtonLink slot="actions" href="/methods/" variant="secondary">查看可迁移写法</ButtonLink>
+  <section class="section">
+    <p class="index-note">每个 ConclusionVersion 都有独立永久地址。新增数据或结论版本不会覆盖旧 URL；只有结论明确引用的 Run 与素材进入页面。</p>
+    <div class="evidence-grid">
+      {conclusions.map((conclusion) => (
+        <div class="evidence-stack">
+          <ConclusionSummary conclusion={conclusion} data={data} compact showLimitations={false} />
+          <ButtonLink href={conclusionPath(conclusion.conclusion_version_id)} variant="secondary">
+            打开 {conclusion.conclusion_version_id}
+          </ButtonLink>
+        </div>
+      ))}
+    </div>
+  </section>
+</ContentLayout>

@@ -1,0 +1,156 @@
+---
+import EvidenceBadge from "../ui/EvidenceBadge.astro";
+import type { DecisionView } from "./model.js";
+
+interface Props {
+  item: DecisionView;
+}
+
+const { item } = Astro.props;
+const { decision, anchor, runs } = item;
+const actualLabel = decision.evidence_level === "tested" ? "受控实验结果" : "单 Run 结果观察";
+---
+
+<article
+  class="decision-card"
+  id={`decision-${anchor}`}
+  data-decision-id={decision.decision_id}
+  data-evidence-level={decision.evidence_level}
+>
+  <div class="decision-card__topline">
+    <EvidenceBadge level={decision.evidence_level} />
+    <a href={`#evidence-${anchor}`}>
+      {runs.length > 0 ? `下钻 ${runs.length} 个 Run、评分与结果图` : "查看提示词短证据"}
+    </a>
+  </div>
+
+  <div class="decision-flow">
+    <section>
+      <span class="decision-flow__step">01 / 决策</span>
+      <p>{decision.decision}</p>
+    </section>
+    <span class="decision-flow__arrow" aria-hidden="true">→</span>
+    <section>
+      <span class="decision-flow__step">02 / 控制了什么</span>
+      <p>{decision.control_target}</p>
+    </section>
+    <span class="decision-flow__arrow" aria-hidden="true">→</span>
+    <section>
+      <span class="decision-flow__step">03 / 换掉会怎样</span>
+      <p>{decision.expected_effect}</p>
+    </section>
+  </div>
+
+  {decision.observed_effect && (
+    <section class="decision-actual" data-observed-effect data-numeric-drilldown={`evidence-${anchor}`}>
+      <h3>{actualLabel}</h3>
+      <p>{decision.observed_effect}</p>
+      <a href={`#evidence-${anchor}`}>把汇总数字展开到具体 Run、评分修订和图片</a>
+    </section>
+  )}
+</article>
+
+<style>
+  .decision-card {
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 1.6rem);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    scroll-margin-top: 6rem;
+  }
+
+  .decision-card[data-evidence-level="tested"] {
+    border-top: 3px solid #548d5c;
+  }
+
+  .decision-card[data-evidence-level="observed"] {
+    border-top: 3px solid #4b8199;
+  }
+
+  .decision-card[data-evidence-level="inferred"] {
+    border-top: 3px solid #b18a53;
+  }
+
+  .decision-card__topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .decision-card__topline > a,
+  .decision-actual a {
+    color: var(--color-forest);
+    font-size: 0.76rem;
+    font-weight: 700;
+  }
+
+  .decision-flow {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .decision-flow section {
+    min-width: 0;
+  }
+
+  .decision-flow__step {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--color-accent-deep);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+  }
+
+  .decision-flow p {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .decision-flow__arrow {
+    display: none;
+    color: var(--color-accent);
+    font-size: 1.3rem;
+  }
+
+  .decision-actual {
+    margin-top: 1.2rem;
+    padding: 0.9rem;
+    border-radius: var(--radius-small);
+    background: var(--color-surface-muted);
+  }
+
+  .decision-actual h3 {
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .decision-actual p {
+    margin-bottom: 0.55rem;
+    font-size: 0.86rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 52rem) {
+    .decision-flow {
+      grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 0.8fr) auto minmax(0, 1.35fr);
+      align-items: start;
+      gap: 1rem;
+    }
+
+    .decision-flow__arrow {
+      display: block;
+      padding-top: 1.2rem;
+    }
+  }
+</style>

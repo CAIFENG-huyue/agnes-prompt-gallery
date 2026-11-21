@@ -1,0 +1,495 @@
+---
+import CaseHero from "./CaseHero.astro";
+import DecisionCard from "./DecisionCard.astro";
+import EvidenceDrawer from "./EvidenceDrawer.astro";
+import { anchorId } from "./model.js";
+import type { CasePageModel } from "./model.js";
+
+interface Props {
+  page: CasePageModel;
+}
+
+const { page } = Astro.props;
+const { caseData, guide, decisions, prompts, classification, fingerprint } = page;
+---
+
+<article class="case-page" data-case-id={caseData.case_id}>
+  <CaseHero page={page} />
+
+  <section class="case-section" id="decisions" data-section="decisions" aria-labelledby="decisions-title">
+    <header class="case-section__heading">
+      <p>01 / 决策卡</p>
+      <div>
+        <h2 id="decisions-title">每个约束，都要能说清代价</h2>
+        <span>决策 → 控制了什么 → 换掉会怎样；推断与实测分卡展示。</span>
+      </div>
+    </header>
+    <div class="decision-list">
+      {decisions.map((item) => <DecisionCard item={item} />)}
+    </div>
+  </section>
+
+  <section class="case-section" id="challenges" data-section="challenges" aria-labelledby="challenges-title">
+    <header class="case-section__heading">
+      <p>02 / 共性难点</p>
+      <div>
+        <h2 id="challenges-title">整体像，不等于逐项对</h2>
+        <span>这些检查项来自本案例的结构指纹与提示词。</span>
+      </div>
+    </header>
+    <ol class="challenge-list" data-self-explanation="common-challenges">
+      {guide.common_challenges.map((challenge, index) => (
+        <li>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <p>{challenge}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="case-section" id="transfer" data-section="transfer" aria-labelledby="transfer-title">
+    <div class="transfer-card">
+      <p>03 / 一条可迁移写法</p>
+      <h2 id="transfer-title">换掉题材时，保留结构契约</h2>
+      <p data-self-explanation="transferable-rule">{guide.transferable_rule}</p>
+    </div>
+  </section>
+
+  <section class="case-section" id="evidence" data-section="evidence" aria-labelledby="evidence-title">
+    <header class="case-section__heading">
+      <p>04 / 可选证据抽屉</p>
+      <div>
+        <h2 id="evidence-title">从结论回到短证据、Run 与图片</h2>
+        <span>默认折叠。实验卡中的数字可继续下钻到当前评分修订和具体结果图。</span>
+      </div>
+    </header>
+    <div class="evidence-list">
+      {decisions.map((item) => <EvidenceDrawer item={item} caseTitle={caseData.title} />)}
+    </div>
+  </section>
+
+  <section class="case-section case-sources" id="sources" data-section="sources" aria-labelledby="sources-title">
+    <header class="case-section__heading">
+      <p>05 / 版本与来源</p>
+      <div>
+        <h2 id="sources-title">知道它从哪里来</h2>
+        <span>分类、指纹、指南与提示词分别保留版本，不用来源原文替代判断。</span>
+      </div>
+    </header>
+
+    <div class="source-grid">
+      <section class="source-card">
+        <h3>案例来源</h3>
+        <p>{caseData.source.source_label}</p>
+        <a href={caseData.source.source_url} rel="noreferrer">打开来源页面</a>
+      </section>
+      <section class="source-card">
+        <h3>分类依据</h3>
+        <p>{classification.rationale}</p>
+        <code>{classification.classifier_version}</code>
+      </section>
+      <section class="source-card">
+        <h3>指南版本</h3>
+        <p><code>{guide.guide_id}</code></p>
+        <code>{guide.guide_version}</code>
+      </section>
+    </div>
+
+    <details class="fingerprint-source" id="fingerprint-evidence" data-fingerprint-evidence>
+      <summary>查看三个关键指纹的完整结构依据</summary>
+      <div>
+        <dl>
+          <div><dt>主体数量</dt><dd>{fingerprint.subject_count}</dd></div>
+          <div><dt>画幅</dt><dd>{fingerprint.ratio}</dd></div>
+          <div><dt>版式</dt><dd>{fingerprint.layout}</dd></div>
+          <div><dt>输入方式</dt><dd>{fingerprint.input_mode}</dd></div>
+        </dl>
+        <p class="fingerprint-source__excerpt">{fingerprint.evidence_excerpt}</p>
+        <div class="fingerprint-source__columns">
+          <section>
+            <h3>文字槽位</h3>
+            {fingerprint.text_slots.length > 0 ? (
+              <ul>
+                {fingerprint.text_slots.map((slot) => (
+                  <li><code>{slot.slot_id}</code> · {slot.role} · {slot.required ? "必填" : "可选"}</li>
+                ))}
+              </ul>
+            ) : <p>无独立文字槽位。</p>}
+          </section>
+          <section>
+            <h3>结构关系</h3>
+            {fingerprint.relations.length > 0 ? (
+              <ul>
+                {fingerprint.relations.map((relation) => (
+                  <li><code>{relation.source_slot}</code> → {relation.relation} → <code>{relation.target_slot}</code></li>
+                ))}
+              </ul>
+            ) : <p>无额外关系记录。</p>}
+          </section>
+        </div>
+        <code>{fingerprint.fingerprint_version}</code>
+      </div>
+    </details>
+
+    <section class="prompt-archive" aria-labelledby="prompts-title">
+      <div class="prompt-archive__heading">
+        <h3 id="prompts-title">完整提示词原文</h3>
+        <p>仅作来源证据，各版本默认折叠。</p>
+      </div>
+      <div class="prompt-list">
+        {prompts.map((prompt) => (
+          <details
+            id={`prompt-${anchorId(prompt.prompt_version_id)}`}
+            data-prompt-version={prompt.prompt_version_id}
+          >
+            <summary>
+              <span>版本 {prompt.version_no} · <code>{prompt.prompt_version_id}</code></span>
+              <span>{prompt.change_note}</span>
+            </summary>
+            <div class="prompt-source">
+              <pre>{prompt.text}</pre>
+              <p>SHA-256 <code>{prompt.content_sha256}</code></p>
+              {prompt.parent_version_id && <p>父版本 <code>{prompt.parent_version_id}</code></p>}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </section>
+</article>
+
+<style>
+  .case-page {
+    min-width: 0;
+    padding-top: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .case-section {
+    min-width: 0;
+    margin-top: clamp(2.25rem, 6vw, 4.5rem);
+    padding-top: clamp(1.5rem, 4vw, 2.5rem);
+    border-top: 1px solid var(--color-line);
+  }
+
+  .case-section__heading {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .case-section__heading > p,
+  .transfer-card > p:first-child {
+    margin: 0;
+    color: var(--color-accent-deep);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+  }
+
+  .case-section__heading h2,
+  .transfer-card h2 {
+    margin-bottom: 0.45rem;
+    font-size: clamp(1.55rem, 4vw, 2.65rem);
+  }
+
+  .case-section__heading div > span {
+    display: block;
+    max-width: 44rem;
+    color: var(--color-muted);
+    font-size: 0.83rem;
+    line-height: 1.6;
+  }
+
+  .decision-list,
+  .evidence-list {
+    display: grid;
+    min-width: 0;
+    gap: 1rem;
+  }
+
+  .challenge-list {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .challenge-list li {
+    display: grid;
+    min-width: 0;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 0.95rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    background: rgb(255 253 248 / 72%);
+  }
+
+  .challenge-list li > span {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 750;
+  }
+
+  .challenge-list p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .transfer-card {
+    padding: clamp(1.3rem, 4vw, 2.4rem);
+    border-radius: var(--radius-large);
+    background:
+      radial-gradient(circle at 100% 0%, rgb(220 236 168 / 18%), transparent 24rem),
+      var(--color-forest-deep);
+    color: #eef3ed;
+    box-shadow: var(--shadow-lift);
+  }
+
+  .transfer-card > p:first-child {
+    margin-bottom: 0.75rem;
+    color: var(--color-lime);
+  }
+
+  .transfer-card h2 {
+    color: white;
+  }
+
+  .transfer-card > p:last-child {
+    max-width: 58rem;
+    margin: 0;
+    font-size: clamp(0.96rem, 2vw, 1.12rem);
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+  }
+
+  .case-sources {
+    padding-bottom: 1rem;
+  }
+
+  .source-grid {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .source-card {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+  }
+
+  .source-card h3,
+  .fingerprint-source h3,
+  .prompt-archive__heading h3 {
+    margin-bottom: 0.45rem;
+    font-size: 0.95rem;
+  }
+
+  .source-card p {
+    margin-bottom: 0.55rem;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .source-card a {
+    color: var(--color-forest);
+    font-size: 0.76rem;
+    font-weight: 700;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    overflow-wrap: anywhere;
+  }
+
+  .fingerprint-source,
+  .prompt-list details {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+    scroll-margin-top: 6rem;
+  }
+
+  .fingerprint-source > summary,
+  .prompt-list summary {
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .fingerprint-source > div {
+    min-width: 0;
+    padding: 0 1rem 1rem;
+  }
+
+  .fingerprint-source dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .fingerprint-source dl > div {
+    min-width: 0;
+    padding: 0.65rem;
+    background: var(--color-surface-muted);
+  }
+
+  .fingerprint-source dt {
+    color: var(--color-muted);
+    font-size: 0.66rem;
+  }
+
+  .fingerprint-source dd {
+    margin: 0.2rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
+
+  .fingerprint-source__excerpt {
+    padding: 0.75rem;
+    border-left: 2px solid var(--color-accent);
+    color: var(--color-muted);
+    font-size: 0.76rem;
+    overflow-wrap: anywhere;
+  }
+
+  .fingerprint-source__columns {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .fingerprint-source__columns ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+  }
+
+  .fingerprint-source__columns li {
+    margin-bottom: 0.35rem;
+    overflow-wrap: anywhere;
+  }
+
+  .fingerprint-source__columns p {
+    color: var(--color-muted);
+    font-size: 0.76rem;
+  }
+
+  .prompt-archive {
+    margin-top: 2rem;
+  }
+
+  .prompt-archive__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .prompt-archive__heading h3,
+  .prompt-archive__heading p {
+    margin-bottom: 0;
+  }
+
+  .prompt-archive__heading p {
+    color: var(--color-muted);
+    font-size: 0.72rem;
+  }
+
+  .prompt-list {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .prompt-list summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+  }
+
+  .prompt-list summary > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .prompt-list summary > span:last-child {
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    font-weight: 500;
+  }
+
+  .prompt-source {
+    min-width: 0;
+    padding: 0 1rem 1rem;
+  }
+
+  .prompt-source pre {
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    overflow: auto;
+    border-radius: var(--radius-small);
+    background: var(--color-forest-deep);
+    color: #eff4ef;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .prompt-source p {
+    margin: 0.65rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.66rem;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 48rem) {
+    .case-section__heading {
+      grid-template-columns: 9rem minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .challenge-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .challenge-list li {
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
+      padding: 1.2rem;
+    }
+
+    .source-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .fingerprint-source dl {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .fingerprint-source__columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

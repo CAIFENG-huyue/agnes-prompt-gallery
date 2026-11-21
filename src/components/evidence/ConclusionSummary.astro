@@ -1,0 +1,108 @@
+---
+import EvidenceBadge from "../ui/EvidenceBadge.astro";
+import type { ConclusionVersion } from "../../lib/content/index.js";
+import {
+  conclusionPath,
+  evidenceEntryPoint,
+  formatSigned,
+  imageAnchor,
+  presentationFor,
+  type EvidenceData
+} from "./evidence-model.js";
+
+interface Props {
+  conclusion: ConclusionVersion;
+  data: EvidenceData;
+  compact?: boolean;
+  showLimitations?: boolean;
+}
+
+const { conclusion, data, compact = false, showLimitations = !compact } = Astro.props;
+const presentation = presentationFor(conclusion);
+const path = conclusionPath(conclusion.conclusion_version_id);
+const entry = evidenceEntryPoint(conclusion, data);
+const caseHref = entry ? `${path}#${entry.run.case_id}` : `${path}#evidence-runs`;
+const runHref = entry ? `${path}#${entry.run.run_id}` : `${path}#evidence-runs`;
+const imageHref = entry?.imageId ? `${path}#${imageAnchor(entry.imageId)}` : `${path}#evidence-runs`;
+const scoreHref = entry?.score ? `${path}#${entry.score.score_id}` : `${path}#score-boundary`;
+const Heading = compact ? "h3" : "h2";
+---
+
+<article
+  class:list={["evidence-card", "evidence-summary", { "evidence-summary--compact": compact }]}
+  data-conclusion-version={conclusion.conclusion_version_id}
+  data-metric={conclusion.metric}
+  data-estimate={String(conclusion.estimate)}
+  data-unit={conclusion.unit}
+  data-ci-low={String(conclusion.ci_low)}
+  data-ci-high={String(conclusion.ci_high)}
+  data-ci-level={String(conclusion.ci_level)}
+  data-p-value={conclusion.p_value === undefined ? "not-estimated" : String(conclusion.p_value)}
+  data-n-cases={String(conclusion.n_cases)}
+  data-n-images={String(conclusion.n_images)}
+  data-n-runs={String(conclusion.evidence_run_ids.length)}
+  data-score-snapshot={conclusion.score_snapshot_hash}
+  data-generator={conclusion.generator_version}
+  data-evidence-case={entry?.run.case_id}
+  data-evidence-run={entry?.run.run_id}
+  data-evidence-image={entry?.imageId}
+  data-evidence-score={entry?.score?.score_id ?? "not-available"}
+>
+  <div class="evidence-summary__heading">
+    <Heading>{presentation.title}</Heading>
+    <EvidenceBadge level={presentation.level} compact={compact} />
+  </div>
+  <p class="evidence-summary__direction">{presentation.direction} · {conclusion.metric}</p>
+  <a class="evidence-estimate" href={caseHref} data-metric-link="estimate">
+    <strong>{formatSigned(conclusion.estimate)} <span>{conclusion.unit}</span></strong>
+    <code>快照原值 {String(conclusion.estimate)} {conclusion.unit}</code>
+  </a>
+  <p>{presentation.description}</p>
+  <dl class="evidence-stats">
+    <div class="evidence-stat">
+      <dt>{conclusion.ci_level > 0 ? `${conclusion.ci_level * 100}% 区间` : "区间状态"}</dt>
+      <dd>
+        <a href={runHref} data-metric-link="confidence-interval">
+          <code>[{String(conclusion.ci_low)}, {String(conclusion.ci_high)}] {conclusion.unit}</code>
+        </a>
+        {conclusion.ci_level === 0 && <span> · 未估计抽样置信区间</span>}
+      </dd>
+    </div>
+    <div class="evidence-stat">
+      <dt>检验</dt>
+      <dd>
+        {conclusion.p_value === undefined ? (
+          <strong>未做有功效的假设检验；没有 p 值</strong>
+        ) : (
+          <a href={scoreHref} data-metric-link="p-value"><code>p = {String(conclusion.p_value)}</code></a>
+        )}
+      </dd>
+    </div>
+    <div class="evidence-stat">
+      <dt>样本量</dt>
+      <dd>
+        <a href={caseHref} data-metric-link="n-cases">{conclusion.n_cases} 个案例</a> ·
+        <a href={imageHref} data-metric-link="n-images">{conclusion.n_images} 张实验图</a> ·
+        <a href={runHref} data-metric-link="n-runs">{conclusion.evidence_run_ids.length} 个证据 Run</a>
+      </dd>
+    </div>
+  </dl>
+  <div class="evidence-method">
+    <p><strong>区间方法：</strong>{conclusion.ci_method}</p>
+    <p><strong>检验方法：</strong>{conclusion.p_method ?? "未做有功效的假设检验"}</p>
+  </div>
+  <nav class="evidence-chain" aria-label="数字证据下钻">
+    <a data-drilldown="case" href={caseHref}>case · {entry?.run.case_id ?? "无"}</a>
+    <a data-drilldown="run" href={runHref}>run · {entry?.run.run_id ?? "无"}</a>
+    <a data-drilldown="image" href={imageHref}>image · {entry?.imageId ?? "无"}</a>
+    <a data-drilldown="score-revision" href={scoreHref}>score revision · {entry?.score?.score_id ?? "明确缺失"}</a>
+  </nav>
+  {showLimitations && (
+    <section class="evidence-limitations" aria-label="结论局限">
+      <h3>局限与解释边界</h3>
+      <ul>
+        {conclusion.limitations.map((limitation) => <li>{limitation}</li>)}
+      </ul>
+    </section>
+  )}
+</article>

@@ -1,0 +1,67 @@
+---
+import type { DiscoveryCard } from "./discovery-types.js";
+
+interface Props {
+  card?: DiscoveryCard;
+  position?: number;
+  template?: boolean;
+}
+
+const { card, position = 1, template = false } = Astro.props;
+---
+
+<article class="discovery-card" data-case-id={card?.caseId}>
+  <a
+    class="discovery-card__visual"
+    href={card?.href}
+    data-field="image-link"
+    aria-label={card ? `打开${card.title}案例` : undefined}
+  >
+    {template || !card ? (
+      <img data-field="image" alt="" width="640" height="480" decoding="async" />
+    ) : (
+      <img
+        data-field="image"
+        src={card.image.src}
+        srcset={card.image.srcSet}
+        sizes={card.image.sizes}
+        width={card.image.width}
+        height={card.image.height}
+        alt={card.image.alt}
+        loading={position === 1 ? "eager" : "lazy"}
+        decoding="async"
+      />
+    )}
+    <span class="discovery-card__position" data-field="position" aria-hidden="true">
+      {card ? String(position).padStart(2, "0") : ""}
+    </span>
+  </a>
+  <div class="discovery-card__body">
+    <div class="discovery-card__meta">
+      <span class="discovery-card__category" data-field="category">{card?.categoryName}</span>
+      <span data-field="layout">{card?.layoutLabel}</span>
+      <span class="discovery-card__id" data-field="case-id">{card ? `#${card.caseId.replace("case-", "")}` : ""}</span>
+    </div>
+    <h3 class="discovery-card__title">
+      <a href={card?.href} data-field="title-link" data-text="title">{card?.title}</a>
+    </h3>
+    <section class="discovery-card__reason" aria-label={card?.reasonHeading}>
+      <h4 data-field="reason-heading">{card?.reasonHeading}</h4>
+      <ul data-field="reasons">
+        {card?.reasons.map((reason) => <li data-reason-kind={reason.kind}>{reason.text}</li>)}
+      </ul>
+    </section>
+    <section class="discovery-card__note">
+      <h4>共性难点</h4>
+      <p data-field="challenge">{card?.challenge}</p>
+    </section>
+    <section class="discovery-card__rule">
+      <h4>一条迁移写法</h4>
+      <p data-field="rule">{card?.transferableRule}</p>
+    </section>
+    <a class="discovery-card__open" href={card?.href} data-field="case-link">
+      打开案例
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</article>

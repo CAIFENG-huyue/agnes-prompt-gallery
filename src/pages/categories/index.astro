@@ -1,0 +1,23 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import CategoryCard from "../../components/ui/CategoryCard.astro";
+import { getDiscoveryData } from "../../components/discovery/discovery-data.js";
+import "../../components/discovery/discovery.css";
+
+const data = await getDiscoveryData();
+---
+
+<ContentLayout
+  title="从“我想……”开始"
+  eyebrow="五类任务入口"
+  description="选最接近的画面目标。进入后可按意图、版式、输入方式和文字槽位继续筛选，不必理解分类规则。"
+  wide
+>
+  <section class="section" aria-label="五类通俗导航">
+    <div class="category-grid discovery-category-grid">
+      {data.categories.map((category) => (
+        <CategoryCard category={category} count={data.categoryCounts[category.category_id]} />
+      ))}
+    </div>
+  </section>
+</ContentLayout>

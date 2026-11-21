@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CasePage from "../../components/case/CasePage.astro";
+import { getCasePageModels } from "../../components/case/model.js";
+import type { CasePageModel } from "../../components/case/model.js";
+
+export async function getStaticPaths() {
+  const pages = await getCasePageModels();
+  return pages.map((page) => ({
+    params: { id: page.caseData.case_id },
+    props: { page }
+  }));
+}
+
+interface Props {
+  page: CasePageModel;
+}
+
+const { page } = Astro.props;
+const description = `${page.category.name}：${page.category.plain_explanation}。直接查看适合与不适合、三个关键指纹、决策依据、证据级别和提示词版本。`;
+---
+
+<BaseLayout title={page.caseData.title} description={description}>
+  <CasePage page={page} />
+</BaseLayout>

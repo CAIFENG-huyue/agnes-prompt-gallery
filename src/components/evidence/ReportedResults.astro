@@ -1,0 +1,64 @@
+---
+import type { ConclusionVersion, ExperimentVersion } from "../../lib/content/index.js";
+import {
+  comparisonArmId,
+  conclusionPath,
+  formatPercent,
+  reportForConclusion,
+  runsForConclusion,
+  type ArmReport,
+  type EvidenceData
+} from "./evidence-model.js";
+
+interface Props {
+  conclusion: ConclusionVersion;
+  experiments: ExperimentVersion[];
+  data: EvidenceData;
+}
+
+const { conclusion, experiments, data } = Astro.props;
+const report = reportForConclusion(conclusion, experiments);
+const runs = runsForConclusion(conclusion, data);
+const path = conclusionPath(conclusion.conclusion_version_id);
+const armEntries = Object.entries(report.arms);
+const armLabel = (armId: string) => experiments.flatMap((item) => item.arms).find((arm) => arm.arm_id === armId)?.label ?? armId;
+const armHref = (armId: string) => {
+  const run = runs.find((item) => comparisonArmId(conclusion, item) === armId);
+  return run ? `${path}#${run.run_id}` : `${path}#evidence-runs`;
+};
+const displayValue = (arm: ArmReport) => {
+  if (report.mode === "hard-gate") return `${arm.passes}/${arm.n_images}`;
+  if (report.mode === "exact-slots") return `${arm.exact_slots_hits}/${arm.exact_slots_total}`;
+  return `${arm.text_hits}/${arm.text_total}`;
+};
+---
+
+<div class="report-grid" data-report-mode={report.mode} data-conclusion-report={conclusion.conclusion_version_id}>
+  {armEntries.map(([armId, arm]) => (
+    <article
+      class="report-card"
+      data-arm-report={armId}
+      data-n-images={arm.n_images === undefined ? undefined : String(arm.n_images)}
+      data-text-hits={arm.text_hits === undefined ? undefined : String(arm.text_hits)}
+      data-text-total={arm.text_total === undefined ? undefined : String(arm.text_total)}
+      data-passes={arm.passes === undefined ? undefined : String(arm.passes)}
+      data-rate={(arm.rate ?? arm.pass_rate) === undefined ? undefined : String(arm.rate ?? arm.pass_rate)}
+      data-ci-low={arm.wilson95 ? String(arm.wilson95[0]) : undefined}
+      data-ci-high={arm.wilson95 ? String(arm.wilson95[1]) : undefined}
+      data-exact-slots-hits={arm.exact_slots_hits === undefined ? undefined : String(arm.exact_slots_hits)}
+      data-exact-slots-total={arm.exact_slots_total === undefined ? undefined : String(arm.exact_slots_total)}
+      data-per-image-exact={arm.per_image_exact?.join("/")}
+    >
+      <p class="evidence-kicker">{armId}</p>
+      <h3>{armLabel(armId)}</h3>
+      <a class="report-card__value" href={armHref(armId)} data-report-value={displayValue(arm)}>{displayValue(arm)}</a>
+      {(arm.rate ?? arm.pass_rate) !== undefined && <p><a href={armHref(armId)}>{formatPercent((arm.rate ?? arm.pass_rate)!)}</a>{arm.n_images !== undefined ? ` · ${arm.n_images} 张` : ""}</p>}
+      {arm.exact_slots_rate_text && <p><a href={armHref(armId)}>{arm.exact_slots_rate_text}</a></p>}
+      {arm.per_image_exact && <p><a href={armHref(armId)}>逐图全对 {arm.per_image_exact[0]}/{arm.per_image_exact[1]}</a></p>}
+      {arm.wilson95 && <p class="report-card__meta"><a href={armHref(armId)}>臂级 Wilson 95% [{formatPercent(arm.wilson95[0])}, {formatPercent(arm.wilson95[1])}]</a></p>}
+    </article>
+  ))}
+</div>
+{report.mode === "text" && <p class="index-note">臂级 Wilson 区间描述 pooled 比例；主效应区间使用案例级配对 bootstrap。601/620 与 557/620 的直接差不是本页主效应，主效应以 ConclusionVersion 原值为准。</p>}
+{report.mode === "hard-gate" && <p class="index-note">硬门区间同样区分臂级 Wilson 与案例级配对效应区间。p=1 不证明无效应，功效与主指标层级限制见上方局限。</p>}
+{report.mode === "exact-slots" && <p class="index-note">这些槽位值来自结果文档的聚合操纵检查。overlay 没有逐图 ScoreRevision；80/80 是 PIL 确定性构造结果，不作为独立盲评胜利。</p>}

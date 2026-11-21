@@ -1,0 +1,139 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import ButtonLink from "../../components/ui/ButtonLink.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+import ConclusionSummary from "../../components/evidence/ConclusionSummary.astro";
+import VersionPanel from "../../components/evidence/VersionPanel.astro";
+import ExperimentDesign from "../../components/evidence/ExperimentDesign.astro";
+import ReportedResults from "../../components/evidence/ReportedResults.astro";
+import RunEvidence from "../../components/evidence/RunEvidence.astro";
+import { loadContent } from "../../lib/content/index.js";
+import {
+  comparisonArmId,
+  conclusionPath,
+  experimentsForConclusion,
+  groupRunsByCase,
+  loadEvidenceData,
+  perCaseForConclusion,
+  presentationFor,
+  promptVersionsForConclusion,
+  runsForConclusion
+} from "../../components/evidence/evidence-model.js";
+import "../../components/evidence/evidence.css";
+
+export async function getStaticPaths() {
+  const conclusions = await loadContent("conclusions");
+  return conclusions.map((conclusion) => ({
+    params: { id: conclusion.conclusion_version_id },
+    props: { conclusionVersionId: conclusion.conclusion_version_id }
+  }));
+}
+
+interface Props {
+  conclusionVersionId: string;
+}
+
+const { conclusionVersionId } = Astro.props;
+const data = await loadEvidenceData();
+const conclusion = data.conclusionById.get(conclusionVersionId);
+if (!conclusion) throw new Error(`未知 ConclusionVersion：${conclusionVersionId}`);
+const presentation = presentationFor(conclusion);
+const experiments = experimentsForConclusion(conclusion, data);
+const promptVersions = promptVersionsForConclusion(conclusion, data);
+const runs = runsForConclusion(conclusion, data);
+const groups = groupRunsByCase(conclusion, data);
+const perCase = perCaseForConclusion(conclusion, experiments);
+const relatedMethods = data.methods.filter((method) => method.conclusion_version_ids.includes(conclusionVersionId));
+const hasMissingScores = runs.some((run) => !(data.scoresByRun.get(run.run_id)?.length));
+const runHref = (caseId: string, armId: string) => {
+  const run = runs.find((item) => item.case_id === caseId && comparisonArmId(conclusion, item) === armId);
+  return run ? `#${run.run_id}` : `#${caseId}`;
+};
+---
+
+<ContentLayout
+  title={presentation.title}
+  eyebrow={`ConclusionVersion / ${conclusionVersionId}`}
+  description={presentation.description}
+  wide
+>
+  <ButtonLink slot="actions" href="/experiments/" variant="secondary">全部结论版本</ButtonLink>
+  <section class="section" id="conclusion">
+    <div class="content-grid">
+      <div class="span-8"><ConclusionSummary conclusion={conclusion} data={data} /></div>
+      <div class="span-4"><VersionPanel conclusion={conclusion} experiments={experiments} promptVersions={promptVersions} /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading title="问题、设计与评分口径" eyebrow="Design" description="实验版本冻结假设、臂、模型和评分口径；探索性存档不升级为新的结论。" />
+    <div class="design-grid">
+      {experiments.map((experiment) => <ExperimentDesign experiment={experiment} conclusion={conclusion} data={data} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading title="臂级汇总与区间" eyebrow="Reported results" description="原始命中数、样本量和臂级区间均链接到对应 Run；主效应只取结论版本中的精确值。" />
+    <ReportedResults conclusion={conclusion} experiments={experiments} data={data} />
+  </section>
+
+  <section class="section" id="cases">
+    <SectionHeading title="逐案例、逐 Run 与逐图评分" eyebrow="Evidence drilldown" description="展开案例即可核对每次运行、结果图和评分修订；图片默认懒加载，960w 大图只在主动点击时打开。" />
+    {perCase.length > 0 && (
+      <div class="case-results">
+        {perCase.map((item) => (
+          <article
+            class="case-result"
+            data-case-result={item.case_id}
+            data-prose-hits={String(item.prose.hits)}
+            data-prose-total={String(item.prose.total)}
+            data-structured-hits={String(item.structured.hits)}
+            data-structured-total={String(item.structured.total)}
+            data-diff-pp={String(item.diff_pp)}
+          >
+            <h3><a href={`#${item.case_id}`}>{item.case_id}</a></h3>
+            <dl>
+              <div><dt>prose</dt><dd><a href={runHref(item.case_id, "prose")}>{item.prose.hits}/{item.prose.total}</a></dd></div>
+              <div><dt>structured</dt><dd><a href={runHref(item.case_id, "structured")}>{item.structured.hits}/{item.structured.total}</a></dd></div>
+              <div><dt>structured − prose</dt><dd><a href={runHref(item.case_id, "structured")}>{item.diff_pp} pp</a></dd></div>
+            </dl>
+          </article>
+        ))}
+      </div>
+    )}
+    <div id="evidence-runs">
+      {hasMissingScores && (
+        <aside class="evidence-boundary" id="score-boundary">
+          <strong>评分证据边界</strong>
+          <p>H2 对照 Run 有 ScoreRevision；overlay Run 只有聚合操纵检查，没有逐图 ScoreRevision。页面保留下钻并明确标注缺口，不生成替代评分 ID。</p>
+        </aside>
+      )}
+      {groups.map(([caseId, caseRuns], index) => (
+        <details class="case-evidence" id={caseId} data-case-id={caseId} open={index === 0}>
+          <summary>
+            <span>{caseId}{data.caseById.get(caseId)?.title ? ` · ${data.caseById.get(caseId)?.title}` : ""}</span>
+            <span>{caseRuns.length} 个证据 Run</span>
+          </summary>
+          <div class="case-evidence__body">
+            {caseRuns.map((run) => {
+              const experiment = data.experimentById.get(run.experiment_version_id);
+              const promptVersion = data.promptById.get(run.prompt_version_id);
+              if (!experiment || !promptVersion) throw new Error(`Run ${run.run_id} 的版本引用不完整`);
+              return <RunEvidence run={run} experiment={experiment} promptVersion={promptVersion} comparisonArmId={comparisonArmId(conclusion, run)} data={data} />;
+            })}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {relatedMethods.length > 0 && (
+    <section class="section">
+      <SectionHeading title="绑定此版本的写法" eyebrow="Methods" description="方法页回读同一 ConclusionVersion，不另建数字来源。" />
+      <div class="cluster">
+        {relatedMethods.map((method) => <ButtonLink href={`/methods/${method.method_id}/`} variant="secondary">{method.title}</ButtonLink>)}
+      </div>
+    </section>
+  )}
+  <link rel="canonical" href={conclusionPath(conclusionVersionId)} />
+</ContentLayout>

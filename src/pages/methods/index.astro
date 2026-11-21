@@ -1,0 +1,48 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import ButtonLink from "../../components/ui/ButtonLink.astro";
+import ConclusionSummary from "../../components/evidence/ConclusionSummary.astro";
+import { conclusionPath, loadEvidenceData } from "../../components/evidence/evidence-model.js";
+import "../../components/evidence/evidence.css";
+
+const data = await loadEvidenceData();
+---
+
+<ContentLayout
+  title="可迁移写法"
+  eyebrow="Methods / evidence-bound"
+  description="按适用条件取用写法，同时查看不适用条件、决策边界和支持它的固定实验版本。"
+  wide
+>
+  <ButtonLink slot="actions" href="/experiments/" variant="secondary">核对实验证据</ButtonLink>
+  <section class="section evidence-stack">
+    {data.methods.map((method) => (
+      <article class="evidence-card" data-method-id={method.method_id}>
+        <p class="evidence-kicker">{method.method_id}</p>
+        <h2>{method.title}</h2>
+        <p class="method-card__rule">{method.transferable_rule}</p>
+        <div class="design-grid">
+          <section>
+            <h3>适用条件</h3>
+            <ul class="method-list">{method.applicable_when.map((item) => <li>{item}</li>)}</ul>
+          </section>
+          <section>
+            <h3>不适用与反例</h3>
+            <ul class="method-list">{method.unsuitable_for.map((item) => <li>{item}</li>)}</ul>
+          </section>
+        </div>
+        <div class="evidence-stack">
+          {method.conclusion_version_ids.map((id) => {
+            const conclusion = data.conclusionById.get(id);
+            if (!conclusion) throw new Error(`方法 ${method.method_id} 引用了无效 CV：${id}`);
+            return <ConclusionSummary conclusion={conclusion} data={data} compact showLimitations={false} />;
+          })}
+        </div>
+        <div class="method-card__footer">
+          <ButtonLink href={`/methods/${method.method_id}/`}>打开写法与决策</ButtonLink>
+          {method.conclusion_version_ids.map((id) => <a href={conclusionPath(id)}><code>{id}</code></a>)}
+        </div>
+      </article>
+    ))}
+  </section>
+</ContentLayout>

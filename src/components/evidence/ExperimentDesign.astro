@@ -1,0 +1,51 @@
+---
+import Tag from "../ui/Tag.astro";
+import type { ConclusionVersion, ExperimentVersion } from "../../lib/content/index.js";
+import { conclusionPath, designOf, evidenceEntryPoint, versionAnchor, type EvidenceData } from "./evidence-model.js";
+
+interface Props {
+  experiment: ExperimentVersion;
+  conclusion: ConclusionVersion;
+  data: EvidenceData;
+}
+
+const { experiment, conclusion, data } = Astro.props;
+const design = designOf(experiment);
+const analysis = experiment.design["analysis"] as { effect?: string; gee?: string } | undefined;
+const entry = evidenceEntryPoint(conclusion, data);
+const path = conclusionPath(conclusion.conclusion_version_id);
+const runHref = entry ? `${path}#${entry.run.run_id}` : `${path}#evidence-runs`;
+const caseHref = design.single_case ? `${path}#${design.single_case}` : `${path}#evidence-runs`;
+---
+
+<article class="design-card" data-design-version={experiment.experiment_version_id}>
+  <div class="cluster">
+    <Tag tone="accent">{experiment.experiment_version_id}</Tag>
+    <Tag tone="outline">{experiment.status}</Tag>
+  </div>
+  <h3>问题与假设</h3>
+  <p>{experiment.hypothesis}</p>
+  <dl>
+    {design.single_case && <div><dt>案例</dt><dd><a href={caseHref}>{design.single_case}</a></dd></div>}
+    {design.reps_per_arm !== undefined && <div><dt>每臂重复</dt><dd><a href={runHref}>{design.reps_per_arm} 张</a></dd></div>}
+    {design.n_images !== undefined && <div><dt>实验图样本</dt><dd><a href={runHref}>{design.n_images} 张</a></dd></div>}
+    <div><dt>模型</dt><dd><code>{experiment.model}</code></dd></div>
+    <div><dt>评分口径</dt><dd><code>{experiment.rubric_version}</code></dd></div>
+  </dl>
+  {design.blinding && <p><strong>盲评：</strong>{design.blinding}</p>}
+  {design.blinded === false && <p><strong>盲评：</strong>未施盲。{design.blind_id_policy}</p>}
+  {design.feasibility_pilot && <p><strong>设计性质：</strong>单案例可行性试点；{design.powered_test === false ? "不是有功效的检验。" : ""}</p>}
+  {design.scoring_notes && <p><strong>评分与复核：</strong>{design.scoring_notes}</p>}
+  {analysis?.effect && <p><strong>主效应口径：</strong>{analysis.effect}</p>}
+  {analysis?.gee && <p><strong>存档边界：</strong>{analysis.gee}</p>}
+  <h3>实验臂</h3>
+  <ul>
+    {experiment.arms.map((arm) => (
+      <li>
+        <strong>{arm.arm_id}</strong> · {arm.label}
+        <br />
+        {arm.prompt_version_ids.map((id) => <a href={`#${versionAnchor("pv", id)}`}><code>{id}</code></a>)}
+      </li>
+    ))}
+  </ul>
+</article>

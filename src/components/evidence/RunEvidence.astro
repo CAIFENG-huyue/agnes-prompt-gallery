@@ -1,0 +1,86 @@
+---
+import Tag from "../ui/Tag.astro";
+import EvidenceImage from "./EvidenceImage.astro";
+import type { ExperimentVersion, PromptVersion, Run, ScoreRevision } from "../../lib/content/index.js";
+import { imageAnchor, versionAnchor, type EvidenceData } from "./evidence-model.js";
+
+interface Props {
+  run: Run;
+  experiment: ExperimentVersion;
+  promptVersion: PromptVersion;
+  comparisonArmId: string;
+  data: EvidenceData;
+}
+
+const { run, experiment, promptVersion, comparisonArmId, data } = Astro.props;
+const revisions = data.scoresByRun.get(run.run_id) ?? [];
+const isUnblindedH2 = experiment.experiment_id === "h2-226";
+---
+
+<article
+  class="run-evidence"
+  id={run.run_id}
+  data-run-id={run.run_id}
+  data-case-id={run.case_id}
+  data-experiment-version={run.experiment_version_id}
+  data-arm-id={run.arm_id}
+  data-comparison-arm-id={comparisonArmId}
+>
+  <header class="run-evidence__header">
+    <div>
+      <p class="evidence-kicker">{run.case_id} · {comparisonArmId}</p>
+      <h3>{run.run_id}</h3>
+    </div>
+    <Tag tone={comparisonArmId === "structured" || comparisonArmId === "overlay" ? "accent" : "outline"}>
+      {comparisonArmId} · r{run.rep}
+    </Tag>
+  </header>
+  <div class="run-evidence__meta">
+    <span>ExperimentVersion <a href={`#${versionAnchor("ev", run.experiment_version_id)}`}><code>{run.experiment_version_id}</code></a></span>
+    <span>PromptVersion <a href={`#${versionAnchor("pv", run.prompt_version_id)}`}><code>{run.prompt_version_id}</code></a></span>
+    <span>{isUnblindedH2 ? "来源运行标识（未施盲）" : "blind_id"} <code>{run.blind_id}</code></span>
+  </div>
+  <p>{promptVersion.change_note}</p>
+  <div class="run-evidence__media">
+    {run.result_asset_ids.map((sourceAssetId, index) => (
+      <EvidenceImage
+        sourceAssetId={sourceAssetId}
+        assets={data.assetsBySource.get(sourceAssetId) ?? []}
+        alt={`${run.case_id} ${comparisonArmId} 第 ${run.rep} 次运行，${sourceAssetId}`}
+        label={run.arm_id === "overlay" ? (index === 0 ? "叠字结果图" : "无字底图") : "实验结果图"}
+      />
+    ))}
+  </div>
+  {revisions.length > 0 ? revisions.map((score: ScoreRevision) => (
+    <section
+      class="score-revision"
+      id={score.score_id}
+      data-score-id={score.score_id}
+      data-score-revision={String(score.revision)}
+      data-run-id={run.run_id}
+      data-current={String(score.is_current)}
+    >
+      <h4>ScoreRevision · {score.score_id}</h4>
+      <dl>
+        <div><dt>revision</dt><dd>{score.revision}</dd></div>
+        <div><dt>G1–G4</dt><dd>{score.g1}/{score.g2}/{score.g3}/{score.g4}</dd></div>
+        <div><dt>逐字命中</dt><dd>{score.text_hits}/{score.text_total}</dd></div>
+        <div><dt>元素命中</dt><dd>{score.elements_hits}/{score.elements_total}</dd></div>
+        <div><dt>count_error</dt><dd>{score.count_error}</dd></div>
+        <div><dt>当前修订</dt><dd>{score.is_current ? "是" : "否"}</dd></div>
+      </dl>
+      <p class="score-revision__notes">{score.notes}</p>
+      <p class="muted">评分者 {score.scorer} · {score.scored_at} · supersedes {score.supersedes_id ?? "无"}</p>
+      <div class="score-revision__links">
+        <span>评分依据图：</span>
+        {score.evidence_asset_ids.map((assetId) => <a href={`#${imageAnchor(assetId)}`}>{assetId}</a>)}
+      </div>
+    </section>
+  )) : (
+    <section class="score-revision score-revision--missing" id={`${run.run_id}-score-missing`} data-score-revision="missing" data-run-id={run.run_id}>
+      <h4>无逐图 ScoreRevision</h4>
+      <p>此 overlay Run 只有结果文档中的聚合操纵检查，没有逐图评分表。保留 Run、叠字图与无字底图下钻，但不补造评分修订，也不把 80/80 解释为独立盲评胜利。</p>
+      <a href="#score-boundary">查看此结论的评分证据边界</a>
+    </section>
+  )}
+</article>

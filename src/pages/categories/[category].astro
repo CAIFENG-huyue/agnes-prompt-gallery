@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths } from "astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import DiscoverySearch from "../../components/discovery/DiscoverySearch.astro";
+import { getCategoryIntentLinks, getDiscoveryData } from "../../components/discovery/discovery-data.js";
+import { loadTaxonomy } from "../../lib/content/index.js";
+import type { Category } from "../../lib/content/types.js";
+
+interface Props {
+  category: Category;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const taxonomy = await loadTaxonomy();
+  return taxonomy.categories.map((category) => ({
+    params: { category: category.category_id },
+    props: { category }
+  }));
+};
+
+const { category } = Astro.props;
+const data = await getDiscoveryData();
+const categoryCards = Object.values(data.cards).filter((card) => card.categoryId === category.category_id);
+const cards = Object.fromEntries(categoryCards.map((card) => [card.caseId, card]));
+const categoryIntents = getCategoryIntentLinks(category);
+---
+
+<ContentLayout
+  title={category.name}
+  eyebrow="按用途进入 · 再按结构筛选"
+  description={`${category.plain_explanation}。常见任务：${category.when_to_use}。`}
+  wide
+>
+  <a class="button button--secondary" slot="actions" href="/categories/">查看五类入口</a>
+  <nav class="discovery-category-tabs" aria-label="切换任务分类">
+    {data.categories.map((item) => (
+      <a
+        href={`/categories/${item.category_id}/`}
+        aria-current={item.category_id === category.category_id ? "page" : undefined}
+      >
+        {item.name}
+      </a>
+    ))}
+  </nav>
+  <DiscoverySearch
+    instanceId={`category-${category.category_id}`}
+    mode="browse"
+    category={category}
+    initialQuery=""
+    initialCards={categoryCards.slice(0, 5)}
+    cards={cards}
+    categoryIntents={categoryIntents}
+  />
+</ContentLayout>

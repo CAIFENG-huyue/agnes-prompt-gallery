@@ -1,0 +1,72 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import ButtonLink from "../../components/ui/ButtonLink.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+import ConclusionSummary from "../../components/evidence/ConclusionSummary.astro";
+import VersionPanel from "../../components/evidence/VersionPanel.astro";
+import {
+  conclusionPath,
+  experimentsForConclusion,
+  loadEvidenceData,
+  loadMethods,
+  promptVersionsForConclusion
+} from "../../components/evidence/evidence-model.js";
+import "../../components/evidence/evidence.css";
+
+export async function getStaticPaths() {
+  const methods = await loadMethods();
+  return methods.map((method) => ({ params: { id: method.method_id }, props: { methodId: method.method_id } }));
+}
+
+interface Props {
+  methodId: string;
+}
+
+const { methodId } = Astro.props;
+const data = await loadEvidenceData();
+const method = data.methods.find((item) => item.method_id === methodId);
+if (!method) throw new Error(`未知方法：${methodId}`);
+const conclusions = method.conclusion_version_ids.map((id) => {
+  const conclusion = data.conclusionById.get(id);
+  if (!conclusion) throw new Error(`方法 ${methodId} 引用了无效 CV：${id}`);
+  return conclusion;
+});
+---
+
+<ContentLayout title={method.title} eyebrow={`Method / ${method.method_id}`} description={method.decision} wide>
+  <ButtonLink slot="actions" href="/methods/" variant="secondary">全部可迁移写法</ButtonLink>
+  <section class="section">
+    <div class="method-decision">
+      <p class="evidence-kicker">可迁移写法</p>
+      <h2>决策与控制目标</h2>
+      <p>{method.transferable_rule}</p>
+      <p>{method.decision}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="design-grid">
+      <article class="design-card">
+        <h2>适用条件</h2>
+        <ul class="method-list">{method.applicable_when.map((item) => <li>{item}</li>)}</ul>
+      </article>
+      <article class="design-card">
+        <h2>不适用与反例</h2>
+        <ul class="method-list">{method.unsuitable_for.map((item) => <li>{item}</li>)}</ul>
+      </article>
+    </div>
+  </section>
+  <section class="section evidence-stack">
+    <SectionHeading title="支持此写法的结论版本" eyebrow="Canonical evidence" description="以下数字直接回读 ConclusionVersion；完整局限与下钻保留在同一永久版本页面。" />
+    {conclusions.map((conclusion) => (
+      <div class="evidence-stack">
+        <ConclusionSummary conclusion={conclusion} data={data} />
+        <ButtonLink href={`${conclusionPath(conclusion.conclusion_version_id)}#evidence-runs`} variant="secondary">逐案例、Run、图片与评分修订</ButtonLink>
+        <VersionPanel
+          conclusion={conclusion}
+          experiments={experimentsForConclusion(conclusion, data)}
+          promptVersions={promptVersionsForConclusion(conclusion, data)}
+        />
+      </div>
+    ))}
+  </section>
+</ContentLayout>

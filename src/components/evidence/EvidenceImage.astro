@@ -1,0 +1,45 @@
+---
+import type { Asset } from "../../lib/content/index.js";
+import { imageAnchor } from "./evidence-model.js";
+
+interface Props {
+  sourceAssetId: string;
+  assets: Asset[];
+  alt: string;
+  label: string;
+}
+
+const { sourceAssetId, assets, alt, label } = Astro.props;
+const variants = new Map(assets.map((asset) => [asset.width, asset]));
+const small = variants.get(360);
+const medium = variants.get(640);
+const large = variants.get(960);
+if (!small || !medium || !large) throw new Error(`证据图 ${sourceAssetId} 缺少 360/640/960 WebP 派生档`);
+const ordered = [small, medium, large];
+const srcset = ordered.map((asset) => `${asset.uri} ${asset.width}w`).join(", ");
+---
+
+<figure
+  class="evidence-image"
+  id={imageAnchor(sourceAssetId)}
+  data-source-asset-id={sourceAssetId}
+  data-asset-ids={ordered.map((asset) => asset.asset_id).join(" ")}
+>
+  <a href={large.uri} aria-label={`打开 ${label} 的 960w 大图：${sourceAssetId}`}>
+    <img
+      src={medium.uri}
+      srcset={srcset}
+      sizes="(max-width: 40rem) 100vw, (max-width: 80rem) 50vw, 34rem"
+      width={medium.width}
+      height={medium.height}
+      style={`--evidence-ratio: ${medium.width} / ${medium.height}`}
+      loading="lazy"
+      decoding="async"
+      alt={alt}
+    />
+  </a>
+  <figcaption>
+    <span>{label} · {sourceAssetId}</span>
+    <a href={large.uri}>960w</a>
+  </figcaption>
+</figure>

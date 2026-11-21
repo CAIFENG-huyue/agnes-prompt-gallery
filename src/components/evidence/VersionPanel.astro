@@ -1,0 +1,64 @@
+---
+import Tag from "../ui/Tag.astro";
+import type { ConclusionVersion, ExperimentVersion, PromptVersion } from "../../lib/content/index.js";
+import { conclusionPath, versionAnchor } from "./evidence-model.js";
+
+interface Props {
+  conclusion: ConclusionVersion;
+  experiments: ExperimentVersion[];
+  promptVersions: PromptVersion[];
+}
+
+const { conclusion, experiments, promptVersions } = Astro.props;
+---
+
+<aside class="version-panel" data-version-panel={conclusion.conclusion_version_id}>
+  <p class="evidence-kicker">永久版本</p>
+  <h2>版本与评分快照</h2>
+  <dl>
+    <div>
+      <dt>ConclusionVersion</dt>
+      <dd><a href={conclusionPath(conclusion.conclusion_version_id)}><code>{conclusion.conclusion_version_id}</code></a></dd>
+    </div>
+    <div>
+      <dt>结论版本号</dt>
+      <dd>v{conclusion.version_no}；此地址不指向 latest，也不被后续版本覆盖</dd>
+    </div>
+    <div>
+      <dt>评分快照 SHA-256</dt>
+      <dd><code>{conclusion.score_snapshot_hash}</code></dd>
+    </div>
+    <div>
+      <dt>生成器</dt>
+      <dd><code>{conclusion.generator_version}</code></dd>
+    </div>
+  </dl>
+  <h3>实验版本</h3>
+  <div class="evidence-stack">
+    {experiments.map((experiment) => (
+      <section id={versionAnchor("ev", experiment.experiment_version_id)} data-experiment-version={experiment.experiment_version_id}>
+        <div class="cluster">
+          <Tag tone="accent">{experiment.experiment_version_id}</Tag>
+          <Tag tone="outline">{experiment.status}</Tag>
+        </div>
+        <p><strong>模型：</strong><code>{experiment.model}</code></p>
+        <p><strong>评分口径：</strong><code>{experiment.rubric_version}</code></p>
+        <p><strong>主指标：</strong><code>{experiment.primary_metric}</code></p>
+      </section>
+    ))}
+  </div>
+  <details>
+    <summary>PromptVersion 与父版本链</summary>
+    <ol class="version-list">
+      {promptVersions.map((prompt) => (
+        <li id={versionAnchor("pv", prompt.prompt_version_id)} data-prompt-version={prompt.prompt_version_id}>
+          <code>{prompt.prompt_version_id}</code> · v{prompt.version_no}
+          <br />
+          <span class="muted">父版本：{prompt.parent_version_id ?? "无"}</span>
+          <br />
+          <span>{prompt.change_note}</span>
+        </li>
+      ))}
+    </ol>
+  </details>
+</aside>

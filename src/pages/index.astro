@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CategoryCard from "../components/ui/CategoryCard.astro";
+import DiscoverySearch from "../components/discovery/DiscoverySearch.astro";
+import { getDiscoveryData } from "../components/discovery/discovery-data.js";
+import { PENGUIN_QUERY } from "../components/discovery/discovery-types.js";
+
+const data = await getDiscoveryData();
+const totalCases = Object.keys(data.cards).length;
+---
+
+<BaseLayout
+  title="Agnes Bench"
+  description="输入画面任务或选择五类用途，查看结构相近的案例、命中原因、共性难点和一条迁移写法。"
+>
+  <div class="discovery-home">
+    <section class="discovery-hero" aria-labelledby="discovery-home-title">
+      <div class="discovery-hero__grid">
+        <div class="discovery-hero__copy">
+          <p class="discovery-hero__eyebrow">AGNES BENCH / {totalCases} CASES</p>
+          <h1 id="discovery-home-title">把画面任务，<br />直接对到结构。</h1>
+          <p>说出要做什么，不必先记住专业分类。候选卡会把结构依据、容易漏掉的地方和一条可迁移写法放在一起。</p>
+        </div>
+        <div class="discovery-hero__index" aria-label="检索排序依次是结构、意图、文本">
+          <span class="discovery-hero__index-label">检索顺序固定</span>
+          <div><strong>结构</strong><span>先看视图、槽位与关系</span></div>
+          <div><strong>意图</strong><span>再看你要完成什么</span></div>
+          <div><strong>文本</strong><span>最后补充标题与用词</span></div>
+          <small>离线静态索引 · 不用相似度百分比混淆判断</small>
+        </div>
+      </div>
+      <ol class="discovery-steps" aria-label="三步打开案例">
+        <li data-step="1">
+          <span>01</span>
+          <div><strong>说任务</strong><p>输入画面目标，或点一张“我想……”分类卡</p></div>
+        </li>
+        <li data-step="2">
+          <span>02</span>
+          <div><strong>看匹配</strong><p>拿到 3–5 张卡，核对命中原因和共性难点</p></div>
+        </li>
+        <li data-step="3">
+          <span>03</span>
+          <div><strong>打开案例</strong><p>进入详情，查看适合边界、决策和迁移写法</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <DiscoverySearch
+      instanceId="home-discovery"
+      mode="search"
+      initialQuery={PENGUIN_QUERY}
+      initialCards={data.penguinCards}
+      cards={data.cards}
+    />
+
+    <section class="discovery-category-section" aria-labelledby="discovery-category-title">
+      <div class="discovery-section-heading">
+        <div>
+          <p class="eyebrow">第 1 步也可以从这里开始</p>
+          <h2 id="discovery-category-title">从“我想……”选一类</h2>
+        </div>
+        <p>分类只负责缩小入口，版式、标注和参考图条件仍可继续筛选。</p>
+      </div>
+      <div class="category-grid discovery-category-grid">
+        {data.categories.map((category) => (
+          <CategoryCard category={category} count={data.categoryCounts[category.category_id]} />
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

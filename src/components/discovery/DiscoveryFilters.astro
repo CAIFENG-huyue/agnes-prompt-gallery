@@ -1,0 +1,35 @@
+---
+import type { DiscoveryFilterOptions } from "./discovery-types.js";
+
+interface Props {
+  instanceId: string;
+  options: DiscoveryFilterOptions;
+}
+
+const { instanceId, options } = Astro.props;
+const groups = [
+  { name: "intent", label: "任务意图", all: "全部意图", options: options.intents },
+  { name: "layout", label: "画面版式", all: "全部版式", options: options.layouts },
+  { name: "input", label: "输入方式", all: "全部输入方式", options: options.inputs },
+  { name: "slot", label: "文字与标注", all: "全部槽位", options: options.slots }
+];
+---
+
+<div class="discovery-filters">
+  {groups.map((group) => (
+    <label class="discovery-filters__field" for={`${instanceId}-${group.name}`}>
+      <span>{group.label}</span>
+      <select
+        id={`${instanceId}-${group.name}`}
+        name={group.name}
+        data-discovery-filter={group.name}
+      >
+        <option value="">{group.all}</option>
+        {group.options.map((option) => <option value={option.value}>{option.label}</option>)}
+      </select>
+    </label>
+  ))}
+  <button class="discovery-filters__reset" type="button" data-discovery-reset>
+    清空条件
+  </button>
+</div>
