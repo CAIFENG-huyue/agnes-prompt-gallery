@@ -1,0 +1,302 @@
+[
+  {
+    "case_id": "case-15",
+    "primary_category_id": "graphic-communication",
+    "rationale": "海报上要求用芥末黄色艺术字写标语“趁年轻，激爽才够味”，标题字与卖点注意层级是核心。"
+  },
+  {
+    "case_id": "case-17",
+    "primary_category_id": "information-diagram",
+    "rationale": "VR 头显 9 层组件的 exploded view 与左右共 8 条 callout_labels 的组件标注绑定是核心。"
+  },
+  {
+    "case_id": "case-22",
+    "primary_category_id": "scene-narrative",
+    "rationale": "前景少女低姿突进、背景少女空中飞踢及木地板碎裂等前景/背景站位与动作描写是核心。"
+  },
+  {
+    "case_id": "case-23",
+    "primary_category_id": "information-diagram",
+    "rationale": "25 级编号台阶、8 条演化级别标签与 6 个关键里程碑的槽位-标注绑定是核心。"
+  },
+  {
+    "case_id": "case-34",
+    "primary_category_id": "information-diagram",
+    "rationale": "4 行圆形头像网格且每格 label 与 description 一一对应（Sun Wukong、Tang Sanzang 等）是核心。"
+  },
+  {
+    "case_id": "case-39",
+    "primary_category_id": "subject-form",
+    "rationale": "核心是 24 张 LINE 贴纸的 quirky hand-drawn 风格与角色造型，无逐格标注绑定要求。"
+  },
+  {
+    "case_id": "case-43",
+    "primary_category_id": "information-diagram",
+    "rationale": "3x3 网格 9 个头像槽位且每个带 label 与外貌描述绑定（Jon Snow、Daenerys 等）是核心。"
+  },
+  {
+    "case_id": "case-50",
+    "primary_category_id": "scene-narrative",
+    "rationale": "跪姿人物居中面向祭坛、小提琴在其右侧、面具悬于天花板的细密空间关系描写是核心。"
+  },
+  {
+    "case_id": "case-57",
+    "primary_category_id": "interface-document",
+    "rationale": "复刻 Twitter/X 推文详情页，含状态栏、actions 操作栏与底部 navigation_bar 的界面操作流是核心。"
+  },
+  {
+    "case_id": "case-78",
+    "primary_category_id": "information-diagram",
+    "rationale": "明确“NOT a finished character illustration”，要求转为姿态-光源分析板并用绿色光晕标记光源与受光区。"
+  },
+  {
+    "case_id": "case-84",
+    "primary_category_id": "information-diagram",
+    "rationale": "要求用不同颜色、线型与箭头区分角色关系并形成清晰视觉层级的关系图谱绑定是核心。"
+  },
+  {
+    "case_id": "case-92",
+    "primary_category_id": "graphic-communication",
+    "rationale": "左侧大型 pop-art 日文标题“雑談/配信”与副标题横幅、LIVE 徽章的封面文字层级是核心。"
+  },
+  {
+    "case_id": "case-98",
+    "primary_category_id": "graphic-communication",
+    "rationale": "layout.typography 明确列出五个位置的主标题、介绍、名字、宣传语与日期的文字排版层级是核心。"
+  },
+  {
+    "case_id": "case-102",
+    "primary_category_id": "information-diagram",
+    "rationale": "要求 legible score breakdown 的赛事数据高光卡，比分细分信息的清晰呈现是核心。"
+  },
+  {
+    "case_id": "case-131",
+    "primary_category_id": "interface-document",
+    "rationale": "landing page mockup 按 Hero/Strategy/Performance/Keys to Success 等 section 组织页面阅读流。"
+  },
+  {
+    "case_id": "case-133",
+    "primary_category_id": "information-diagram",
+    "rationale": "设计网格、概念草图、灵感来源、创意理念、品牌应用、色彩规范等多板块展示板的结构是核心。"
+  },
+  {
+    "case_id": "case-141",
+    "primary_category_id": "graphic-communication",
+    "rationale": "各 banner 的主文案“いちごたっぷり”、副文案与 badges 卖点注意层级是促销传播的核心。"
+  },
+  {
+    "case_id": "case-153",
+    "primary_category_id": "information-diagram",
+    "rationale": "exactly 6 堆配料配 6 个标签、成分徽章与用法说明横幅的配料-标注绑定是核心。"
+  },
+  {
+    "case_id": "case-163",
+    "primary_category_id": "scene-narrative",
+    "rationale": "“李白在抖音直播月下起舞”的人物-场景-动作情节组合是核心。"
+  },
+  {
+    "case_id": "case-204",
+    "primary_category_id": "information-diagram",
+    "rationale": "动画分镜（storyboard）本质是多个格子按顺序排列的结构板。"
+  },
+  {
+    "case_id": "case-205",
+    "primary_category_id": "scene-narrative",
+    "rationale": "古代皇宫 × 快递驿站两个场景元素融合的空间情境是核心。"
+  },
+  {
+    "case_id": "case-216",
+    "primary_category_id": "subject-form",
+    "rationale": "核心是“使用附图中的图案”并“凸显图案的美感”，四款单品是对该图案风格保真的展示。"
+  },
+  {
+    "case_id": "case-217",
+    "primary_category_id": "subject-form",
+    "rationale": "少女的姿态、表情、服装与 CCD 闪光快照风格的质感保真是核心。"
+  },
+  {
+    "case_id": "case-226",
+    "primary_category_id": "information-diagram",
+    "rationale": "“头像下面有他们的谥号和名字”要求多个皇帝头像与文字标签逐一绑定。"
+  },
+  {
+    "case_id": "case-233",
+    "primary_category_id": "subject-form",
+    "rationale": "蒙娜丽莎形象与油画风格的主体保真是核心，喝可乐仅为单一动作。"
+  },
+  {
+    "case_id": "case-237",
+    "primary_category_id": "graphic-communication",
+    "rationale": "明确要求“研究 2025 年作为饮料广告的高 CTA 设计”，卖点与行动引导层级是核心。"
+  },
+  {
+    "case_id": "case-243",
+    "primary_category_id": "interface-document",
+    "rationale": "UI 设计系统包含网页、移动端、卡片、控件、按钮等界面组件。"
+  },
+  {
+    "case_id": "case-258",
+    "primary_category_id": "interface-document",
+    "rationale": "快手 App 内容截图与 iPhone 尺寸的界面结构复刻是核心。"
+  },
+  {
+    "case_id": "case-270",
+    "primary_category_id": "information-diagram",
+    "rationale": "三面図、表情バリエーション、衣装部件分解、色板等官方设定资料卡的槽位结构是核心。"
+  },
+  {
+    "case_id": "case-290",
+    "primary_category_id": "information-diagram",
+    "rationale": "SSR/SR/R 分级、重点卡放大、卡面设计配人物介绍与技能设计的多卡槽位绑定是核心。"
+  },
+  {
+    "case_id": "case-291",
+    "primary_category_id": "graphic-communication",
+    "rationale": "弹珠店宣传单要求豪华彩虹字体与“并列介绍几个虚构新机型”的传播注意层级是核心。"
+  },
+  {
+    "case_id": "case-298",
+    "primary_category_id": "scene-narrative",
+    "rationale": "河流形状构图中天际线、天鹅船、扎基姆桥、渡轮等多元素的空间安排是核心，排版仅为收尾点缀。"
+  },
+  {
+    "case_id": "case-353",
+    "primary_category_id": "information-diagram",
+    "rationale": "左上用户区、右上分析结论、中部试色矩阵、底部总结的信息结构布局与色号模块绑定是核心。"
+  },
+  {
+    "case_id": "case-366",
+    "primary_category_id": "subject-form",
+    "rationale": "写实摄影与 2D 卡通涂鸦叠加的风格融合围绕单人主体与质感展开。"
+  },
+  {
+    "case_id": "case-371",
+    "primary_category_id": "scene-narrative",
+    "rationale": "保留原图同时在 objects/table/shoulder 等处放置多个迷你分身 doing different activities 的空间情节是核心。"
+  },
+  {
+    "case_id": "case-379",
+    "primary_category_id": "information-diagram",
+    "rationale": "6-8 个漫画面板各带 caption 与对白，另有人格特质标签块与 DO/DON'T 分区的结构是核心。"
+  },
+  {
+    "case_id": "case-387",
+    "primary_category_id": "interface-document",
+    "rationale": "Netflix 首页 UI 及 hero 影片标题与剧照的界面呈现是核心。"
+  },
+  {
+    "case_id": "case-389",
+    "primary_category_id": "graphic-communication",
+    "rationale": "Giant headline typography 与 icon-based benefit callouts、motivational copy 的广告注意层级是核心。"
+  },
+  {
+    "case_id": "case-414",
+    "primary_category_id": "subject-form",
+    "rationale": "晨间少女的皮肤 subsurface scattering、细发丝与胶片颗粒等写实人像质感保真是核心。"
+  },
+  {
+    "case_id": "case-417",
+    "primary_category_id": "graphic-communication",
+    "rationale": "复古广告海报的 Bold retro typography、假产品罐、badges 与 price tag 等传播元素是核心。"
+  },
+  {
+    "case_id": "case-418",
+    "primary_category_id": "graphic-communication",
+    "rationale": "顶部粗体城市名配下方当地语言名的两级文字层级与严格 3 色海报版式是核心。"
+  },
+  {
+    "case_id": "case-420",
+    "primary_category_id": "subject-form",
+    "rationale": "以上传人像为外观基准的超广角低角度写实自拍质感是核心。"
+  },
+  {
+    "case_id": "case-422",
+    "primary_category_id": "information-diagram",
+    "rationale": "storyboard 展示板要求 labeled sections、technical annotations、镜头运动标记与角色多视图分区。"
+  },
+  {
+    "case_id": "case-432",
+    "primary_category_id": "scene-narrative",
+    "rationale": "Foreground 珊瑚礁鱼群海龟、Midground 潜水者、Background 海面船只的前中背景空间分层是核心。"
+  },
+  {
+    "case_id": "case-443",
+    "primary_category_id": "information-diagram",
+    "rationale": "五层食材 Top→Bottom 竖直堆叠并以 infographic text labels 与 thin pointer lines 一一绑定是核心。"
+  },
+  {
+    "case_id": "case-446",
+    "primary_category_id": "subject-form",
+    "rationale": "男士肖像的低多边形纸艺雕塑材质与造型风格是核心。"
+  },
+  {
+    "case_id": "case-448",
+    "primary_category_id": "scene-narrative",
+    "rationale": "人物穿行于飞机空战、防空炮、平民躲避等街机化城市场景的空间互动是核心。"
+  },
+  {
+    "case_id": "case-454",
+    "primary_category_id": "graphic-communication",
+    "rationale": "以薯片包为中心 hero 的广告海报构图与 clean premium hierarchy、no clutter 的传播层级是核心。"
+  },
+  {
+    "case_id": "case-466",
+    "primary_category_id": "scene-narrative",
+    "rationale": "明确要求 PRIMARY FOCUS 猫脸与 SECONDARY FOCUS 人脸的双焦点追逐互动构图。"
+  },
+  {
+    "case_id": "case-474",
+    "primary_category_id": "scene-narrative",
+    "rationale": "Hallstatt、Bergen、Kyoto、Santorini 四个目的地的湖畔/港湾/樱川/白墙场景空间构成是核心。"
+  },
+  {
+    "case_id": "case-475",
+    "primary_category_id": "information-diagram",
+    "rationale": "front/side/top/bottom/oblique 技术视图、crease lines、毫米尺寸箭头与材质手写标注的结构板是核心。"
+  },
+  {
+    "case_id": "case-479",
+    "primary_category_id": "subject-form",
+    "rationale": "把参考图重构为杂志纸艺拼贴风格并 Retain the main subject, pose, and overall concept 的风格转换是核心。"
+  },
+  {
+    "case_id": "case-480",
+    "primary_category_id": "subject-form",
+    "rationale": "同一角色的多姿态速写、chibi 涂鸦与 obsessed fan artist 画风的造型表现是核心，且明确 No grid, no order。"
+  },
+  {
+    "case_id": "case-482",
+    "primary_category_id": "graphic-communication",
+    "rationale": "背景中 HEAVY/ON MY OWN MIND/HEAD 的手写排版与 fashion editorial campaign 的注意层级是核心。"
+  },
+  {
+    "case_id": "case-491",
+    "primary_category_id": "subject-form",
+    "rationale": "Y2K 闪光镜面自拍的单人质感与 direct flash/35mm 摄影风格保真是核心。"
+  },
+  {
+    "case_id": "case-494",
+    "primary_category_id": "information-diagram",
+    "rationale": "巴士周围的 battery pack、motor、regenerative braking 等工程 callouts 与 precision annotation lines 绑定是核心。"
+  },
+  {
+    "case_id": "case-499",
+    "primary_category_id": "subject-form",
+    "rationale": "以参考外貌为基准的全身时尚编辑写真与人物质感是核心。"
+  },
+  {
+    "case_id": "case-508",
+    "primary_category_id": "subject-form",
+    "rationale": "篇幅集中在俯拍机位、木漏日光斑与丁达尔效应下肌肤与猫毛的质感表现。"
+  },
+  {
+    "case_id": "case-510",
+    "primary_category_id": "subject-form",
+    "rationale": "Only one icon 的单个 squircle App 图标拟物造型与风格是核心，不涉及页面阅读或操作流。"
+  },
+  {
+    "case_id": "case-541",
+    "primary_category_id": "subject-form",
+    "rationale": "上半保留原照、下半蜡笔速写重绘加手写短语的混合媒介风格转换是核心。"
+  }
+]

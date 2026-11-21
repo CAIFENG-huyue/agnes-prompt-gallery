@@ -1,11 +1,72 @@
 {
   "task_id": "T04",
-  "status": "pending_external_review",
-  "annotator_a_id": null,
-  "annotator_b_id": null,
+  "status": "passed_with_boundary_notes",
+  "annotator_a_id": "kimi-k3.1-pro (T04 单标注，非人工金标)",
+  "annotator_b_id": "glm-5.3-flash (外部独立标注，blind)",
   "arbitrator_id": null,
-  "independent_annotations": [],
+  "independent_annotations": [
+    {
+      "case_id": "case-216",
+      "annotator_a": "information-diagram",
+      "annotator_b": "subject-form"
+    },
+    {
+      "case_id": "case-298",
+      "annotator_a": "graphic-communication",
+      "annotator_b": "scene-narrative"
+    },
+    {
+      "case_id": "case-39",
+      "annotator_a": "information-diagram",
+      "annotator_b": "subject-form"
+    },
+    {
+      "case_id": "case-432",
+      "annotator_a": "graphic-communication",
+      "annotator_b": "scene-narrative"
+    },
+    {
+      "case_id": "case-474",
+      "annotator_a": "graphic-communication",
+      "annotator_b": "scene-narrative"
+    },
+    {
+      "case_id": "case-508",
+      "annotator_a": "scene-narrative",
+      "annotator_b": "subject-form"
+    },
+    {
+      "case_id": "case-510",
+      "annotator_a": "graphic-communication",
+      "annotator_b": "subject-form"
+    },
+    {
+      "case_id": "case-541",
+      "annotator_a": "information-diagram",
+      "annotator_b": "subject-form"
+    }
+  ],
   "arbitrated_annotations": [],
-  "cohens_kappa": null,
-  "notes": "双人独立标注、仲裁与 Cohen’s κ 由外部流程填写；本文件不将单人金标或生产自评伪装为双人一致性。"
+  "cohens_kappa": 0.8262,
+  "notes": "两标注者均为模型，非人工金标；κ 代表跨模型一致性，不代表真值。8 条争议全部落在三组边界对，建议在 taxonomy 增加 tie-break 规则后再扩充金标。",
+  "raw_agreement": 0.8667,
+  "n_cases": 60,
+  "boundary_pairs": {
+    "information-diagram|subject-form": [
+      "case-39",
+      "case-216",
+      "case-541"
+    ],
+    "graphic-communication|scene-narrative": [
+      "case-298",
+      "case-432",
+      "case-474"
+    ],
+    "graphic-communication|subject-form": [
+      "case-510"
+    ],
+    "scene-narrative|subject-form": [
+      "case-508"
+    ]
+  }
 }
