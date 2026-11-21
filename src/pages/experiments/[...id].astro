@@ -68,7 +68,14 @@ const runHref = (caseId: string, armId: string) => {
   <section class="section">
     <SectionHeading title="问题、设计与评分口径" eyebrow="Design" description="实验版本冻结假设、臂、模型和评分口径；探索性存档不升级为新的结论。" />
     <div class="design-grid">
-      {experiments.map((experiment) => <ExperimentDesign experiment={experiment} conclusion={conclusion} data={data} />)}
+      {experiments.map((experiment) => (
+        <ExperimentDesign
+          experiment={experiment}
+          conclusion={conclusion}
+          data={data}
+          promptVersionIds={promptVersions.map((prompt) => prompt.prompt_version_id)}
+        />
+      ))}
     </div>
   </section>
 

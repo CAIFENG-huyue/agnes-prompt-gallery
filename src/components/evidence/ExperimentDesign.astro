@@ -7,9 +7,11 @@ interface Props {
   experiment: ExperimentVersion;
   conclusion: ConclusionVersion;
   data: EvidenceData;
+  promptVersionIds: string[];
 }
 
-const { experiment, conclusion, data } = Astro.props;
+const { experiment, conclusion, data, promptVersionIds } = Astro.props;
+const linkedPromptVersionIds = new Set(promptVersionIds);
 const design = designOf(experiment);
 const analysis = experiment.design["analysis"] as { effect?: string; gee?: string } | undefined;
 const entry = evidenceEntryPoint(conclusion, data);
@@ -44,7 +46,11 @@ const caseHref = design.single_case ? `${path}#${design.single_case}` : `${path}
       <li>
         <strong>{arm.arm_id}</strong> · {arm.label}
         <br />
-        {arm.prompt_version_ids.map((id) => <a href={`#${versionAnchor("pv", id)}`}><code>{id}</code></a>)}
+        {arm.prompt_version_ids.map((id) => (
+          linkedPromptVersionIds.has(id)
+            ? <a href={`#${versionAnchor("pv", id)}`}><code>{id}</code></a>
+            : <code>{id}</code>
+        ))}
       </li>
     ))}
   </ul>
