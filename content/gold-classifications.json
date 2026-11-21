@@ -1,0 +1,542 @@
+[
+  {
+    "case_id": "case-15",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "人物服务于夜宵海报，芥末黄艺术字和宣传语构成传播核心",
+    "evidence_excerpt": "生成一张海报图片……用芥末黄色艺术字写着，趁年轻，激爽才够味！",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-17",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.99,
+    "rationale": "九层爆炸视图与八个部件标注需要逐项对应",
+    "evidence_excerpt": "9 distinct layers of internal components……callout_labels……count: 8",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-22",
+    "primary_category_id": "scene-narrative",
+    "confidence": 0.99,
+    "rationale": "两名格斗者的前后位置、招式和冲击动作是画面核心",
+    "evidence_excerpt": "martial arts battle between two young female fighters……dynamic, low, forward-thrusting stance",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-23",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "演化时间线、八个层级和二十五个编号台阶均需逐槽核对",
+    "evidence_excerpt": "evolutionary timeline infographic……Winding stone staircase with 25 numbered steps",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-34",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.98,
+    "rationale": "多行角色头像有明确数量且每个头像绑定姓名标签",
+    "evidence_excerpt": "character avatar grid……grid of circular portraits with text labels centered below each circle",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-39",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.93,
+    "rationale": "二十四枚贴纸组成需要控制数量的重复槽位集合",
+    "evidence_excerpt": "Create {argument name=\"quantity\" default=\"24\"} LINE stickers",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-43",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.99,
+    "rationale": "三乘三人物网格中九个肖像分别绑定角色名",
+    "evidence_excerpt": "character portrait grid……grid: 3x3……count: 9……text labels below each",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-50",
+    "primary_category_id": "scene-narrative",
+    "confidence": 0.98,
+    "rationale": "人物跪向祭坛、小提琴位置和悬浮面具共同组织空间叙事",
+    "evidence_excerpt": "a single figure……kneels……facing an ornate golden altar……To the right……a wooden violin",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-57",
+    "primary_category_id": "interface-document",
+    "confidence": 1,
+    "rationale": "社交应用的状态栏、帖子操作和底部导航构成完整操作流",
+    "evidence_excerpt": "mobile social media app UI mockup……actions: reply, retweet, like……navigation_bar",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-78",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.99,
+    "rationale": "姿态与光源分析表用箭头、标签和强度区域解释结构",
+    "evidence_excerpt": "pose-and-light analysis sheet……mark the estimated light sources with labels and arrows",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-84",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "角色数量、关系类型、连线和阵营标签是核心核对对象",
+    "evidence_excerpt": "character relationship map……Use different colors, line types, and arrows to distinguish different relationships",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-92",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.98,
+    "rationale": "视频缩略图依靠大号日文字、直播徽章和人物吸引点击",
+    "evidence_excerpt": "YouTube stream thumbnail……large, bold, pop-art Japanese typography……A red LIVE badge",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-98",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "首播缩略图的标题、角色名、宣传语和时间形成传播层级",
+    "evidence_excerpt": "VTuber debut stream thumbnail……large bold text……初配信……stream date and time",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-102",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.97,
+    "rationale": "高光卡片必须准确呈现个人数据、比赛摘要和比分拆分",
+    "evidence_excerpt": "using exact stats and game summary……legible score breakdown……Highlight card",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-131",
+    "primary_category_id": "interface-document",
+    "confidence": 1,
+    "rationale": "落地页按 Hero、策略、数据、社证和行动按钮组织浏览操作流",
+    "evidence_excerpt": "UI/UX landing page mockup……Call to Action……text input field……glowing button",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-133",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.99,
+    "rationale": "品牌识别展示板含网格、草图、色彩、字体、尺寸和错误示例等规范槽位",
+    "evidence_excerpt": "brand identity system presentation board……色彩规范……字体规范……最小使用尺寸……错误使用示例",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-141",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.98,
+    "rationale": "多尺寸草莓广告横幅以主标题、卖点和促销徽章驱动传播",
+    "evidence_excerpt": "promotional banner design set……strawberry advertisement campaign……main_text……badges",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-153",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.96,
+    "rationale": "六堆食材与六个标签必须一一绑定，另有成分和用法槽位",
+    "evidence_excerpt": "exactly 6 distinct piles of ingredients……Attach 6 small brown rectangular labels",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-163",
+    "primary_category_id": "scene-narrative",
+    "confidence": 0.9,
+    "rationale": "提示词只要求李白月下起舞的直播情境，未要求页面控件或操作路径",
+    "evidence_excerpt": "李白在抖音直播月下起舞……Li Bai dancing under the moon during a Douyin livestream",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-204",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.93,
+    "rationale": "动画分镜以多个有序镜头槽位及对应画面为核心",
+    "evidence_excerpt": "生成一张动画分镜生成器……Generate an animation storyboard generator",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-205",
+    "primary_category_id": "scene-narrative",
+    "confidence": 0.97,
+    "rationale": "古代皇宫与快递驿站的空间重构及其中活动构成场景核心",
+    "evidence_excerpt": "生成一张古代皇宫 × 快递驿站……ancient imperial palace × express delivery station",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-216",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.92,
+    "rationale": "四款单品分别绑定配色、排版与穿搭效果，需要逐款核对",
+    "evidence_excerpt": "打造 4 款时尚单品，采用不同的色彩搭配与排版设计，附带穿搭效果图",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-217",
+    "primary_category_id": "subject-form",
+    "confidence": 0.99,
+    "rationale": "单人外貌、表情、服装和 CCD 质感保真是主要要求",
+    "evidence_excerpt": "年轻的韩国女偶像，温柔纯真的外表……手机照片，老式CCD相机美学",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-226",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.97,
+    "rationale": "明朝各帝头像与下方谥号、姓名形成重复的人物标签槽位",
+    "evidence_excerpt": "生成明朝各个皇帝的头像，头像下面有他们的谥号和名字",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-233",
+    "primary_category_id": "subject-form",
+    "confidence": 0.97,
+    "rationale": "蒙娜丽莎这一主体的油画风格与可识别外观保真是核心",
+    "evidence_excerpt": "生成一张蒙娜丽莎喝可乐的油画……oil painting of Mona Lisa drinking cola",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-237",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "饮料商品广告以品牌名称和高 CTA 视觉传播为目标",
+    "evidence_excerpt": "商品广告照片……名称=夏柑SODA……高CTA设计",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-243",
+    "primary_category_id": "interface-document",
+    "confidence": 1,
+    "rationale": "UI 设计系统覆盖网页、移动端、卡片、控件和按钮",
+    "evidence_excerpt": "生成一套UI设计系统，包含网页、移动端、卡片、控件、按钮",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-258",
+    "primary_category_id": "interface-document",
+    "confidence": 0.99,
+    "rationale": "快手内容截图以手机界面中的直播内容呈现为核心",
+    "evidence_excerpt": "生成快手内容截图：主题：直播离婚预告，iPhone尺寸",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-270",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "角色设定表需核对三视图、表情、装备拆解、色板和世界观说明",
+    "evidence_excerpt": "正面、側面、背面の3面図……衣装や装備の詳細パーツを分解……カラーパレット",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-290",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.98,
+    "rationale": "套卡按稀有度分级，每张卡绑定卡面、人物介绍和技能说明",
+    "evidence_excerpt": "按照SSR SR R 分级……包括卡面设计和人物介绍……需要有套卡设计和技能设计",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-291",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "弹珠店宣传单通过奢华彩虹字体和机型卖点吸引注意",
+    "evidence_excerpt": "制作一家弹珠店那种闪闪发光的宣传单……豪华装饰彩虹字体",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-298",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "波士顿城市海报以城市意象、标题和标语构成传播画面",
+    "evidence_excerpt": "一张引人注目的2026年春季波士顿城市海报……SPRING 2026……垂直标语",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-353",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "口红报告将用户分析、推荐色号、试色矩阵和总结分区绑定",
+    "evidence_excerpt": "口红推荐报告信息结构图……每一列 = 一个色号……中部：试色矩阵",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-366",
+    "primary_category_id": "subject-form",
+    "confidence": 0.96,
+    "rationale": "单个女性的摄影外观与二维涂鸦叠加风格是核心，咖啡场景仅作背景",
+    "evidence_excerpt": "A trendy young woman sitting at an outdoor café table……scene blends realistic photography with playful 2D cartoon overlays",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-371",
+    "primary_category_id": "scene-narrative",
+    "confidence": 0.99,
+    "rationale": "多个迷你分身分布在物体和肩部并从事不同活动，空间关系明确",
+    "evidence_excerpt": "multiple small mini version characters……placed naturally around the scene……doing different activities",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-379",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.99,
+    "rationale": "品牌人格图解将六至八个漫画面板、性格标签和宜忌区块结构化",
+    "evidence_excerpt": "comic-style infographic poster……6–8 comic panels……PERSONALITY TRAITS SECTION……DO / DON’T SECTION",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-387",
+    "primary_category_id": "interface-document",
+    "confidence": 1,
+    "rationale": "Netflix 首页 UI 的主视觉是页面浏览结构的一部分",
+    "evidence_excerpt": "Create a Netflix homepage UI featuring a main hero film",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-389",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "健身补剂广告以巨型品牌标题、产品和利益点文案构成传播层级",
+    "evidence_excerpt": "campaign poster……Giant headline typography……Transparent Labs Hydrate……Strong motivational copy",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-414",
+    "primary_category_id": "subject-form",
+    "confidence": 0.99,
+    "rationale": "单人面部、肤质、头发、姿态和晨间光影的写实保真是核心",
+    "evidence_excerpt": "young Japanese woman……Skin subsurface scattering……fine skin texture perceptible",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-417",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "复古猫薄荷广告通过大字标题、产品、价格标签和徽章传播",
+    "evidence_excerpt": "vintage Indonesian catnip advertisement poster……Bold retro typography……price tag",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-418",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "城市旅行海报以地标图形和顶部城市名称建立传播识别",
+    "evidence_excerpt": "vertical mid-century travel poster……Bold sans-serif [CITY NAME] at top",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-420",
+    "primary_category_id": "subject-form",
+    "confidence": 0.99,
+    "rationale": "参考人物身份、姿态、肤质和低角度透视的保真是主要目标",
+    "evidence_excerpt": "Use the uploaded portrait photo as the appearance reference for the person……photorealistic outdoor portrait",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-422",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "十个分镜与角色、环境、摄影机标记和图例均需逐槽对应",
+    "evidence_excerpt": "STORYBOARD (10 CUTS)……CHARACTER REFERENCE……ENVIRONMENT / SET DESIGN……Location elements legend",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-432",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "大堡礁旅行海报以目的地画面和底部目的地文字传播为核心",
+    "evidence_excerpt": "premium editorial travel poster illustration……GREAT BARRIER REEF……AUSTRALIA",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-443",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "塔可五层爆炸结构按上下顺序排列并绑定五个文字标签",
+    "evidence_excerpt": "exploded vertical infographic……Top → Bottom structure……Add clean infographic text labels with thin pointer lines",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-446",
+    "primary_category_id": "subject-form",
+    "confidence": 1,
+    "rationale": "单个人物肖像的低多边形纸艺外观与材质是核心",
+    "evidence_excerpt": "low-poly papercraft portrait of a stylish young man……realistic paper texture",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-448",
+    "primary_category_id": "scene-narrative",
+    "confidence": 1,
+    "rationale": "飞行员、战机、市民和城市战场共同形成多主体动作世界",
+    "evidence_excerpt": "massive WWII fighter planes dogfighting……random civilians casually dodging fighter planes",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-454",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "薯片广告以中心包装、城市风味卖点和商业层级为核心",
+    "evidence_excerpt": "premium travel-food advertisement poster……chips packet placed at the bottom center as the main hero object",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-466",
+    "primary_category_id": "scene-narrative",
+    "confidence": 1,
+    "rationale": "猫与人物双焦点的前后追逐和互动张力是场景核心",
+    "evidence_excerpt": "TWO focal subjects……the subject is charging forward……create strong interaction and pursuit tension",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-474",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.99,
+    "rationale": "四城旅行海报系列以目的地名称和城市视觉识别为核心",
+    "evidence_excerpt": "Minimalist flat travel poster illustration series……elegant typography with destination names",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-475",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "包装结构板需核对多视图、折线、接缝、毫米尺寸和材料标注",
+    "evidence_excerpt": "Surrounded by technical views……crease lines, seam details, and size arrows in millimeters……materials and finishes",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-479",
+    "primary_category_id": "subject-form",
+    "confidence": 0.95,
+    "rationale": "参考主体、姿态和概念的纸艺拼贴风格重绘是核心，短句仅为辅助",
+    "evidence_excerpt": "Retain the main subject, pose, and overall concept……reimagine it as a warm, hand-edited collage",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-480",
+    "primary_category_id": "subject-form",
+    "confidence": 0.91,
+    "rationale": "多种姿态和表情是角色风格探索，且明确要求无网格、无顺序，不构成逐槽核对",
+    "evidence_excerpt": "full-body poses, tiny chibi doodles, exaggerated expressions……No grid, no order",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-482",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.95,
+    "rationale": "时尚 Campaign 将概念肖像与 HEAVY、HEAD 等背景字体整合为传播画面",
+    "evidence_excerpt": "Typography integrated into the background……HEAVY……ON MY OWN MIND……HEAD",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-491",
+    "primary_category_id": "subject-form",
+    "confidence": 0.99,
+    "rationale": "单人对镜自拍的外观、闪光质感和 Y2K 摄影风格是核心",
+    "evidence_excerpt": "A moody late-night mirror selfie……young woman……Y2K flash photography",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-494",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "电动巴士工程指南包含大量技术标注、规格、图表和生命周期模块",
+    "evidence_excerpt": "sustainable transportation infographic……Surround the bus with engineering callouts……Technical Specifications",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-499",
+    "primary_category_id": "subject-form",
+    "confidence": 0.99,
+    "rationale": "同一参考人物的全身穿搭、外貌和时尚摄影质感是主要目标",
+    "evidence_excerpt": "full-body editorial fashion photograph……same appearance as the reference……realistic lighting",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-508",
+    "primary_category_id": "scene-narrative",
+    "confidence": 0.97,
+    "rationale": "女性蹲下逗弄橘猫并仰头，人物与猫的动作和光线关系构成场景",
+    "evidence_excerpt": "她蹲在花园小径上，轻轻逗弄一只毛茸茸的橘猫……当她仰头朝向镜头时",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-510",
+    "primary_category_id": "graphic-communication",
+    "confidence": 0.92,
+    "rationale": "macOS 应用图标以 Bichon Shop 的品牌识别和单一视觉符号为核心",
+    "evidence_excerpt": "A macOS app icon for an app named Bichon Shop……A single squircle icon",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  },
+  {
+    "case_id": "case-541",
+    "primary_category_id": "information-diagram",
+    "confidence": 0.9,
+    "rationale": "严格的上下五十比五十分区将原照片与对应重绘、短句绑定到两个槽位",
+    "evidence_excerpt": "vertical mixed-media memory card with a strict 50/50 split……top half……bottom half",
+    "classifier_version": "manual-gold-v1",
+    "review_status": "reviewed"
+  }
+]

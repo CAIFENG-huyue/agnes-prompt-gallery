@@ -1,0 +1,11 @@
+{
+  "task_id": "T04",
+  "status": "pending_external_review",
+  "annotator_a_id": null,
+  "annotator_b_id": null,
+  "arbitrator_id": null,
+  "independent_annotations": [],
+  "arbitrated_annotations": [],
+  "cohens_kappa": null,
+  "notes": "双人独立标注、仲裁与 Cohen’s κ 由外部流程填写；本文件不将单人金标或生产自评伪装为双人一致性。"
+}
