@@ -1,0 +1,61 @@
+{
+  "task_id": "T05",
+  "status": "pending_external_review",
+  "coverage": {
+    "case_count": 541,
+    "fingerprint_count": 541,
+    "intent_count": 541,
+    "gold_fingerprint_count": 60
+  },
+  "self_assessment": {
+    "key_fields": {
+      "subject_count": {
+        "passed": 60,
+        "total": 60,
+        "rate": 1
+      },
+      "layout": {
+        "passed": 60,
+        "total": 60,
+        "rate": 1
+      },
+      "text_slots": {
+        "passed": 60,
+        "total": 60,
+        "rate": 1
+      },
+      "input_mode": {
+        "passed": 60,
+        "total": 60,
+        "rate": 1
+      },
+      "ratio": {
+        "passed": 60,
+        "total": 60,
+        "rate": 1
+      }
+    },
+    "relations": {
+      "true_positive": 111,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    }
+  },
+  "annotator_a_id": null,
+  "annotator_b_id": null,
+  "arbitrator_id": null,
+  "independent_annotations": [],
+  "arbitrated_annotations": [],
+  "key_field_agreement": {
+    "subject_count": null,
+    "layout": null,
+    "text_slots": null,
+    "input_mode": null,
+    "ratio": null,
+    "relations_f1": null
+  },
+  "notes": "self_assessment 是本地确定性规则对 rule-derived-gold-v1 的自评；金标由同一规则生成，并已对抽样案例复核、修正负向提示词、子串误命中与 JSON 键名等明显误检，不是双人独立标注。双人独立标注、仲裁、关键字段一致率与 relations F1 由外部流程填写。"
+}

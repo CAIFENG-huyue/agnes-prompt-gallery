@@ -1,0 +1,1721 @@
+[
+  {
+    "case_id": "case-15",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "主题海报版式设计 生成一张海报图片，图片人物是一个19岁的中国少女，... 生成一张海报图片，图片人物是一个19岁的中国少女，黑色直长发，很开心的在夜宵摊上喝啤酒吃小龙虾。海报上用芥末黄色艺术字写着，趁年轻，激爽才够味！",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-17",
+    "subject_count": 1,
+    "layout": "exploded-view",
+    "relations": [
+      {
+        "source_slot": "assembly",
+        "relation": "decomposed_into",
+        "target_slot": "component-layers"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "branded_by",
+        "target_slot": "brand"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "brand",
+        "role": "brand",
+        "required": true
+      },
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      },
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "界面交互设计图 type { \"type\": \"exploded view product diagram poster\", \"subject\": \"VR headset\", \"style\": \"clean high-tech 3D render, studio lighting, glowing acc",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-22",
+    "subject_count": 2,
+    "layout": "spatial-scene",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "efault=\"high-impact martial arts battle\"} between two young female fighters in a {argument name=\"setting\" default=\"traditional wooden martial arts dojo\"}. In the foreground,",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-23",
+    "subject_count": 25,
+    "layout": "modular-infographic",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "information-modules"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "process",
+        "relation": "explained_by",
+        "target_slot": "instructions"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "instructions",
+        "role": "instruction",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "信息图可视化设计 type { \"type\": \"evolutionary timeline infographic\", \"instruction\": \"Using REFERENCE_0 as a structural base, tr",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-34",
+    "subject_count": 11,
+    "layout": "modular-grid",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "repeated-slots"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "subtle texture\", \"format\": \"grid of circular portraits with text labels centered below each circle\", \"rows\": [ { \"count\": 4, \"items\": [ {",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-39",
+    "subject_count": 24,
+    "layout": "modular-grid",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "repeated-slots"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "综合应用场景图 quantity Create {argument name=\"quantity\" default=\"24\"} LINE stickers of {argument name=\"animals\" default=\"animals\"} in a quirky hand-drawn style. Target {argument name=\"target audience\" default=\"Japanese Gen Z\"}",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-43",
+    "subject_count": 9,
+    "layout": "modular-grid",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "repeated-slots"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "插画艺术创作图 type { \"type\": \"character portrait grid\", \"theme\": \"{argument name=\\\"theme\\\" default=\\\"Game of Thrones characters\\\"}\", \"style\": \"{argument name=\\\"art",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-50",
+    "subject_count": 1,
+    "layout": "spatial-scene",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "fault=\"dark fantasy\"} aesthetic. In the center, a single figure wearing a {argument name=\"clothing\" default=\"long white robe\"} kneels on a highly reflective stone floor, facing",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-57",
+    "subject_count": 0,
+    "layout": "ui-page",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "ui-page",
+        "relation": "operated_through",
+        "target_slot": "ui_controls"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "badged_by",
+        "target_slot": "badge"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "scheduled_by",
+        "target_slot": "temporal"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "ui_controls",
+        "role": "ui_control",
+        "required": true
+      },
+      {
+        "slot_id": "badge",
+        "role": "badge",
+        "required": true
+      },
+      {
+        "slot_id": "temporal",
+        "role": "temporal_label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "界面交互设计图 type { \"type\": \"mobile social media app UI mockup\", \"platform\": \"Twitter/X dark mode\", \"header\": { \"status_bar\": \"time 19:28, bird icon, signal, wifi, bat",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-78",
+    "subject_count": 1,
+    "layout": "analysis-sheet",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "pose",
+        "relation": "analyzed_by",
+        "target_slot": "light-annotations"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "annotations"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "annotations",
+        "role": "annotation",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "ntity - emotional expression [FIGURE CONVERSION] single rough mannequin-like human figure white body contour lines white internal construction lines simple mannequin head no f",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-84",
+    "subject_count": 6,
+    "layout": "network-map",
+    "relations": [
+      {
+        "source_slot": "character-nodes",
+        "relation": "connected_by",
+        "target_slot": "relationship-edges"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "关系图谱信息图 theme Please generate a high-design character relationship map poster based on {argument name=\"theme\" default=\"Demon Sl",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-92",
+    "subject_count": 1,
+    "layout": "ui-page",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "badged_by",
+        "target_slot": "badge"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      },
+      {
+        "slot_id": "badge",
+        "role": "badge",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "elow is a pink banner reading \"{argument name=\"subtitle text\" default=\"今夜もゆるっとトーク!\"}\". A red \"LIVE\" badge sits in the top left. Floating speech bubbles, stars, and hearts deco",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-98",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "branded_by",
+        "target_slot": "brand"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "scheduled_by",
+        "target_slot": "temporal"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "brand",
+        "role": "brand",
+        "required": true
+      },
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      },
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      },
+      {
+        "slot_id": "temporal",
+        "role": "temporal_label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "主题海报版式设计 type { \"type\": \"VTuber debut stream thumbnail\", \"character\": { \"appearance\": \"anime girl, long dark purple",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-102",
+    "subject_count": 0,
+    "layout": "data-card",
+    "relations": [
+      {
+        "source_slot": "main-view",
+        "relation": "described_by",
+        "target_slot": "body"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "quantified_by",
+        "target_slot": "data"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "body",
+        "role": "description",
+        "required": true
+      },
+      {
+        "slot_id": "data",
+        "role": "data_value",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "信息图可视化设计 performance description Search the web for {argument name=\"performance description\" default=\"this week’s standout",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-131",
+    "subject_count": 0,
+    "layout": "ui-page",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "branded_by",
+        "target_slot": "brand"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      },
+      {
+        "source_slot": "process",
+        "relation": "explained_by",
+        "target_slot": "instructions"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "quantified_by",
+        "target_slot": "data"
+      },
+      {
+        "source_slot": "ui-page",
+        "relation": "operated_through",
+        "target_slot": "ui_controls"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "brand",
+        "role": "brand",
+        "required": true
+      },
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      },
+      {
+        "slot_id": "instructions",
+        "role": "instruction",
+        "required": true
+      },
+      {
+        "slot_id": "data",
+        "role": "data_value",
+        "required": true
+      },
+      {
+        "slot_id": "ui_controls",
+        "role": "ui_control",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "界面交互设计图 type { \"type\": \"UI/UX landing page mockup\", \"theme\": \"dark mode, sleek modern aesthetic, glassmorphism, {argument name=\\\"primary accent col",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-133",
+    "subject_count": 1,
+    "layout": "ui-page",
+    "relations": [
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "dimensions"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "branded_by",
+        "target_slot": "brand"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "described_by",
+        "target_slot": "body"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "scheduled_by",
+        "target_slot": "temporal"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "dimensions",
+        "role": "dimension_annotation",
+        "required": true
+      },
+      {
+        "slot_id": "brand",
+        "role": "brand",
+        "required": true
+      },
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      },
+      {
+        "slot_id": "body",
+        "role": "description",
+        "required": true
+      },
+      {
+        "slot_id": "temporal",
+        "role": "temporal_label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "ty system presentation board\", \"header\": { \"title\": \"品牌视觉识别系统 BRAND IDENTITY SYSTEM\", \"slogan\": \"爱它·懂它·陪伴它\" }, \"main_logo\": { \"text\": \"{argument name=\\\"brand",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-141",
+    "subject_count": 1,
+    "layout": "modular-grid",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "repeated-slots"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "badged_by",
+        "target_slot": "badge"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "badge",
+        "role": "badge",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "1:1",
+    "confidence": 0.99,
+    "evidence_excerpt": "ies\", \"main_text\": \"{argument name=\\\"main headline\\\" default=\\\"いちごたっぷり\\\"}\", \"sub_text\": [\"笑顔あふれる、甘〜いひととき♪\", \"とびきりおいしい！\", \"ひと粒で、しあわせ広がる♡\", \"あまっ♡\", \"旬のおいしさをお届け！\"],",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-153",
+    "subject_count": 1,
+    "layout": "packaging-label",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      },
+      {
+        "source_slot": "process",
+        "relation": "explained_by",
+        "target_slot": "instructions"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "badged_by",
+        "target_slot": "badge"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      },
+      {
+        "slot_id": "instructions",
+        "role": "instruction",
+        "required": true
+      },
+      {
+        "slot_id": "badge",
+        "role": "badge",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "1:1",
+    "confidence": 0.99,
+    "evidence_excerpt": "主题海报版式设计 main headline Using REFERENCE_0 as the base style and preserving the central chicken illustration, transform the im",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-163",
+    "subject_count": 0,
+    "layout": "spatial-scene",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "诗仙李白月下直播起舞 诗仙李白月下直播起舞 [中文] 李白在抖音直播月下起舞 [English] Li Bai dancing under the moon during a Douyin livestream",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-204",
+    "subject_count": 0,
+    "layout": "storyboard-sheet",
+    "relations": [
+      {
+        "source_slot": "panel-sequence",
+        "relation": "ordered_as",
+        "target_slot": "storyboard-panels"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "智能动画分镜生成器 智能动画分镜生成器 [中文] 生成一张动画分镜生成器 [English] Generate an animation storyboard generator",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-205",
+    "subject_count": 0,
+    "layout": "spatial-scene",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "皇宫深处的御用快递驿站 皇宫深处的御用快递驿站 [中文] 生成一张古代皇宫 × 快递驿站 [English] Generate an ancient imperial palace × express delivery station",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-216",
+    "subject_count": 4,
+    "layout": "modular-grid",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "repeated-slots"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_and_image",
+    "ratio": "2:3",
+    "confidence": 0.99,
+    "evidence_excerpt": "雅致图案四款时尚单品设计 雅致图案四款时尚单品设计 [中文] 使用附图中的图案，由专业设计师打造 4 款时尚单品，采用不同的色彩搭配与排版设计，附带穿搭效果图。以雅致的构图凸显图案的美感。格式为 2:3，希望将图像生成模型从 duct-tape-1 指定为 duct-tape-2、3。 [English] Use the patterns in the attached image, crafted by professional de",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-217",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "9:16",
+    "confidence": 0.99,
+    "evidence_excerpt": "昏暗室内纯真少女的意外回眸 昏暗室内纯真少女的意外回眸 [中文] { \"prompt\": { \"style_and_tech\": \"手机照片，老式CCD相机美学，刺眼的闪光灯，颗粒感，昏暗杂乱的室内光线，抓拍快照感觉，轻微的运动模糊\", \"subject\": \"年轻的韩国女偶像，温柔纯真的外表\", \"pose\": \"动作进行中，微微转头看向镜头，仿佛刚刚注意到正在被拍照，肩膀微微耸起\", \"expression\": \"眼睛微微睁大，因惊",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-226",
+    "subject_count": 16,
+    "layout": "modular-infographic",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "information-modules"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "古风明朝帝王群像长卷 古风明朝帝王群像长卷 [中文] 根据上传图片的风格，生成明朝各个皇帝的头像，头像下面有他们的谥号和名字 [English] Based on the style of the uploaded image, generate portraits of the emperors",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-233",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "蒙娜丽莎畅饮可乐的趣味油画 蒙娜丽莎畅饮可乐的趣味油画 [中文] 生成一张蒙娜丽莎喝可乐的油画。 [English] Generate an oil painting of Mona Lisa drinking cola.",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-237",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "3:4",
+    "confidence": 0.99,
+    "evidence_excerpt": "夏日柑橘苏打高转化广告图 夏日柑橘苏打高转化广告图 [中文] 图像生成: 商品广告照片, 适合夏天的季节商品, 碳酸饮料, 名称=\"夏柑SODA\", 形状=PET瓶500ml, 研究2025年作为饮料广告的高CTA设计后设计并生成图像规格, 宽高比3:4 [English] Image generation: Product advertising photo, Seasonal product suitable for summer,",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-243",
+    "subject_count": 0,
+    "layout": "ui-system",
+    "relations": [
+      {
+        "source_slot": "ui-page",
+        "relation": "operated_through",
+        "target_slot": "ui_controls"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "ui_controls",
+        "role": "ui_control",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "定制专属风格界面设计系统 定制专属风格界面设计系统 [中文] 用xx风格帮我生成一套UI设计系统，包含网页、移动端、卡片、控件、按钮 以及其它 [English] Generate a UI design system for me in xx style, including web pages, mobile, cards, controls, buttons, and others",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-258",
+    "subject_count": 0,
+    "layout": "ui-page",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "快手直播离婚预告手机截图 快手直播离婚预告手机截图 [中文] 生成快手内容截图：主题：直播离婚预告，iPhone尺寸 [English] Generate Kuaishou content screenshot: Theme: Live divorce announcement, iPhone size",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-270",
+    "subject_count": 1,
+    "layout": "multi-view-grid",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "complemented_by",
+        "target_slot": "detail-views"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_and_image",
+    "ratio": "16:9",
+    "confidence": 0.99,
+    "evidence_excerpt": "信息图可视化设计 官方角色设定资料图鉴 [中文] このキャラクターと背景を元に、 公式設定資料のようなキャラクターシートを作成してください。 ・正面、側面、背面の3面図を含める ・キャラクターの表情バリエーションを追加 ・衣装や装備の詳細パーツを",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-290",
+    "subject_count": 1,
+    "layout": "card-collection",
+    "relations": [
+      {
+        "source_slot": "collection",
+        "relation": "contains",
+        "target_slot": "cards"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "described_by",
+        "target_slot": "body"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      },
+      {
+        "slot_id": "body",
+        "role": "description",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "古风诗人镭射典藏卡牌 古风诗人镭射典藏卡牌 [中文] 为中国古代诗人设计一套游戏卡片，并按照SSR SR R 分级，重点卡片有放大展示的效果，包括卡面设计和人物介绍，有很高级的游戏卡片质感，稀有卡片还会有特色的光影例如镭射效果 需要有套卡设计和技能设计，并附带较为详细的说明 [English] Design a set of game cards for ancient Chinese poets, classified by SSR ",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-291",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "3:4",
+    "confidence": 0.99,
+    "evidence_excerpt": "极致奢华的弹珠店梦幻宣传单 极致奢华的弹珠店梦幻宣传单 [中文] 以 3:4 比例制作一家弹珠店那种闪闪发光的宣传单。放置一个真实、精细的现代可爱日本女性。充分利用闪闪发光、立体感丰富的豪华装饰彩虹字体等，务必做到极致奢华。并列介绍几个不存在的虚构新机型。 [English] Create a sparkling flyer like those of a pachinko parlor at a 3:4 aspect ratio. P",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-298",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "subtitled_by",
+        "target_slot": "subtitle"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "subtitle",
+        "role": "subtitle",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "9:16",
+    "confidence": 0.99,
+    "evidence_excerpt": "梦幻波士顿春季城市海报 梦幻波士顿春季城市海报 [中文] 一张引人注目的2026年春季波士顿城市海报，具有优雅的庆典氛围和大胆的当代设计。在干净的米白色纹理背景上，带有大面积的留白，一个微型的单人赛艇手在图像右下角一条狭窄的反光水带上划行。船桨划出的尾波以动态的",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-353",
+    "subject_count": 1,
+    "layout": "modular-infographic",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "information-modules"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "branded_by",
+        "target_slot": "brand"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "brand",
+        "role": "brand",
+        "required": true
+      },
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "品牌口红推荐报告信息图 品牌口红推荐报告信息图 一、系统角色 你是一个专业美妆顾问 + 人脸分析系统 + 品牌视觉设计系统。 你的任务是：基于用户上传自拍与指定口红品牌，生成一张具有品牌调性的“口红推荐报告信息结构图”。 二、输入参数 用户图像：{用户自拍}",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-366",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "咖啡馆写实照片与 2D 涂鸦叠加 咖啡馆写实照片与 2D 涂鸦叠加 A trendy young woman sitting at an outdoor café table, holding a hot coffee cup near her lips. She has short curly black hair and wears oversized tinted sunglasses, a cropped beige sweat",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-371",
+    "subject_count": 5,
+    "layout": "freeform-collage",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "annotations"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "captioned_by",
+        "target_slot": "caption"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "annotations",
+        "role": "annotation",
+        "required": true
+      },
+      {
+        "slot_id": "caption",
+        "role": "caption",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "t, identity, pose, lighting, and background. Add multiple small “mini version” characters of the same person (chibi / doll-like style), placed naturally around the scene (on obj",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-379",
+    "subject_count": 1,
+    "layout": "modular-infographic",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "information-modules"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "branded_by",
+        "target_slot": "brand"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "captioned_by",
+        "target_slot": "caption"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "brand",
+        "role": "brand",
+        "required": true
+      },
+      {
+        "slot_id": "caption",
+        "role": "caption",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "4:5",
+    "confidence": 0.99,
+    "evidence_excerpt": "品牌人格漫画信息图 品牌人格漫画信息图 Using the uploaded logo, create a highly detailed, comic-style infographic poster: “What This Brand Feels Li",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-387",
+    "subject_count": 1,
+    "layout": "ui-page",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "x homepage UI featuring a main hero film with its title and still generated from the uploaded reference.",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-389",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "captioned_by",
+        "target_slot": "caption"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "caption",
+        "role": "caption",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "Hydrate 健身补剂 Campaign Create a striking campaign poster that stops people mid-scroll for Transparent Labs Hydrate. Bold high-impact supplement advertisement with dramatic bla",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-414",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "r early 20s. Almond-shaped eyes with soft natural single eyelids, slightly elongated eye corners, still carrying the heaviness of just waking. Straight refined nose with a deli",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-417",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "badged_by",
+        "target_slot": "badge"
+      },
+      {
+        "source_slot": "product",
+        "relation": "priced_by",
+        "target_slot": "price"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "badge",
+        "role": "badge",
+        "required": true
+      },
+      {
+        "slot_id": "price",
+        "role": "price",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "realistic vintage Indonesian catnip advertisement poster, retro 1970s paper texture, distressed print, faded colors. A black-and-white tuxedo cat wearing cute vintage housewife",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-418",
+    "subject_count": 0,
+    "layout": "poster-hierarchy",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "中世纪城市旅行海报 中世纪城市旅行海报 Create a vertical mid-century travel poster for [CITY NAME] featuring [LANDMARK]. Use a strict 3-color palett",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-420",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_and_image",
+    "ratio": "3:4",
+    "confidence": 0.99,
+    "evidence_excerpt": "红跑道低角度夏日人像 红跑道低角度夏日人像 Use the uploaded portrait photo as the appearance reference for the person. Create a bright photorealistic o",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-422",
+    "subject_count": 1,
+    "layout": "storyboard-sheet",
+    "relations": [
+      {
+        "source_slot": "panel-sequence",
+        "relation": "ordered_as",
+        "target_slot": "storyboard-panels"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "annotations"
+      },
+      {
+        "source_slot": "ui-page",
+        "relation": "operated_through",
+        "target_slot": "ui_controls"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "annotations",
+        "role": "annotation",
+        "required": true
+      },
+      {
+        "slot_id": "ui_controls",
+        "role": "ui_control",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "16:9",
+    "confidence": 0.99,
+    "evidence_excerpt": "冬季生存惊悚 Storyboard 冬季生存惊悚 Storyboard Cinematic Survival Thriller Storyboard Prompt Create a premium cinematic storyboard presentation she",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-432",
+    "subject_count": 2,
+    "layout": "poster-hierarchy",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "3:4",
+    "confidence": 0.99,
+    "evidence_excerpt": "大堡礁复古旅行海报 大堡礁复古旅行海报 Create a premium editorial travel poster illustration of the Great Barrier Reef, Australia. Style: Flat vecto",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-443",
+    "subject_count": 1,
+    "layout": "exploded-view",
+    "relations": [
+      {
+        "source_slot": "assembly",
+        "relation": "decomposed_into",
+        "target_slot": "component-layers"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "labels"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "labels",
+        "role": "label",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "塔可爆炸拆解信息图 塔可爆炸拆解信息图 Create a hyper-realistic exploded vertical infographic composition of tacos. Top → Bottom structure: Fresh L",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-446",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "男士肖像 Create a highly detailed low-poly papercraft portrait of a stylish young man, designed like an origami paper sculpture. The character has curly dark brown hair, a trimmed be",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-448",
+    "subject_count": 2,
+    "layout": "spatial-scene",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "4:5",
+    "confidence": 0.99,
+    "evidence_excerpt": "1942 空战街机电影城 1942 空战街机电影城 Ultra-realistic cinematic “1942 City” scene, retro WWII arcade-shooter-inspired metropolis in real life, intense aerial-war atmosphere, vertical 4:5 editorial composition Male, exact face, vinta",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-454",
+    "subject_count": 1,
+    "layout": "poster-hierarchy",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "旅行美食薯片广告海报 旅行美食薯片广告海报 Ultra-detailed premium travel-food advertisement poster for [CITY/COUNTRY], vertical composition, inspired b",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-466",
+    "subject_count": 2,
+    "layout": "spatial-scene",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "y toward the camera. Composition must prioritize TWO focal subjects: 1. PRIMARY FOCUS → the cat's face 2. SECONDARY FOCUS → the human subject's face The cat dominates the",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-474",
+    "subject_count": 4,
+    "layout": "poster-series",
+    "relations": [
+      {
+        "source_slot": "series",
+        "relation": "contains",
+        "target_slot": "destination-posters"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "四城极简旅行海报系列 四城极简旅行海报系列 Minimalist flat travel poster illustration series of iconic destinations around the world, clean vector ar",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-475",
+    "subject_count": 1,
+    "layout": "multi-view-grid",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "complemented_by",
+        "target_slot": "detail-views"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "dimensions"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "described_by",
+        "target_slot": "materials"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "annotations"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "dimensions",
+        "role": "dimension_annotation",
+        "required": true
+      },
+      {
+        "slot_id": "materials",
+        "role": "material_notes",
+        "required": true
+      },
+      {
+        "slot_id": "annotations",
+        "role": "annotation",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "企鹅造型包装结构板 企鹅造型包装结构板 Using the attached image, create an illustration sheet of professional industrial design packaging for the pa",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-479",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "titled_by",
+        "target_slot": "title"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "captioned_by",
+        "target_slot": "caption"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "title",
+        "role": "title",
+        "required": true
+      },
+      {
+        "slot_id": "caption",
+        "role": "caption",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "3:4",
+    "confidence": 0.99,
+    "evidence_excerpt": "backgrounds, excessive collage elements, a luxury poster atmosphere, dark tones, harsh shadows, and sloppy text.",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-480",
+    "subject_count": 1,
+    "layout": "freeform-collage",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "粉丝速写本角色页 粉丝速写本角色页 Draw me as if an obsessed fan artist filled an entire sketchbook page - messy, overlapping, full-body poses, tiny chibi doodles, exaggerated expressions, and random close-ups of their hands or eyes. Whi",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-482",
+    "subject_count": 2,
+    "layout": "poster-hierarchy",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "paign 自我凝视超现实 Campaign Ultra-realistic conceptual portrait of a young man with curly hair and light stubble, wearing yellow-tinted rectangular sunglasses, a beige minimal t-shirt",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-491",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "Y2K 高楼浴室镜面自拍 Y2K 高楼浴室镜面自拍 A moody late-night mirror selfie captured in a luxury high-rise bathroom overlooking a glowing city skyline. A young woman with long, slightly messy black hair leans forward over a marble sink, ",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-494",
+    "subject_count": 1,
+    "layout": "modular-infographic",
+    "relations": [
+      {
+        "source_slot": "canvas",
+        "relation": "partitioned_into",
+        "target_slot": "information-modules"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "annotations"
+      },
+      {
+        "source_slot": "canvas",
+        "relation": "quantified_by",
+        "target_slot": "data"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "annotations",
+        "role": "annotation",
+        "required": true
+      },
+      {
+        "slot_id": "data",
+        "role": "data_value",
+        "required": true
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "1:1",
+    "confidence": 0.99,
+    "evidence_excerpt": "电动巴士工程信息图 电动巴士工程信息图 Create a premium square “reference-style sustainable transportation infographic” centered around a futuristic",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-499",
+    "subject_count": 1,
+    "layout": "single-subject",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      }
+    ],
+    "text_slots": [],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "极简精品店全身时尚写真 极简精品店全身时尚写真 A full-body editorial fashion photograph of a beautiful young woman with the same appearance as the reference, long glossy dark hair, soft bangs, fair skin, and refined feminine features. She stan",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-508",
+    "subject_count": 2,
+    "layout": "spatial-scene",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "木漏日庭院俯拍猫咪人像 木漏日庭院俯拍猫咪人像 俯拍镜头，高角度顶机位，自上而下俯瞰一位年轻的东亚裔女性，她有着精致的东亚五官和柔顺的黑发。她蹲在花园小径上，轻轻逗弄一只毛茸茸的橘猫。头顶密密的枝叶滤过阳光，形成灵动的“木漏日”效果——跃动、圆形的光斑在她的肌肤",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-510",
+    "subject_count": 0,
+    "layout": "icon-canvas",
+    "relations": [],
+    "text_slots": [],
+    "input_mode": "text_only",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "macOS app icon for an app named 'Bichon Shop'. A single squircle icon with smooth continuous rounded corners, centered on a white canvas with padding, occupying about 80% of t",
+    "fingerprint_version": "rule-derived-gold-v1"
+  },
+  {
+    "case_id": "case-541",
+    "subject_count": 1,
+    "layout": "split-screen",
+    "relations": [
+      {
+        "source_slot": "input-image",
+        "relation": "transformed_into",
+        "target_slot": "main-view"
+      },
+      {
+        "source_slot": "upper-slot",
+        "relation": "contrasted_with",
+        "target_slot": "lower-slot"
+      },
+      {
+        "source_slot": "main-view",
+        "relation": "captioned_by",
+        "target_slot": "caption"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "caption",
+        "role": "caption",
+        "required": true
+      }
+    ],
+    "input_mode": "text_and_image",
+    "ratio": "custom",
+    "confidence": 0.99,
+    "evidence_excerpt": "50/50 混合媒介回忆卡 50/50 混合媒介回忆卡 Transform the uploaded photo into a vertical mixed-media memory card with a strict 50/50 split. Keep the original photo unchanged in the top half. In the bottom half, use textured off-white ha",
+    "fingerprint_version": "rule-derived-gold-v1"
+  }
+]

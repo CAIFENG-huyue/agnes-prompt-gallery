@@ -1,0 +1,447 @@
+[
+  {
+    "intent_id": "structure_sheet",
+    "label": "结构板",
+    "synonyms": [
+      "结构板",
+      "结构图",
+      "设计展示板",
+      "structure sheet",
+      "illustration sheet"
+    ],
+    "related_intent_ids": [
+      "multi_view",
+      "technical_view",
+      "dimension_annotation",
+      "material_notes"
+    ]
+  },
+  {
+    "intent_id": "multi_view",
+    "label": "多视图",
+    "synonyms": [
+      "多视图",
+      "三视图",
+      "正侧背视图",
+      "multi-view",
+      "multiple views"
+    ],
+    "related_intent_ids": [
+      "structure_sheet",
+      "technical_view"
+    ]
+  },
+  {
+    "intent_id": "technical_view",
+    "label": "技术视图",
+    "synonyms": [
+      "技术视图",
+      "工程视图",
+      "正视图",
+      "侧视图",
+      "technical views",
+      "orthographic views"
+    ],
+    "related_intent_ids": [
+      "structure_sheet",
+      "multi_view"
+    ]
+  },
+  {
+    "intent_id": "exploded_view",
+    "label": "爆炸拆解图",
+    "synonyms": [
+      "爆炸图",
+      "拆解图",
+      "分层结构",
+      "exploded view",
+      "exploded assembly"
+    ],
+    "related_intent_ids": [
+      "structure_sheet",
+      "component_labeling"
+    ]
+  },
+  {
+    "intent_id": "dimension_annotation",
+    "label": "尺寸标注",
+    "synonyms": [
+      "尺寸",
+      "标尺寸",
+      "尺寸标注",
+      "尺寸线",
+      "毫米标注",
+      "dimensions",
+      "size arrows",
+      "dimension annotation"
+    ],
+    "related_intent_ids": [
+      "structure_sheet",
+      "technical_view"
+    ]
+  },
+  {
+    "intent_id": "material_notes",
+    "label": "材料说明",
+    "synonyms": [
+      "材料",
+      "材料说明",
+      "材料标注",
+      "材质说明",
+      "material notes",
+      "materials and finishes"
+    ],
+    "related_intent_ids": [
+      "structure_sheet",
+      "component_labeling"
+    ]
+  },
+  {
+    "intent_id": "component_labeling",
+    "label": "部件标注",
+    "synonyms": [
+      "部件标签",
+      "引线标注",
+      "工程标注",
+      "callouts",
+      "pointer labels"
+    ],
+    "related_intent_ids": [
+      "structure_sheet",
+      "exploded_view"
+    ]
+  },
+  {
+    "intent_id": "information_design",
+    "label": "信息图解",
+    "synonyms": [
+      "信息图",
+      "信息结构图",
+      "图解",
+      "infographic",
+      "information design"
+    ],
+    "related_intent_ids": [
+      "data_visualization",
+      "comparison"
+    ]
+  },
+  {
+    "intent_id": "data_visualization",
+    "label": "数据图表",
+    "synonyms": [
+      "数据可视化",
+      "图表",
+      "数据卡片",
+      "chart",
+      "data visualization"
+    ],
+    "related_intent_ids": [
+      "information_design"
+    ]
+  },
+  {
+    "intent_id": "timeline",
+    "label": "时间线",
+    "synonyms": [
+      "时间轴",
+      "演化时间线",
+      "timeline",
+      "chronology"
+    ],
+    "related_intent_ids": [
+      "information_design"
+    ]
+  },
+  {
+    "intent_id": "storyboard",
+    "label": "分镜",
+    "synonyms": [
+      "分镜",
+      "故事板",
+      "多格分镜",
+      "storyboard",
+      "film panels"
+    ],
+    "related_intent_ids": [
+      "sequence_steps"
+    ]
+  },
+  {
+    "intent_id": "sequence_steps",
+    "label": "步骤说明",
+    "synonyms": [
+      "步骤图",
+      "编号步骤",
+      "流程说明",
+      "numbered steps",
+      "instructions"
+    ],
+    "related_intent_ids": [
+      "information_design"
+    ]
+  },
+  {
+    "intent_id": "comparison",
+    "label": "对照矩阵",
+    "synonyms": [
+      "对比表",
+      "试色矩阵",
+      "比较矩阵",
+      "comparison matrix",
+      "comparison table"
+    ],
+    "related_intent_ids": [
+      "information_design"
+    ]
+  },
+  {
+    "intent_id": "relationship_map",
+    "label": "关系图谱",
+    "synonyms": [
+      "关系图",
+      "人物关系图",
+      "阵营连线",
+      "relationship map",
+      "network diagram"
+    ],
+    "related_intent_ids": [
+      "information_design"
+    ]
+  },
+  {
+    "intent_id": "map_layout",
+    "label": "地图",
+    "synonyms": [
+      "地图",
+      "美食地图",
+      "区域导览",
+      "map",
+      "illustrated map"
+    ],
+    "related_intent_ids": [
+      "information_design"
+    ]
+  },
+  {
+    "intent_id": "character_sheet",
+    "label": "角色设定表",
+    "synonyms": [
+      "角色设定",
+      "人物设定表",
+      "表情差分",
+      "character sheet",
+      "design sheet"
+    ],
+    "related_intent_ids": [
+      "multi_view",
+      "character_design"
+    ]
+  },
+  {
+    "intent_id": "poster_design",
+    "label": "海报",
+    "synonyms": [
+      "海报",
+      "宣传单",
+      "广告图",
+      "poster",
+      "flyer"
+    ],
+    "related_intent_ids": [
+      "typography",
+      "brand_identity"
+    ]
+  },
+  {
+    "intent_id": "typography",
+    "label": "字体排版",
+    "synonyms": [
+      "标题字",
+      "艺术字",
+      "字标",
+      "typography",
+      "headline"
+    ],
+    "related_intent_ids": [
+      "poster_design",
+      "text_rendering"
+    ]
+  },
+  {
+    "intent_id": "brand_identity",
+    "label": "品牌识别",
+    "synonyms": [
+      "品牌",
+      "标志",
+      "视觉识别",
+      "logo",
+      "brand identity"
+    ],
+    "related_intent_ids": [
+      "poster_design"
+    ]
+  },
+  {
+    "intent_id": "interface_design",
+    "label": "界面设计",
+    "synonyms": [
+      "界面",
+      "截图",
+      "页面",
+      "UI",
+      "UI/UX",
+      "interface"
+    ],
+    "related_intent_ids": [
+      "document_layout"
+    ]
+  },
+  {
+    "intent_id": "document_layout",
+    "label": "文档版面",
+    "synonyms": [
+      "文档排版",
+      "杂志内页",
+      "报纸版面",
+      "document layout",
+      "editorial layout"
+    ],
+    "related_intent_ids": [
+      "text_rendering"
+    ]
+  },
+  {
+    "intent_id": "product_design",
+    "label": "产品与包装",
+    "synonyms": [
+      "产品设计",
+      "包装设计",
+      "工业外观",
+      "product design",
+      "packaging"
+    ],
+    "related_intent_ids": [
+      "structure_sheet"
+    ]
+  },
+  {
+    "intent_id": "portrait",
+    "label": "人像写真",
+    "synonyms": [
+      "人像",
+      "肖像",
+      "写真",
+      "自拍",
+      "portrait",
+      "selfie"
+    ],
+    "related_intent_ids": [
+      "subject_appearance"
+    ]
+  },
+  {
+    "intent_id": "character_design",
+    "label": "角色造型",
+    "synonyms": [
+      "角色",
+      "人物外观",
+      "角色插画",
+      "character design"
+    ],
+    "related_intent_ids": [
+      "subject_appearance"
+    ]
+  },
+  {
+    "intent_id": "subject_appearance",
+    "label": "主体外观",
+    "synonyms": [
+      "主体造型",
+      "材质保真",
+      "静物",
+      "product render",
+      "still life"
+    ],
+    "related_intent_ids": []
+  },
+  {
+    "intent_id": "scene_composition",
+    "label": "场景叙事",
+    "synonyms": [
+      "场景",
+      "空间关系",
+      "多主体互动",
+      "scene composition",
+      "storytelling"
+    ],
+    "related_intent_ids": []
+  },
+  {
+    "intent_id": "reference_transformation",
+    "label": "参考图重构",
+    "synonyms": [
+      "参考图",
+      "上传图片",
+      "保留主体",
+      "reference image",
+      "image transformation"
+    ],
+    "related_intent_ids": []
+  },
+  {
+    "intent_id": "text_rendering",
+    "label": "图中文字",
+    "synonyms": [
+      "文字",
+      "文案",
+      "标题",
+      "短句",
+      "text rendering",
+      "caption"
+    ],
+    "related_intent_ids": [
+      "typography"
+    ]
+  },
+  {
+    "intent_id": "sticker_set",
+    "label": "贴纸套组",
+    "synonyms": [
+      "贴纸",
+      "表情包",
+      "LINE stickers",
+      "sticker set"
+    ],
+    "related_intent_ids": [
+      "character_design"
+    ]
+  },
+  {
+    "intent_id": "card_design",
+    "label": "卡片设计",
+    "synonyms": [
+      "卡片",
+      "卡牌",
+      "收藏卡",
+      "card design",
+      "trading cards"
+    ],
+    "related_intent_ids": [
+      "character_design"
+    ]
+  },
+  {
+    "intent_id": "icon_design",
+    "label": "应用图标",
+    "synonyms": [
+      "图标",
+      "应用图标",
+      "app icon",
+      "squircle icon"
+    ],
+    "related_intent_ids": [
+      "brand_identity"
+    ]
+  }
+]
