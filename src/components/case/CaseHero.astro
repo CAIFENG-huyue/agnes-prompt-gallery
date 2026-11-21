@@ -307,6 +307,32 @@ const hasExperiments = evidenceLevels.some((level) => level !== "inferred");
     line-height: 1.5;
   }
 
+  @media (max-width: 55.99rem) {
+    .case-hero > [data-hero-item="title"] {
+      order: 1;
+    }
+
+    .case-hero > [data-hero-item="category"] {
+      order: 2;
+    }
+
+    .case-hero > [data-hero-item="fit"] {
+      order: 3;
+    }
+
+    .case-hero > [data-hero-item="evidence"] {
+      order: 4;
+    }
+
+    .case-hero > [data-hero-item="fingerprints"] {
+      order: 5;
+    }
+
+    .case-hero > [data-hero-item="cover"] {
+      order: 6;
+    }
+  }
+
   @media (min-width: 56rem) {
     .case-hero {
       grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);

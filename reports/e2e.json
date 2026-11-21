@@ -1,0 +1,420 @@
+{
+  "generatedAt": "2026-11-21T20:58:01.165Z",
+  "viewport": {
+    "width": 360,
+    "height": 800
+  },
+  "baseUrl": "http://127.0.0.1:4321",
+  "build": "dist-t13",
+  "summary": {
+    "pages": 13,
+    "passed": 13,
+    "failed": 0,
+    "linksChecked": 50,
+    "linkFailures": 0,
+    "maxScrollWidth": 360,
+    "pass": true
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "kind": "home",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/home.png",
+      "foldScreenshot": "reports/e2e-360/home-fold.png"
+    },
+    {
+      "slug": "categories",
+      "path": "/categories/",
+      "kind": "listing",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/categories.png",
+      "foldScreenshot": "reports/e2e-360/categories-fold.png"
+    },
+    {
+      "slug": "category-subject-form",
+      "path": "/categories/subject-form/",
+      "kind": "listing",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/category-subject-form.png",
+      "foldScreenshot": "reports/e2e-360/category-subject-form-fold.png"
+    },
+    {
+      "slug": "category-scene-narrative",
+      "path": "/categories/scene-narrative/",
+      "kind": "listing",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/category-scene-narrative.png",
+      "foldScreenshot": "reports/e2e-360/category-scene-narrative-fold.png"
+    },
+    {
+      "slug": "category-graphic-communication",
+      "path": "/categories/graphic-communication/",
+      "kind": "listing",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/category-graphic-communication.png",
+      "foldScreenshot": "reports/e2e-360/category-graphic-communication-fold.png"
+    },
+    {
+      "slug": "category-information-diagram",
+      "path": "/categories/information-diagram/",
+      "kind": "listing",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/category-information-diagram.png",
+      "foldScreenshot": "reports/e2e-360/category-information-diagram-fold.png"
+    },
+    {
+      "slug": "category-interface-document",
+      "path": "/categories/interface-document/",
+      "kind": "listing",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/category-interface-document.png",
+      "foldScreenshot": "reports/e2e-360/category-interface-document-fold.png"
+    },
+    {
+      "slug": "case-23",
+      "path": "/cases/case-23/",
+      "kind": "case",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/case-23.png",
+      "foldScreenshot": "reports/e2e-360/case-23-fold.png"
+    },
+    {
+      "slug": "case-371",
+      "path": "/cases/case-371/",
+      "kind": "case",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/case-371.png",
+      "foldScreenshot": "reports/e2e-360/case-371-fold.png"
+    },
+    {
+      "slug": "case-2",
+      "path": "/cases/case-2/",
+      "kind": "case",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/case-2.png",
+      "foldScreenshot": "reports/e2e-360/case-2-fold.png"
+    },
+    {
+      "slug": "experiments",
+      "path": "/experiments/",
+      "kind": "evidence",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/experiments.png",
+      "foldScreenshot": "reports/e2e-360/experiments-fold.png"
+    },
+    {
+      "slug": "method-prose-contract-exact-text",
+      "path": "/methods/prose-contract-exact-text/",
+      "kind": "method",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/method-prose-contract-exact-text.png",
+      "foldScreenshot": "reports/e2e-360/method-prose-contract-exact-text-fold.png"
+    },
+    {
+      "slug": "method-blank-band-deterministic-overlay",
+      "path": "/methods/blank-band-deterministic-overlay/",
+      "kind": "method",
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "pass": true,
+      "errors": [],
+      "screenshot": "reports/e2e-360/method-blank-band-deterministic-overlay.png",
+      "foldScreenshot": "reports/e2e-360/method-blank-band-deterministic-overlay-fold.png"
+    }
+  ],
+  "links": {
+    "discovered": 62,
+    "checked": 50,
+    "failures": [],
+    "items": [
+      {
+        "path": "/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-00d00c74cc-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-0cc3c8dc18-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-0e69dc95ed-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-1162363500-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-135e7fe228-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-226dc9b555-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-5bff25fe1d-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-6dcbcd97ce-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-6f650b5747-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-7e4200a3b8-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-868be1a807-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-88cac37e29-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-9a4d668cc8-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-a8581974bc-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-b89e5730b4-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-bbf091614e-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-bf2659d56f-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-c6233752fa-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-d9b4f2ce3a-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/assets/experiments/h1/h1-efa1ff5fc6-960.webp",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-1/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-10/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-11/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-13/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-14/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-15/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-2/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-21/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-22/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-24/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-25/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-26/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-27/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-29/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-296/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-3/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-310/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-380/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-4/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-46/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-47/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-475/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-48/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-5/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-50/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-512/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-6/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-7/",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "path": "/cases/case-8/",
+        "status": 200,
+        "pass": true
+      }
+    ]
+  }
+}
