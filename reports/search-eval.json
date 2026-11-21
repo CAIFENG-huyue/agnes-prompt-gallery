@@ -1,0 +1,5584 @@
+{
+  "task_id": "T09",
+  "status": "passed",
+  "passed": true,
+  "tool": "tools/evaluate-search.mjs",
+  "gold_version": "t09-intent-search-gold-v1",
+  "index_version": "structure-first-static-v1",
+  "ranking": {
+    "priority": [
+      "structure",
+      "intent",
+      "text"
+    ],
+    "method": "lexicographic",
+    "long_prompt_included": false,
+    "runtime_services": false,
+    "vector_model": false
+  },
+  "query_count": 25,
+  "queries_passed": 25,
+  "metrics": {
+    "mean_confirmed_recall_at_5": 0.822,
+    "results_with_reasons": 125,
+    "total_results": 125,
+    "reason_coverage": 1
+  },
+  "ordering": {
+    "policy": "依次比较 structure、intent、text 分数；仅当前项相同才比较下一项，最后按 case_id 稳定排序。",
+    "synthetic_checks": [
+      {
+        "check": "structure_precedes_intent_and_text",
+        "passed": true
+      },
+      {
+        "check": "intent_precedes_text_when_structure_ties",
+        "passed": true
+      },
+      {
+        "check": "text_breaks_structure_and_intent_ties",
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "penguin_hard_scenario": {
+    "query": "企鹅饼干礼盒结构板，带尺寸和材料说明",
+    "required_same_structure_hits": 3,
+    "actual_same_structure_hits": 3,
+    "same_structure_case_ids": [
+      "case-475",
+      "case-512",
+      "case-310"
+    ],
+    "all_results_have_reasons": true,
+    "passed": true,
+    "top5": [
+      {
+        "case_id": "case-475",
+        "title": "企鹅造型包装结构板",
+        "category_id": "information-diagram",
+        "category_name": "信息图解",
+        "layout": "multi-view-grid",
+        "intents": [
+          "component_labeling",
+          "dimension_annotation",
+          "information_design",
+          "material_notes",
+          "multi_view",
+          "product_design",
+          "reference_transformation",
+          "structure_sheet",
+          "technical_view",
+          "text_rendering"
+        ],
+        "scores": {
+          "structure": 100,
+          "intent": 115,
+          "text": 13.204238
+        },
+        "reasons": [
+          {
+            "kind": "structure",
+            "text": "结构命中：尺寸、材料均有独立槽位；多视图网格"
+          },
+          {
+            "kind": "intent",
+            "text": "意图命中：尺寸标注、材料说明、结构板"
+          },
+          {
+            "kind": "intent",
+            "text": "关联意图：部件标注、多视图、技术视图"
+          },
+          {
+            "kind": "text",
+            "text": "文本命中：标题、替代文本、分类或来源标签包含“企鹅”"
+          }
+        ],
+        "matched_intent_ids": [
+          "dimension_annotation",
+          "material_notes",
+          "structure_sheet"
+        ],
+        "matched_structure": [
+          "slot:dimensions",
+          "slot:materials",
+          "layout:multi-view-grid"
+        ]
+      },
+      {
+        "case_id": "case-512",
+        "title": "Brutalist Freestyle 角色设定表",
+        "category_id": "information-diagram",
+        "category_name": "信息图解",
+        "layout": "multi-view-grid",
+        "intents": [
+          "character_design",
+          "character_sheet",
+          "component_labeling",
+          "dimension_annotation",
+          "information_design",
+          "material_notes",
+          "multi_view",
+          "reference_transformation",
+          "structure_sheet",
+          "technical_view",
+          "text_rendering",
+          "typography"
+        ],
+        "scores": {
+          "structure": 100,
+          "intent": 115,
+          "text": 0
+        },
+        "reasons": [
+          {
+            "kind": "structure",
+            "text": "结构命中：尺寸、材料均有独立槽位；多视图网格"
+          },
+          {
+            "kind": "intent",
+            "text": "意图命中：尺寸标注、材料说明、结构板"
+          },
+          {
+            "kind": "intent",
+            "text": "关联意图：部件标注、多视图、技术视图"
+          }
+        ],
+        "matched_intent_ids": [
+          "dimension_annotation",
+          "material_notes",
+          "structure_sheet"
+        ],
+        "matched_structure": [
+          "slot:dimensions",
+          "slot:materials",
+          "layout:multi-view-grid"
+        ]
+      },
+      {
+        "case_id": "case-310",
+        "title": "零食品牌技术分解图",
+        "category_id": "information-diagram",
+        "category_name": "信息图解",
+        "layout": "modular-infographic",
+        "intents": [
+          "brand_identity",
+          "component_labeling",
+          "data_visualization",
+          "dimension_annotation",
+          "information_design",
+          "material_notes",
+          "text_rendering"
+        ],
+        "scores": {
+          "structure": 100,
+          "intent": 71.666667,
+          "text": 0
+        },
+        "reasons": [
+          {
+            "kind": "structure",
+            "text": "结构命中：尺寸、材料均有独立槽位；模块化信息图"
+          },
+          {
+            "kind": "intent",
+            "text": "意图命中：尺寸标注、材料说明"
+          },
+          {
+            "kind": "intent",
+            "text": "关联意图：部件标注"
+          }
+        ],
+        "matched_intent_ids": [
+          "dimension_annotation",
+          "material_notes"
+        ],
+        "matched_structure": [
+          "slot:dimensions",
+          "slot:materials",
+          "layout:modular-infographic"
+        ]
+      },
+      {
+        "case_id": "case-296",
+        "title": "博物馆级中文拆解信息图鉴",
+        "category_id": "interface-document",
+        "category_name": "界面文档",
+        "layout": "exploded-view",
+        "intents": [
+          "component_labeling",
+          "exploded_view",
+          "information_design",
+          "interface_design",
+          "material_notes",
+          "portrait",
+          "poster_design",
+          "structure_sheet",
+          "text_rendering"
+        ],
+        "scores": {
+          "structure": 66.666667,
+          "intent": 71.666667,
+          "text": 0
+        },
+        "reasons": [
+          {
+            "kind": "structure",
+            "text": "结构命中：材料独立槽位；爆炸拆解布局"
+          },
+          {
+            "kind": "intent",
+            "text": "意图命中：材料说明、结构板"
+          },
+          {
+            "kind": "intent",
+            "text": "关联意图：部件标注"
+          }
+        ],
+        "matched_intent_ids": [
+          "material_notes",
+          "structure_sheet"
+        ],
+        "matched_structure": [
+          "slot:materials",
+          "layout:exploded-view"
+        ]
+      },
+      {
+        "case_id": "case-380",
+        "title": "冠状病毒尺度缩放科学信息图",
+        "category_id": "information-diagram",
+        "category_name": "信息图解",
+        "layout": "modular-infographic",
+        "intents": [
+          "dimension_annotation",
+          "information_design",
+          "text_rendering"
+        ],
+        "scores": {
+          "structure": 66.666667,
+          "intent": 33.333333,
+          "text": 0
+        },
+        "reasons": [
+          {
+            "kind": "structure",
+            "text": "结构命中：尺寸独立槽位；模块化信息图"
+          },
+          {
+            "kind": "intent",
+            "text": "意图命中：尺寸标注"
+          }
+        ],
+        "matched_intent_ids": [
+          "dimension_annotation"
+        ],
+        "matched_structure": [
+          "slot:dimensions",
+          "layout:modular-infographic"
+        ]
+      }
+    ]
+  },
+  "queries": [
+    {
+      "query_id": "Q01",
+      "query": "企鹅饼干礼盒结构板，带尺寸和材料说明",
+      "hard_scenario": true,
+      "expected_intent_ids": [
+        "structure_sheet",
+        "dimension_annotation",
+        "material_notes"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 3,
+      "top5_relevant_case_ids": [
+        "case-475",
+        "case-512",
+        "case-310"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-475",
+          "title": "企鹅造型包装结构板",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "component_labeling",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "multi_view",
+            "product_design",
+            "reference_transformation",
+            "structure_sheet",
+            "technical_view",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 115,
+            "text": 13.204238
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：尺寸、材料均有独立槽位；多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：尺寸标注、材料说明、结构板"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：部件标注、多视图、技术视图"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“企鹅”"
+            }
+          ],
+          "matched_intent_ids": [
+            "dimension_annotation",
+            "material_notes",
+            "structure_sheet"
+          ],
+          "matched_structure": [
+            "slot:dimensions",
+            "slot:materials",
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-512",
+          "title": "Brutalist Freestyle 角色设定表",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_design",
+            "character_sheet",
+            "component_labeling",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "multi_view",
+            "reference_transformation",
+            "structure_sheet",
+            "technical_view",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 115,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：尺寸、材料均有独立槽位；多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：尺寸标注、材料说明、结构板"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：部件标注、多视图、技术视图"
+            }
+          ],
+          "matched_intent_ids": [
+            "dimension_annotation",
+            "material_notes",
+            "structure_sheet"
+          ],
+          "matched_structure": [
+            "slot:dimensions",
+            "slot:materials",
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-310",
+          "title": "零食品牌技术分解图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "data_visualization",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 71.666667,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：尺寸、材料均有独立槽位；模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：尺寸标注、材料说明"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：部件标注"
+            }
+          ],
+          "matched_intent_ids": [
+            "dimension_annotation",
+            "material_notes"
+          ],
+          "matched_structure": [
+            "slot:dimensions",
+            "slot:materials",
+            "layout:modular-infographic"
+          ]
+        },
+        {
+          "case_id": "case-296",
+          "title": "博物馆级中文拆解信息图鉴",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "exploded-view",
+          "intents": [
+            "component_labeling",
+            "exploded_view",
+            "information_design",
+            "interface_design",
+            "material_notes",
+            "portrait",
+            "poster_design",
+            "structure_sheet",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 66.666667,
+            "intent": 71.666667,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：材料独立槽位；爆炸拆解布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：材料说明、结构板"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：部件标注"
+            }
+          ],
+          "matched_intent_ids": [
+            "material_notes",
+            "structure_sheet"
+          ],
+          "matched_structure": [
+            "slot:materials",
+            "layout:exploded-view"
+          ]
+        },
+        {
+          "case_id": "case-380",
+          "title": "冠状病毒尺度缩放科学信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "dimension_annotation",
+            "information_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 66.666667,
+            "intent": 33.333333,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：尺寸独立槽位；模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：尺寸标注"
+            }
+          ],
+          "matched_intent_ids": [
+            "dimension_annotation"
+          ],
+          "matched_structure": [
+            "slot:dimensions",
+            "layout:modular-infographic"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q02",
+      "query": "角色设定表，带三视图和正侧背视图",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "character_sheet",
+        "multi_view"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-512",
+        "case-372",
+        "case-439",
+        "case-270",
+        "case-271"
+      ],
+      "confirmed_recall_at_5": 0.833333,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-512",
+          "title": "Brutalist Freestyle 角色设定表",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_design",
+            "character_sheet",
+            "component_labeling",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "multi_view",
+            "reference_transformation",
+            "structure_sheet",
+            "technical_view",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 110,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型、角色设定表、多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板、技术视图"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design",
+            "character_sheet",
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-372",
+          "title": "可爱角色设定表",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_design",
+            "character_sheet",
+            "information_design",
+            "multi_view",
+            "portrait",
+            "poster_design",
+            "reference_transformation",
+            "structure_sheet",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型、角色设定表、多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design",
+            "character_sheet",
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-439",
+          "title": "赛博黑客角色设定表",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "brand_identity",
+            "character_design",
+            "character_sheet",
+            "component_labeling",
+            "information_design",
+            "multi_view",
+            "portrait",
+            "structure_sheet",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型、角色设定表、多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design",
+            "character_sheet",
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-270",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_sheet",
+            "information_design",
+            "multi_view",
+            "reference_transformation",
+            "structure_sheet"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 71.666667,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：角色设定表、多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_sheet",
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-271",
+          "title": "人物角色设定图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_sheet",
+            "information_design",
+            "multi_view",
+            "structure_sheet"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 71.666667,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：角色设定表、多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_sheet",
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q03",
+      "query": "爆炸拆解图，部件标签用引线标注",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "exploded_view",
+        "component_labeling"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 3,
+      "top5_relevant_case_ids": [
+        "case-17",
+        "case-296",
+        "case-443"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-17",
+          "title": "界面交互设计图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "exploded_view",
+            "information_design",
+            "interface_design",
+            "poster_design",
+            "structure_sheet",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：部件标签独立槽位；爆炸拆解布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：部件标注、爆炸拆解图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "component_labeling",
+            "exploded_view"
+          ],
+          "matched_structure": [
+            "slot:labels",
+            "layout:exploded-view"
+          ]
+        },
+        {
+          "case_id": "case-296",
+          "title": "博物馆级中文拆解信息图鉴",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "exploded-view",
+          "intents": [
+            "component_labeling",
+            "exploded_view",
+            "information_design",
+            "interface_design",
+            "material_notes",
+            "portrait",
+            "poster_design",
+            "structure_sheet",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：注解独立槽位；爆炸拆解布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：部件标注、爆炸拆解图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "component_labeling",
+            "exploded_view"
+          ],
+          "matched_structure": [
+            "slot:annotations",
+            "layout:exploded-view"
+          ]
+        },
+        {
+          "case_id": "case-443",
+          "title": "塔可爆炸拆解信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "component_labeling",
+            "exploded_view",
+            "information_design",
+            "structure_sheet",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：部件标签独立槽位；爆炸拆解布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：部件标注、爆炸拆解图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "component_labeling",
+            "exploded_view"
+          ],
+          "matched_structure": [
+            "slot:labels",
+            "layout:exploded-view"
+          ]
+        },
+        {
+          "case_id": "case-71",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "data_visualization",
+            "exploded_view",
+            "information_design",
+            "relationship_map",
+            "structure_sheet",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 50,
+            "intent": 55,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：爆炸拆解布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：爆炸拆解图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "exploded_view"
+          ],
+          "matched_structure": [
+            "layout:exploded-view"
+          ]
+        },
+        {
+          "case_id": "case-211",
+          "title": "天坛古建拆解全图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "exploded_view",
+            "information_design",
+            "structure_sheet"
+          ],
+          "scores": {
+            "structure": 50,
+            "intent": 55,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：爆炸拆解布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：爆炸拆解图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "exploded_view"
+          ],
+          "matched_structure": [
+            "layout:exploded-view"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q04",
+      "query": "产品三视图技术视图，包含正视图和侧视图",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "multi_view",
+        "technical_view"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 3,
+      "top5_relevant_case_ids": [
+        "case-370",
+        "case-475",
+        "case-512"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-370",
+          "title": "Crumple Chair 概念沙发研发板",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "information_design",
+            "multi_view",
+            "structure_sheet",
+            "technical_view"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：多视图、技术视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "multi_view",
+            "technical_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-475",
+          "title": "企鹅造型包装结构板",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "component_labeling",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "multi_view",
+            "product_design",
+            "reference_transformation",
+            "structure_sheet",
+            "technical_view",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：多视图、技术视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "multi_view",
+            "technical_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-512",
+          "title": "Brutalist Freestyle 角色设定表",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_design",
+            "character_sheet",
+            "component_labeling",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "multi_view",
+            "reference_transformation",
+            "structure_sheet",
+            "technical_view",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：多视图、技术视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "multi_view",
+            "technical_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-270",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_sheet",
+            "information_design",
+            "multi_view",
+            "reference_transformation",
+            "structure_sheet"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 55,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        },
+        {
+          "case_id": "case-271",
+          "title": "人物角色设定图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_sheet",
+            "information_design",
+            "multi_view",
+            "structure_sheet"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 55,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：多视图网格"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：多视图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [
+            "multi_view"
+          ],
+          "matched_structure": [
+            "layout:multi-view-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q05",
+      "query": "编号步骤流程说明，保留步骤槽位",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "sequence_steps"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-1",
+        "case-14",
+        "case-23",
+        "case-66",
+        "case-153"
+      ],
+      "confirmed_recall_at_5": 0.833333,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-1",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "data_visualization",
+            "information_design",
+            "sequence_steps",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：步骤独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：步骤说明"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "sequence_steps"
+          ],
+          "matched_structure": [
+            "slot:instructions"
+          ]
+        },
+        {
+          "case_id": "case-14",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "sequence_steps",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：步骤独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：步骤说明"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "sequence_steps"
+          ],
+          "matched_structure": [
+            "slot:instructions"
+          ]
+        },
+        {
+          "case_id": "case-23",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "reference_transformation",
+            "sequence_steps",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：步骤独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：步骤说明"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "sequence_steps"
+          ],
+          "matched_structure": [
+            "slot:instructions"
+          ]
+        },
+        {
+          "case_id": "case-66",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "sequence_steps",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：步骤独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：步骤说明"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "sequence_steps"
+          ],
+          "matched_structure": [
+            "slot:instructions"
+          ]
+        },
+        {
+          "case_id": "case-153",
+          "title": "主题海报版式设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "packaging-label",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "product_design",
+            "reference_transformation",
+            "sequence_steps",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：步骤独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：步骤说明"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "sequence_steps"
+          ],
+          "matched_structure": [
+            "slot:instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q06",
+      "query": "时间轴演化时间线，带日期标注",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "timeline"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 3,
+      "top5_relevant_case_ids": [
+        "case-375",
+        "case-215",
+        "case-469"
+      ],
+      "confirmed_recall_at_5": 0.75,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-375",
+          "title": "古希腊三哲时间轴城市图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "timeline",
+          "intents": [
+            "information_design",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 26.408475
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：时间线布局；temporal独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：时间线"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“时间、间轴”"
+            }
+          ],
+          "matched_intent_ids": [
+            "timeline"
+          ],
+          "matched_structure": [
+            "layout:timeline",
+            "slot:temporal"
+          ]
+        },
+        {
+          "case_id": "case-215",
+          "title": "西方艺术演进像素博物馆",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "timeline",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：时间线布局；temporal独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：时间线"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "timeline"
+          ],
+          "matched_structure": [
+            "layout:timeline",
+            "slot:temporal"
+          ]
+        },
+        {
+          "case_id": "case-469",
+          "title": "导览式科普绘本",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "timeline",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "reference_transformation",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：时间线布局；temporal独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：时间线"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "timeline"
+          ],
+          "matched_structure": [
+            "layout:timeline",
+            "slot:temporal"
+          ]
+        },
+        {
+          "case_id": "case-72",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 50,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：temporal独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：时间线"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "timeline"
+          ],
+          "matched_structure": [
+            "slot:temporal"
+          ]
+        },
+        {
+          "case_id": "case-218",
+          "title": "绘制科学百科知识图谱",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "modular-infographic",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "data_visualization",
+            "information_design",
+            "interface_design",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 50,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：temporal独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：时间线"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "timeline"
+          ],
+          "matched_structure": [
+            "slot:temporal"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q07",
+      "query": "人物关系图，使用阵营连线",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "relationship_map"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-74",
+        "case-75",
+        "case-76",
+        "case-77",
+        "case-84"
+      ],
+      "confirmed_recall_at_5": 0.8,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-74",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "network-map",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "relationship_map",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：关系网络布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：关系图谱"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "relationship_map"
+          ],
+          "matched_structure": [
+            "layout:network-map"
+          ]
+        },
+        {
+          "case_id": "case-75",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "network-map",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "relationship_map",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：关系网络布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：关系图谱"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "relationship_map"
+          ],
+          "matched_structure": [
+            "layout:network-map"
+          ]
+        },
+        {
+          "case_id": "case-76",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "network-map",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "relationship_map",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：关系网络布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：关系图谱"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "relationship_map"
+          ],
+          "matched_structure": [
+            "layout:network-map"
+          ]
+        },
+        {
+          "case_id": "case-77",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "network-map",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "relationship_map",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：关系网络布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：关系图谱"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "relationship_map"
+          ],
+          "matched_structure": [
+            "layout:network-map"
+          ]
+        },
+        {
+          "case_id": "case-84",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "network-map",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "poster_design",
+            "relationship_map",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：关系网络布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：关系图谱"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "relationship_map"
+          ],
+          "matched_structure": [
+            "layout:network-map"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q08",
+      "query": "手绘城市区域导览地图",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "map_layout"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-11",
+        "case-331",
+        "case-274",
+        "case-369",
+        "case-18"
+      ],
+      "confirmed_recall_at_5": 0.833333,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-11",
+          "title": "一张手绘风格的城市美食地图，以台州为主题",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "map_layout",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 29.729428
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：canvas → partitioned_into → information-modules"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：地图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“地图、手绘、城市”"
+            }
+          ],
+          "matched_intent_ids": [
+            "map_layout"
+          ],
+          "matched_structure": [
+            "relation:partitioned_into"
+          ]
+        },
+        {
+          "case_id": "case-331",
+          "title": "西安手绘水彩城市地图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "map_layout"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 29.729428
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：canvas → partitioned_into → information-modules"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：地图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“地图、手绘、城市”"
+            }
+          ],
+          "matched_intent_ids": [
+            "map_layout"
+          ],
+          "matched_structure": [
+            "relation:partitioned_into"
+          ]
+        },
+        {
+          "case_id": "case-274",
+          "title": "成都吃货暴走手绘美食地图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "map_layout",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 20.684074
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：canvas → partitioned_into → repeated-slots"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：地图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“地图、手绘”"
+            }
+          ],
+          "matched_intent_ids": [
+            "map_layout"
+          ],
+          "matched_structure": [
+            "relation:partitioned_into"
+          ]
+        },
+        {
+          "case_id": "case-369",
+          "title": "明洞旅游区域地图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "map_layout"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 10.698712
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：canvas → partitioned_into → information-modules"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：地图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“地图”"
+            }
+          ],
+          "matched_intent_ids": [
+            "map_layout"
+          ],
+          "matched_structure": [
+            "relation:partitioned_into"
+          ]
+        },
+        {
+          "case_id": "case-18",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "map_layout",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：canvas → partitioned_into → information-modules"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：地图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "map_layout"
+          ],
+          "matched_structure": [
+            "relation:partitioned_into"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q09",
+      "query": "数据可视化图表，带数值说明",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "data_visualization"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-1",
+        "case-71",
+        "case-73",
+        "case-102",
+        "case-157"
+      ],
+      "confirmed_recall_at_5": 0.8,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-1",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "data_visualization",
+            "information_design",
+            "sequence_steps",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 2.404917
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：数值独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：数据图表"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图表”"
+            }
+          ],
+          "matched_intent_ids": [
+            "data_visualization"
+          ],
+          "matched_structure": [
+            "slot:data"
+          ]
+        },
+        {
+          "case_id": "case-71",
+          "title": "关系图谱信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "data_visualization",
+            "exploded_view",
+            "information_design",
+            "relationship_map",
+            "structure_sheet",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 2.404917
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：数值独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：数据图表"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图表”"
+            }
+          ],
+          "matched_intent_ids": [
+            "data_visualization"
+          ],
+          "matched_structure": [
+            "slot:data"
+          ]
+        },
+        {
+          "case_id": "case-73",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "data_visualization",
+            "information_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 2.404917
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：数值独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：数据图表"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图表”"
+            }
+          ],
+          "matched_intent_ids": [
+            "data_visualization"
+          ],
+          "matched_structure": [
+            "slot:data"
+          ]
+        },
+        {
+          "case_id": "case-102",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "data-card",
+          "intents": [
+            "data_visualization",
+            "information_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 2.404917
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：数值独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：数据图表"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图表”"
+            }
+          ],
+          "matched_intent_ids": [
+            "data_visualization"
+          ],
+          "matched_structure": [
+            "slot:data"
+          ]
+        },
+        {
+          "case_id": "case-157",
+          "title": "电商商品展示设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "data_visualization",
+            "information_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 2.404917
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：数值独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：数据图表"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图表”"
+            }
+          ],
+          "matched_intent_ids": [
+            "data_visualization"
+          ],
+          "matched_structure": [
+            "slot:data"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q10",
+      "query": "多格分镜故事板",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "storyboard"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-316",
+        "case-24",
+        "case-60",
+        "case-118",
+        "case-204"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-316",
+          "title": "冲破次元壁的写实漫画跑者",
+          "category_id": "scene-narrative",
+          "category_name": "场景叙事",
+          "layout": "storyboard-sheet",
+          "intents": [
+            "scene_composition",
+            "storyboard"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 3.424065
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：分镜板布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：分镜"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“故事”"
+            }
+          ],
+          "matched_intent_ids": [
+            "storyboard"
+          ],
+          "matched_structure": [
+            "layout:storyboard-sheet"
+          ]
+        },
+        {
+          "case_id": "case-24",
+          "title": "漫画分镜叙事设计",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "storyboard-sheet",
+          "intents": [
+            "portrait",
+            "storyboard",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：分镜板布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：分镜"
+            }
+          ],
+          "matched_intent_ids": [
+            "storyboard"
+          ],
+          "matched_structure": [
+            "layout:storyboard-sheet"
+          ]
+        },
+        {
+          "case_id": "case-60",
+          "title": "漫画分镜叙事设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "storyboard-sheet",
+          "intents": [
+            "information_design",
+            "portrait",
+            "storyboard"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：分镜板布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：分镜"
+            }
+          ],
+          "matched_intent_ids": [
+            "storyboard"
+          ],
+          "matched_structure": [
+            "layout:storyboard-sheet"
+          ]
+        },
+        {
+          "case_id": "case-118",
+          "title": "漫画分镜叙事设计",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "storyboard-sheet",
+          "intents": [
+            "storyboard",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：分镜板布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：分镜"
+            }
+          ],
+          "matched_intent_ids": [
+            "storyboard"
+          ],
+          "matched_structure": [
+            "layout:storyboard-sheet"
+          ]
+        },
+        {
+          "case_id": "case-204",
+          "title": "智能动画分镜生成器",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "storyboard-sheet",
+          "intents": [
+            "information_design",
+            "storyboard"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：分镜板布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：分镜"
+            }
+          ],
+          "matched_intent_ids": [
+            "storyboard"
+          ],
+          "matched_structure": [
+            "layout:storyboard-sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q11",
+      "query": "对照矩阵比较产品差异",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "comparison"
+      ],
+      "min_top5_hits": 2,
+      "top5_relevant_hits": 2,
+      "top5_relevant_case_ids": [
+        "case-179",
+        "case-353"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-179",
+          "title": "蒸汽朋克射手座解剖图谱",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "comparison",
+            "component_labeling",
+            "information_design",
+            "poster_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：对照矩阵"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "comparison"
+          ],
+          "matched_structure": [
+            "layout:modular-infographic"
+          ]
+        },
+        {
+          "case_id": "case-353",
+          "title": "品牌口红推荐报告信息图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "brand_identity",
+            "comparison",
+            "component_labeling",
+            "information_design",
+            "portrait",
+            "poster_design",
+            "reference_transformation",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：对照矩阵"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [
+            "comparison"
+          ],
+          "matched_structure": [
+            "layout:modular-infographic"
+          ]
+        },
+        {
+          "case_id": "case-1",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "data_visualization",
+            "information_design",
+            "sequence_steps",
+            "text_rendering",
+            "timeline"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 5,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-infographic"
+          ]
+        },
+        {
+          "case_id": "case-8",
+          "title": "科普百科图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "poster_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 5,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-infographic"
+          ]
+        },
+        {
+          "case_id": "case-11",
+          "title": "一张手绘风格的城市美食地图，以台州为主题",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "map_layout",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 5,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块化信息图"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：信息图解"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-infographic"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q12",
+      "query": "海报字体排版，突出主标题",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "poster_design",
+        "typography",
+        "text_rendering"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-98",
+        "case-124",
+        "case-143",
+        "case-175",
+        "case-354"
+      ],
+      "confirmed_recall_at_5": 0,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-98",
+          "title": "主题海报版式设计",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：海报层级布局；5 个独立文字槽位；标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：海报、图中文字、字体排版"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "matched_structure": [
+            "layout:poster-hierarchy",
+            "text_slots:any",
+            "slot:title",
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-124",
+          "title": "主题海报版式设计",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：海报层级布局；4 个独立文字槽位；标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：海报、图中文字、字体排版"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "matched_structure": [
+            "layout:poster-hierarchy",
+            "text_slots:any",
+            "slot:title",
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-143",
+          "title": "品牌徽标设计图",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：海报层级布局；3 个独立文字槽位；标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：海报、图中文字、字体排版"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "matched_structure": [
+            "layout:poster-hierarchy",
+            "text_slots:any",
+            "slot:title",
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-175",
+          "title": "封面排版设计图",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：海报层级布局；4 个独立文字槽位；标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：海报、图中文字、字体排版"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "matched_structure": [
+            "layout:poster-hierarchy",
+            "text_slots:any",
+            "slot:title",
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-354",
+          "title": "Logo 与品牌身份系统提示词合集",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：海报层级布局；5 个独立文字槽位；标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：海报、图中文字、字体排版"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "matched_structure": [
+            "layout:poster-hierarchy",
+            "text_slots:any",
+            "slot:title",
+            "slot:title"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q13",
+      "query": "品牌标志，保留独立品牌槽位",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "brand_identity"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-17",
+        "case-36",
+        "case-83",
+        "case-98",
+        "case-101"
+      ],
+      "confirmed_recall_at_5": 0.8,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-17",
+          "title": "界面交互设计图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "exploded_view",
+            "information_design",
+            "interface_design",
+            "poster_design",
+            "structure_sheet",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：品牌独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：品牌识别"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：海报"
+            }
+          ],
+          "matched_intent_ids": [
+            "brand_identity"
+          ],
+          "matched_structure": [
+            "slot:brand"
+          ]
+        },
+        {
+          "case_id": "case-36",
+          "title": "品牌徽标设计图",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "portrait",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：品牌独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：品牌识别"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：海报"
+            }
+          ],
+          "matched_intent_ids": [
+            "brand_identity"
+          ],
+          "matched_structure": [
+            "slot:brand"
+          ]
+        },
+        {
+          "case_id": "case-83",
+          "title": "信息图可视化设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "brand_identity",
+            "information_design",
+            "poster_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：品牌独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：品牌识别"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：海报"
+            }
+          ],
+          "matched_intent_ids": [
+            "brand_identity"
+          ],
+          "matched_structure": [
+            "slot:brand"
+          ]
+        },
+        {
+          "case_id": "case-98",
+          "title": "主题海报版式设计",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：品牌独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：品牌识别"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：海报"
+            }
+          ],
+          "matched_intent_ids": [
+            "brand_identity"
+          ],
+          "matched_structure": [
+            "slot:brand"
+          ]
+        },
+        {
+          "case_id": "case-101",
+          "title": "界面交互设计图",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "interface_design",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：品牌独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：品牌识别"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：海报"
+            }
+          ],
+          "matched_intent_ids": [
+            "brand_identity"
+          ],
+          "matched_structure": [
+            "slot:brand"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q14",
+      "query": "UI 界面设计，保留按钮和导航控件",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "interface_design"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-21",
+        "case-57",
+        "case-104",
+        "case-107",
+        "case-130"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-21",
+          "title": "直播界面设计图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "interface_design",
+            "portrait",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 1.667645
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：界面页面布局；操作控件独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：界面设计"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“ui”"
+            }
+          ],
+          "matched_intent_ids": [
+            "interface_design"
+          ],
+          "matched_structure": [
+            "layout:ui-page",
+            "slot:ui_controls"
+          ]
+        },
+        {
+          "case_id": "case-57",
+          "title": "界面交互设计图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "interface_design",
+            "portrait",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 1.667645
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：界面页面布局；操作控件独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：界面设计"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“ui”"
+            }
+          ],
+          "matched_intent_ids": [
+            "interface_design"
+          ],
+          "matched_structure": [
+            "layout:ui-page",
+            "slot:ui_controls"
+          ]
+        },
+        {
+          "case_id": "case-104",
+          "title": "界面交互设计图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "interface_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 1.667645
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：界面页面布局；操作控件独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：界面设计"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“ui”"
+            }
+          ],
+          "matched_intent_ids": [
+            "interface_design"
+          ],
+          "matched_structure": [
+            "layout:ui-page",
+            "slot:ui_controls"
+          ]
+        },
+        {
+          "case_id": "case-107",
+          "title": "应用界面样机图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "interface_design",
+            "portrait",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 1.667645
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：界面页面布局；操作控件独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：界面设计"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“ui”"
+            }
+          ],
+          "matched_intent_ids": [
+            "interface_design"
+          ],
+          "matched_structure": [
+            "layout:ui-page",
+            "slot:ui_controls"
+          ]
+        },
+        {
+          "case_id": "case-130",
+          "title": "界面交互设计图",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "interface_design",
+            "portrait",
+            "poster_design",
+            "product_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 1.667645
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：界面页面布局；操作控件独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：界面设计"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“ui”"
+            }
+          ],
+          "matched_intent_ids": [
+            "interface_design"
+          ],
+          "matched_structure": [
+            "layout:ui-page",
+            "slot:ui_controls"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q15",
+      "query": "文档排版杂志内页，整理阅读顺序",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "document_layout"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 3,
+      "top5_relevant_case_ids": [
+        "case-122",
+        "case-345",
+        "case-456"
+      ],
+      "confirmed_recall_at_5": 0.6,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-122",
+          "title": "主题海报版式设计",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "modular-grid",
+          "intents": [
+            "document_layout",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：文档版面"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：图中文字"
+            }
+          ],
+          "matched_intent_ids": [
+            "document_layout"
+          ],
+          "matched_structure": [
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-345",
+          "title": "法新浪潮撕纸电影海报",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "document_layout",
+            "portrait",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：文档版面"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：图中文字"
+            }
+          ],
+          "matched_intent_ids": [
+            "document_layout"
+          ],
+          "matched_structure": [
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-456",
+          "title": "历史事件 2x2 可视化地图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "document_layout",
+            "information_design",
+            "text_rendering",
+            "timeline",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：文档版面"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：图中文字"
+            }
+          ],
+          "matched_intent_ids": [
+            "document_layout"
+          ],
+          "matched_structure": [
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-388",
+          "title": "1980s Claude 复古杂志广告",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "modular-grid",
+          "intents": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 5,
+            "text": 11.007013
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：图中文字"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“杂志”"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "slot:title"
+          ]
+        },
+        {
+          "case_id": "case-479",
+          "title": "杂志纸艺拼贴重绘",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "poster_design",
+            "reference_transformation",
+            "subject_appearance",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 5,
+            "text": 11.007013
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：标题独立槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：图中文字"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“杂志”"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "slot:title"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q16",
+      "query": "产品与包装设计，保留包装外观",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "product_design"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 4,
+      "top5_relevant_case_ids": [
+        "case-475",
+        "case-130",
+        "case-153",
+        "case-487"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-475",
+          "title": "企鹅造型包装结构板",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "component_labeling",
+            "dimension_annotation",
+            "information_design",
+            "material_notes",
+            "multi_view",
+            "product_design",
+            "reference_transformation",
+            "structure_sheet",
+            "technical_view",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 11.817943
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：产品与包装"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“包装”"
+            }
+          ],
+          "matched_intent_ids": [
+            "product_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-130",
+          "title": "界面交互设计图",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "interface_design",
+            "portrait",
+            "poster_design",
+            "product_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：产品与包装"
+            }
+          ],
+          "matched_intent_ids": [
+            "product_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-153",
+          "title": "主题海报版式设计",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "packaging-label",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "product_design",
+            "reference_transformation",
+            "sequence_steps",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：产品与包装"
+            }
+          ],
+          "matched_intent_ids": [
+            "product_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-487",
+          "title": "法式药妆商业分镜封面",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "storyboard-sheet",
+          "intents": [
+            "brand_identity",
+            "character_sheet",
+            "information_design",
+            "portrait",
+            "product_design",
+            "storyboard",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：产品与包装"
+            }
+          ],
+          "matched_intent_ids": [
+            "product_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-17",
+          "title": "界面交互设计图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "exploded-view",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "exploded_view",
+            "information_design",
+            "interface_design",
+            "poster_design",
+            "structure_sheet",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 5,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "关联意图：结构板"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": []
+        }
+      ]
+    },
+    {
+      "query_id": "Q17",
+      "query": "单人人像写真",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "portrait"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-31",
+        "case-35",
+        "case-45",
+        "case-123",
+        "case-173"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-31",
+          "title": "人像写实摄影图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "portrait",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局；主体数量为 1"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：人像写真"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            }
+          ],
+          "matched_intent_ids": [
+            "portrait"
+          ],
+          "matched_structure": [
+            "layout:single-subject",
+            "subject_count:1"
+          ]
+        },
+        {
+          "case_id": "case-35",
+          "title": "人像写实摄影图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "portrait",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局；主体数量为 1"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：人像写真"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            }
+          ],
+          "matched_intent_ids": [
+            "portrait"
+          ],
+          "matched_structure": [
+            "layout:single-subject",
+            "subject_count:1"
+          ]
+        },
+        {
+          "case_id": "case-45",
+          "title": "人像写实摄影图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "portrait",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局；主体数量为 1"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：人像写真"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            }
+          ],
+          "matched_intent_ids": [
+            "portrait"
+          ],
+          "matched_structure": [
+            "layout:single-subject",
+            "subject_count:1"
+          ]
+        },
+        {
+          "case_id": "case-123",
+          "title": "插画艺术创作图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "component_labeling",
+            "portrait",
+            "subject_appearance",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局；主体数量为 1"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：人像写真"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            }
+          ],
+          "matched_intent_ids": [
+            "portrait"
+          ],
+          "matched_structure": [
+            "layout:single-subject",
+            "subject_count:1"
+          ]
+        },
+        {
+          "case_id": "case-173",
+          "title": "银河繁星点缀的冰蓝襦裙",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "portrait",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局；主体数量为 1"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：人像写真"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            }
+          ],
+          "matched_intent_ids": [
+            "portrait"
+          ],
+          "matched_structure": [
+            "layout:single-subject",
+            "subject_count:1"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q18",
+      "query": "角色造型与人物外观插画",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "character_design"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-533",
+        "case-530",
+        "case-325",
+        "case-132",
+        "case-372"
+      ],
+      "confirmed_recall_at_5": 0.5,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-533",
+          "title": "手绘涂鸦时尚人物插画",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "character_design",
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 17.695058
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“人物、插画”"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-530",
+          "title": "实拍背景涂鸦人物替换",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "character_design",
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 9.620719
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“人物”"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-325",
+          "title": "皮克斯风阳光少年",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "character_design",
+            "portrait",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：主体外观"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-132",
+          "title": "界面交互设计图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "character_design",
+            "icon_design",
+            "information_design",
+            "interface_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-372",
+          "title": "可爱角色设定表",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "multi-view-grid",
+          "intents": [
+            "character_design",
+            "character_sheet",
+            "information_design",
+            "multi_view",
+            "portrait",
+            "poster_design",
+            "reference_transformation",
+            "structure_sheet",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：角色造型"
+            }
+          ],
+          "matched_intent_ids": [
+            "character_design"
+          ],
+          "matched_structure": []
+        }
+      ]
+    },
+    {
+      "query_id": "Q19",
+      "query": "静物主体造型，突出材质保真",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "subject_appearance"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-6",
+        "case-25",
+        "case-27",
+        "case-29",
+        "case-30"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-6",
+          "title": "插画艺术创作图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“静物”"
+            }
+          ],
+          "matched_intent_ids": [
+            "subject_appearance"
+          ],
+          "matched_structure": [
+            "layout:single-subject"
+          ]
+        },
+        {
+          "case_id": "case-25",
+          "title": "综合应用场景图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“静物”"
+            }
+          ],
+          "matched_intent_ids": [
+            "subject_appearance"
+          ],
+          "matched_structure": [
+            "layout:single-subject"
+          ]
+        },
+        {
+          "case_id": "case-27",
+          "title": "人物角色设定图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“静物”"
+            }
+          ],
+          "matched_intent_ids": [
+            "subject_appearance"
+          ],
+          "matched_structure": [
+            "layout:single-subject"
+          ]
+        },
+        {
+          "case_id": "case-29",
+          "title": "电影感叙事场景图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“静物”"
+            }
+          ],
+          "matched_intent_ids": [
+            "subject_appearance"
+          ],
+          "matched_structure": [
+            "layout:single-subject"
+          ]
+        },
+        {
+          "case_id": "case-30",
+          "title": "写实摄影风格图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "subject_appearance",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：单主体布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：主体外观"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“静物”"
+            }
+          ],
+          "matched_intent_ids": [
+            "subject_appearance"
+          ],
+          "matched_structure": [
+            "layout:single-subject"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q20",
+      "query": "多主体互动的空间场景叙事",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "scene_composition"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-26",
+        "case-46",
+        "case-50",
+        "case-120",
+        "case-127"
+      ],
+      "confirmed_recall_at_5": 0.6,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-26",
+          "title": "建筑空间场景图",
+          "category_id": "scene-narrative",
+          "category_name": "场景叙事",
+          "layout": "spatial-scene",
+          "intents": [
+            "scene_composition"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 33.347773
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：空间场景布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：场景叙事"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“间场、空间、场景、景叙”"
+            }
+          ],
+          "matched_intent_ids": [
+            "scene_composition"
+          ],
+          "matched_structure": [
+            "layout:spatial-scene"
+          ]
+        },
+        {
+          "case_id": "case-46",
+          "title": "建筑空间场景图",
+          "category_id": "scene-narrative",
+          "category_name": "场景叙事",
+          "layout": "spatial-scene",
+          "intents": [
+            "scene_composition"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 33.347773
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：空间场景布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：场景叙事"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“间场、空间、场景、景叙”"
+            }
+          ],
+          "matched_intent_ids": [
+            "scene_composition"
+          ],
+          "matched_structure": [
+            "layout:spatial-scene"
+          ]
+        },
+        {
+          "case_id": "case-50",
+          "title": "建筑空间场景图",
+          "category_id": "scene-narrative",
+          "category_name": "场景叙事",
+          "layout": "spatial-scene",
+          "intents": [
+            "scene_composition"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 33.347773
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：空间场景布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：场景叙事"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“间场、空间、场景、景叙”"
+            }
+          ],
+          "matched_intent_ids": [
+            "scene_composition"
+          ],
+          "matched_structure": [
+            "layout:spatial-scene"
+          ]
+        },
+        {
+          "case_id": "case-120",
+          "title": "建筑空间场景图",
+          "category_id": "scene-narrative",
+          "category_name": "场景叙事",
+          "layout": "spatial-scene",
+          "intents": [
+            "scene_composition"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 33.347773
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：空间场景布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：场景叙事"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“间场、空间、场景、景叙”"
+            }
+          ],
+          "matched_intent_ids": [
+            "scene_composition"
+          ],
+          "matched_structure": [
+            "layout:spatial-scene"
+          ]
+        },
+        {
+          "case_id": "case-127",
+          "title": "建筑空间场景图",
+          "category_id": "scene-narrative",
+          "category_name": "场景叙事",
+          "layout": "spatial-scene",
+          "intents": [
+            "portrait",
+            "scene_composition",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 33.347773
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：空间场景布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：场景叙事"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“间场、空间、场景、景叙”"
+            }
+          ],
+          "matched_intent_ids": [
+            "scene_composition"
+          ],
+          "matched_structure": [
+            "layout:spatial-scene"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q21",
+      "query": "参考图重构，保留主体",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "reference_transformation"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-6",
+        "case-29",
+        "case-44",
+        "case-285",
+        "case-322"
+      ],
+      "confirmed_recall_at_5": 0.6,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-6",
+          "title": "插画艺术创作图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：参考图输入"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：参考图重构"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“主体”"
+            }
+          ],
+          "matched_intent_ids": [
+            "reference_transformation"
+          ],
+          "matched_structure": [
+            "input_mode:text_and_image"
+          ]
+        },
+        {
+          "case_id": "case-29",
+          "title": "电影感叙事场景图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：参考图输入"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：参考图重构"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“主体”"
+            }
+          ],
+          "matched_intent_ids": [
+            "reference_transformation"
+          ],
+          "matched_structure": [
+            "input_mode:text_and_image"
+          ]
+        },
+        {
+          "case_id": "case-44",
+          "title": "古风历史题材图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "component_labeling",
+            "reference_transformation",
+            "subject_appearance",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：参考图输入"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：参考图重构"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“主体”"
+            }
+          ],
+          "matched_intent_ids": [
+            "reference_transformation"
+          ],
+          "matched_structure": [
+            "input_mode:text_and_image"
+          ]
+        },
+        {
+          "case_id": "case-285",
+          "title": "真实动漫画面快照",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "reference_transformation",
+            "subject_appearance"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：参考图输入"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：参考图重构"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“主体”"
+            }
+          ],
+          "matched_intent_ids": [
+            "reference_transformation"
+          ],
+          "matched_structure": [
+            "input_mode:text_and_image"
+          ]
+        },
+        {
+          "case_id": "case-322",
+          "title": "街头炫瓶男模",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "single-subject",
+          "intents": [
+            "component_labeling",
+            "reference_transformation",
+            "subject_appearance",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 2.368012
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：参考图输入"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：参考图重构"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“主体”"
+            }
+          ],
+          "matched_intent_ids": [
+            "reference_transformation"
+          ],
+          "matched_structure": [
+            "input_mode:text_and_image"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q22",
+      "query": "图中文字与短句，保留独立文字槽位",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "text_rendering"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 5,
+      "top5_relevant_case_ids": [
+        "case-431",
+        "case-2",
+        "case-5",
+        "case-7",
+        "case-10"
+      ],
+      "confirmed_recall_at_5": 0.6,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-431",
+          "title": "城市文字旅行海报",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-infographic",
+          "intents": [
+            "information_design",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 13.204238
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：1 个独立文字槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：图中文字"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：字体排版"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“文字”"
+            }
+          ],
+          "matched_intent_ids": [
+            "text_rendering"
+          ],
+          "matched_structure": [
+            "text_slots:any"
+          ]
+        },
+        {
+          "case_id": "case-2",
+          "title": "社媒界面截图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "data_visualization",
+            "interface_design",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：4 个独立文字槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：图中文字"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：字体排版"
+            }
+          ],
+          "matched_intent_ids": [
+            "text_rendering"
+          ],
+          "matched_structure": [
+            "text_slots:any"
+          ]
+        },
+        {
+          "case_id": "case-5",
+          "title": "主题海报版式设计",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：1 个独立文字槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：图中文字"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：字体排版"
+            }
+          ],
+          "matched_intent_ids": [
+            "text_rendering"
+          ],
+          "matched_structure": [
+            "text_slots:any"
+          ]
+        },
+        {
+          "case_id": "case-7",
+          "title": "应用界面样机图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "interface_design",
+            "portrait",
+            "reference_transformation",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：2 个独立文字槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：图中文字"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：字体排版"
+            }
+          ],
+          "matched_intent_ids": [
+            "text_rendering"
+          ],
+          "matched_structure": [
+            "text_slots:any"
+          ]
+        },
+        {
+          "case_id": "case-10",
+          "title": "主题海报版式设计",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "poster-hierarchy",
+          "intents": [
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：1 个独立文字槽位"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：图中文字"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：字体排版"
+            }
+          ],
+          "matched_intent_ids": [
+            "text_rendering"
+          ],
+          "matched_structure": [
+            "text_slots:any"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q23",
+      "query": "LINE stickers 贴纸套组",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "sticker_set"
+      ],
+      "min_top5_hits": 3,
+      "top5_relevant_hits": 4,
+      "top5_relevant_case_ids": [
+        "case-37",
+        "case-38",
+        "case-39",
+        "case-40"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-37",
+          "title": "综合应用场景图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "information_design",
+            "sticker_set"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：贴纸套组"
+            }
+          ],
+          "matched_intent_ids": [
+            "sticker_set"
+          ],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-38",
+          "title": "综合应用场景图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "information_design",
+            "sticker_set"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：贴纸套组"
+            }
+          ],
+          "matched_intent_ids": [
+            "sticker_set"
+          ],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-39",
+          "title": "综合应用场景图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "information_design",
+            "sticker_set"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：贴纸套组"
+            }
+          ],
+          "matched_intent_ids": [
+            "sticker_set"
+          ],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-40",
+          "title": "综合应用场景图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "information_design",
+            "sticker_set"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：贴纸套组"
+            }
+          ],
+          "matched_intent_ids": [
+            "sticker_set"
+          ],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-28",
+          "title": "写实摄影风格创作",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "information_design",
+            "portrait"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 0,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q24",
+      "query": "收藏卡牌套卡设计",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "card_design"
+      ],
+      "min_top5_hits": 2,
+      "top5_relevant_hits": 2,
+      "top5_relevant_case_ids": [
+        "case-166",
+        "case-290"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-166",
+          "title": "十二黄金圣斗士卡牌合集",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "card_design",
+            "information_design"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：卡片设计"
+            }
+          ],
+          "matched_intent_ids": [
+            "card_design"
+          ],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-290",
+          "title": "古风诗人镭射典藏卡牌",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "card-collection",
+          "intents": [
+            "card_design",
+            "component_labeling",
+            "information_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：卡片合集布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：卡片设计"
+            }
+          ],
+          "matched_intent_ids": [
+            "card_design"
+          ],
+          "matched_structure": [
+            "layout:card-collection"
+          ]
+        },
+        {
+          "case_id": "case-28",
+          "title": "写实摄影风格创作",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "information_design",
+            "portrait"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 0,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-32",
+          "title": "插画艺术创作图",
+          "category_id": "subject-form",
+          "category_name": "主体造型",
+          "layout": "modular-grid",
+          "intents": [
+            "subject_appearance",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 0,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        },
+        {
+          "case_id": "case-34",
+          "title": "插画艺术创作图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "modular-grid",
+          "intents": [
+            "component_labeling",
+            "information_design",
+            "portrait",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 0,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：模块网格布局"
+            }
+          ],
+          "matched_intent_ids": [],
+          "matched_structure": [
+            "layout:modular-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q25",
+      "query": "应用图标 app icon，使用方形画布",
+      "hard_scenario": false,
+      "expected_intent_ids": [
+        "icon_design"
+      ],
+      "min_top5_hits": 2,
+      "top5_relevant_hits": 2,
+      "top5_relevant_case_ids": [
+        "case-444",
+        "case-510"
+      ],
+      "confirmed_recall_at_5": 1,
+      "reasons_passed": true,
+      "ordering_passed": true,
+      "passed": true,
+      "top5": [
+        {
+          "case_id": "case-444",
+          "title": "迪斯科镜面 3D App 图标",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "icon-canvas",
+          "intents": [
+            "icon_design",
+            "poster_design"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 11.817943
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：图标画布布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：应用图标"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图标”"
+            }
+          ],
+          "matched_intent_ids": [
+            "icon_design"
+          ],
+          "matched_structure": [
+            "layout:icon-canvas"
+          ]
+        },
+        {
+          "case_id": "case-510",
+          "title": "Bichon Shop 拟物 App 图标",
+          "category_id": "graphic-communication",
+          "category_name": "平面传播",
+          "layout": "icon-canvas",
+          "intents": [
+            "icon_design",
+            "poster_design"
+          ],
+          "scores": {
+            "structure": 100,
+            "intent": 100,
+            "text": 11.817943
+          },
+          "reasons": [
+            {
+              "kind": "structure",
+              "text": "结构命中：图标画布布局"
+            },
+            {
+              "kind": "intent",
+              "text": "意图命中：应用图标"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“图标”"
+            }
+          ],
+          "matched_intent_ids": [
+            "icon_design"
+          ],
+          "matched_structure": [
+            "layout:icon-canvas"
+          ]
+        },
+        {
+          "case_id": "case-106",
+          "title": "应用界面样机图",
+          "category_id": "interface-document",
+          "category_name": "界面文档",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "component_labeling",
+            "icon_design",
+            "interface_design",
+            "poster_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 8.599067
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：应用图标"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            },
+            {
+              "kind": "text",
+              "text": "文本命中：标题、替代文本、分类或来源标签包含“应用”"
+            }
+          ],
+          "matched_intent_ids": [
+            "icon_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-132",
+          "title": "界面交互设计图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "character_design",
+            "icon_design",
+            "information_design",
+            "interface_design",
+            "text_rendering"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：应用图标"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "icon_design"
+          ],
+          "matched_structure": []
+        },
+        {
+          "case_id": "case-133",
+          "title": "界面交互设计图",
+          "category_id": "information-diagram",
+          "category_name": "信息图解",
+          "layout": "ui-page",
+          "intents": [
+            "brand_identity",
+            "dimension_annotation",
+            "icon_design",
+            "information_design",
+            "interface_design",
+            "text_rendering",
+            "typography"
+          ],
+          "scores": {
+            "structure": 0,
+            "intent": 105,
+            "text": 0
+          },
+          "reasons": [
+            {
+              "kind": "intent",
+              "text": "意图命中：应用图标"
+            },
+            {
+              "kind": "intent",
+              "text": "关联意图：品牌识别"
+            }
+          ],
+          "matched_intent_ids": [
+            "icon_design"
+          ],
+          "matched_structure": []
+        }
+      ]
+    }
+  ]
+}
