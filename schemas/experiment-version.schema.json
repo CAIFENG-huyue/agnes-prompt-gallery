@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "experiment-version.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "experiment_version_id",
+    "experiment_id",
+    "version_no",
+    "hypothesis",
+    "design",
+    "arms",
+    "model",
+    "primary_metric",
+    "secondary_metrics",
+    "rubric_version",
+    "status"
+  ],
+  "properties": {
+    "experiment_version_id": {
+      "$ref": "common.schema.json#/$defs/experimentVersionId"
+    },
+    "experiment_id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "version_no": {
+      "$ref": "common.schema.json#/$defs/versionNo"
+    },
+    "hypothesis": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "design": {
+      "type": "object"
+    },
+    "arms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["arm_id", "label", "prompt_version_ids"],
+        "properties": {
+          "arm_id": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "label": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "prompt_version_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "common.schema.json#/$defs/promptVersionId"
+            }
+          }
+        }
+      }
+    },
+    "model": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "primary_metric": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "secondary_metrics": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      }
+    },
+    "rubric_version": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "frozen", "superseded"]
+    }
+  }
+}

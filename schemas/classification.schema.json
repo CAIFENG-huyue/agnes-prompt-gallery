@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classification.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "primary_category_id",
+    "confidence",
+    "rationale",
+    "evidence_excerpt",
+    "classifier_version",
+    "review_status"
+  ],
+  "properties": {
+    "case_id": {
+      "$ref": "common.schema.json#/$defs/caseId"
+    },
+    "primary_category_id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "rationale": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "evidence_excerpt": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "classifier_version": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["unreviewed", "reviewed", "gold_arbitrated"]
+    }
+  }
+}

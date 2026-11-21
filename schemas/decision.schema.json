@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "decision.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "case_id",
+    "prompt_version_id",
+    "decision",
+    "control_target",
+    "before_excerpt",
+    "after_excerpt",
+    "expected_effect",
+    "observed_effect",
+    "evidence_level",
+    "evidence_refs"
+  ],
+  "properties": {
+    "decision_id": {
+      "$ref": "common.schema.json#/$defs/resourceId"
+    },
+    "case_id": {
+      "$ref": "common.schema.json#/$defs/caseId"
+    },
+    "prompt_version_id": {
+      "$ref": "common.schema.json#/$defs/promptVersionId"
+    },
+    "decision": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "control_target": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "before_excerpt": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "after_excerpt": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "expected_effect": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "observed_effect": {
+      "$ref": "common.schema.json#/$defs/nullableNonEmptyString"
+    },
+    "evidence_level": {
+      "$ref": "common.schema.json#/$defs/evidenceLevel"
+    },
+    "evidence_refs": {
+      "$ref": "common.schema.json#/$defs/evidenceRefs"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["evidence_level"],
+        "properties": {
+          "evidence_level": {
+            "enum": ["tested", "observed"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observed_effect": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "evidence_refs": {
+            "contains": {
+              "type": "object",
+              "required": ["entity_type"],
+              "properties": {
+                "entity_type": {
+                  "const": "run"
+                }
+              }
+            },
+            "minContains": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": ["evidence_level"],
+        "properties": {
+          "evidence_level": {
+            "const": "inferred"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observed_effect": {
+            "type": "null"
+          },
+          "evidence_refs": {
+            "contains": {
+              "type": "object",
+              "required": ["entity_type"],
+              "properties": {
+                "entity_type": {
+                  "const": "prompt_version"
+                }
+              }
+            },
+            "minContains": 1
+          }
+        }
+      }
+    }
+  ]
+}

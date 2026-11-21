@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "case.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "title", "cover_asset_id", "editorial_status", "source"],
+  "properties": {
+    "case_id": {
+      "$ref": "common.schema.json#/$defs/caseId"
+    },
+    "title": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "image_alt": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "cover_asset_id": {
+      "$ref": "common.schema.json#/$defs/resourceId"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "editorial_status": {
+      "type": "string",
+      "enum": ["imported", "enriched", "reviewed", "published"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "source_label",
+        "source_url",
+        "github_url",
+        "original_category",
+        "styles",
+        "scenes"
+      ],
+      "properties": {
+        "repository": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "source_label": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "source_url": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "github_url": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "original_category": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "styles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        }
+      }
+    }
+  }
+}

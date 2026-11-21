@@ -1,0 +1,24 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+
+interface Props {
+  title?: string;
+  description: string;
+  href?: string;
+  actionLabel?: string;
+}
+
+const {
+  title = "暂时没有匹配的案例",
+  description,
+  href,
+  actionLabel = "重新选择任务"
+} = Astro.props;
+---
+
+<section class="empty-state" aria-labelledby="empty-state-title">
+  <p class="eyebrow">调整结构条件</p>
+  <h2 id="empty-state-title">{title}</h2>
+  <p>{description}</p>
+  {href && <ButtonLink href={href} variant="secondary">{actionLabel}</ButtonLink>}
+</section>

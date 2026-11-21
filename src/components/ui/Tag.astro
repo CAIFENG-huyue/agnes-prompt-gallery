@@ -1,0 +1,10 @@
+---
+interface Props {
+  tone?: "neutral" | "accent" | "outline";
+  class?: string;
+}
+
+const { tone = "neutral", class: className } = Astro.props;
+---
+
+<span class:list={["tag", `tag--${tone}`, className]}><slot /></span>

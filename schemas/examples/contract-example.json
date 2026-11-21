@@ -1,0 +1,213 @@
+{
+  "fixture_kind": "synthetic-contract-fixture",
+  "case": {
+    "case_id": "case-000",
+    "title": "结构板契约合成示例",
+    "image_alt": "仅用于 Schema 校验的结构板占位描述",
+    "cover_asset_id": "asset-synthetic-000",
+    "featured": false,
+    "editorial_status": "imported",
+    "source": {
+      "repository": "synthetic-fixture",
+      "source_label": "合成契约示例",
+      "source_url": "synthetic://case-000/source",
+      "github_url": "synthetic://case-000/repository",
+      "original_category": "fixture",
+      "styles": [],
+      "scenes": []
+    }
+  },
+  "classification": {
+    "case_id": "case-000",
+    "primary_category_id": "information-diagram",
+    "confidence": 1,
+    "rationale": "尺寸与材料均占用需要逐槽核对的独立位置",
+    "evidence_excerpt": "视图、尺寸与材料分别绑定独立槽位",
+    "classifier_version": "synthetic-classifier-v1",
+    "review_status": "reviewed"
+  },
+  "fingerprint": {
+    "case_id": "case-000",
+    "subject_count": 1,
+    "layout": "multi-view-grid",
+    "relations": [
+      {
+        "source_slot": "main-view",
+        "relation": "annotated_by",
+        "target_slot": "dimensions"
+      }
+    ],
+    "text_slots": [
+      {
+        "slot_id": "dimensions",
+        "role": "dimension_annotation",
+        "required": true,
+        "content": "尺寸"
+      },
+      {
+        "slot_id": "materials",
+        "role": "material_notes",
+        "required": true,
+        "content": "材料"
+      }
+    ],
+    "input_mode": "text_only",
+    "ratio": "4:3",
+    "confidence": 1,
+    "evidence_excerpt": "主视图关联尺寸标注，材料说明单独占位",
+    "fingerprint_version": "synthetic-fingerprint-v1"
+  },
+  "guide": {
+    "guide_id": "guide-synthetic-000",
+    "case_id": "case-000",
+    "suitable_for": ["需要同时核对视图、尺寸和材料槽位的结构板"],
+    "unsuitable_for": ["只关注单一主体材质且不需要标注的任务"],
+    "common_challenges": ["视图与尺寸错配", "材料说明遗漏"],
+    "transferable_rule": "先固定视图，再为尺寸与材料建立独立槽位并绑定到对应视图。",
+    "guide_version": "synthetic-guide-v1"
+  },
+  "asset": {
+    "asset_id": "asset-synthetic-000",
+    "uri": "/assets/synthetic/case-000.webp",
+    "kind": "synthetic_fixture",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "width": 960,
+    "height": 720,
+    "source_url": "synthetic://case-000/image",
+    "format": "webp"
+  },
+  "promptVersion": {
+    "prompt_version_id": "case-000/pv-001",
+    "case_id": "case-000",
+    "version_no": 1,
+    "parent_version_id": null,
+    "text": "主体、视图、尺寸与材料分别占用明确槽位。",
+    "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "change_note": "合成示例的初始版本",
+    "spec": {
+      "ratio": "4:3",
+      "refs": [],
+      "ref_contract": null,
+      "canvas": "4:3 画布",
+      "subject": "单一礼盒",
+      "elements": ["主视图", "侧视图"],
+      "texts": [
+        {
+          "text": "尺寸",
+          "where": "主视图旁",
+          "style": "工程标注"
+        },
+        {
+          "text": "材料",
+          "where": "独立说明槽位",
+          "style": "简洁说明"
+        }
+      ],
+      "counts": [
+        {
+          "item": "视图",
+          "rows": 1,
+          "cols": 2,
+          "labels": ["主视图", "侧视图"]
+        }
+      ],
+      "layout": "双视图结构板",
+      "style": "技术线稿",
+      "negatives": ["缺少尺寸槽位"]
+    }
+  },
+  "experimentVersion": {
+    "experiment_version_id": "synthetic-structure/ev-001",
+    "experiment_id": "synthetic-structure",
+    "version_no": 1,
+    "hypothesis": "仅验证实验版本字段结构，不表达实验主张",
+    "design": {
+      "fixture_only": true,
+      "single_variable": true
+    },
+    "arms": [
+      {
+        "arm_id": "arm-synthetic",
+        "label": "合成示例臂",
+        "prompt_version_ids": ["case-000/pv-001"]
+      }
+    ],
+    "model": "synthetic-model",
+    "primary_metric": "schema_validity",
+    "secondary_metrics": [],
+    "rubric_version": "synthetic-rubric-v1",
+    "status": "draft"
+  },
+  "run": {
+    "run_id": "run-synthetic-000",
+    "experiment_version_id": "synthetic-structure/ev-001",
+    "arm_id": "arm-synthetic",
+    "case_id": "case-000",
+    "prompt_version_id": "case-000/pv-001",
+    "rep": 1,
+    "blind_id": "synthetic-blind-000",
+    "result_asset_ids": ["asset-synthetic-000"],
+    "created_at": "2026-01-01T00:00:00Z"
+  },
+  "scoreRevision": {
+    "score_id": "score-synthetic-000-r1",
+    "run_id": "run-synthetic-000",
+    "revision": 1,
+    "supersedes_id": null,
+    "g1": 0,
+    "g2": 0,
+    "g3": 0,
+    "g4": 0,
+    "text_hits": 0,
+    "text_total": 0,
+    "elements_hits": 0,
+    "elements_total": 0,
+    "count_error": 0,
+    "notes": "合成契约示例，不是评分结果",
+    "scorer": "synthetic-scorer",
+    "scored_at": "2026-01-01T00:00:00Z",
+    "is_current": true,
+    "evidence_asset_ids": ["asset-synthetic-000"]
+  },
+  "decision": {
+    "decision_id": "decision-synthetic-000",
+    "case_id": "case-000",
+    "prompt_version_id": "case-000/pv-001",
+    "decision": "固定视图与尺寸槽位",
+    "control_target": "绑定视角和标注",
+    "before_excerpt": "视图、尺寸与材料混在自由描述中",
+    "after_excerpt": "视图、尺寸与材料分别绑定独立槽位",
+    "expected_effect": "取消槽位后易漏项或错配",
+    "observed_effect": null,
+    "evidence_level": "inferred",
+    "evidence_refs": [
+      {
+        "entity_type": "prompt_version",
+        "entity_id": "case-000/pv-001"
+      },
+      {
+        "entity_type": "case",
+        "entity_id": "case-000"
+      }
+    ]
+  },
+  "conclusionVersion": {
+    "conclusion_version_id": "cv-synthetic-000-v1",
+    "conclusion_id": "conclusion-synthetic-000",
+    "version_no": 1,
+    "source_experiment_version_ids": ["synthetic-structure/ev-001"],
+    "score_snapshot_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "metric": "schema_example_metric",
+    "estimate": 0,
+    "unit": "score",
+    "ci_low": 0,
+    "ci_high": 0,
+    "ci_method": "synthetic-interval",
+    "ci_level": 0.95,
+    "n_cases": 1,
+    "n_images": 1,
+    "limitations": ["仅用于契约校验，不构成实验结论"],
+    "generator_version": "synthetic-generator-v1",
+    "evidence_run_ids": ["run-synthetic-000"]
+  }
+}

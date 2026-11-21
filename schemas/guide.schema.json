@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "guide.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "guide_id",
+    "case_id",
+    "suitable_for",
+    "unsuitable_for",
+    "common_challenges",
+    "transferable_rule",
+    "guide_version"
+  ],
+  "properties": {
+    "guide_id": {
+      "$ref": "common.schema.json#/$defs/resourceId"
+    },
+    "case_id": {
+      "$ref": "common.schema.json#/$defs/caseId"
+    },
+    "suitable_for": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      }
+    },
+    "unsuitable_for": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      }
+    },
+    "common_challenges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      }
+    },
+    "transferable_rule": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "guide_version": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    }
+  }
+}

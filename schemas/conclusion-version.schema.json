@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "conclusion-version.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "conclusion_version_id",
+    "conclusion_id",
+    "version_no",
+    "source_experiment_version_ids",
+    "score_snapshot_hash",
+    "metric",
+    "estimate",
+    "unit",
+    "ci_low",
+    "ci_high",
+    "ci_method",
+    "ci_level",
+    "n_cases",
+    "n_images",
+    "limitations",
+    "generator_version",
+    "evidence_run_ids"
+  ],
+  "properties": {
+    "conclusion_version_id": {
+      "$ref": "common.schema.json#/$defs/resourceId"
+    },
+    "conclusion_id": {
+      "$ref": "common.schema.json#/$defs/resourceId"
+    },
+    "version_no": {
+      "$ref": "common.schema.json#/$defs/versionNo"
+    },
+    "source_experiment_version_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/experimentVersionId"
+      }
+    },
+    "score_snapshot_hash": {
+      "$ref": "common.schema.json#/$defs/sha256"
+    },
+    "metric": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "estimate": {
+      "type": "number"
+    },
+    "unit": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "ci_low": {
+      "type": "number"
+    },
+    "ci_high": {
+      "type": "number"
+    },
+    "ci_method": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "ci_level": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "p_value": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "p_method": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "n_cases": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "n_images": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      }
+    },
+    "generator_version": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "evidence_run_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/resourceId"
+      }
+    }
+  },
+  "dependentRequired": {
+    "p_value": ["p_method"],
+    "p_method": ["p_value"]
+  }
+}

@@ -1,0 +1,25 @@
+---
+import type { EvidenceLevel } from "../../lib/content/types.js";
+
+interface Props {
+  level: EvidenceLevel;
+  compact?: boolean;
+}
+
+const { level, compact = false } = Astro.props;
+const evidence = {
+  tested: { label: "受控实验", description: "有受控实验 Run 支撑" },
+  observed: { label: "结果观察", description: "有实际结果观察，不宣称受控因果" },
+  inferred: { label: "结构推断", description: "由提示词和结构规则推断，非实测结论" }
+} satisfies Record<EvidenceLevel, { label: string; description: string }>;
+const current = evidence[level];
+---
+
+<span
+  class:list={["evidence-badge", `evidence-badge--${level}`, { "evidence-badge--compact": compact }]}
+  title={current.description}
+>
+  <span class="evidence-badge__dot" aria-hidden="true"></span>
+  <span>{current.label}</span>
+  {!compact && <span class="visually-hidden">：{current.description}</span>}
+</span>

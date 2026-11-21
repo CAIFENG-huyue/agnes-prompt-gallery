@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+import "../styles/layout.css";
+import "../styles/components.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "按意图与画面结构查找案例，查看可迁移写法及其证据版本。"
+} = Astro.props;
+const pageTitle = title === "Agnes Bench" ? title : `${title} · Agnes Bench`;
+const navigation = [
+  { href: "/", label: "找案例" },
+  { href: "/methods/", label: "可迁移写法" },
+  { href: "/experiments/", label: "实验证据" }
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f4f1e9" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/" aria-label="Agnes Bench 首页">
+          <span class="brand__mark" aria-hidden="true">AB</span>
+          <span class="brand__name">Agnes Bench</span>
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          {navigation.map((item) => (
+            <a
+              href={item.href}
+              aria-current={Astro.url.pathname === item.href ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main id="main-content" class="page-shell">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span>Agnes Bench</span>
+        <span>静态案例索引 · 证据与版本可回溯</span>
+      </div>
+    </footer>
+  </body>
+</html>

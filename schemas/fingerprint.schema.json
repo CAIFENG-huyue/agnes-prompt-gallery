@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fingerprint.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "subject_count",
+    "layout",
+    "relations",
+    "text_slots",
+    "input_mode",
+    "ratio",
+    "confidence",
+    "evidence_excerpt",
+    "fingerprint_version"
+  ],
+  "properties": {
+    "case_id": {
+      "$ref": "common.schema.json#/$defs/caseId"
+    },
+    "subject_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "layout": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_slot", "relation", "target_slot"],
+        "properties": {
+          "source_slot": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "relation": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "target_slot": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "text_slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slot_id", "role", "required"],
+        "properties": {
+          "slot_id": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "role": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "content": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "input_mode": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "ratio": {
+      "$ref": "common.schema.json#/$defs/ratio"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "evidence_excerpt": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "fingerprint_version": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    }
+  }
+}

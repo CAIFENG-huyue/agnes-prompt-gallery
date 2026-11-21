@@ -1,0 +1,26 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  eyebrow?: string;
+  description?: string;
+  wide?: boolean;
+}
+
+const { title, eyebrow, description, wide = false } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <header class:list={["page-intro", { "page-intro--wide": wide }]}>
+    <div class="page-intro__copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      {description && <p class="page-intro__description">{description}</p>}
+    </div>
+    <div class="page-intro__actions">
+      <slot name="actions" />
+    </div>
+  </header>
+  <slot />
+</BaseLayout>

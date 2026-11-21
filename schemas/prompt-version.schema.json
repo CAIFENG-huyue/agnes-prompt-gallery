@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prompt-version.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "prompt_version_id",
+    "case_id",
+    "version_no",
+    "parent_version_id",
+    "text",
+    "content_sha256",
+    "change_note",
+    "spec"
+  ],
+  "properties": {
+    "prompt_version_id": {
+      "$ref": "common.schema.json#/$defs/promptVersionId"
+    },
+    "case_id": {
+      "$ref": "common.schema.json#/$defs/caseId"
+    },
+    "version_no": {
+      "$ref": "common.schema.json#/$defs/versionNo"
+    },
+    "parent_version_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/promptVersionId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "text": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "content_sha256": {
+      "$ref": "common.schema.json#/$defs/sha256"
+    },
+    "change_note": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ratio",
+        "refs",
+        "ref_contract",
+        "canvas",
+        "subject",
+        "elements",
+        "texts",
+        "counts",
+        "layout",
+        "style",
+        "negatives"
+      ],
+      "properties": {
+        "ratio": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/ratio"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "refs": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        },
+        "ref_contract": {
+          "$ref": "common.schema.json#/$defs/nullableNonEmptyString"
+        },
+        "canvas": {
+          "$ref": "common.schema.json#/$defs/nullableNonEmptyString"
+        },
+        "subject": {
+          "$ref": "common.schema.json#/$defs/nullableNonEmptyString"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        },
+        "texts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text", "where", "style"],
+            "properties": {
+              "text": {
+                "$ref": "common.schema.json#/$defs/nonEmptyString"
+              },
+              "where": {
+                "$ref": "common.schema.json#/$defs/nonEmptyString"
+              },
+              "style": {
+                "$ref": "common.schema.json#/$defs/nonEmptyString"
+              }
+            }
+          }
+        },
+        "counts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["item", "rows", "cols", "labels"],
+            "properties": {
+              "item": {
+                "$ref": "common.schema.json#/$defs/nonEmptyString"
+              },
+              "rows": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cols": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "labels": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/nonEmptyString"
+                }
+              }
+            }
+          }
+        },
+        "layout": {
+          "$ref": "common.schema.json#/$defs/nullableNonEmptyString"
+        },
+        "style": {
+          "$ref": "common.schema.json#/$defs/nullableNonEmptyString"
+        },
+        "negatives": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+---
+import type { Category } from "../../lib/content/types.js";
+
+interface Props {
+  category: Category;
+  href?: string;
+  count?: number;
+}
+
+const {
+  category,
+  href = `/categories/${category.category_id}/`,
+  count
+} = Astro.props;
+---
+
+<a class="category-card" data-category={category.category_id} href={href}>
+  <span class="category-card__topline">
+    <span class="category-card__index">{String(category.decision_order).padStart(2, "0")}</span>
+    {count !== undefined && <span class="category-card__count">{count} 个案例</span>}
+  </span>
+  <span class="category-card__name">{category.name}</span>
+  <span class="category-card__explanation">{category.plain_explanation}</span>
+  <span class="category-card__usage">
+    <span class="category-card__label">什么时候用</span>
+    <span>{category.when_to_use}</span>
+  </span>
+  <span class="category-card__intents">
+    {category.intent_examples.slice(0, 2).map((intent) => <span>{intent}</span>)}
+  </span>
+</a>

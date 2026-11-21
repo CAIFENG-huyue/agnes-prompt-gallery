@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "taxonomy_id": "agnes-primary-taxonomy",
+  "version_no": 1,
+  "categories": [
+    {
+      "category_id": "subject-form",
+      "name": "主体造型",
+      "plain_explanation": "我想把一个东西或人的外观、材质画对",
+      "definition": "以一个主体的外观、材质或风格保真为核心",
+      "when_to_use": "产品、人像、角色、静物",
+      "decision_order": 5,
+      "acceptance_focus": "外观、材质和主体保真",
+      "intent_examples": ["我想把产品材质画对", "我想保持角色外观一致", "我想调整静物质感"]
+    },
+    {
+      "category_id": "scene-narrative",
+      "name": "场景叙事",
+      "plain_explanation": "我想安排多个对象在哪里、做什么",
+      "definition": "以多主体的空间关系、动作或情节为核心",
+      "when_to_use": "场景、故事、参考图重构",
+      "decision_order": 4,
+      "acceptance_focus": "空间关系、动作与情节",
+      "intent_examples": ["我想安排人物的位置和动作", "我想重构参考图中的场景", "我想让多个对象形成故事"]
+    },
+    {
+      "category_id": "graphic-communication",
+      "name": "平面传播",
+      "plain_explanation": "我想让人先看到标题、品牌或卖点",
+      "definition": "以标题、品牌和视觉注意的层级为核心",
+      "when_to_use": "海报、封面、广告、字标",
+      "decision_order": 3,
+      "acceptance_focus": "标题、品牌与视觉注意层级",
+      "intent_examples": ["我想突出海报标题", "我想让品牌先被看到", "我想安排广告卖点层级"]
+    },
+    {
+      "category_id": "information-diagram",
+      "name": "信息图解",
+      "plain_explanation": "我想把尺寸、步骤、部件或多格对应关系讲清楚",
+      "definition": "以多个槽位的数量、顺序、标注及绑定关系为核心",
+      "when_to_use": "结构板、图表、设定卡、对照矩阵",
+      "decision_order": 2,
+      "acceptance_focus": "槽位数量、顺序、标注及绑定关系",
+      "intent_examples": ["我想做结构板", "我想标尺寸", "我想写材料说明"]
+    },
+    {
+      "category_id": "interface-document",
+      "name": "界面文档",
+      "plain_explanation": "我想让页面容易读、容易操作",
+      "definition": "以页面中的阅读流或操作流为核心",
+      "when_to_use": "UI、文档、出版物",
+      "decision_order": 1,
+      "acceptance_focus": "阅读流与操作流",
+      "intent_examples": ["我想让界面容易操作", "我想整理文档阅读顺序", "我想规划出版物版面"]
+    }
+  ],
+  "conflict_resolution": [
+    "interface-document",
+    "information-diagram",
+    "graphic-communication",
+    "scene-narrative",
+    "subject-form"
+  ]
+}

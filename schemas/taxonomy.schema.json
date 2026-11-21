@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "taxonomy.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "taxonomy_id", "version_no", "categories", "conflict_resolution"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "taxonomy_id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "version_no": {
+      "$ref": "common.schema.json#/$defs/versionNo"
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "category.schema.json"
+      }
+    },
+    "conflict_resolution": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/slug"
+      }
+    }
+  }
+}

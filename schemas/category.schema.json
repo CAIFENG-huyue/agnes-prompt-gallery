@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "category.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "category_id",
+    "name",
+    "plain_explanation",
+    "definition",
+    "when_to_use",
+    "decision_order",
+    "acceptance_focus",
+    "intent_examples"
+  ],
+  "properties": {
+    "category_id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "name": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "plain_explanation": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "definition": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "when_to_use": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "decision_order": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "acceptance_focus": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "intent_examples": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      }
+    }
+  }
+}
