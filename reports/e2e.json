@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-21T20:58:01.165Z",
+  "generatedAt": "2026-11-21T21:04:11.061Z",
   "viewport": {
     "width": 360,
     "height": 800
   },
   "baseUrl": "http://127.0.0.1:4321",
-  "build": "dist-t13",
+  "build": "dist-e2e",
   "summary": {
     "pages": 13,
     "passed": 13,

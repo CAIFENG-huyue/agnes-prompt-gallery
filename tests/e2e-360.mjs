@@ -1,11 +1,12 @@
+import { spawnSync } from "node:child_process";
 import { createServer } from "node:http";
-import { readFile, stat, mkdir, writeFile } from "node:fs/promises";
+import { readFile, stat, mkdir, rm, writeFile } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
-const DIST = join(ROOT, "dist-t13");
+const DIST = join(ROOT, "dist-e2e");
 const OUT_DIR = join(ROOT, "reports");
 const SHOT_DIR = join(OUT_DIR, "e2e-360");
 const PORT = Number(process.env.E2E_PORT || 4321);
@@ -180,8 +181,28 @@ async function collectLinks(page, defs) {
   return [...links].sort();
 }
 
+function buildSite() {
+  const result = spawnSync("npx", ["--yes", "astro", "build", "--outDir", "dist-e2e"], {
+    cwd: ROOT,
+    encoding: "utf8",
+    timeout: 600000,
+    maxBuffer: 64 * 1024 * 1024
+  });
+  if (result.status !== 0) {
+    throw new Error(`astro build 失败（exit ${result.status}）：\n${result.stderr || result.stdout}`);
+  }
+  const pages = result.stdout.match(/(\d+)\s+page\(s\) built/u)?.[1];
+  console.log(`[build] dist-e2e：${pages ?? "?"} page(s)`);
+}
+
 async function main() {
   await mkdir(SHOT_DIR, { recursive: true });
+  try {
+    buildSite();
+  } catch (error) {
+    await rm(DIST, { recursive: true, force: true });
+    throw error;
+  }
   const server = await startServer();
   const browser = await chromium.launch({ args: ["--no-sandbox", "--disable-dev-shm-usage"] });
   const context = await browser.newContext({ viewport: VIEWPORT, deviceScaleFactor: 1 });
@@ -223,7 +244,7 @@ async function main() {
       generatedAt: new Date().toISOString(),
       viewport: VIEWPORT,
       baseUrl: ORIGIN,
-      build: "dist-t13",
+      build: "dist-e2e",
       summary: {
         pages: results.length,
         passed: results.length - failed.length,
@@ -251,6 +272,7 @@ async function main() {
   } finally {
     await browser.close();
     server.close();
+    await rm(DIST, { recursive: true, force: true });
   }
 }
 
