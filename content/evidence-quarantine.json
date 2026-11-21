@@ -1,0 +1,90 @@
+{
+  "policy": "唯一可信盲标映射是 E/mapping-h1.jsonl；禁止由图片或内容哈希猜 blind_id。无法回连 Case/PromptVersion/Run 或缺乏结果文档支持的记录只存档，不进入任何展示数字。",
+  "generated_by": "tools/migrate-experiments.mjs",
+  "records": [
+    {
+      "record_id": "quarantine-001",
+      "source_path": "E/images/h2/bg-montage.jpg",
+      "case_id": null,
+      "reason": "拼版展示素材，不是逐 Run 结果图，无法回连任何 Run",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-002",
+      "source_path": "E/images/h2/h2-353-r1-overlay.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-003",
+      "source_path": "E/images/h2/h2-353-r1.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-004",
+      "source_path": "E/images/h2/h2-353-r2-overlay.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-005",
+      "source_path": "E/images/h2/h2-353-r2.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-006",
+      "source_path": "E/images/h2/h2-353-r3-overlay.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-007",
+      "source_path": "E/images/h2/h2-353-r3.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-008",
+      "source_path": "E/images/h2/h2-353-r4-overlay.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-009",
+      "source_path": "E/images/h2/h2-353-r4.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-010",
+      "source_path": "E/images/h2/h2-353-r5-overlay.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-011",
+      "source_path": "E/images/h2/h2-353-r5.png",
+      "case_id": "case-353",
+      "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+      "disposition": "archive-only"
+    },
+    {
+      "record_id": "quarantine-012",
+      "source_path": "E/images/h2/h2-pilot-226-1.png",
+      "case_id": "case-226",
+      "reason": "单张早期试点图，不属于 results-h2.md 冻结的每臂 5 张设计，也无 mapping 可回连",
+      "disposition": "archive-only"
+    }
+  ]
+}

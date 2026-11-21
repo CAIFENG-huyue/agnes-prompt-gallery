@@ -1,0 +1,438 @@
+[
+  {
+    "experiment_version_id": "h1/ev-001",
+    "experiment_id": "h1",
+    "version_no": 1,
+    "hypothesis": "分段结构化提示词（元素编号＋逐槽字符串）相比散文契约段落能提高图内文字逐字达成率（structured − prose 为正）。",
+    "design": {
+      "source": {
+        "mapping": "E/mapping-h1.jsonl",
+        "scores": "E/scores-h1.csv",
+        "results": "E/results-h1.md",
+        "specs": "E/specs/h1/"
+      },
+      "case_ids": [
+        "case-23",
+        "case-153",
+        "case-226",
+        "case-270",
+        "case-353",
+        "case-371",
+        "case-379",
+        "case-387",
+        "case-389",
+        "case-475"
+      ],
+      "reps_per_arm": 5,
+      "n_images": 100,
+      "blinding": "全部 blind_id 直接来自 mapping-h1.jsonl；未由图片文件或内容哈希反推归属",
+      "scoring_notes": "scores-h1.csv 已并入 results-h1.md ‘Scoring reliability’ 所述 20% 盲重复核修正；scorer=agent-recheck 的行为复核后评分，本次迁移作为各 Run 的 revision 1 当前评分",
+      "analysis": {
+        "effect": "对每案例先取每臂 per-image text_hits/text_total 的均值，再计算 structured − prose，最后对 10 个案例取算术平均，单位 pp",
+        "wilson_z": 1.959963984540054,
+        "bootstrap": {
+          "resamples": 10000,
+          "seed": 20261121,
+          "method": "案例级配对重采样，percentile 线性插值 2.5/97.5；RNG 复现 numpy PCG64(SeedSequence(seed)) 的 integers(0,10) 序列（analyze.py 口径）"
+        },
+        "permutation": "双侧精确符号翻转，10 案例共 1024 种符号组合，|mean| >= |observed| - 1e-12 计数",
+        "gee": "原文 GEE 由 statsmodels 拟合，仅作为 design.reported 的存档文字，不在本生成器中重算"
+      },
+      "reported": {
+        "arms": {
+          "prose": {
+            "n_images": 50,
+            "text_hits": 601,
+            "text_total": 620,
+            "rate": 0.969,
+            "wilson95": [
+              0.953,
+              0.98
+            ]
+          },
+          "structured": {
+            "n_images": 50,
+            "text_hits": 557,
+            "text_total": 620,
+            "rate": 0.898,
+            "wilson95": [
+              0.872,
+              0.92
+            ]
+          }
+        },
+        "n_cases": 10,
+        "effect_pp": -7.9,
+        "bootstrap95_pp": [
+          -14.5,
+          -2.6
+        ],
+        "permutation_p": 0.01562,
+        "gee_text": "OR=0.29 [0.19, 0.46], marginal=-7.4 pp, p=6.931e-08",
+        "hard_gate": {
+          "arms": {
+            "prose": {
+              "n_images": 50,
+              "passes": 6,
+              "pass_rate": 0.12,
+              "wilson95": [
+                0.056,
+                0.238
+              ]
+            },
+            "structured": {
+              "n_images": 50,
+              "passes": 4,
+              "pass_rate": 0.08,
+              "wilson95": [
+                0.032,
+                0.188
+              ]
+            }
+          },
+          "effect_pp": -4,
+          "bootstrap95_pp": [
+            -18,
+            6
+          ],
+          "permutation_p": 1,
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p": 1
+          },
+          "power_at_15pp_n10": 0.26,
+          "gee_pass": "OR=0.64 [0.24, 1.68], p=0.3616"
+        },
+        "exploratory": {
+          "requirement_fulfillment": {
+            "effect_pp": -3.8,
+            "p": 0.3242,
+            "p_holm": 0.9727
+          },
+          "element_recall": {
+            "effect_pp": 0.5,
+            "p": 0.7656,
+            "p_holm": 1
+          },
+          "text_exact": {
+            "effect_pp": -24,
+            "p": 0.03125,
+            "p_holm": 0.125
+          },
+          "count_correct": {
+            "effect_pp": -4,
+            "p": 0.8281,
+            "p_holm": 1
+          }
+        },
+        "per_case": [
+          {
+            "case_id": "case-23",
+            "prose": {
+              "hits": 80,
+              "total": 80,
+              "rate": 1
+            },
+            "structured": {
+              "hits": 79,
+              "total": 80,
+              "rate": 0.988
+            },
+            "diff_pp": -1.2
+          },
+          {
+            "case_id": "case-153",
+            "prose": {
+              "hits": 70,
+              "total": 70,
+              "rate": 1
+            },
+            "structured": {
+              "hits": 69,
+              "total": 70,
+              "rate": 0.986
+            },
+            "diff_pp": -1.4
+          },
+          {
+            "case_id": "case-226",
+            "prose": {
+              "hits": 75,
+              "total": 80,
+              "rate": 0.938
+            },
+            "structured": {
+              "hits": 62,
+              "total": 80,
+              "rate": 0.775
+            },
+            "diff_pp": -16.2
+          },
+          {
+            "case_id": "case-270",
+            "prose": {
+              "hits": 45,
+              "total": 45,
+              "rate": 1
+            },
+            "structured": {
+              "hits": 43,
+              "total": 45,
+              "rate": 0.956
+            },
+            "diff_pp": -4.4
+          },
+          {
+            "case_id": "case-353",
+            "prose": {
+              "hits": 97,
+              "total": 100,
+              "rate": 0.97
+            },
+            "structured": {
+              "hits": 99,
+              "total": 100,
+              "rate": 0.99
+            },
+            "diff_pp": 2
+          },
+          {
+            "case_id": "case-371",
+            "prose": {
+              "hits": 10,
+              "total": 10,
+              "rate": 1
+            },
+            "structured": {
+              "hits": 10,
+              "total": 10,
+              "rate": 1
+            },
+            "diff_pp": 0
+          },
+          {
+            "case_id": "case-379",
+            "prose": {
+              "hits": 63,
+              "total": 65,
+              "rate": 0.969
+            },
+            "structured": {
+              "hits": 60,
+              "total": 65,
+              "rate": 0.923
+            },
+            "diff_pp": -4.6
+          },
+          {
+            "case_id": "case-387",
+            "prose": {
+              "hits": 74,
+              "total": 75,
+              "rate": 0.987
+            },
+            "structured": {
+              "hits": 64,
+              "total": 75,
+              "rate": 0.853
+            },
+            "diff_pp": -13.3
+          },
+          {
+            "case_id": "case-389",
+            "prose": {
+              "hits": 56,
+              "total": 60,
+              "rate": 0.933
+            },
+            "structured": {
+              "hits": 51,
+              "total": 60,
+              "rate": 0.85
+            },
+            "diff_pp": -8.3
+          },
+          {
+            "case_id": "case-475",
+            "prose": {
+              "hits": 31,
+              "total": 35,
+              "rate": 0.886
+            },
+            "structured": {
+              "hits": 20,
+              "total": 35,
+              "rate": 0.571
+            },
+            "diff_pp": -31.4
+          }
+        ],
+        "decision": "adopt=False (primary_pass=False, pass point estimate=-4.0 pp); held-out pass validation still required."
+      }
+    },
+    "arms": [
+      {
+        "arm_id": "prose",
+        "label": "散文契约段落提示词",
+        "prompt_version_ids": [
+          "case-23/pv-002",
+          "case-153/pv-002",
+          "case-226/pv-002",
+          "case-270/pv-002",
+          "case-353/pv-002",
+          "case-371/pv-002",
+          "case-379/pv-002",
+          "case-387/pv-002",
+          "case-389/pv-002",
+          "case-475/pv-002"
+        ]
+      },
+      {
+        "arm_id": "structured",
+        "label": "分段结构化提示词",
+        "prompt_version_ids": [
+          "case-23/pv-003",
+          "case-153/pv-003",
+          "case-226/pv-003",
+          "case-270/pv-003",
+          "case-353/pv-003",
+          "case-371/pv-003",
+          "case-379/pv-003",
+          "case-387/pv-003",
+          "case-389/pv-003",
+          "case-475/pv-003"
+        ]
+      }
+    ],
+    "model": "agnes-image-2.5-flash",
+    "primary_metric": "text_fulfillment_case_level_effect_pp",
+    "secondary_metrics": [
+      "hard_gate_pass",
+      "requirement_fulfillment",
+      "element_recall",
+      "text_exact",
+      "count_correct"
+    ],
+    "rubric_version": "h1-g1-g4-text-elements-count-v1",
+    "status": "frozen"
+  },
+  {
+    "experiment_version_id": "h2-226/ev-001",
+    "experiment_id": "h2-226",
+    "version_no": 1,
+    "hypothesis": "对具有可预测空白题注带的版式，无字底图加 PIL 叠字比模型直接生成图内文字获得更高的逐字槽位达成率。",
+    "design": {
+      "source": {
+        "results": "E/results-h2.md",
+        "spec": "E/specs/h2/case-226.json",
+        "images": "E/images/h2/"
+      },
+      "single_case": "case-226",
+      "reps_per_arm": 5,
+      "n_images": 10,
+      "feasibility_pilot": true,
+      "powered_test": false,
+      "blinded": false,
+      "blind_id_policy": "H2 未施盲；overlay 各 Run 的 blind_id 字段记录来源运行标识 h2-226-r{2..6}-overlay，与 results-h2.md 的 r2–r6 一一对应，未由哈希猜测",
+      "control_runs": {
+        "experiment_version_id": "h1/ev-001",
+        "arm_id": "prose",
+        "case_id": "case-226",
+        "run_ids": [
+          "run-h1-226-prose-1",
+          "run-h1-226-prose-2",
+          "run-h1-226-prose-3",
+          "run-h1-226-prose-4",
+          "run-h1-226-prose-5"
+        ],
+        "note": "Arm A 复用 H1 case-226 prose 的 5 次运行及其盲评评分，不重复生成图片"
+      },
+      "overlay": {
+        "font": "Noto Serif CJK SC Bold",
+        "placement": "内容底部空白带检测加人工核对",
+        "result_assets": "每个 overlay Run 的 result_asset_ids 依次为叠字结果图与对应无字底图",
+        "arm_b_text": "文字由 PIL 确定性构造，100% 逐字是操纵检查而非独立胜利"
+      },
+      "reported": {
+        "arms": {
+          "in-image": {
+            "exact_slots_hits": 75,
+            "exact_slots_total": 80,
+            "exact_slots_rate_text": "75/80 = 93.8%",
+            "per_image_exact": [
+              0,
+              5
+            ],
+            "portraits": [
+              5,
+              5
+            ],
+            "grid": [
+              5,
+              5
+            ]
+          },
+          "overlay": {
+            "exact_slots_hits": 80,
+            "exact_slots_total": 80,
+            "exact_slots_rate_text": "80/80 = 100%",
+            "per_image_exact": [
+              5,
+              5
+            ],
+            "portraits": [
+              5,
+              5
+            ],
+            "grid": [
+              5,
+              5
+            ]
+          }
+        },
+        "band_usable": [
+          5,
+          5
+        ],
+        "no_collision": [
+          5,
+          5
+        ],
+        "guide_line_defect": "r6",
+        "caveats": [
+          "One case, n=5 per arm. Not powered; treat as feasibility evidence.",
+          "Arm B's text is deterministic, so text accuracy is not blind-comparable.",
+          "Overlay placement uses content-bottom detection plus manual inspection; production"
+        ]
+      }
+    },
+    "arms": [
+      {
+        "arm_id": "in-image",
+        "label": "Arm A：H1 prose 提示词，模型直接生成图内文字",
+        "prompt_version_ids": [
+          "case-226/pv-002"
+        ]
+      },
+      {
+        "arm_id": "overlay",
+        "label": "Arm B：同 spec 但 texts=[] 并保留两行空白题注，PIL 后叠字",
+        "prompt_version_ids": [
+          "case-226/pv-004"
+        ]
+      }
+    ],
+    "model": "agnes-image-2.5-flash",
+    "primary_metric": "exact_text_slot_fulfillment",
+    "secondary_metrics": [
+      "per_image_exact_text",
+      "portrait_count",
+      "grid_layout",
+      "band_usability",
+      "text_portrait_collision"
+    ],
+    "rubric_version": "h2-226-manipulation-check-v1",
+    "status": "frozen"
+  }
+]

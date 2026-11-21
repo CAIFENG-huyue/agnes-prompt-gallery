@@ -1,0 +1,639 @@
+{
+  "tool": "tools/build-conclusions.mjs",
+  "generator_version": "build-conclusions.mjs@1.0.0",
+  "mode": "check",
+  "generated_at": "2026-11-21T15:01:15.673Z",
+  "inputs": {
+    "experiment_versions": "content/experiment-versions.json",
+    "runs": "content/runs.json",
+    "score_revisions": "content/score-revisions.json",
+    "quarantine": "content/evidence-quarantine.json",
+    "reported_reference": "content/experiment-versions.json design.reported（由 migrate-experiments.mjs 从 E/results-h1.md 与 E/results-h2.md 解析）",
+    "experiments_root": "/workspace/agent/agnes/experiments"
+  },
+  "score_snapshot_hash": "7b13f2915a4191f80cf97b801cfe2c7192c95ea85f401196b1b017d57cbce0b0",
+  "recompute": {
+    "h1": {
+      "arms": {
+        "prose": {
+          "n_images": 50,
+          "text_hits": 601,
+          "text_total": 620,
+          "rate": 0.9693548387096774,
+          "wilson95": [
+            0.9526344356396451,
+            0.9802949036514771
+          ],
+          "passes": 6,
+          "pass_rate": 0.12,
+          "pass_wilson95": [
+            0.05617600150932274,
+            0.23804817383202992
+          ]
+        },
+        "structured": {
+          "n_images": 50,
+          "text_hits": 557,
+          "text_total": 620,
+          "rate": 0.8983870967741936,
+          "wilson95": [
+            0.8720981397232941,
+            0.9197697187128131
+          ],
+          "passes": 4,
+          "pass_rate": 0.08,
+          "pass_wilson95": [
+            0.03154951408859298,
+            0.18838246918342838
+          ]
+        }
+      },
+      "n_cases": 10,
+      "effect_pp": -7.9083638583638605,
+      "bootstrap95_pp": [
+        -14.539762667887674,
+        -2.6030853174603195
+      ],
+      "permutation": {
+        "p": 0.015625,
+        "n_perms": 1024
+      },
+      "per_case": [
+        {
+          "case_id": "case-23",
+          "prose_rate": 1,
+          "structured_rate": 0.9875,
+          "diff_pp": -1.2499999999999956
+        },
+        {
+          "case_id": "case-153",
+          "prose_rate": 1,
+          "structured_rate": 0.9857142857142858,
+          "diff_pp": -1.4285714285714235
+        },
+        {
+          "case_id": "case-226",
+          "prose_rate": 0.9375,
+          "structured_rate": 0.775,
+          "diff_pp": -16.249999999999996
+        },
+        {
+          "case_id": "case-270",
+          "prose_rate": 1,
+          "structured_rate": 0.9555555555555555,
+          "diff_pp": -4.444444444444451
+        },
+        {
+          "case_id": "case-353",
+          "prose_rate": 0.97,
+          "structured_rate": 0.99,
+          "diff_pp": 2.0000000000000018
+        },
+        {
+          "case_id": "case-371",
+          "prose_rate": 1,
+          "structured_rate": 1,
+          "diff_pp": 0
+        },
+        {
+          "case_id": "case-379",
+          "prose_rate": 0.9692307692307693,
+          "structured_rate": 0.923076923076923,
+          "diff_pp": -4.615384615384633
+        },
+        {
+          "case_id": "case-387",
+          "prose_rate": 0.9866666666666667,
+          "structured_rate": 0.8533333333333333,
+          "diff_pp": -13.333333333333341
+        },
+        {
+          "case_id": "case-389",
+          "prose_rate": 0.9333333333333332,
+          "structured_rate": 0.85,
+          "diff_pp": -8.333333333333325
+        },
+        {
+          "case_id": "case-475",
+          "prose_rate": 0.8857142857142858,
+          "structured_rate": 0.5714285714285714,
+          "diff_pp": -31.428571428571438
+        }
+      ],
+      "hard_gate": {
+        "effect_pp": -3.9999999999999996,
+        "bootstrap95_pp": [
+          -18,
+          6.000000000000001
+        ],
+        "permutation": {
+          "p": 1,
+          "n_perms": 1024
+        },
+        "mcnemar": {
+          "b": 0,
+          "c": 1,
+          "p": 1
+        }
+      },
+      "exploratory": {
+        "requirement_fulfillment": {
+          "n_cases": 10,
+          "effect_pp": -3.8007529507529516,
+          "p": 0.32421875,
+          "p_holm": 0.97265625
+        },
+        "element_recall": {
+          "n_cases": 10,
+          "effect_pp": 0.5061050061050032,
+          "p": 0.765625,
+          "p_holm": 1
+        },
+        "text_exact": {
+          "n_cases": 10,
+          "effect_pp": -24,
+          "p": 0.03125,
+          "p_holm": 0.125
+        },
+        "count_correct": {
+          "n_cases": 10,
+          "effect_pp": -3.9999999999999996,
+          "p": 0.828125,
+          "p_holm": 1
+        }
+      }
+    },
+    "h2_226": {
+      "control": {
+        "run_ids": [
+          "run-h1-226-prose-1",
+          "run-h1-226-prose-2",
+          "run-h1-226-prose-3",
+          "run-h1-226-prose-4",
+          "run-h1-226-prose-5"
+        ],
+        "exact_slots_hits": 75,
+        "exact_slots_total": 80,
+        "per_image_exact": [
+          0,
+          5
+        ]
+      },
+      "overlay": {
+        "run_ids": [
+          "run-h2-226-overlay-2",
+          "run-h2-226-overlay-3",
+          "run-h2-226-overlay-4",
+          "run-h2-226-overlay-5",
+          "run-h2-226-overlay-6"
+        ],
+        "exact_slots_hits": 80,
+        "exact_slots_total": 80,
+        "per_image_exact": [
+          5,
+          5
+        ],
+        "source": "E/results-h2.md 操纵检查记录（PIL 确定性文字，无逐图评分表）"
+      },
+      "effect_pp": 6.25,
+      "n_cases": 1,
+      "n_images_per_arm": 5
+    }
+  },
+  "conclusions": [
+    {
+      "conclusion_version_id": "h1-text-fulfillment/cv-001",
+      "estimate": -7.9083638583638605,
+      "ci": [
+        -14.539762667887674,
+        -2.6030853174603195
+      ],
+      "p_value": 0.015625,
+      "n_cases": 10,
+      "n_images": 100,
+      "evidence_runs": 100
+    },
+    {
+      "conclusion_version_id": "h1-hard-gate-pass/cv-001",
+      "estimate": -3.9999999999999996,
+      "ci": [
+        -18,
+        6.000000000000001
+      ],
+      "p_value": 1,
+      "n_cases": 10,
+      "n_images": 100,
+      "evidence_runs": 100
+    },
+    {
+      "conclusion_version_id": "h2-226-overlay-exact-text/cv-001",
+      "estimate": 6.25,
+      "ci": [
+        6.25,
+        6.25
+      ],
+      "p_value": null,
+      "n_cases": 1,
+      "n_images": 10,
+      "evidence_runs": 10
+    }
+  ],
+  "quarantine": {
+    "total_records": 12,
+    "excluded_from_all_metrics": true,
+    "by_reason": [
+      {
+        "reason": "拼版展示素材，不是逐 Run 结果图，无法回连任何 Run",
+        "count": 1
+      },
+      {
+        "reason": "H2-353 只有生成与叠字素材，results-h2.md 未给出其结果；按 plan-v2 仅存档，不产生结论也不进入数字",
+        "count": 10
+      },
+      {
+        "reason": "单张早期试点图，不属于 results-h2.md 冻结的每臂 5 张设计，也无 mapping 可回连",
+        "count": 1
+      }
+    ],
+    "record_ids": [
+      "quarantine-001",
+      "quarantine-002",
+      "quarantine-003",
+      "quarantine-004",
+      "quarantine-005",
+      "quarantine-006",
+      "quarantine-007",
+      "quarantine-008",
+      "quarantine-009",
+      "quarantine-010",
+      "quarantine-011",
+      "quarantine-012"
+    ]
+  },
+  "integrity": {
+    "h1_runs": 100,
+    "unique_h1_blind_ids": 100,
+    "current_score_revisions": 100,
+    "orphan_references": 0,
+    "schema_errors": 0
+  },
+  "checks": [
+    {
+      "id": "h1.prose.text_hits_total",
+      "expected": "601/620",
+      "actual": "601/620",
+      "pass": true
+    },
+    {
+      "id": "h1.prose.n_images",
+      "expected": 50,
+      "actual": 50,
+      "pass": true
+    },
+    {
+      "id": "h1.prose.rate_round3",
+      "expected": 0.969,
+      "actual": 0.969,
+      "pass": true
+    },
+    {
+      "id": "h1.prose.wilson_round3",
+      "expected": [
+        0.953,
+        0.98
+      ],
+      "actual": [
+        0.953,
+        0.98
+      ],
+      "pass": true
+    },
+    {
+      "id": "h1.prose.hard_gate_passes",
+      "expected": 6,
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "id": "h1.prose.hard_gate_wilson_round3",
+      "expected": [
+        0.056,
+        0.238
+      ],
+      "actual": [
+        0.056,
+        0.238
+      ],
+      "pass": true
+    },
+    {
+      "id": "h1.structured.text_hits_total",
+      "expected": "557/620",
+      "actual": "557/620",
+      "pass": true
+    },
+    {
+      "id": "h1.structured.n_images",
+      "expected": 50,
+      "actual": 50,
+      "pass": true
+    },
+    {
+      "id": "h1.structured.rate_round3",
+      "expected": 0.898,
+      "actual": 0.898,
+      "pass": true
+    },
+    {
+      "id": "h1.structured.wilson_round3",
+      "expected": [
+        0.872,
+        0.92
+      ],
+      "actual": [
+        0.872,
+        0.92
+      ],
+      "pass": true
+    },
+    {
+      "id": "h1.structured.hard_gate_passes",
+      "expected": 4,
+      "actual": 4,
+      "pass": true
+    },
+    {
+      "id": "h1.structured.hard_gate_wilson_round3",
+      "expected": [
+        0.032,
+        0.188
+      ],
+      "actual": [
+        0.032,
+        0.188
+      ],
+      "pass": true
+    },
+    {
+      "id": "h1.n_cases",
+      "expected": 10,
+      "actual": 10,
+      "pass": true
+    },
+    {
+      "id": "h1.effect_pp_round1",
+      "expected": -7.9,
+      "actual": -7.9,
+      "pass": true
+    },
+    {
+      "id": "h1.bootstrap95_pp_round1",
+      "expected": [
+        -14.5,
+        -2.6
+      ],
+      "actual": [
+        -14.5,
+        -2.6
+      ],
+      "pass": true
+    },
+    {
+      "id": "h1.permutation_p_4g",
+      "expected": 0.01562,
+      "actual": 0.015625,
+      "pass": true
+    },
+    {
+      "id": "h1.hard_gate.effect_pp_round1",
+      "expected": -4,
+      "actual": -4,
+      "pass": true
+    },
+    {
+      "id": "h1.hard_gate.bootstrap95_pp_round1",
+      "expected": [
+        -18,
+        6
+      ],
+      "actual": [
+        -18,
+        6
+      ],
+      "pass": true
+    },
+    {
+      "id": "h1.hard_gate.permutation_p",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "id": "h1.hard_gate.mcnemar",
+      "expected": {
+        "b": 0,
+        "c": 1,
+        "p": 1
+      },
+      "actual": {
+        "b": 0,
+        "c": 1,
+        "p": 1
+      },
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.requirement_fulfillment.effect_pp_round1",
+      "expected": -3.8,
+      "actual": -3.8,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.requirement_fulfillment.p_4g",
+      "expected": 0.3242,
+      "actual": 0.32421875,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.requirement_fulfillment.p_holm_4g",
+      "expected": 0.9727,
+      "actual": 0.97265625,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.element_recall.effect_pp_round1",
+      "expected": 0.5,
+      "actual": 0.5,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.element_recall.p_4g",
+      "expected": 0.7656,
+      "actual": 0.765625,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.element_recall.p_holm_4g",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.text_exact.effect_pp_round1",
+      "expected": -24,
+      "actual": -24,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.text_exact.p_4g",
+      "expected": 0.03125,
+      "actual": 0.03125,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.text_exact.p_holm_4g",
+      "expected": 0.125,
+      "actual": 0.125,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.count_correct.effect_pp_round1",
+      "expected": -4,
+      "actual": -4,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.count_correct.p_4g",
+      "expected": 0.8281,
+      "actual": 0.828125,
+      "pass": true
+    },
+    {
+      "id": "h1.exploratory.count_correct.p_holm_4g",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-23.diff_pp_round1",
+      "expected": -1.2,
+      "actual": -1.2,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-153.diff_pp_round1",
+      "expected": -1.4,
+      "actual": -1.4,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-226.diff_pp_round1",
+      "expected": -16.2,
+      "actual": -16.2,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-270.diff_pp_round1",
+      "expected": -4.4,
+      "actual": -4.4,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-353.diff_pp_round1",
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-371.diff_pp_round1",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-379.diff_pp_round1",
+      "expected": -4.6,
+      "actual": -4.6,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-387.diff_pp_round1",
+      "expected": -13.3,
+      "actual": -13.3,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-389.diff_pp_round1",
+      "expected": -8.3,
+      "actual": -8.3,
+      "pass": true
+    },
+    {
+      "id": "h1.per_case.case-475.diff_pp_round1",
+      "expected": -31.4,
+      "actual": -31.4,
+      "pass": true
+    },
+    {
+      "id": "h2.control.exact_slots",
+      "expected": "75/80",
+      "actual": "75/80",
+      "pass": true
+    },
+    {
+      "id": "h2.control.per_image_exact",
+      "expected": [
+        0,
+        5
+      ],
+      "actual": [
+        0,
+        5
+      ],
+      "pass": true
+    },
+    {
+      "id": "h2.overlay.exact_slots_documented",
+      "expected": "80/80",
+      "actual": "80/80",
+      "pass": true
+    },
+    {
+      "id": "h2.n_images_per_arm",
+      "expected": 5,
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "id": "h2.single_case_feasibility",
+      "expected": {
+        "n_cases": 1,
+        "n_images": 10,
+        "ci_level": 0
+      },
+      "actual": {
+        "n_cases": 1,
+        "n_images": 10,
+        "ci_level": 0
+      },
+      "pass": true
+    },
+    {
+      "id": "h2.effect_pp",
+      "expected": 6.25,
+      "actual": 6.25,
+      "pass": true
+    }
+  ],
+  "deviations": [
+    "重算口径与随机种子取自 E/analyze.py（bootstrap 10000 次、PCG64 种子 20261121、精确符号翻转），提示词文本渲染口径取自 E/compile.py，H2 叠字臂 spec 取自 E/specs/h2/case-226.json；这些文件只读且未列入 T06 输入表，是为了不编造原始提示词与统计口径。",
+    "scores-h1.csv 已是并入盲重复核修正后的评分，因此每个 H1 Run 只有 revision=1 的当前评分，未虚构被替代修订；首版逐图评分未完整留存，不做重建。",
+    "原文 GEE（statsmodels）与逐图 portraits/grid 检查没有可机读逐图输入，未在 JS 中重算，分别存档于 design.reported 与本报告。",
+    "scores-h1.csv 的时间戳无时区，迁移时统一追加 Z 归一化为 ISO8601，未改动时分秒。",
+    "H2 未施盲：overlay Run 的 blind_id 字段记录来源运行标识 h2-226-r{2..6}-overlay；H2-353 素材、单张试点图与拼版共 12 条进入隔离清单，不参与任何数字。",
+    "result_asset_ids 使用源图文件名（去扩展名）作为资产 ID，资产清单与多档 WebP 由 T08 登记；本报告已核对每个被引用源图真实存在。",
+    "T03 已把每个案例的原始提示词登记为 case-N/pv-001，因此实验提示词版本从 pv-002 起追加（H1 prose=pv-002、structured=pv-003、H2-226 叠字=pv-004），不覆盖原始版本；迁移脚本会对 T03 主键冲突与父版本链做强校验。"
+  ],
+  "passed": true,
+  "drift": []
+}
