@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && node tools/generate-sitemap.mjs",
+    "build": "astro check && astro build && node tools/generate-sitemap.mjs && node tools/apply-base.mjs",
     "preview": "astro preview",
     "test": "vitest run",
     "test:e2e": "node tests/e2e-360.mjs"
