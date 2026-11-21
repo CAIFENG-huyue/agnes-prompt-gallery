@@ -18,6 +18,7 @@ function rewriteText(text) {
     out = out.replaceAll(`"/${root}/`, `"${PREFIX}/${root}/`);
     out = out.replaceAll(`'/${root}/`, `'${PREFIX}/${root}/`);
     out = out.replaceAll(`(/${root}/`, `(${PREFIX}/${root}/`);
+    out = out.replaceAll(`, /${root}/`, `, ${PREFIX}/${root}/`);
   }
   out = out.replaceAll('href="/"', `href="${PREFIX}/"`);
   out = out.replaceAll('action="/"', `action="${PREFIX}/"`);
