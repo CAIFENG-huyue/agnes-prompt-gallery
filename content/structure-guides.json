@@ -1,0 +1,131 @@
+[
+  {
+    "guide_id": "structure-sheet-view-contract",
+    "title": "结构板：先锁视图，再放标注",
+    "intent_ids": [
+      "structure_sheet",
+      "multi_view",
+      "technical_view"
+    ],
+    "suitable_for": [
+      "包装、产品或角色需要同时展示主视觉、正侧背视图、拆解细节与部件标签时。"
+    ],
+    "unsuitable_for": [
+      "只有单一氛围图需求，或各视图可以更换主体、比例和视角定义时。"
+    ],
+    "common_challenges": [
+      "多视图不是把同一主体复制多次：正、侧、背或顶、底视图必须有各自视角，并保持主体特征与比例一致。",
+      "主视觉、技术视图、结构草图与局部放大需要独立槽位；视图数量齐全但标签串位仍不合格。",
+      "引线和文字要指向对应部件，不能因版面拥挤而跨过其他视图或改变归属。"
+    ],
+    "transferable_rules": [
+      "先列视图清单，再为每个视图写视角、主体比例、可见部件和允许出现的标注；最后才安排主视觉与装饰。",
+      "把“视图—部件—标签”作为同一核对单元；删掉任一视图后，同步删除只属于该视图的尺寸与材料短注。"
+    ],
+    "evidence_level": "inferred",
+    "guide_version": "evidence-derived-guides-v1",
+    "evidence": [
+      {
+        "case_id": "case-475",
+        "prompt_version_id": "case-475/pv-001",
+        "excerpt": "Using the attached image, create an illustration sheet of professional industrial design packaging for the package (PACKAGE TYPE). A centered heroic 3D renderin"
+      },
+      {
+        "case_id": "case-512",
+        "prompt_version_id": "case-512/pv-001",
+        "excerpt": "hould resemble a AAA game character turnaround sheet mixed with a Nike commercial concept presentation. The character should feel agile, stylish, confident, a"
+      },
+      {
+        "case_id": "case-296",
+        "prompt_version_id": "case-296/pv-001",
+        "excerpt": "生成一张“博物馆图鉴式中文拆解信息图”。 要求整张图兼具真实写实主视觉、结构拆解、中文标注、材质说明、纹样寓意、色彩含义和核心特征总结。你需要根据【主题】自动判断最合适的主体对象、服饰体系、器物结构、时代风格、关键部件、材质工艺、颜色方案与版式结构，用户无需再提供其他信息。 整体风格应为：国家博物馆展板"
+      }
+    ]
+  },
+  {
+    "guide_id": "structure-sheet-dimensions",
+    "title": "尺寸标注：数值必须落到视图与边界",
+    "intent_ids": [
+      "structure_sheet",
+      "dimension_annotation",
+      "technical_view"
+    ],
+    "suitable_for": [
+      "需要核对高、宽、深、直径或展开尺寸，并能指出尺寸线两端所夹视图边界时。"
+    ],
+    "unsuitable_for": [
+      "尚未确定尺寸对象或单位，只希望画面出现工程感数字时。"
+    ],
+    "common_challenges": [
+      "尺寸数值、单位、尺寸线起止与对应视图必须一起核对；只有数字没有箭头目标，无法判断高、宽、深属于哪条边。",
+      "透视图中的视觉长度不能替代正交视图尺寸；同一尺寸重复出现在多个视图时还要检查是否互相矛盾。",
+      "尺寸文字可能正确但箭头挂错，也可能箭头位置正确但单位缺失，因此不能把文字命中当作尺寸完成。"
+    ],
+    "transferable_rules": [
+      "每条尺寸都按“所属视图—测量部位—数值—单位—尺寸线起止”登记；迁移主体时重新提供参数，不复制原案例数值。",
+      "把尺寸槽位与材料短注、色板分开，避免尺寸值漂到色块或邻近部件；没有明确测量边界的数字不进入结构板。"
+    ],
+    "evidence_level": "inferred",
+    "guide_version": "evidence-derived-guides-v1",
+    "evidence": [
+      {
+        "case_id": "case-475",
+        "prompt_version_id": "case-475/pv-001",
+        "excerpt": "re, crease lines, seam details, and size arrows in millimeters. Show materials and finishes (matte, glossy print, plastic, paper, glass, etc.) in handwritten a"
+      },
+      {
+        "case_id": "case-512",
+        "prompt_version_id": "case-512/pv-001",
+        "excerpt": "uts with arrows and labels. Include measurement guides, material notes, and design annotations. Keep presentation minimal and premium. Avoid clutter. Professio"
+      },
+      {
+        "case_id": "case-310",
+        "prompt_version_id": "case-310/pv-001",
+        "excerpt": "关键组件标签 • 显示结构、分层或内部设计的内部截面图 • 测量数据、尺寸和规格 • 带有成分和数量的材料标注 • 指示主要功能和结构完整性的箭头 • 显示关键机械或设计元素的简单示意图或剖面图 • 可持续性标注 标题位置：位于手绘技术注释框内，带有强调色边框，粗体字显示产品名称，置于上角。 风格"
+      }
+    ]
+  },
+  {
+    "guide_id": "structure-sheet-materials",
+    "title": "材料标注：材料词必须绑定部件与表面",
+    "intent_ids": [
+      "structure_sheet",
+      "material_notes",
+      "component_labeling"
+    ],
+    "suitable_for": [
+      "不同部件使用不同材料、涂层、纸张、塑料或金属，并需要分别说明表面处理时。"
+    ],
+    "unsuitable_for": [
+      "只需要整体材质风格，或尚未确定各部件材料，无法写出归属关系时。"
+    ],
+    "common_challenges": [
+      "材料名称、颜色、表面处理与部件归属要同时成立；“哑光、金属、纸质”等词没有部件指向时无法验收。",
+      "材料短注与引线终点可能错配，尤其在外壳、内衬、接缝和透明件相邻时，不能只看材料词是否出现。",
+      "视觉质感与文字说明需要一致；写成透明材料却画成不透明表面，仍属于材料表达冲突。"
+    ],
+    "transferable_rules": [
+      "每条材料短注按“部件—材料—颜色或表面处理—引线目标”登记，同一部件的多种处理归并到同一槽位。",
+      "将材料槽位与尺寸槽位分离；换材料时只更新对应部件及其表面表现，不顺手改动无关视图的尺寸。"
+    ],
+    "evidence_level": "inferred",
+    "guide_version": "evidence-derived-guides-v1",
+    "evidence": [
+      {
+        "case_id": "case-475",
+        "prompt_version_id": "case-475/pv-001",
+        "excerpt": "nd size arrows in millimeters. Show materials and finishes (matte, glossy print, plastic, paper, glass, etc.) in handwritten annotations. Add color swatches, re"
+      },
+      {
+        "case_id": "case-512",
+        "prompt_version_id": "case-512/pv-001",
+        "excerpt": "labels. Include measurement guides, material notes, and design annotations. Keep presentation minimal and premium. Avoid clutter. Professional concept art quali"
+      },
+      {
+        "case_id": "case-296",
+        "prompt_version_id": "case-296/pv-001",
+        "excerpt": "式中文拆解信息图”。 要求整张图兼具真实写实主视觉、结构拆解、中文标注、材质说明、纹样寓意、色彩含义和核心特征总结。你需要根据【主题】自动判断最合适的主体对象、服饰体系、器物结构、时代风格、关键部件、材质工艺、颜色方案与版式结构，用户无需再提供其他信息。 整体风格应为：国家博物馆展板、历史服饰图鉴、"
+      }
+    ]
+  }
+]

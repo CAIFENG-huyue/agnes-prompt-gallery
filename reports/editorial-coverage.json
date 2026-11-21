@@ -1,0 +1,219 @@
+{
+  "task_id": "T07",
+  "tool": "tools/build-guides.mjs",
+  "generator_version": "build-guides.mjs@1.0.0",
+  "mode": "check",
+  "generated_at": "2026-11-21T16:58:41.978Z",
+  "inputs": {
+    "cases": {
+      "path": "content/cases.json",
+      "sha256": "4f2f89e55552071f304a6a7d7e0d1b78e70302220009d5bdce889780b8620d6c"
+    },
+    "classifications": {
+      "path": "content/classifications.json",
+      "sha256": "114855f55a5f3da1d65cdef740dea7c041a69768faad24396e3c73489e850a6c"
+    },
+    "fingerprints": {
+      "path": "content/fingerprints.json",
+      "sha256": "fb618522fd3db90e11ec323d2340bebbe212ad9f33d6a5d318aa363b20a30ae2"
+    },
+    "intents": {
+      "path": "content/intents.json",
+      "sha256": "deb934de5e47491605ea92f778ba1b1352a6d8bf599c539d0ae50bff53dd349d"
+    },
+    "casePromptVersions": {
+      "path": "content/prompt-versions/cases.json",
+      "sha256": "1b08b4e473015a66a951fb97c7a1bcda08e967131cfd80c61adaabd2e1b84ca6"
+    },
+    "experimentPromptVersions": {
+      "path": "content/prompt-versions/experiments.json",
+      "sha256": "4ae2cdd8c739cd4d9fc100cd845e10010b8c57abb60baf1e981d039fc954f3bd"
+    },
+    "experimentVersions": {
+      "path": "content/experiment-versions.json",
+      "sha256": "26c5c83a32f491349d6a9c401dd4d888b3582d28a19eb2a16822940346988241"
+    },
+    "runs": {
+      "path": "content/runs.json",
+      "sha256": "db964b8332bfdb7cbf25148f8755ddad68539f6e6a6d01c3def8754755f74f81"
+    },
+    "scoreRevisions": {
+      "path": "content/score-revisions.json",
+      "sha256": "2035398458b8574a8d2ee86beaa94ca8565453de23e69c55d315455d57da2224"
+    },
+    "conclusions": {
+      "path": "generated/conclusions.json",
+      "sha256": "8108b4949195491eb2d569d12f9c929cc812d293b4a229f47e2f787dbd6908e2"
+    }
+  },
+  "coverage": {
+    "cases": 541,
+    "case_guides": 541,
+    "inferred_case_coverage": 541,
+    "h1_cases": 10,
+    "h1_decisions": {
+      "case-23": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-153": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-226": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-270": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-353": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-371": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-379": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-387": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-389": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      },
+      "case-475": {
+        "total": 4,
+        "run_backed": 3,
+        "evidence_levels": {
+          "inferred": 1,
+          "tested": 1,
+          "observed": 2
+        }
+      }
+    },
+    "structure_guides": 3,
+    "methods": 2
+  },
+  "decisions": {
+    "total": 571,
+    "evidence_level_distribution": {
+      "inferred": 541,
+      "tested": 10,
+      "observed": 20
+    },
+    "run_backed": 30
+  },
+  "valid_conclusion_version_ids": [
+    "h1-text-fulfillment/cv-001",
+    "h2-226-overlay-exact-text/cv-001"
+  ],
+  "audit": {
+    "sample_case_ids": [
+      "case-23",
+      "case-153",
+      "case-226",
+      "case-270",
+      "case-353",
+      "case-371",
+      "case-379",
+      "case-387",
+      "case-389",
+      "case-475",
+      "case-512",
+      "case-296",
+      "case-310",
+      "case-1",
+      "case-3",
+      "case-2",
+      "case-22",
+      "case-6",
+      "case-4",
+      "case-5"
+    ],
+    "basis": "10 个 H1，加结构板、尺寸、材料证据案例，再按五类补足；只抽样核对规则与短证据，不展开全量提示词"
+  },
+  "checks": [
+    {
+      "id": "guides.cover_all_cases",
+      "pass": true
+    },
+    {
+      "id": "decisions.inferred_cover_all_cases",
+      "pass": true
+    },
+    {
+      "id": "decisions.non_inferred_have_runs",
+      "pass": true
+    },
+    {
+      "id": "h1.three_run_backed_cards_each",
+      "pass": true
+    },
+    {
+      "id": "structure.dimensions_and_materials",
+      "pass": true
+    },
+    {
+      "id": "methods.two_with_valid_cv",
+      "pass": true
+    },
+    {
+      "id": "audit.sample_size",
+      "pass": true
+    }
+  ],
+  "drift": [],
+  "passed": true
+}

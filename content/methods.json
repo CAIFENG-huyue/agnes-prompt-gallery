@@ -1,0 +1,203 @@
+[
+  {
+    "method_id": "prose-contract-exact-text",
+    "title": "逐字文字的散文契约",
+    "applicable_when": [
+      "图内文字需要逐字核对，且比较时能保持需求 spec、模型与评分口径不变。",
+      "需要决定是否只改变提示词组织形式，而不是同时增删文字、元素或布局。"
+    ],
+    "unsuitable_for": [
+      "把该结论直接外推到其他模型、其他案例分布或尺寸与材料结构板。",
+      "把结构化分段当成无需 Run 验证的默认改进。"
+    ],
+    "transferable_rule": "先冻结同一份需求 spec，再把文字内容、所在位置、样式和数量写成散文契约；是否改成结构化分段由对应 Run 决定，不由分段外观决定。",
+    "decision": "在 H1 的证据范围内，不采纳“只把同一 spec 改成结构化分段”的优化，保留散文契约；正向或零差异的单案例也不被抹平。",
+    "conclusion_version_ids": [
+      "h1-text-fulfillment/cv-001"
+    ],
+    "evidence": [
+      {
+        "conclusion_version_id": "h1-text-fulfillment/cv-001",
+        "metric": "text_fulfillment_effect_structured_minus_prose",
+        "estimate": -7.9083638583638605,
+        "unit": "pp",
+        "ci_low": -14.539762667887674,
+        "ci_high": -2.6030853174603195,
+        "ci_method": "案例级配对 bootstrap，10000 次重采样，percentile 2.5/97.5，PCG64 种子 20261121（与 analyze.py 同一随机序列）",
+        "ci_level": 0.95,
+        "n_cases": 10,
+        "n_images": 100,
+        "limitations": [
+          "H1 假设被拒绝：structured 比 prose 低 7.9pp，按预注册决定不采纳结构化写法，保留 prose 契约模板。",
+          "差距集中于 case-475、case-226、case-387、case-389；case-353 反而 +2.0pp，case-23/153/371 接近天花板。",
+          "评分可靠性来自同一评分者的 20% 盲重时间复核（15/20 完全一致），不是独立第二评分者，不能排除共同评分偏差。",
+          "仅 10 个案例、单一模型 agnes-image-2.5-flash，结论不外推到其他模型或案例分布。",
+          "原文 GEE 结果由 statsmodels 拟合，未在本生成器中重算，仅存档于 experiment-versions 的 design.reported。"
+        ],
+        "source_experiment_version_ids": [
+          "h1/ev-001"
+        ],
+        "score_snapshot_hash": "7b13f2915a4191f80cf97b801cfe2c7192c95ea85f401196b1b017d57cbce0b0",
+        "evidence_run_ids": [
+          "run-h1-153-prose-1",
+          "run-h1-153-prose-2",
+          "run-h1-153-prose-3",
+          "run-h1-153-prose-4",
+          "run-h1-153-prose-5",
+          "run-h1-153-structured-1",
+          "run-h1-153-structured-2",
+          "run-h1-153-structured-3",
+          "run-h1-153-structured-4",
+          "run-h1-153-structured-5",
+          "run-h1-226-prose-1",
+          "run-h1-226-prose-2",
+          "run-h1-226-prose-3",
+          "run-h1-226-prose-4",
+          "run-h1-226-prose-5",
+          "run-h1-226-structured-1",
+          "run-h1-226-structured-2",
+          "run-h1-226-structured-3",
+          "run-h1-226-structured-4",
+          "run-h1-226-structured-5",
+          "run-h1-23-prose-1",
+          "run-h1-23-prose-2",
+          "run-h1-23-prose-3",
+          "run-h1-23-prose-4",
+          "run-h1-23-prose-5",
+          "run-h1-23-structured-1",
+          "run-h1-23-structured-2",
+          "run-h1-23-structured-3",
+          "run-h1-23-structured-4",
+          "run-h1-23-structured-5",
+          "run-h1-270-prose-1",
+          "run-h1-270-prose-2",
+          "run-h1-270-prose-3",
+          "run-h1-270-prose-4",
+          "run-h1-270-prose-5",
+          "run-h1-270-structured-1",
+          "run-h1-270-structured-2",
+          "run-h1-270-structured-3",
+          "run-h1-270-structured-4",
+          "run-h1-270-structured-5",
+          "run-h1-353-prose-1",
+          "run-h1-353-prose-2",
+          "run-h1-353-prose-3",
+          "run-h1-353-prose-4",
+          "run-h1-353-prose-5",
+          "run-h1-353-structured-1",
+          "run-h1-353-structured-2",
+          "run-h1-353-structured-3",
+          "run-h1-353-structured-4",
+          "run-h1-353-structured-5",
+          "run-h1-371-prose-1",
+          "run-h1-371-prose-2",
+          "run-h1-371-prose-3",
+          "run-h1-371-prose-4",
+          "run-h1-371-prose-5",
+          "run-h1-371-structured-1",
+          "run-h1-371-structured-2",
+          "run-h1-371-structured-3",
+          "run-h1-371-structured-4",
+          "run-h1-371-structured-5",
+          "run-h1-379-prose-1",
+          "run-h1-379-prose-2",
+          "run-h1-379-prose-3",
+          "run-h1-379-prose-4",
+          "run-h1-379-prose-5",
+          "run-h1-379-structured-1",
+          "run-h1-379-structured-2",
+          "run-h1-379-structured-3",
+          "run-h1-379-structured-4",
+          "run-h1-379-structured-5",
+          "run-h1-387-prose-1",
+          "run-h1-387-prose-2",
+          "run-h1-387-prose-3",
+          "run-h1-387-prose-4",
+          "run-h1-387-prose-5",
+          "run-h1-387-structured-1",
+          "run-h1-387-structured-2",
+          "run-h1-387-structured-3",
+          "run-h1-387-structured-4",
+          "run-h1-387-structured-5",
+          "run-h1-389-prose-1",
+          "run-h1-389-prose-2",
+          "run-h1-389-prose-3",
+          "run-h1-389-prose-4",
+          "run-h1-389-prose-5",
+          "run-h1-389-structured-1",
+          "run-h1-389-structured-2",
+          "run-h1-389-structured-3",
+          "run-h1-389-structured-4",
+          "run-h1-389-structured-5",
+          "run-h1-475-prose-1",
+          "run-h1-475-prose-2",
+          "run-h1-475-prose-3",
+          "run-h1-475-prose-4",
+          "run-h1-475-prose-5",
+          "run-h1-475-structured-1",
+          "run-h1-475-structured-2",
+          "run-h1-475-structured-3",
+          "run-h1-475-structured-4",
+          "run-h1-475-structured-5"
+        ],
+        "p_value": 0.015625,
+        "p_method": "双侧精确符号翻转置换检验，1024 种符号组合"
+      }
+    ]
+  },
+  {
+    "method_id": "blank-band-deterministic-overlay",
+    "title": "可预测空白带的确定性叠字",
+    "applicable_when": [
+      "版式存在可稳定检测的空白题注带，并且底图与合成图都能逐张核对。",
+      "文字可以由确定性排版工具生成，且不需要模型同时绘制文字笔画。"
+    ],
+    "unsuitable_for": [
+      "文字与尺寸箭头、界面控件、项目符号或复杂结构纠缠，无法划出稳定空白带。",
+      "需要据此宣称普遍优于图内文字，或无法保留底图、叠字图与位置核对记录。"
+    ],
+    "transferable_rule": "把底图的文字槽清空并保留明确的空白题注带，再用确定性工具叠字；同时保存无字底图、合成结果和空白带位置核对，发现残留导线或碰撞时不得放行。",
+    "decision": "对可预测空白带，可采用无字底图加确定性后期叠字；当前结论只是单案例可行性证据，且叠字文字是确定性构造，不作盲比优胜声明。",
+    "conclusion_version_ids": [
+      "h2-226-overlay-exact-text/cv-001"
+    ],
+    "evidence": [
+      {
+        "conclusion_version_id": "h2-226-overlay-exact-text/cv-001",
+        "metric": "exact_text_slot_fulfillment_overlay_minus_in_image",
+        "estimate": 6.25,
+        "unit": "pp",
+        "ci_low": 6.25,
+        "ci_high": 6.25,
+        "ci_method": "未估计区间：单案例可行性试点且 Arm B 文字为确定性构造，退化为点值，不构成抽样置信区间",
+        "ci_level": 0,
+        "n_cases": 1,
+        "n_images": 10,
+        "limitations": [
+          "单案例 case-226、每臂 5 张共 10 张的可行性试点，不是有功效的检验，不能据此宣称普遍优胜。",
+          "Arm B 的 80/80 逐字是 PIL 确定性构造的操纵检查，文字准确性两臂不可盲比；H2 全程未施盲。",
+          "Arm A 复用 H1 case-226 prose 的 5 次盲评运行（75/80），五张图同一槽位把世宗/朱厚熜写成朱厚熄。",
+          "空白带 5/5 可用、5/5 无文字压人像，但 r6 底图在带内残留细导线，叠字压线仍可读，属于真实集成缺陷。",
+          "不外推到 475 尺寸箭头、387 UI、389 项目符号等文字与结构纠缠的版式；叠字位置依赖底部检测加人工核对，生产需要稳定槽位模板。"
+        ],
+        "source_experiment_version_ids": [
+          "h1/ev-001",
+          "h2-226/ev-001"
+        ],
+        "score_snapshot_hash": "7b13f2915a4191f80cf97b801cfe2c7192c95ea85f401196b1b017d57cbce0b0",
+        "evidence_run_ids": [
+          "run-h1-226-prose-1",
+          "run-h1-226-prose-2",
+          "run-h1-226-prose-3",
+          "run-h1-226-prose-4",
+          "run-h1-226-prose-5",
+          "run-h2-226-overlay-2",
+          "run-h2-226-overlay-3",
+          "run-h2-226-overlay-4",
+          "run-h2-226-overlay-5",
+          "run-h2-226-overlay-6"
+        ]
+      }
+    ]
+  }
+]
