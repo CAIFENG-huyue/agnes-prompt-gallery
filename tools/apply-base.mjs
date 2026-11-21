@@ -25,9 +25,22 @@ function rewriteText(text) {
 }
 
 function rewriteHtml(text) {
-  const out = rewriteText(text);
+  let out = rewriteText(text);
+  out = out.replace(/srcset="([^"]*)"/g, (_, value) => {
+    const fixed = value
+      .split(",")
+      .map((part) => {
+        const item = part.trim();
+        if (item.startsWith("/") && !item.startsWith(`${PREFIX}/`)) {
+          return `${PREFIX}${item}`;
+        }
+        return item;
+      })
+      .join(", ");
+    return `srcset="${fixed}"`;
+  });
   const bare = PREFIX.replace(/^\//, "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const attr = new RegExp(`(\\b(?:href|src|action|poster)=")\\/(?!\\/|${bare}/)`, "g");
+  const attr = new RegExp(`(\\b(?:href|src|action|poster|content)=")\\/(?!\\/|${bare}/)`, "g");
   return out.replace(attr, `$1${PREFIX}/`);
 }
 
