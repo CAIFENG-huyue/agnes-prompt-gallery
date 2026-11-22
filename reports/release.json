@@ -1,15 +1,15 @@
 {
   "task_id": "T14",
-  "generated_at": "2026-11-22T06:36:54.926Z",
+  "generated_at": "2026-11-22T06:42:46.486Z",
   "status": "passed",
   "passed": true,
-  "duration_ms": 32324,
+  "duration_ms": 31120,
   "environment": {
     "node": "v24.1.0",
     "platform": "linux",
     "arch": "x64",
-    "commit": "f6cd1a7f3095d3070033126be2ab25ece17dfbc9",
-    "base_commit": "f6cd1a7f3095d3070033126be2ab25ece17dfbc9",
+    "commit": "a503b6a9d005f64104099fd40bc525321d7be4f8",
+    "base_commit": "a503b6a9d005f64104099fd40bc525321d7be4f8",
     "branch": "master"
   },
   "build": {
@@ -26,7 +26,7 @@
       "methods": 3,
       "patterns": 1
     },
-    "duration_ms": 7022,
+    "duration_ms": 6396,
     "exit_code": 0
   },
   "resource_budget": {
@@ -96,7 +96,7 @@
         "command": "node tools/validate-contracts.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 199,
+        "duration_ms": 226,
         "output_excerpt": "✓ 五类齐全，通俗定义与冲突顺序通过\n✓ 11 个共享实体示例通过\n✓ 跨实体 ID 与证据引用通过\n✓ Decision/Run/Score/Conclusion 的 24 项证据与版本必填反向校验通过\n✓ tested/observed/inferred 证据语义反向校验通过\n契约校验通过：分类、示例、版本字段和证据字段均有效",
         "error": null
       }
@@ -110,7 +110,7 @@
         "command": "node tools/validate-cases.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 869,
+        "duration_ms": 832,
         "output_excerpt": "通过：541 个 Case、541 个 PromptVersion、541 个来源资产符合 Schema 与关联约束\n通过：541 张原图可读，尺寸、格式、哈希与清单一致\n通过：金标 60 条，覆盖 13 个原始类别，包含全部 10 个 H1 case_id\n案例校验完成，报告：reports/import.json",
         "error": null
       }
@@ -124,7 +124,7 @@
         "command": "node tools/check-classifications.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 249,
+        "duration_ms": 231,
         "output_excerpt": "✓ 覆盖与唯一性：541/541，每条恰好一个五类 primary_category_id\n✓ 金标：60/60，生产一致 60/60，准确率 100.00%\n✓ 非金标同人抽审：49 条，固定哈希可复现\n✓ 各类数量：{\"subject-form\":137,\"scene-narrative\":45,\"graphic-communication\":147,\"information-diagram\":132,\"interface-document\":80}\n✓ 独立标注 8 条争议记录，Cohen’s κ=0.8262，状态 passed_with_boundary_notes",
         "error": null
       }
@@ -138,7 +138,7 @@
         "command": "node tools/check-fingerprints.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 236,
+        "duration_ms": 241,
         "output_excerpt": "✓ 覆盖与唯一性：指纹 541/541，意图 541/541，金标 60/60\n✓ subject_count 自评：60/60，100.00%\n✓ layout 自评：60/60，100.00%\n✓ text_slots 自评：60/60，100.00%\n✓ input_mode 自评：60/60，100.00%\n✓ ratio 自评：60/60，100.00%\n✓ relations 自评：TP=111，FP=0，FN=0，F1=1\n✓ 意图与同义词：31 个意图，结构板/尺寸标注/材料说明/技术视图/多视图齐全\n✓ 双人独立标注、仲裁与外部一致率：空模板，未伪造",
         "error": null
       }
@@ -152,7 +152,7 @@
         "command": "node tools/check-guides.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 402,
+        "duration_ms": 452,
         "output_excerpt": "✓ 案例指南：541/541；原始提示词 inferred 覆盖 541/541\n✓ H1：10/10，每例 1 张 inferred、1 张 tested、2 张 observed\n✓ 决策：571 张；{\"inferred\":541,\"tested\":10,\"observed\":20}；Run 与当前评分回链有效\n✓ 结构板指南：视图、尺寸、材料 3 条；尺寸单位/箭头与材料部件归属难点齐全\n✓ 方法：2 条；仅引用当前可重算的有效 ConclusionVersion\n✓ 无禁用语气、无整段提示词、无孤立证据引用，构建漂移为空",
         "error": null
       }
@@ -166,7 +166,7 @@
         "command": "node tools/check-assets.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 1599,
+        "duration_ms": 1539,
         "output_excerpt": "通过：541+100+22 张源图全覆盖，1989 张 WebP 的 Schema、尺寸、哈希和体积均有效\n总体积 126032078 字节，最终超限 0 张，报告：reports/assets.json",
         "error": null
       }
@@ -225,7 +225,7 @@
         "command": "node tools/evaluate-search.mjs",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 369,
+        "duration_ms": 410,
         "output_excerpt": "检索评估通过：25/25 条查询达标，命中原因覆盖 125/125\n企鹅题 Top5 同结构命中：3/5（要求 ≥3），案例：case-475、case-512、case-310\n排序策略：structure > intent > text（lexicographic）",
         "error": null
       }
@@ -265,14 +265,14 @@
       "id": "build",
       "name": "静态构建（dist-t14）",
       "status": "pass",
-      "summary": "557 页构建完成（7022 ms）",
+      "summary": "557 页构建完成（6396 ms）",
       "evidence": {
         "command": "npx --yes astro build --outDir dist-t14",
         "exit_code": 0,
-        "duration_ms": 7022,
+        "duration_ms": 6396,
         "pages_built": 557,
         "expected_pages": 557,
-        "output_excerpt": "\u001b[2m14:36:33\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/categories/information-diagram/index.html\u001b[22m \u001b[2m(+6ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/categories/interface-document/index.html\u001b[22m \u001b[2m(+4ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/categories/index.astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/categories/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/conclusions/index.astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/conclusions/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/experiments/[...id].astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/experiments/h1-text-fulfillment/cv-001/index.html\u001b[22m \u001b[2m(+32ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/experiments/h1-hard-gate-pass/cv-001/index.html\u001b[22m \u001b[2m(+23ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/experiments/h2-226-overlay-exact-text/cv-001/index.html\u001b[22m \u001b[2m(+5ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/experiments/index.astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/experiments/index.html\u001b[22m \u001b[2m(+6ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/index.astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+15ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/methods/[id].astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/methods/prose-contract-exact-text/index.html\u001b[22m \u001b[2m(+7ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/methods/blank-band-deterministic-overlay/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/methods/index.astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/methods/index.html\u001b[22m \u001b[2m(+4ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m▶\u001b[39m src/pages/patterns/index.astro\n\u001b[2m14:36:33\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/patterns/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m14:36:33\u001b[22m \u001b[32m✓ Completed in 1.06s.\n\u001b[39m\n\u001b[2m14:36:34\u001b[22m \u001b[34m[build]\u001b[39m 557 page(s) built in \u001b[1m4.87s\u001b[22m\n\u001b[2m14:36:34\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m"
+        "output_excerpt": "\u001b[2m14:42:25\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/categories/information-diagram/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/categories/interface-document/index.html\u001b[22m \u001b[2m(+4ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/categories/index.astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/categories/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/conclusions/index.astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/conclusions/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/experiments/[...id].astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/experiments/h1-text-fulfillment/cv-001/index.html\u001b[22m \u001b[2m(+26ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/experiments/h1-hard-gate-pass/cv-001/index.html\u001b[22m \u001b[2m(+18ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/experiments/h2-226-overlay-exact-text/cv-001/index.html\u001b[22m \u001b[2m(+4ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/experiments/index.astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/experiments/index.html\u001b[22m \u001b[2m(+5ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/index.astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+12ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/methods/[id].astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/methods/prose-contract-exact-text/index.html\u001b[22m \u001b[2m(+5ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/methods/blank-band-deterministic-overlay/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/methods/index.astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/methods/index.html\u001b[22m \u001b[2m(+4ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m▶\u001b[39m src/pages/patterns/index.astro\n\u001b[2m14:42:25\u001b[22m   \u001b[34m└─\u001b[39m \u001b[2m/patterns/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m14:42:25\u001b[22m \u001b[32m✓ Completed in 927ms.\n\u001b[39m\n\u001b[2m14:42:26\u001b[22m \u001b[34m[build]\u001b[39m 557 page(s) built in \u001b[1m4.38s\u001b[22m\n\u001b[2m14:42:26\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m"
       }
     },
     {
@@ -305,7 +305,7 @@
         "command": "node quality/casefirst.check.mjs dist-t14",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 197,
+        "duration_ms": 204,
         "output_excerpt": "案例优先验收通过：首页 541 张卡、case-23 对照块与 5 条同门槛链接、规律页 69/126 与 TEXT_WRONG=105、结论页总盘齐全。",
         "error": null
       }
@@ -319,7 +319,7 @@
         "command": "node quality/evidence-pages.check.mjs dist-t14",
         "exit_code": 0,
         "signal": null,
-        "duration_ms": 251,
+        "duration_ms": 260,
         "output_excerpt": "实验页验收通过：3 个 ConclusionVersion 页面，12 个数字下钻链接全部落到页内 case/run/image/score revision。\n估计值、区间、p 值、样本量、快照哈希、检验方法与局限均与 generated/conclusions.json 完全一致。\n永久地址与 canonical 一致且不指向 latest；无评分 Run 的 5 处缺口被明确标注，未生成替代评分或结论。",
         "error": null
       }
@@ -387,18 +387,18 @@
       "status": "pass",
       "summary": "合成案例使案例页 541→542 且 src 未变；git restore 后复建 542→541",
       "evidence": {
-        "temp_dir": "/tmp/agnes-t14-contract-wXkXlJ",
+        "temp_dir": "/tmp/agnes-t14-contract-HA6rA8",
         "baseline": {
           "pages": 557,
           "case_pages": 541
         },
         "modified_build": {
-          "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-wXkXlJ/dist-modified",
+          "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-HA6rA8/dist-modified",
           "exit_code": 0,
           "pages": "558"
         },
         "restored_build": {
-          "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-wXkXlJ/dist-restored",
+          "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-HA6rA8/dist-restored",
           "exit_code": 0,
           "pages": "557"
         },
@@ -428,7 +428,7 @@
           "bytes_match_originals": true,
           "git_status_content_generated": "(empty)",
           "rebuild": {
-            "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-wXkXlJ/dist-restored",
+            "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-HA6rA8/dist-restored",
             "exit_code": 0,
             "pages": 557,
             "case_pages": 541,
@@ -475,7 +475,7 @@
             "id": "rebuild_542_case_pages",
             "status": "pass",
             "evidence": {
-              "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-wXkXlJ/dist-modified",
+              "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-HA6rA8/dist-modified",
               "exit_code": 0,
               "pages": 558,
               "expected_pages": 558,
@@ -506,14 +506,14 @@
             "evidence": {
               "before": {
                 "file_count": 50,
-                "sha256": "7696c119227f1a2f0e3701321724a7406b1ebacc76167d6d50d247d1315f1934"
+                "sha256": "e3d88ead3a8da1a27ea05b324ec529b3df3ecc743002e3d527264f9edf567061"
               },
               "after": {
                 "file_count": 50,
-                "sha256": "7696c119227f1a2f0e3701321724a7406b1ebacc76167d6d50d247d1315f1934"
+                "sha256": "e3d88ead3a8da1a27ea05b324ec529b3df3ecc743002e3d527264f9edf567061"
               },
-              "git_status_src_before": "?? src/pages/conclusions/\n?? src/pages/patterns/",
-              "git_status_src_after": "?? src/pages/conclusions/\n?? src/pages/patterns/"
+              "git_status_src_before": "M src/pages/cases/[id].astro\n M src/pages/index.astro",
+              "git_status_src_after": "M src/pages/cases/[id].astro\n M src/pages/index.astro"
             }
           },
           {
@@ -545,7 +545,7 @@
               "bytes_match_originals": true,
               "git_status_content_generated": "(empty)",
               "rebuild": {
-                "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-wXkXlJ/dist-restored",
+                "command": "npx --yes astro build --outDir /tmp/agnes-t14-contract-HA6rA8/dist-restored",
                 "exit_code": 0,
                 "pages": 557,
                 "case_pages": 541,
@@ -558,7 +558,7 @@
             "id": "temp_outside_repo",
             "status": "pass",
             "evidence": {
-              "temp_dir": "/tmp/agnes-t14-contract-wXkXlJ"
+              "temp_dir": "/tmp/agnes-t14-contract-HA6rA8"
             }
           }
         ]

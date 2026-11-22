@@ -13,10 +13,13 @@ const bucketLabels: Record<string, string> = {
   unreviewed: "未评审"
 };
 
-function gateText(item: CatalogCase): string {
-  if (item.verdict === "UNREVIEWED") return "未评审";
-  if (item.topGates.length === 0) return "无失败门槛";
-  return item.topGates.join(" · ");
+function gateInfo(item: CatalogCase): { text: string; tone: string } {
+  if (item.verdict === "UNREVIEWED") return { text: "未评审", tone: "none" };
+  if (item.topGates.length === 0) return { text: "无门槛失败", tone: "none" };
+  const text = item.topGates.join(" · ");
+  if (item.bucket === "fail") return { text, tone: "fail" };
+  if (item.bucket === "review") return { text, tone: "review" };
+  return { text, tone: "none" };
 }
 ---
 
@@ -95,7 +98,7 @@ function gateText(item: CatalogCase): string {
             <div class="case-card__body">
               <h3>{item.title}</h3>
               <p class="case-card__meta">{item.categoryName}</p>
-              <p class="case-card__gates" data-card-gates>{gateText(item)}</p>
+              <p class:list={["case-card__gates", `case-card__gates--${gateInfo(item).tone}`]} data-card-gates>{gateInfo(item).text}</p>
             </div>
           </a>
         </li>
@@ -319,10 +322,18 @@ function gateText(item: CatalogCase): string {
 
   .case-card__gates {
     margin: 0;
-    color: var(--color-accent-deep);
+    color: var(--color-muted);
     font-family: var(--font-mono);
     font-size: 0.625rem;
     line-height: 1.45;
+  }
+
+  .case-card__gates--fail {
+    color: #b23a2a;
+  }
+
+  .case-card__gates--review {
+    color: #6b7280;
   }
 
   .case-stream__empty {

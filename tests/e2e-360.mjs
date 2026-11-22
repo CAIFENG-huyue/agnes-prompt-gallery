@@ -140,8 +140,23 @@ async function homeChecks(page, errors) {
   if (cards.images.some((image) => !image.complete || image.naturalWidth <= 0)) {
     errors.push(`首页卡片主图未加载：${JSON.stringify(cards.images)}`);
   }
+  const gateCopy = await page.evaluate(() => {
+    const text = document.body.innerText;
+    const pass = [...document.querySelectorAll('.case-card[data-verdict="pass"] .case-card__gates')][0];
+    const fail = [...document.querySelectorAll('.case-card[data-verdict="fail"] .case-card__gates')][0];
+    return {
+      staleCopy: text.includes("无失败门槛"),
+      passText: pass?.textContent?.trim() ?? "",
+      passColor: pass ? getComputedStyle(pass).color : "",
+      failText: fail?.textContent?.trim() ?? "",
+      failColor: fail ? getComputedStyle(fail).color : ""
+    };
+  });
+  if (gateCopy.staleCopy) errors.push("首页仍出现「无失败门槛」");
+  if (gateCopy.passText !== "无门槛失败") errors.push(`PASS 卡门槛文案错误：${gateCopy.passText}`);
+  if (gateCopy.failColor === gateCopy.passColor) errors.push(`FAIL/PASS 门槛颜色未区分：${JSON.stringify(gateCopy)}`);
   await page.screenshot({ path: join(SHOT_DIR, "casefirst-home-390x844.png") });
-  return { cards, filter, scrollWidth: overflow.scrollWidth };
+  return { cards, filter, gateCopy, scrollWidth: overflow.scrollWidth };
 }
 
 async function caseChecks(page, errors) {
@@ -155,15 +170,52 @@ async function caseChecks(page, errors) {
   if (!text.includes("本站生成")) errors.push("case-23 缺少「本站生成」");
   if (!text.includes("开源项目原图")) errors.push("case-23 缺少「开源项目原图」");
   if (!text.includes("freestylefly/awesome-gpt-image-2")) errors.push("case-23 未写明开源项目名");
-  const gateLinks = await page.locator(".related li a").count();
-  if (gateLinks < 5) errors.push(`case-23 同门槛案例链接不足 5 条：${gateLinks}`);
+
+  const top = await page.evaluate((viewportHeight) => {
+    const title = document.querySelector(".case-head h1");
+    const meta = document.querySelector(".case-head__meta");
+    const image = document.querySelector(".gen-figure img");
+    if (!title || !meta || !image) return null;
+    const titleRect = title.getBoundingClientRect();
+    const imageRect = image.getBoundingClientRect();
+    return {
+      title: title.textContent?.trim(),
+      meta: meta.textContent?.replace(/\s+/g, " ").trim(),
+      titleTop: Math.round(titleRect.top),
+      titleAboveImage: titleRect.bottom <= imageRect.top,
+      titleVisible: titleRect.top >= 0 && titleRect.bottom <= viewportHeight
+    };
+  }, MOBILE.height);
+  if (!top) {
+    errors.push("case-23 首屏缺少标题或元信息");
+  } else {
+    if (!top.titleAboveImage) errors.push(`案例标题不在图片上方：${JSON.stringify(top)}`);
+    if (!top.titleVisible) errors.push(`案例标题不在首屏：${JSON.stringify(top)}`);
+    if (!(top.meta ?? "").includes("FAIL")) errors.push(`首屏元信息缺少判定：${top.meta}`);
+  }
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-case-23-top-390x844.png") });
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-case-23-390x844.png") });
+
+  const related = await page.evaluate(() => [...document.querySelectorAll(".related li a")]
+    .map((anchor) => ({ href: anchor.getAttribute("href"), text: anchor.textContent?.trim() ?? "" }))
+    .filter((item) => item.href));
+  if (related.length < 5) errors.push(`case-23 同门槛案例链接不足 5 条：${related.length}`);
+  if (related.some((item) => !item.href.startsWith("/cases/case-"))) errors.push(`同门槛链接地址异常：${JSON.stringify(related)}`);
+  const firstHref = related[0]?.href;
+  if (firstHref) {
+    await page.locator(".related li a").first().click();
+    await page.waitForTimeout(150);
+    const navigated = new URL(page.url()).pathname;
+    if (navigated !== firstHref) errors.push(`同门槛案例不可点：${firstHref} → ${navigated}`);
+    await page.goBack({ waitUntil: "load" });
+  }
+
   const generated = await page.evaluate(() => {
     const image = document.querySelector(".gen-figure img");
     return image ? { naturalWidth: image.naturalWidth, complete: image.complete } : null;
   });
   if (!generated || generated.naturalWidth <= 0) errors.push(`case-23 本站生成图未加载：${JSON.stringify(generated)}`);
-  await page.screenshot({ path: join(SHOT_DIR, "casefirst-case-23-390x844.png") });
-  return { gateLinks, generated, scrollWidth: overflow.scrollWidth };
+  return { gateLinks: related.length, related, top, generated, scrollWidth: overflow.scrollWidth };
 }
 
 async function patternsChecks(page, errors, patterns) {
@@ -228,6 +280,76 @@ async function desktopHomeChecks(page, errors) {
   return { cards, scrollWidth: overflow.scrollWidth };
 }
 
+async function desktopCaseChecks(page, errors) {
+  await page.setViewportSize(DESKTOP);
+  await page.goto(`${ORIGIN}/cases/case-23/`, { waitUntil: "load" });
+  await page.waitForTimeout(300);
+  const layout = await page.evaluate(() => {
+    const detail = document.querySelector(".case-detail");
+    const compare = document.querySelector("[data-compare]");
+    return {
+      columns: detail ? getComputedStyle(detail).gridTemplateColumns.split(" ").filter(Boolean).length : 0,
+      compareDisplay: compare ? getComputedStyle(compare).display : "missing"
+    };
+  });
+  if (layout.columns !== 2) errors.push(`桌面案例页不再是两栏：${JSON.stringify(layout)}`);
+  if (layout.compareDisplay === "none" || layout.compareDisplay === "missing") errors.push(`桌面拖动对比未显示：${JSON.stringify(layout)}`);
+
+  const sync = await page.evaluate(() => {
+    const range = document.querySelector("[data-compare-range]");
+    const clip = document.querySelector("[data-compare-clip]");
+    const divider = document.querySelector("[data-compare-divider]");
+    const source = document.querySelector(".compare__stage > img");
+    const generated = document.querySelector(".compare__clip img");
+    if (!range || !clip || !divider || !source || !generated) return null;
+    const setValue = (value) => {
+      range.value = String(value);
+      range.dispatchEvent(new Event("input", { bubbles: true }));
+      return { clipPath: clip.style.clipPath, dividerLeft: divider.style.left };
+    };
+    const left = setValue(20);
+    const right = setValue(80);
+    setValue(50);
+    return {
+      left,
+      right,
+      sourceNatural: source.naturalWidth,
+      generatedNatural: generated.naturalWidth
+    };
+  });
+  if (!sync) {
+    errors.push("桌面对比组件结构缺失");
+  } else {
+    if (!sync.left.clipPath.includes("80%") || sync.left.dividerLeft !== "20%") {
+      errors.push(`拖到 20 时裁切未同步：${JSON.stringify(sync.left)}`);
+    }
+    if (!sync.right.clipPath.includes("20%") || sync.right.dividerLeft !== "80%") {
+      errors.push(`拖到 80 时裁切未同步：${JSON.stringify(sync.right)}`);
+    }
+    if (sync.sourceNatural <= 0 || sync.generatedNatural <= 0) {
+      errors.push(`对照图未加载：${JSON.stringify(sync)}`);
+    }
+  }
+
+  await page.evaluate(() => {
+    const block = document.querySelector(".source-block");
+    if (block) {
+      const top = block.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo(0, Math.max(0, top - 64));
+    }
+  });
+  await page.waitForTimeout(250);
+  const compareVisible = await page.evaluate(() => {
+    const compare = document.querySelector("[data-compare]");
+    if (!compare) return null;
+    const rect = compare.getBoundingClientRect();
+    return { top: Math.round(rect.top), bottom: Math.round(rect.bottom), inViewport: rect.top >= 0 && rect.top < window.innerHeight };
+  });
+  if (!compareVisible?.inViewport) errors.push(`对照截图未落在视口内：${JSON.stringify(compareVisible)}`);
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-case-23-compare-1440x900.png") });
+  return { layout, sync, compareVisible, scrollWidth: await page.evaluate(() => document.documentElement.scrollWidth) };
+}
+
 async function main() {
   await mkdir(SHOT_DIR, { recursive: true });
   buildSite();
@@ -243,6 +365,7 @@ async function main() {
     evidence.case23 = await caseChecks(page, errors);
     evidence.patterns = await patternsChecks(page, errors, patterns);
     evidence.conclusions = await conclusionsChecks(page, errors);
+    evidence.desktopCase = await desktopCaseChecks(page, errors);
     evidence.desktopHome = await desktopHomeChecks(page, errors);
   } catch (error) {
     errors.push(`执行异常：${error instanceof Error ? error.message : String(error)}`);
@@ -257,7 +380,9 @@ async function main() {
     viewports: { mobile: MOBILE, desktop: DESKTOP },
     screenshots: [
       "reports/visual/casefirst-home-390x844.png",
+      "reports/visual/casefirst-case-23-top-390x844.png",
       "reports/visual/casefirst-case-23-390x844.png",
+      "reports/visual/casefirst-case-23-compare-1440x900.png",
       "reports/visual/casefirst-patterns-390x844.png",
       "reports/visual/casefirst-conclusions-390x844.png",
       "reports/visual/casefirst-home-1440x900.png"

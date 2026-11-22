@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T06:36:22.353Z",
+  "generatedAt": "2026-11-22T06:41:46.552Z",
   "viewports": {
     "mobile": {
       "width": 390,
@@ -12,7 +12,9 @@
   },
   "screenshots": [
     "reports/visual/casefirst-home-390x844.png",
+    "reports/visual/casefirst-case-23-top-390x844.png",
     "reports/visual/casefirst-case-23-390x844.png",
+    "reports/visual/casefirst-case-23-compare-1440x900.png",
     "reports/visual/casefirst-patterns-390x844.png",
     "reports/visual/casefirst-conclusions-390x844.png",
     "reports/visual/casefirst-home-1440x900.png"
@@ -64,10 +66,46 @@
           "height": 32
         }
       ],
+      "gateCopy": {
+        "staleCopy": false,
+        "passText": "无门槛失败",
+        "passColor": "rgb(95, 107, 99)",
+        "failText": "TEXT_WRONG",
+        "failColor": "rgb(178, 58, 42)"
+      },
       "scrollWidth": 390
     },
     "case23": {
       "gateLinks": 5,
+      "related": [
+        {
+          "href": "/cases/case-226/",
+          "text": "古风明朝帝王群像长卷 TEXT_WRONG · RELATION_WRONG"
+        },
+        {
+          "href": "/cases/case-328/",
+          "text": "俯拍巨女城景自拍 REF_MISMATCH · RELATION_WRONG"
+        },
+        {
+          "href": "/cases/case-421/",
+          "text": "iPhone 屏幕遮脸创意人像 RELATION_WRONG"
+        },
+        {
+          "href": "/cases/case-1/",
+          "text": "信息图可视化设计 TEXT_WRONG"
+        },
+        {
+          "href": "/cases/case-11/",
+          "text": "一张手绘风格的城市美食地图，以台州为主题 COUNT_WRONG · MISSING_ELEMENT"
+        }
+      ],
+      "top": {
+        "title": "信息图可视化设计",
+        "meta": "信息图解 · FAIL · 关系错误 / 文字错误",
+        "titleTop": 80,
+        "titleAboveImage": true,
+        "titleVisible": true
+      },
       "generated": {
         "naturalWidth": 390,
         "complete": true
@@ -96,6 +134,30 @@
     },
     "conclusions": {
       "scrollWidth": 390
+    },
+    "desktopCase": {
+      "layout": {
+        "columns": 2,
+        "compareDisplay": "block"
+      },
+      "sync": {
+        "left": {
+          "clipPath": "inset(0px 80% 0px 0px)",
+          "dividerLeft": "20%"
+        },
+        "right": {
+          "clipPath": "inset(0px 20% 0px 0px)",
+          "dividerLeft": "80%"
+        },
+        "sourceNatural": 633,
+        "generatedNatural": 633
+      },
+      "compareVisible": {
+        "top": 311,
+        "bottom": 825,
+        "inViewport": true
+      },
+      "scrollWidth": 1440
     },
     "desktopHome": {
       "cards": 541,
