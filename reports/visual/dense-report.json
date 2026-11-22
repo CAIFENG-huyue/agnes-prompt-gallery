@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-11-22T00:49:13.896Z",
+  "checks": [
+    {
+      "id": "home-first-screen",
+      "pass": true,
+      "visibleCards": 4,
+      "fourInFirstScreen": 4,
+      "scrollWidth": 390,
+      "cards": [
+        {
+          "top": 473,
+          "bottom": 672,
+          "height": 199
+        },
+        {
+          "top": 473,
+          "bottom": 672,
+          "height": 199
+        },
+        {
+          "top": 682,
+          "bottom": 881,
+          "height": 199
+        },
+        {
+          "top": 682,
+          "bottom": 881,
+          "height": 199
+        },
+        {
+          "top": 891,
+          "bottom": 1090,
+          "height": 199
+        }
+      ]
+    },
+    {
+      "id": "case-first-screen-case-23",
+      "pass": true,
+      "coverHeight": 240,
+      "coverNaturalWidth": 390,
+      "headingFontSize": 22,
+      "evidenceVisible": true
+    },
+    {
+      "id": "case-first-screen-case-371",
+      "pass": true,
+      "coverHeight": 240,
+      "coverNaturalWidth": 390,
+      "headingFontSize": 22,
+      "evidenceVisible": true
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "case-23",
+      "path": "/cases/case-23/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "case-371",
+      "path": "/cases/case-371/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "categories",
+      "path": "/categories/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "category-subject-form",
+      "path": "/categories/subject-form/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "experiments",
+      "path": "/experiments/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "methods",
+      "path": "/methods/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    },
+    {
+      "slug": "method-prose-contract-exact-text",
+      "path": "/methods/prose-contract-exact-text/",
+      "pass": true,
+      "scrollWidth": 390,
+      "errors": []
+    }
+  ],
+  "failures": [],
+  "desktop": {
+    "display": "grid",
+    "columns": "529.906px 622.094px",
+    "coverPosition": "sticky",
+    "coverLeft": 128,
+    "introLeft": 690,
+    "stepsVisible": true,
+    "pass": true,
+    "errors": []
+  }
+}
