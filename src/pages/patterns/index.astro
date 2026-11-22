@@ -1,0 +1,268 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  findCategoryCase,
+  getCatalog,
+  getPatterns,
+  gateLabel
+} from "../../lib/casefirst/data.js";
+
+const [catalog, patterns] = await Promise.all([getCatalog(), getPatterns()]);
+const categoryRows = patterns.categories.map((row) => ({
+  ...row,
+  name: catalog.categoryNames.get(row.category) ?? row.category,
+  passExample: findCategoryCase(catalog, row.category, "pass"),
+  failExample: findCategoryCase(catalog, row.category, "fail")
+}));
+const topCategories = patterns.categories.reduce((sum, row) => sum + row.n, 0);
+---
+
+<BaseLayout
+  title="规律"
+  description="由案例判定数据自动聚合：分类 × 通过率、失败门槛 × 频次，并列出代表案例。"
+>
+  <div class="patterns">
+    <header class="patterns__head">
+      <p class="patterns__eyebrow">AUTO-GENERATED · content/patterns.json</p>
+      <h1>规律</h1>
+      <p class="patterns__meta">已评审 {patterns.judged} 条 · {patterns.categories.length} 个分类 · {patterns.gates.length} 个失败门槛</p>
+    </header>
+
+    <section class="patterns__section" aria-labelledby="category-rate-title">
+      <div class="patterns__section-head">
+        <h2 id="category-rate-title">分类 × 通过率</h2>
+        <span>n = {topCategories}；通过含 PASS 与 PASS-WEAK</span>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">分类</th>
+              <th scope="col">通过 / n</th>
+              <th scope="col">通过率</th>
+              <th scope="col">FAIL</th>
+              <th scope="col">REVIEW</th>
+              <th scope="col">代表案例</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categoryRows.map((row) => (
+              <tr>
+                <th scope="row">
+                  <span class="data-table__name">{row.name}</span>
+                  <code>{row.category}</code>
+                </th>
+                <td>{row.pass} / {row.n}</td>
+                <td><strong>{row.pass_rate.toFixed(1)}%</strong></td>
+                <td>{row.fail}</td>
+                <td>{row.review}</td>
+                <td>
+                  <span class="table-links">
+                    {row.passExample && <a href={row.passExample.href}>{row.passExample.caseId}</a>}
+                    {row.failExample && <a href={row.failExample.href}>{row.failExample.caseId}</a>}
+                    <a href={`/categories/${row.category}/`}>全部</a>
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="patterns__section" aria-labelledby="gate-frequency-title">
+      <div class="patterns__section-head">
+        <h2 id="gate-frequency-title">失败门槛 × 频次</h2>
+        <span>同一案例可命中多个门槛；频次为案例数</span>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">门槛</th>
+              <th scope="col">频次</th>
+              <th scope="col">分类分布</th>
+              <th scope="col">代表案例</th>
+            </tr>
+          </thead>
+          <tbody>
+            {patterns.gates.map((gate) => (
+              <tr>
+                <th scope="row">
+                  <span class="data-table__name">{gateLabel(gate.gate)}</span>
+                  <code>{gate.gate}</code>
+                </th>
+                <td><strong>{gate.n}</strong></td>
+                <td>
+                  <span class="gate-cats">
+                    {gate.categories.slice(0, 2).map(([category, count]) => (
+                      <span>{catalog.categoryNames.get(category) ?? category} {count}</span>
+                    ))}
+                  </span>
+                </td>
+                <td>
+                  <span class="table-links">
+                    {gate.examples.slice(0, 4).map((example) => (
+                      <a href={`/cases/case-${example.case_id}/`}>case-{example.case_id}</a>
+                    ))}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .patterns {
+    display: grid;
+    gap: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .patterns__eyebrow {
+    margin: 0;
+    color: var(--color-accent-deep);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+  }
+
+  .patterns h1 {
+    margin: 0.15rem 0 0;
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+
+  .patterns__meta {
+    margin: 0.25rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+  }
+
+  .patterns__section {
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+  }
+
+  .patterns__section-head {
+    display: grid;
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .patterns__section-head h2 {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  .patterns__section-head span {
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem 0.375rem;
+    border-bottom: 1px solid var(--color-line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .data-table thead th {
+    color: var(--color-muted);
+    font-size: 0.625rem;
+    font-weight: 650;
+    white-space: nowrap;
+  }
+
+  .data-table tbody th {
+    font-weight: 500;
+  }
+
+  .data-table__name {
+    display: block;
+    color: var(--color-ink);
+    font-size: 0.75rem;
+    font-weight: 650;
+  }
+
+  .data-table code {
+    display: block;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+  }
+
+  .data-table strong {
+    color: var(--color-forest-deep);
+    font-family: var(--font-mono);
+  }
+
+  .table-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .table-links a {
+    padding: 0.05rem 0.3rem;
+    border-radius: 0.25rem;
+    background: var(--color-surface-muted);
+    color: var(--color-forest);
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    text-decoration: none;
+  }
+
+  .gate-cats {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-muted);
+    font-size: 0.625rem;
+  }
+
+  @media (min-width: 64rem) {
+    .patterns {
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+    }
+
+    .patterns h1 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .patterns__section {
+      padding: 1rem;
+    }
+
+    .data-table {
+      font-size: 0.8125rem;
+    }
+
+    .data-table__name {
+      font-size: 0.8125rem;
+    }
+
+    .data-table code {
+      font-size: 0.625rem;
+    }
+  }
+</style>

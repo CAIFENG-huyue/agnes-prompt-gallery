@@ -1,7 +1,7 @@
 # 发布矩阵（T14）
 
-- 生成时间：2026-11-22T00:49:02.865Z
-- 基线提交（门禁执行时 HEAD）：`d2022195c139f1b4fdbea3f062f953cd85282847`（master）
+- 生成时间：2026-11-22T06:36:54.926Z
+- 基线提交（门禁执行时 HEAD）：`f6cd1a7f3095d3070033126be2ab25ece17dfbc9`（master）
 - 门禁结果：**全部通过**
 - 门禁命令：`node tools/release-check.mjs`
 
@@ -9,8 +9,8 @@
 
 - 构建命令：`npx --yes astro build --outDir dist-t14`
 - 输出目录：`dist-t14/`（临时发布候选，已在 `.gitignore` 中忽略，不覆盖 `dist/`）
-- 构建耗时：6074 ms
-- 总页数：555（案例页 541）
+- 构建耗时：7022 ms
+- 总页数：557（案例页 541）
 - 静态资源：public/assets 下 1989 张 WebP，构建时原样复制到 `dist-t14/assets/`
 
 ## 页数
@@ -19,10 +19,12 @@
 |---|---:|
 | cases | 541 |
 | categories | 6 |
+| conclusions | 1 |
 | experiments | 4 |
 | home | 1 |
 | methods | 3 |
-| **合计** | **555** |
+| patterns | 1 |
+| **合计** | **557** |
 
 案例页覆盖 `dist-t14/cases/` 下 541 个目录，与 `content/cases.json` 的 541 条记录一一对应。
 
@@ -53,20 +55,19 @@
 | 结构优先检索与 25 条金标 | pass | `node tools/evaluate-search.mjs` | 排序策略：structure > intent > text（lexicographic） |
 | 检索评估报告汇总 | pass | `reports/search-eval.json` | 25/25 查询达标，命中原因覆盖 125/125 |
 | 企鹅硬场景 Top5 ≥3 同结构 | pass | `reports/search-eval.json` | Top5 命中 3 个同结构：case-475、case-512、case-310 |
-| 静态构建（dist-t14） | pass | `npx --yes astro build --outDir dist-t14` | 555 页构建完成（6074 ms） |
-| 页数与案例覆盖（555 页 / 541 案例） | pass | `遍历 dist-t14/index.html` | 555 页，其中案例页 541；{"cases":541,"categories":6,"experiments":4,"home":1,"methods":3} |
-| 首页发现与企鹅题结果卡 | pass | `node quality/discovery.check.mjs dist-t14` | 每张企鹅题结果卡均含命中原因、共性难点、一条迁移写法、案例链接和三档 WebP。 |
-| 541 个案例页自解释与移动首屏 | pass | `node quality/case-pages.check.mjs dist-t14` | 全部提示词版本默认折叠、无整段复制入口；实测数字与评分均链接到页内 Run、评分修订和结果图。 |
+| 静态构建（dist-t14） | pass | `npx --yes astro build --outDir dist-t14` | 557 页构建完成（7022 ms） |
+| 页数与案例覆盖（557 页 / 541 案例） | pass | `遍历 dist-t14/index.html` | 557 页，其中案例页 541；{"cases":541,"categories":6,"conclusions":1,"experiments":4,"home":1,"methods":3,"patterns":1} |
+| 案例优先信息架构与数据驱动规律 | pass | `node quality/casefirst.check.mjs dist-t14` | 案例优先验收通过：首页 541 张卡、case-23 对照块与 5 条同门槛链接、规律页 69/126 与 TEXT_WRONG=105、结论页总盘齐全。 |
 | 实验证据页与结论下钻 | pass | `node quality/evidence-pages.check.mjs dist-t14` | 永久地址与 canonical 一致且不指向 latest；无评分 Run 的 5 处缺口被明确标注，未生成替代评分或结论。 |
 | 资源预算：单文件 ≤150KB、总量、缺图=0 | pass | `generated/assets.json + public/assets` | 1989 张，单张最大 149982 B（/assets/cases/case274-960.webp），总量 120.19 MiB，缺图 0 |
 | 只增数据契约测试（541 → 542 → 541） | pass | `临时追加数据 + 两次 astro build` | 合成案例使案例页 541→542 且 src 未变；git restore 后复建 542→541 |
 
 ## 只增数据契约测试
 
-- 方法：在临时目录 `/tmp/agnes-t14-contract-Gssc9z` 构建，仓库内只临时追加数据行，结束后 `git restore` 还原。
+- 方法：在临时目录 `/tmp/agnes-t14-contract-wXkXlJ` 构建，仓库内只临时追加数据行，结束后 `git restore` 还原。
 - 追加文件：`content/cases.json`、`content/prompt-versions/cases.json`，以及案例页渲染所必需的 `classifications.json`、`fingerprints.json`、`case-guides.json`、`decisions.json` 同 case_id 数据行。
 - 断言：案例页 541 → 542，旧 541 个案例 URL 全部保留，`src/` 目录哈希与 `git status -- src` 均无变化。
-- 还原：`git restore` 后内容字节与基线一致，复建页数回到 555 / 案例页 541；临时构建目录已删除。
+- 还原：`git restore` 后内容字节与基线一致，复建页数回到 557 / 案例页 541；临时构建目录已删除。
 
 ## 已知局限
 
