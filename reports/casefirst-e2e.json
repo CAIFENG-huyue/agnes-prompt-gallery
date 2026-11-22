@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-22T06:33:45.779Z",
+  "viewports": {
+    "mobile": {
+      "width": 390,
+      "height": 844
+    },
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "screenshots": [
+    "reports/visual/casefirst-home-390x844.png",
+    "reports/visual/casefirst-case-23-390x844.png",
+    "reports/visual/casefirst-patterns-390x844.png",
+    "reports/visual/casefirst-conclusions-390x844.png",
+    "reports/visual/casefirst-home-1440x900.png"
+  ],
+  "passed": true,
+  "errors": [],
+  "evidence": {
+    "home": {
+      "cards": {
+        "rendered": 541,
+        "visible": 4,
+        "images": [
+          {
+            "src": "/results/case-2.webp",
+            "naturalWidth": 179,
+            "complete": true
+          },
+          {
+            "src": "/results/case-5.webp",
+            "naturalWidth": 179,
+            "complete": true
+          },
+          {
+            "src": "/results/case-6.webp",
+            "naturalWidth": 179,
+            "complete": true
+          },
+          {
+            "src": "/results/case-7.webp",
+            "naturalWidth": 179,
+            "complete": true
+          }
+        ]
+      },
+      "filter": [
+        {
+          "name": "category",
+          "top": 189,
+          "height": 32
+        },
+        {
+          "name": "verdict",
+          "top": 189,
+          "height": 32
+        },
+        {
+          "name": "gate",
+          "top": 189,
+          "height": 32
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "case23": {
+      "gateLinks": 5,
+      "generated": {
+        "naturalWidth": 390,
+        "complete": true
+      },
+      "scrollWidth": 390
+    },
+    "patterns": {
+      "sampled": {
+        "category": {
+          "expected": {
+            "pass": 69,
+            "n": 126,
+            "rate": 54.8
+          },
+          "row": "信息图解 information-diagram 69 / 126 54.8% 49 8 case-8 case-1 全部"
+        },
+        "gate": {
+          "expected": {
+            "gate": "TEXT_WRONG",
+            "n": 105
+          },
+          "row": "文字错误 TEXT_WRONG 105 信息图解 48 平面传播 20 case-1 case-4 case-9 case-11"
+        }
+      },
+      "scrollWidth": 390
+    },
+    "conclusions": {
+      "scrollWidth": 390
+    },
+    "desktopHome": {
+      "cards": 541,
+      "scrollWidth": 1440
+    }
+  }
+}

@@ -1,25 +1,619 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import CasePage from "../../components/case/CasePage.astro";
-import { getCasePageModels } from "../../components/case/model.js";
-import type { CasePageModel } from "../../components/case/model.js";
+import {
+  getCatalog,
+  getPatterns,
+  gateLabel,
+  sameGateCases,
+  verdictLabel
+} from "../../lib/casefirst/data.js";
+import type { CatalogCase } from "../../lib/casefirst/data.js";
+
+interface Props {
+  caseItem: CatalogCase;
+}
 
 export async function getStaticPaths() {
-  const pages = await getCasePageModels();
-  return pages.map((page) => ({
-    params: { id: page.caseData.case_id },
-    props: { page }
+  const catalog = await getCatalog();
+  return catalog.cases.map((caseItem) => ({
+    params: { id: caseItem.caseId },
+    props: { caseItem }
   }));
 }
 
-interface Props {
-  page: CasePageModel;
-}
-
-const { page } = Astro.props;
-const description = `${page.category.name}：${page.category.plain_explanation}。直接查看适合与不适合、三个关键指纹、决策依据、证据级别和提示词版本。`;
+const { caseItem } = Astro.props;
+const catalog = await getCatalog();
+const patterns = await getPatterns();
+const related = sameGateCases(catalog, caseItem, 5);
+const gateStats = new Map(patterns.gates.map((gate) => [gate.gate, gate.n]));
+const description = `${caseItem.title}：本站生成图与开源项目原图对照，判定 ${verdictLabel(caseItem)}，失败门槛 ${caseItem.gates.join("、") || "无"}。`;
 ---
 
-<BaseLayout title={page.caseData.title} description={description}>
-  <CasePage page={page} />
+<BaseLayout title={caseItem.title} description={description}>
+  <article class="case-detail" data-case-id={caseItem.caseId}>
+    <div class="case-detail__media">
+      <section class="gen-block" aria-labelledby="gen-title">
+        <h2 id="gen-title" class="block-label"><span>本站生成</span><span class="block-label__hint">agnes-image-2.5-flash</span></h2>
+        {caseItem.image ? (
+          <figure class="gen-figure">
+            <img
+              src={caseItem.image.src}
+              srcset={caseItem.image.srcSet}
+              sizes="(min-width: 64rem) 44vw, 100vw"
+              width={caseItem.image.width}
+              height={caseItem.image.height}
+              alt={caseItem.image.alt}
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <figcaption>本站按同题提示词生成的图；质量参差，包含失败样本。</figcaption>
+          </figure>
+        ) : (
+          <div class="gen-figure gen-figure--empty">本站未生成这张图（缺图）。</div>
+        )}
+      </section>
+
+      <section class="source-block" aria-labelledby="source-title">
+        <h2 id="source-title" class="block-label">
+          <span>开源项目原图</span>
+          <a href={caseItem.sourceLink} rel="noreferrer">原链接</a>
+        </h2>
+        <p class="source-block__meta">来源：freestylefly/awesome-gpt-image-2</p>
+
+        {caseItem.sourceImage && caseItem.image ? (
+          <figure class="compare" data-compare>
+            <div class="compare__stage" data-compare-stage>
+              <img
+                class="compare__img"
+                src={caseItem.sourceImage.src}
+                srcset={caseItem.sourceImage.srcSet}
+                sizes="(min-width: 64rem) 44vw, 100vw"
+                width={caseItem.sourceImage.width}
+                height={caseItem.sourceImage.height}
+                alt={caseItem.sourceImage.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="compare__clip" data-compare-clip>
+                <img
+                  class="compare__img"
+                  src={caseItem.image.src}
+                  srcset={caseItem.image.srcSet}
+                  sizes="(min-width: 64rem) 44vw, 100vw"
+                  width={caseItem.image.width}
+                  height={caseItem.image.height}
+                  alt={caseItem.image.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <span class="compare__tag compare__tag--left">本站生成</span>
+              <span class="compare__tag compare__tag--right">开源项目原图</span>
+              <span class="compare__divider" data-compare-divider aria-hidden="true"></span>
+            </div>
+            <input
+              class="compare__range"
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              step="1"
+              aria-label="左右拖动比较本站生成图与开源项目原图"
+              data-compare-range
+            />
+          </figure>
+        ) : (
+          <div class="compare compare--empty">缺少对照图。</div>
+        )}
+
+        {caseItem.sourceImage ? (
+          <figure class="source-figure">
+            <img
+              src={caseItem.sourceImage.src}
+              srcset={caseItem.sourceImage.srcSet}
+              sizes="(min-width: 64rem) 44vw, 100vw"
+              width={caseItem.sourceImage.width}
+              height={caseItem.sourceImage.height}
+              alt={`${caseItem.title}：开源项目原图`}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>开源项目原图 · freestylefly/awesome-gpt-image-2 · <a href={caseItem.sourceLink} rel="noreferrer">原链接</a></figcaption>
+          </figure>
+        ) : (
+          <p class="source-block__meta">缺少开源项目原图对照。</p>
+        )}
+      </section>
+    </div>
+
+    <div class="case-detail__body">
+      <header class="case-head">
+        <p class="case-head__kicker">{caseItem.caseId} · {caseItem.categoryName}</p>
+        <h1>{caseItem.title}</h1>
+        <p class="case-head__category">{caseItem.categoryExplanation}</p>
+      </header>
+
+      <section class="verdict-panel" aria-labelledby="verdict-title">
+        <div class="verdict-panel__top">
+          <h2 id="verdict-title">判定</h2>
+          <span class:list={["verdict-badge", `verdict-badge--${caseItem.bucket}`]}>{verdictLabel(caseItem)}</span>
+        </div>
+        <div class="gate-list">
+          {caseItem.gates.length === 0 ? (
+            <p class="gate-list__empty">{caseItem.verdict === "UNREVIEWED" ? "尚未评审。" : "无失败门槛。"}</p>
+          ) : (
+            <ul>
+              {caseItem.gates.map((gate) => (
+                <li>
+                  <span class="gate-list__label">{gateLabel(gate)}</span>
+                  <code>{gate}</code>
+                  <span class="gate-list__count">{gateStats.get(gate) ?? 0} 例</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <p class="verdict-panel__note">{caseItem.note || "无判定说明。"}</p>
+      </section>
+
+      <section class="prompt-block" aria-labelledby="prompt-title">
+        <h2 id="prompt-title">提示词全文</h2>
+        {caseItem.promptText ? (
+          <pre>{caseItem.promptText}</pre>
+        ) : (
+          <p class="prompt-block__empty">无提示词记录。</p>
+        )}
+      </section>
+
+      <nav class="related" aria-labelledby="related-title">
+        <h2 id="related-title">同门槛的其他案例</h2>
+        <ul>
+          {related.map((item) => (
+            <li>
+              <a href={item.href}>
+                <span>{item.title}</span>
+                <code>{item.gates.slice(0, 2).join(" · ") || item.categoryName}</code>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="related__all"><a href="/patterns/">查看全部规律</a></p>
+      </nav>
+    </div>
+  </article>
 </BaseLayout>
+
+<script>
+  for (const compare of document.querySelectorAll<HTMLElement>("[data-compare]")) {
+    const range = compare.querySelector<HTMLInputElement>("[data-compare-range]");
+    const clip = compare.querySelector<HTMLElement>("[data-compare-clip]");
+    const divider = compare.querySelector<HTMLElement>("[data-compare-divider]");
+    if (!range || !clip) continue;
+    const sync = (): void => {
+      const value = Number(range.value);
+      clip.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+      if (divider) divider.style.left = `${value}%`;
+    };
+    range.addEventListener("input", sync);
+    sync();
+  }
+</script>
+
+<style>
+  .case-detail {
+    display: grid;
+    min-width: 0;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .case-detail__media,
+  .case-detail__body {
+    min-width: 0;
+  }
+
+  .block-label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 0 0 0.375rem;
+    color: var(--color-forest-deep);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .block-label__hint {
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+  }
+
+  .block-label a {
+    color: var(--color-forest);
+    font-size: 0.6875rem;
+    font-weight: 650;
+  }
+
+  .gen-figure {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+  }
+
+  .gen-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .gen-figure figcaption {
+    padding: 0.4rem 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+  }
+
+  .gen-figure--empty {
+    display: grid;
+    min-height: 12rem;
+    place-items: center;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+  }
+
+  .source-block {
+    margin-top: 0.75rem;
+  }
+
+  .source-block__meta {
+    margin: 0 0 0.375rem;
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+  }
+
+  .compare {
+    margin: 0;
+  }
+
+  .compare__stage {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface-muted);
+  }
+
+  .compare__stage img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .compare__clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .compare__clip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .compare__tag {
+    position: absolute;
+    top: 0.5rem;
+    z-index: 2;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    background: rgb(16 54 44 / 82%);
+    color: #fff;
+    font-size: 0.625rem;
+    line-height: 1.5;
+  }
+
+  .compare__tag--left {
+    left: 0.5rem;
+  }
+
+  .compare__tag--right {
+    right: 0.5rem;
+    background: rgb(255 255 255 / 90%);
+    color: var(--color-forest-deep);
+  }
+
+  .compare__divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 3;
+    width: 2px;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgb(16 54 44 / 20%);
+  }
+
+  .compare__range {
+    width: 100%;
+    margin: 0.4rem 0 0;
+    accent-color: var(--color-forest);
+  }
+
+  .compare--empty {
+    display: grid;
+    min-height: 8rem;
+    place-items: center;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+  }
+
+  .source-figure {
+    display: none;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+  }
+
+  .source-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .source-figure figcaption {
+    padding: 0.4rem 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+  }
+
+  .case-detail__body {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .case-head__kicker {
+    margin: 0 0 0.2rem;
+    color: var(--color-accent-deep);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+  }
+
+  .case-head h1 {
+    margin: 0;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .case-head__category {
+    margin: 0.25rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .verdict-panel,
+  .prompt-block,
+  .related {
+    padding: 14px;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+  }
+
+  .verdict-panel__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .verdict-panel h2,
+  .prompt-block h2,
+  .related h2 {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  .verdict-badge {
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .verdict-badge--pass {
+    background: #2e6539;
+  }
+
+  .verdict-badge--fail {
+    background: #b23a2a;
+  }
+
+  .verdict-badge--review {
+    background: #6b7280;
+  }
+
+  .verdict-badge--unreviewed {
+    background: var(--color-surface-muted);
+    color: var(--color-muted);
+  }
+
+  .gate-list {
+    margin-top: 0.5rem;
+  }
+
+  .gate-list ul {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gate-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem;
+    color: var(--color-accent-deep);
+    font-size: 0.75rem;
+  }
+
+  .gate-list__label {
+    font-weight: 650;
+  }
+
+  .gate-list code {
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+  }
+
+  .gate-list__count {
+    color: var(--color-muted);
+    font-size: 0.625rem;
+  }
+
+  .gate-list__empty,
+  .prompt-block__empty {
+    margin: 0.4rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+  }
+
+  .verdict-panel__note {
+    margin: 0.5rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-line);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .prompt-block pre {
+    max-height: 24rem;
+    margin: 0.5rem 0 0;
+    padding: 0.75rem;
+    overflow: auto;
+    border-radius: 0.5rem;
+    background: #f4f5f1;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .related ul {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .related li a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 0.5rem;
+    padding: 0.45rem 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--color-surface-muted);
+    text-decoration: none;
+  }
+
+  .related li span {
+    color: var(--color-ink);
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .related li code {
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+  }
+
+  .related__all {
+    margin: 0.5rem 0 0;
+    font-size: 0.6875rem;
+  }
+
+  .related__all a {
+    color: var(--color-forest);
+    font-weight: 650;
+  }
+
+  @media (max-width: 63.99rem) {
+    .compare {
+      display: none;
+    }
+
+    .source-figure {
+      display: block;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .case-detail {
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      column-gap: 2rem;
+      align-items: start;
+      padding-top: 1.5rem;
+    }
+
+    .case-detail__media {
+      position: sticky;
+      top: calc(var(--topbar-height) + 1rem);
+    }
+
+    .gen-figure img {
+      width: auto;
+      max-width: 100%;
+      max-height: 56vh;
+      margin-inline: auto;
+    }
+
+    .source-figure {
+      display: none;
+    }
+
+    .case-head h1 {
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+
+    .case-head__category {
+      font-size: 0.875rem;
+    }
+
+    .verdict-panel,
+    .prompt-block,
+    .related {
+      padding: 1rem;
+    }
+
+    .prompt-block pre {
+      max-height: 28rem;
+      font-size: 0.75rem;
+    }
+  }
+</style>

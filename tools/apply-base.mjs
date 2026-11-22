@@ -10,7 +10,7 @@ if (!PREFIX) {
   process.exit(0);
 }
 
-const ROOTS = ["assets", "cases", "categories", "methods", "experiments"];
+const ROOTS = ["assets", "results", "cases", "categories", "methods", "experiments", "patterns", "conclusions"];
 
 function rewriteText(text) {
   let out = text;

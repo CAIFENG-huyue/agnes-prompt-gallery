@@ -1,6 +1,6 @@
 import { spawnSync } from "node:child_process";
 import { createServer } from "node:http";
-import { readFile, stat, mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
@@ -8,26 +8,11 @@ import { chromium } from "playwright";
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const DIST = join(ROOT, "dist-e2e");
 const OUT_DIR = join(ROOT, "reports");
-const SHOT_DIR = join(OUT_DIR, "e2e-360");
+const SHOT_DIR = join(OUT_DIR, "visual");
 const PORT = Number(process.env.E2E_PORT || 4321);
 const ORIGIN = `http://127.0.0.1:${PORT}`;
-const VIEWPORT = { width: 360, height: 800 };
-
-const PAGES = [
-  { slug: "home", path: "/", kind: "home" },
-  { slug: "categories", path: "/categories/", kind: "listing" },
-  { slug: "category-subject-form", path: "/categories/subject-form/", kind: "listing" },
-  { slug: "category-scene-narrative", path: "/categories/scene-narrative/", kind: "listing" },
-  { slug: "category-graphic-communication", path: "/categories/graphic-communication/", kind: "listing" },
-  { slug: "category-information-diagram", path: "/categories/information-diagram/", kind: "listing" },
-  { slug: "category-interface-document", path: "/categories/interface-document/", kind: "listing" },
-  { slug: "case-23", path: "/cases/case-23/", kind: "case" },
-  { slug: "case-371", path: "/cases/case-371/", kind: "case" },
-  { slug: "case-2", path: "/cases/case-2/", kind: "case" },
-  { slug: "experiments", path: "/experiments/", kind: "evidence" },
-  { slug: "method-prose-contract-exact-text", path: "/methods/prose-contract-exact-text/", kind: "method" },
-  { slug: "method-blank-band-deterministic-overlay", path: "/methods/blank-band-deterministic-overlay/", kind: "method" }
-];
+const MOBILE = { width: 390, height: 844 };
+const DESKTOP = { width: 1440, height: 900 };
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -68,248 +53,6 @@ function startServer() {
   });
 }
 
-async function firstScreenVisible(page, selector) {
-  const handle = await page.$(selector);
-  if (!handle) return { visible: false, reason: "missing element" };
-  const box = await handle.boundingBox();
-  if (!box || box.width === 0 || box.height === 0) return { visible: false, reason: "zero box" };
-  return {
-    visible: box.y < VIEWPORT.height && box.y + Math.min(box.height, 48) <= VIEWPORT.height,
-    top: Math.round(box.y),
-    height: Math.round(box.height)
-  };
-}
-
-async function measure(page) {
-  return page.evaluate(() => {
-    const doc = document.documentElement;
-    const overflow = [];
-    for (const el of document.querySelectorAll("body *")) {
-      const rect = el.getBoundingClientRect();
-      if (rect.width > 0 && rect.right > window.innerWidth + 0.5) {
-        const style = getComputedStyle(el);
-        if (style.position === "fixed" || style.position === "absolute") continue;
-        overflow.push({
-          tag: el.tagName.toLowerCase(),
-          cls: typeof el.className === "string" ? el.className.slice(0, 80) : "",
-          right: Math.round(rect.right),
-          width: Math.round(rect.width)
-        });
-        if (overflow.length >= 8) break;
-      }
-    }
-    return {
-      scrollWidth: doc.scrollWidth,
-      clientWidth: doc.clientWidth,
-      bodyScrollWidth: document.body.scrollWidth,
-      overflow
-    };
-  });
-}
-
-async function loadVisibleImages(page) {
-  await page.evaluate(async () => {
-    const step = Math.max(240, Math.floor(window.innerHeight * 0.75));
-    const limit = document.documentElement.scrollHeight;
-    for (let y = 0; y < limit; y += step) {
-      window.scrollTo(0, y);
-      await new Promise((resolve) => setTimeout(resolve, 70));
-    }
-    window.scrollTo(0, 0);
-    await new Promise((resolve) => setTimeout(resolve, 120));
-  });
-  await page.waitForFunction(
-    () => [...document.images].every((image) => image.complete),
-    undefined,
-    { timeout: 15000 }
-  ).catch(() => {});
-  return page.$$eval("img", (images) => images
-    .filter((image) => image.offsetParent !== null || image.getBoundingClientRect().width > 0)
-    .filter((image) => image.complete && image.naturalWidth === 0)
-    .map((image) => ({ src: image.currentSrc || image.src, alt: image.alt })));
-}
-
-async function checkBottomSpacing(page) {
-  return page.evaluate(() => {
-    const tabbar = document.querySelector(".tabbar");
-    if (!tabbar) return null;
-    const rect = tabbar.getBoundingClientRect();
-    const padding = Number.parseFloat(getComputedStyle(document.body).paddingBottom) || 0;
-    return { tabHeight: Math.round(rect.height), bodyPadding: Math.round(padding) };
-  });
-}
-
-async function checkSearchFlow(page) {
-  const errors = [];
-  const selectors = await page.evaluate(() => {
-    const shell = document.querySelector(".discovery-search-shell");
-    const results = document.querySelector(".discovery-results");
-    if (!shell) return null;
-    const shellRect = shell.getBoundingClientRect();
-    return {
-      position: getComputedStyle(shell).position,
-      shellBottom: Math.round(shellRect.bottom + window.scrollY),
-      resultsTop: results ? Math.round(results.getBoundingClientRect().top + window.scrollY) : null
-    };
-  });
-  if (!selectors) return errors;
-  if (selectors.position === "fixed" || selectors.position === "absolute") {
-    errors.push(`搜索框不得浮层化：position=${selectors.position}`);
-  }
-  if (selectors.resultsTop !== null && selectors.resultsTop + 1 < selectors.shellBottom) {
-    errors.push(`搜索结果压住搜索框：resultsTop=${selectors.resultsTop} < shellBottom=${selectors.shellBottom}`);
-  }
-  const input = page.locator("[data-discovery-query]").first();
-  if ((await input.count()) > 0) {
-    await input.fill("企鹅 结构板");
-    await page.waitForTimeout(450);
-    const after = await page.evaluate(() => {
-      const results = document.querySelector(".discovery-results");
-      const shell = document.querySelector(".discovery-search-shell");
-      const cards = document.querySelectorAll(".discovery-card").length;
-      if (!results || !shell) return null;
-      return {
-        gap: Math.round(results.getBoundingClientRect().top - shell.getBoundingClientRect().bottom),
-        cards
-      };
-    });
-    if (!after) errors.push("搜索输入后结果区缺失");
-    else if (after.gap < -1) errors.push(`搜索输入后结果与搜索区重叠：gap=${after.gap}`);
-  }
-  return errors;
-}
-
-function fail(list, message) {
-  list.push(message);
-}
-
-async function checkPage(page, def, shotDir) {
-  const errors = [];
-  await page.goto(`${ORIGIN}${def.path}`, { waitUntil: "load" });
-  await page.waitForTimeout(350);
-
-  const metrics = await measure(page);
-  if (metrics.scrollWidth > VIEWPORT.width) {
-    fail(errors, `横向溢出：scrollWidth=${metrics.scrollWidth} > 360${metrics.overflow.length ? `；溢出元素 ${JSON.stringify(metrics.overflow)}` : ""}`);
-  }
-  if (metrics.clientWidth !== VIEWPORT.width) {
-    fail(errors, `视口宽度异常：clientWidth=${metrics.clientWidth}，期望 360`);
-  }
-
-  const bottom = await checkBottomSpacing(page);
-  if (!bottom) fail(errors, "缺少底部 Tab Bar");
-  else if (bottom.bodyPadding + 1 < bottom.tabHeight) {
-    fail(errors, `底部 Tab Bar 遮挡正文：bodyPadding=${bottom.bodyPadding} < tabHeight=${bottom.tabHeight}`);
-  }
-
-  if (def.kind === "home" || def.kind === "listing") {
-    const searchErrors = await checkSearchFlow(page);
-    errors.push(...searchErrors);
-  }
-
-  if (def.kind === "case") {
-    await page.evaluate(() => window.scrollTo(0, 0));
-    const checks = [
-      ["标题", "h1"],
-      ["通俗分类", "[data-hero-item='category']"],
-      ["适合/不适合", "[data-hero-item='fit']"],
-      ["证据级别", "[data-hero-item='evidence'] .evidence-badge"]
-    ];
-    for (const [label, selector] of checks) {
-      const result = await firstScreenVisible(page, selector);
-      if (!result.visible) fail(errors, `首屏不可见：${label}（${result.reason ?? `top=${result.top}`}）`);
-    }
-
-    const cover = await page.evaluate(() => {
-      const image = document.querySelector(".case-cover img");
-      const figure = document.querySelector("[data-hero-item='cover']");
-      return {
-        naturalWidth: image ? image.naturalWidth : 0,
-        top: figure ? Math.round(figure.getBoundingClientRect().top) : null
-      };
-    });
-    if (cover.naturalWidth <= 0) fail(errors, "首屏封面未加载：naturalWidth=0");
-    if (cover.top === null || cover.top >= VIEWPORT.height) fail(errors, `首屏封面不可见：top=${cover.top}`);
-
-    for (const name of ["decisions", "evidence", "prompts"]) {
-      await page.locator(`[data-case-tab="${name}"]`).first().click();
-      await page.waitForTimeout(250);
-      const state = await page.evaluate(() => {
-        const pageEl = document.querySelector("[data-case-page]");
-        const panels = [...document.querySelectorAll("[data-case-panel]")];
-        const visible = panels.filter((panel) => getComputedStyle(panel).display !== "none");
-        const archive = document.querySelector("[data-prompt-archive]");
-        return {
-          active: pageEl?.dataset.activePanel ?? null,
-          visiblePanels: visible.map((panel) => panel.dataset.casePanel),
-          archiveOpen: archive ? archive.open : null
-        };
-      });
-      if (state.active !== name) fail(errors, `分段未激活：期望 ${name}，实际 ${state.active}`);
-      const visibleGroups = [...new Set(state.visiblePanels)];
-      if (visibleGroups.length !== 1 || visibleGroups[0] !== name) {
-        fail(errors, `分段 ${name} 可见面板异常：${JSON.stringify(state.visiblePanels)}`);
-      }
-      if (name === "prompts" && !state.archiveOpen) fail(errors, "提示词面板未展开");
-    }
-
-    if ((await page.locator(".case-prompt-cta").count()) !== 0) {
-      fail(errors, "仍存在 fixed 提示词按钮");
-    }
-
-    const promptDetails = page.locator("details[data-prompt-version]").first();
-    if ((await promptDetails.count()) === 0) {
-      fail(errors, "缺少提示词折叠块");
-    } else {
-      const summary = promptDetails.locator("summary").first();
-      await summary.click();
-      if (!(await promptDetails.locator("pre").first().isVisible())) fail(errors, "提示词展开失败");
-      await summary.click();
-      if (await promptDetails.evaluate((el) => el.open)) fail(errors, "提示词收起失败");
-    }
-  }
-
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(150);
-
-  const brokenImages = await loadVisibleImages(page);
-  if (brokenImages.length > 0) {
-    fail(errors, `图片未加载：${JSON.stringify(brokenImages.slice(0, 5))}`);
-  }
-
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(150);
-  await page.screenshot({ path: join(shotDir, `${def.slug}-fold.png`) });
-  await page.screenshot({ path: join(shotDir, `${def.slug}.png`), fullPage: true });
-
-  return {
-    slug: def.slug,
-    path: def.path,
-    kind: def.kind,
-    scrollWidth: metrics.scrollWidth,
-    clientWidth: metrics.clientWidth,
-    pass: errors.length === 0,
-    errors,
-    screenshot: `reports/e2e-360/${def.slug}.png`,
-    foldScreenshot: `reports/e2e-360/${def.slug}-fold.png`
-  };
-}
-
-async function collectLinks(page, defs) {
-  const links = new Set();
-  for (const def of defs) {
-    await page.goto(`${ORIGIN}${def.path}`, { waitUntil: "load" });
-    const hrefs = await page.$$eval("a[href]", (anchors) => anchors.map((a) => a.getAttribute("href")));
-    for (const href of hrefs) {
-      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) continue;
-      const resolved = new URL(href, `${ORIGIN}${def.path}`);
-      if (resolved.origin !== ORIGIN) continue;
-      links.add(resolved.pathname + resolved.search);
-    }
-  }
-  return [...links].sort();
-}
-
 function buildSite() {
   const result = spawnSync("npx", ["--yes", "astro", "build", "--outDir", "dist-e2e"], {
     cwd: ROOT,
@@ -320,89 +63,212 @@ function buildSite() {
   if (result.status !== 0) {
     throw new Error(`astro build 失败（exit ${result.status}）：\n${result.stderr || result.stdout}`);
   }
-  const pages = result.stdout.match(/(\d+)\s+page\(s\) built/u)?.[1];
-  console.log(`[build] dist-e2e：${pages ?? "?"} page(s)`);
+  console.log(`[build] dist-e2e：${result.stdout.match(/(\d+)\s+page\(s\) built/u)?.[1] ?? "?"} page(s)`);
+}
+
+async function measureOverflow(page) {
+  return page.evaluate(() => {
+    const doc = document.documentElement;
+    const overflow = [];
+    for (const element of document.querySelectorAll("body *")) {
+      const rect = element.getBoundingClientRect();
+      if (rect.width > 0 && rect.right > window.innerWidth + 0.5) {
+        const style = getComputedStyle(element);
+        if (style.position === "fixed" || style.position === "absolute") continue;
+        overflow.push({
+          tag: element.tagName.toLowerCase(),
+          cls: typeof element.className === "string" ? element.className.slice(0, 60) : "",
+          right: Math.round(rect.right)
+        });
+        if (overflow.length >= 5) break;
+      }
+    }
+    return { scrollWidth: doc.scrollWidth, clientWidth: doc.clientWidth, overflow };
+  });
+}
+
+async function waitForImages(page, selector) {
+  await page.waitForFunction((query) => {
+    const images = [...document.querySelectorAll(query)];
+    return images.length > 0 && images.every((image) => image.complete);
+  }, selector, { timeout: 15000 }).catch(() => {});
+}
+
+async function homeChecks(page, errors) {
+  await page.goto(`${ORIGIN}/`, { waitUntil: "load" });
+  await page.waitForTimeout(250);
+  const overflow = await measureOverflow(page);
+  if (overflow.scrollWidth > MOBILE.width) {
+    errors.push(`首页横向溢出 ${overflow.scrollWidth} > ${MOBILE.width}：${JSON.stringify(overflow.overflow)}`);
+  }
+
+  const filter = await page.evaluate(() => {
+    const selects = [...document.querySelectorAll("[data-filter-bar] select")];
+    return selects.map((select) => {
+      const rect = select.getBoundingClientRect();
+      return { name: select.dataset.filter, top: Math.round(rect.top), height: Math.round(rect.height) };
+    });
+  });
+  if (filter.length !== 3 || filter.some((item) => item.height === 0 || item.top >= MOBILE.height)) {
+    errors.push(`筛选项不可见或不完整：${JSON.stringify(filter)}`);
+  }
+
+  await waitForImages(page, ".case-card__media img");
+  const cards = await page.evaluate((viewportHeight) => {
+    const list = [...document.querySelectorAll(".case-card")].filter((card) => !card.hidden);
+    const visible = list.filter((card) => {
+      const rect = card.getBoundingClientRect();
+      return rect.top < viewportHeight && rect.bottom > 0;
+    });
+    return {
+      rendered: list.length,
+      visible: visible.length,
+      images: visible.map((card) => {
+        const image = card.querySelector("img");
+        return image
+          ? { src: image.getAttribute("src"), naturalWidth: image.naturalWidth, complete: image.complete }
+          : { src: null, naturalWidth: 0, complete: false };
+      })
+    };
+  }, MOBILE.height);
+  if (cards.rendered < 4 || cards.visible < 4) {
+    errors.push(`首页首屏卡片不足 4 张：rendered=${cards.rendered} visible=${cards.visible}`);
+  }
+  if (cards.images.some((image) => !image.src || !image.src.startsWith("/results/"))) {
+    errors.push(`首页卡片主图未指向 /results/：${JSON.stringify(cards.images)}`);
+  }
+  if (cards.images.some((image) => !image.complete || image.naturalWidth <= 0)) {
+    errors.push(`首页卡片主图未加载：${JSON.stringify(cards.images)}`);
+  }
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-home-390x844.png") });
+  return { cards, filter, scrollWidth: overflow.scrollWidth };
+}
+
+async function caseChecks(page, errors) {
+  await page.goto(`${ORIGIN}/cases/case-23/`, { waitUntil: "load" });
+  await page.waitForTimeout(250);
+  const overflow = await measureOverflow(page);
+  if (overflow.scrollWidth > MOBILE.width) {
+    errors.push(`case-23 横向溢出 ${overflow.scrollWidth} > ${MOBILE.width}`);
+  }
+  const text = await page.evaluate(() => document.body.textContent ?? "");
+  if (!text.includes("本站生成")) errors.push("case-23 缺少「本站生成」");
+  if (!text.includes("开源项目原图")) errors.push("case-23 缺少「开源项目原图」");
+  if (!text.includes("freestylefly/awesome-gpt-image-2")) errors.push("case-23 未写明开源项目名");
+  const gateLinks = await page.locator(".related li a").count();
+  if (gateLinks < 5) errors.push(`case-23 同门槛案例链接不足 5 条：${gateLinks}`);
+  const generated = await page.evaluate(() => {
+    const image = document.querySelector(".gen-figure img");
+    return image ? { naturalWidth: image.naturalWidth, complete: image.complete } : null;
+  });
+  if (!generated || generated.naturalWidth <= 0) errors.push(`case-23 本站生成图未加载：${JSON.stringify(generated)}`);
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-case-23-390x844.png") });
+  return { gateLinks, generated, scrollWidth: overflow.scrollWidth };
+}
+
+async function patternsChecks(page, errors, patterns) {
+  await page.goto(`${ORIGIN}/patterns/`, { waitUntil: "load" });
+  await page.waitForTimeout(200);
+  const overflow = await measureOverflow(page);
+  if (overflow.scrollWidth > MOBILE.width) {
+    errors.push(`规律页横向溢出 ${overflow.scrollWidth} > ${MOBILE.width}`);
+  }
+  const rows = await page.evaluate(() => {
+    const tables = [...document.querySelectorAll(".data-table")];
+    const text = (table) => [...table.querySelectorAll("tbody tr")].map((row) => row.innerText.replace(/\s+/g, " ").trim());
+    return { category: tables[0] ? text(tables[0]) : [], gate: tables[1] ? text(tables[1]) : [] };
+  });
+
+  const category = patterns.categories.find((item) => item.category === "information-diagram");
+  const gate = patterns.gates.find((item) => item.gate === "TEXT_WRONG");
+  const categoryRow = rows.category.find((row) => row.includes("information-diagram")) ?? "";
+  const gateRow = rows.gate.find((row) => row.includes("TEXT_WRONG")) ?? "";
+  if (!categoryRow.includes(`${category.pass} / ${category.n}`) || !categoryRow.includes(`${category.pass_rate.toFixed(1)}%`)) {
+    errors.push(`规律页分类数字不一致：期望 ${category.pass}/${category.n} ${category.pass_rate}%，实际「${categoryRow}」`);
+  }
+  if (!gateRow.includes(String(gate.n))) {
+    errors.push(`规律页门槛频次不一致：期望 ${gate.gate}=${gate.n}，实际「${gateRow}」`);
+  }
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-patterns-390x844.png") });
+  return {
+    sampled: {
+      category: { expected: { pass: category.pass, n: category.n, rate: category.pass_rate }, row: categoryRow },
+      gate: { expected: { gate: gate.gate, n: gate.n }, row: gateRow }
+    },
+    scrollWidth: overflow.scrollWidth
+  };
+}
+
+async function conclusionsChecks(page, errors) {
+  await page.goto(`${ORIGIN}/conclusions/`, { waitUntil: "load" });
+  await page.waitForTimeout(200);
+  const overflow = await measureOverflow(page);
+  if (overflow.scrollWidth > MOBILE.width) {
+    errors.push(`结论页横向溢出 ${overflow.scrollWidth} > ${MOBILE.width}`);
+  }
+  const text = await page.evaluate(() => document.body.textContent ?? "");
+  for (const required of ["已评审", "通过率", "未评审", "agnes-image-2.5-flash", "REVIEW"]) {
+    if (!text.includes(required)) errors.push(`结论页缺少「${required}」`);
+  }
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-conclusions-390x844.png") });
+  return { scrollWidth: overflow.scrollWidth };
+}
+
+async function desktopHomeChecks(page, errors) {
+  await page.setViewportSize(DESKTOP);
+  await page.goto(`${ORIGIN}/`, { waitUntil: "load" });
+  await page.waitForTimeout(250);
+  const overflow = await measureOverflow(page);
+  if (overflow.scrollWidth > DESKTOP.width) {
+    errors.push(`桌面首页横向溢出 ${overflow.scrollWidth} > ${DESKTOP.width}`);
+  }
+  const cards = await page.locator(".case-card:visible").count();
+  if (cards < 4) errors.push(`桌面首页卡片不足 4 张：${cards}`);
+  await page.screenshot({ path: join(SHOT_DIR, "casefirst-home-1440x900.png") });
+  return { cards, scrollWidth: overflow.scrollWidth };
 }
 
 async function main() {
   await mkdir(SHOT_DIR, { recursive: true });
-  try {
-    buildSite();
-  } catch (error) {
-    await rm(DIST, { recursive: true, force: true });
-    throw error;
-  }
+  buildSite();
+  const patterns = JSON.parse(await readFile(join(ROOT, "content", "patterns.json"), "utf8"));
   const server = await startServer();
   const browser = await chromium.launch({ args: ["--no-sandbox", "--disable-dev-shm-usage"] });
-  const context = await browser.newContext({ viewport: VIEWPORT, deviceScaleFactor: 1 });
+  const context = await browser.newContext({ viewport: MOBILE, deviceScaleFactor: 1 });
   const page = await context.newPage();
-  const results = [];
+  const errors = [];
+  const evidence = {};
   try {
-    for (const def of PAGES) {
-      try {
-        results.push(await checkPage(page, def, SHOT_DIR));
-      } catch (error) {
-        results.push({
-          slug: def.slug,
-          path: def.path,
-          kind: def.kind,
-          scrollWidth: null,
-          pass: false,
-          errors: [`执行异常：${error.message}`]
-        });
-      }
-    }
-
-    const allLinks = await collectLinks(page, PAGES);
-    const step = Math.max(1, Math.floor(allLinks.length / 50));
-    const sampled = [];
-    for (let i = 0; i < allLinks.length && sampled.length < 50; i += step) sampled.push(allLinks[i]);
-    for (let i = 0; i < allLinks.length && sampled.length < 50; i += 1) sampled.push(allLinks[i]);
-    const uniqueSampled = [...new Set(sampled)].slice(0, 50);
-
-    const linkChecks = [];
-    for (const link of uniqueSampled) {
-      const response = await context.request.get(`${ORIGIN}${link}`, { maxRedirects: 3 });
-      linkChecks.push({ path: link, status: response.status(), pass: response.status() === 200 });
-    }
-
-    const linkFailures = linkChecks.filter((item) => !item.pass);
-    const failed = results.filter((item) => !item.pass);
-    const widths = results.map((item) => item.scrollWidth).filter((value) => typeof value === "number");
-    const report = {
-      generatedAt: new Date().toISOString(),
-      viewport: VIEWPORT,
-      baseUrl: ORIGIN,
-      build: "dist-e2e",
-      summary: {
-        pages: results.length,
-        passed: results.length - failed.length,
-        failed: failed.length,
-        linksChecked: linkChecks.length,
-        linkFailures: linkFailures.length,
-        maxScrollWidth: Math.max(...widths),
-        pass: failed.length === 0 && linkFailures.length === 0
-      },
-      pages: results,
-      links: {
-        discovered: allLinks.length,
-        checked: linkChecks.length,
-        failures: linkFailures,
-        items: linkChecks
-      }
-    };
-    await writeFile(join(OUT_DIR, "e2e.json"), `${JSON.stringify(report, null, 2)}\n`);
-    console.log(JSON.stringify(report.summary, null, 2));
-    for (const item of results) {
-      console.log(`${item.pass ? "PASS" : "FAIL"} ${item.path} scrollWidth=${item.scrollWidth}${item.errors.length ? ` :: ${item.errors.join(" | ")}` : ""}`);
-    }
-    if (linkFailures.length) console.log("LINK FAILURES", linkFailures);
-    process.exitCode = report.summary.pass ? 0 : 1;
+    evidence.home = await homeChecks(page, errors);
+    evidence.case23 = await caseChecks(page, errors);
+    evidence.patterns = await patternsChecks(page, errors, patterns);
+    evidence.conclusions = await conclusionsChecks(page, errors);
+    evidence.desktopHome = await desktopHomeChecks(page, errors);
+  } catch (error) {
+    errors.push(`执行异常：${error instanceof Error ? error.message : String(error)}`);
   } finally {
     await browser.close();
     server.close();
     await rm(DIST, { recursive: true, force: true });
   }
+
+  const report = {
+    generatedAt: new Date().toISOString(),
+    viewports: { mobile: MOBILE, desktop: DESKTOP },
+    screenshots: [
+      "reports/visual/casefirst-home-390x844.png",
+      "reports/visual/casefirst-case-23-390x844.png",
+      "reports/visual/casefirst-patterns-390x844.png",
+      "reports/visual/casefirst-conclusions-390x844.png",
+      "reports/visual/casefirst-home-1440x900.png"
+    ],
+    passed: errors.length === 0,
+    errors,
+    evidence
+  };
+  await writeFile(join(OUT_DIR, "casefirst-e2e.json"), `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  console.log(JSON.stringify({ passed: report.passed, errors, evidence }, null, 2));
+  if (!report.passed) process.exitCode = 1;
 }
 
 main().catch((error) => {

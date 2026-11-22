@@ -91,7 +91,7 @@ function buildImage(caseId: string, title: string, assets: Asset[]): DiscoveryIm
     sizes: "(max-width: 63.99rem) 100vw, (max-width: 79.99rem) 46vw, 35rem",
     width: fallback.width,
     height: fallback.height,
-    alt: `${title}案例封面`
+    alt: `${title}原案例配图`
   };
 }
 

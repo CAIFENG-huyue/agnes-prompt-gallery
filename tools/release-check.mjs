@@ -8,7 +8,7 @@ import { recompute } from "./build-conclusions.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const buildDirectory = "dist-t14";
-const expectedPages = 555;
+const expectedPages = 557;
 const expectedCasePages = 541;
 const expectedAssetCount = 1989;
 const maxAssetBytes = 150000;
@@ -593,7 +593,7 @@ async function main() {
   recordGate(
     pageGatePassed ? "pass" : "fail",
     "page_count",
-    "页数与案例覆盖（555 页 / 541 案例）",
+    "页数与案例覆盖（557 页 / 541 案例）",
     {
       total_pages: pagesAfterBuild.pages,
       expected_total_pages: expectedPages,
@@ -604,8 +604,7 @@ async function main() {
     `${pagesAfterBuild.pages} 页，其中案例页 ${pagesAfterBuild.casePages}；${JSON.stringify(pagesAfterBuild.breakdown)}`
   );
 
-  commandGate("discovery", "首页发现与企鹅题结果卡", "node", ["quality/discovery.check.mjs", buildDirectory]);
-  commandGate("case_pages", "541 个案例页自解释与移动首屏", "node", ["quality/case-pages.check.mjs", buildDirectory]);
+  commandGate("casefirst", "案例优先信息架构与数据驱动规律", "node", ["quality/casefirst.check.mjs", buildDirectory]);
   commandGate("evidence_pages", "实验证据页与结论下钻", "node", ["quality/evidence-pages.check.mjs", buildDirectory]);
 
   try {
@@ -724,7 +723,7 @@ async function main() {
     `- 方法：在临时目录 \`${release.gates.find((gate) => gate.id === "contract_test")?.evidence?.temp_dir ?? "(已清理)"}\` 构建，仓库内只临时追加数据行，结束后 \`git restore\` 还原。`,
     "- 追加文件：`content/cases.json`、`content/prompt-versions/cases.json`，以及案例页渲染所必需的 `classifications.json`、`fingerprints.json`、`case-guides.json`、`decisions.json` 同 case_id 数据行。",
     "- 断言：案例页 541 → 542，旧 541 个案例 URL 全部保留，`src/` 目录哈希与 `git status -- src` 均无变化。",
-    "- 还原：`git restore` 后内容字节与基线一致，复建页数回到 555 / 案例页 541；临时构建目录已删除。",
+    "- 还原：`git restore` 后内容字节与基线一致，复建页数回到 557 / 案例页 541；临时构建目录已删除。",
     "",
     "## 已知局限",
     "",

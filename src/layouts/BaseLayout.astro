@@ -10,16 +10,15 @@ interface Props {
 
 const {
   title,
-  description = "按意图与画面结构查找案例，查看可迁移写法及其证据版本。"
+  description = "以案例为主：本站生成图、判定、失败门槛与开源项目原图对照。"
 } = Astro.props;
 const pageTitle = title === "Agnes Bench" ? title : `${title} · Agnes Bench`;
 const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
 const isHome = pathname === "/";
 const sections = [
-  { href: "/", label: "找案例", match: (path: string) => path === "/" || path.startsWith("/cases") },
-  { href: "/categories/", label: "分类", match: (path: string) => path.startsWith("/categories") },
-  { href: "/experiments/", label: "实验", match: (path: string) => path.startsWith("/experiments") },
-  { href: "/methods/", label: "方法", match: (path: string) => path.startsWith("/methods") }
+  { href: "/", label: "案例", match: (path: string) => path === "/" || path.startsWith("/cases") },
+  { href: "/patterns/", label: "规律", match: (path: string) => path.startsWith("/patterns") },
+  { href: "/conclusions/", label: "结论", match: (path: string) => path.startsWith("/conclusions") }
 ];
 const current = sections.find((item) => item.match(pathname));
 ---
@@ -45,14 +44,7 @@ const current = sections.find((item) => item.match(pathname));
         </a>
 
         <div class="topbar__center">
-          {isHome ? (
-            <div class="segmented" role="group" aria-label="首页内容范围" data-home-switch>
-              <button type="button" class="segmented__item is-active" data-home-mode-value="featured" aria-pressed="true">精选</button>
-              <button type="button" class="segmented__item" data-home-mode-value="all" aria-pressed="false">全部</button>
-            </div>
-          ) : (
-            <span class="topbar__page">{current?.label ?? "Agnes"}</span>
-          )}
+          {!isHome && <span class="topbar__page">{current?.label ?? "案例"}</span>}
         </div>
 
         <nav class="desktop-nav" aria-label="主导航">
@@ -62,10 +54,7 @@ const current = sections.find((item) => item.match(pathname));
         </nav>
 
         <div class="topbar__actions">
-          <a class="icon-button" href="/#home-search" aria-label="搜索案例">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg>
-          </a>
-          <a class="icon-button" href="/categories/" aria-label="按分类筛选">
+          <a class="icon-button" href="/#case-filter" aria-label="筛选案例">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>
           </a>
         </div>
@@ -79,7 +68,7 @@ const current = sections.find((item) => item.match(pathname));
     <footer class="site-footer">
       <div class="site-footer__inner">
         <span>Agnes Bench</span>
-        <span>静态案例索引 · 证据与版本可回溯</span>
+        <span>案例优先 · 判定与失败门槛来自案例数据</span>
       </div>
     </footer>
 
@@ -92,15 +81,12 @@ const current = sections.find((item) => item.match(pathname));
         >
           <span class="tabbar__icon" aria-hidden="true">
             {item.href === "/" && (
-              <svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-5.5v-5h-5v5H4z"></path></svg>
+              <svg viewBox="0 0 24 24"><path d="M4 5h7v7H4zM13 5h7v7h-7zM4 14h7v5H4zM13 14h7v5h-7z"></path></svg>
             )}
-            {item.href === "/categories/" && (
-              <svg viewBox="0 0 24 24"><path d="M4 5h6v6H4zM14 5h6v6h-6zM4 14h6v5H4zM14 14h6v5h-6z"></path></svg>
+            {item.href === "/patterns/" && (
+              <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19V8"></path></svg>
             )}
-            {item.href === "/experiments/" && (
-              <svg viewBox="0 0 24 24"><path d="M9 4h6M10 4v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V4M7 15h10"></path></svg>
-            )}
-            {item.href === "/methods/" && (
+            {item.href === "/conclusions/" && (
               <svg viewBox="0 0 24 24"><path d="M5 4h9l5 5v11H5zM14 4v5h5M8 13h8M8 17h6"></path></svg>
             )}
           </span>

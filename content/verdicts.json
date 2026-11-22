@@ -1,0 +1,3857 @@
+[
+  {
+    "case_id": "case-1",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "第12个面板英文标签存在明显拼写错误（Governance Dapshboard，应为 Dashboard）。 | 第12号面板标题显示为“治理看板 / Governance Dashboard”，提示词要求为“治理看板 / Governance Dashboard”，存在乱",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-2",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有提示词要求的文字、图标、数据和布局均已准确呈现，海报风格符合要求。 | 图片完美复现了提示词要求，@OpenAI 蓝勾认证、正文内容、底部黑客质感海报及所有具体的互动数据数值均准确无误，排版精致，整体质量极高。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-3",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "COUNT_WRONG",
+      "MISSING_ELEMENT"
+    ],
+    "note": "披挂国旗颜色为蓝黄(非波黑蓝白), 背景球场氛围(圣西罗)特征缺失, 且右手五指清晰但左手五指模糊/疑似多指。 | 缺少提示词中明确指出的“国际米兰蓝黑配色”与“圣西罗球场”标识，人物双手均出现多于5根手指的解剖结构错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-4",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "产品标签上的文字显示为“老干购条”，与提示词要求的“老干妈”不符，属于文字错误。 | 核心元素完整，背景科技感与弹幕文字均符合提示词，且瓶身文字清晰准确。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-5",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "敦煌剪影叙事完整，藻井/飞天/九色鹿/月牙泉齐全，右下签名 WHY 逐字正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-6",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "参考人设图的银白长发、白裙、蓝缎带与整体气质保留；水面镜像、流星、粉紫天空全部成立。唯一漂移：参考图为紫瞳，成图眼睛偏琥珀色，属细节保真扣分，不构成结构失败。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-7",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "coser 与参考角色一致（银白长发/紫瞳/白裙/蓝缎带）；状态栏 21:36/5G/78%、角色名林夏、对话框文案「今天也辛苦啦，要喝杯热可可吗？」、三个按钮全部逐字正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-8",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "章鱼三心科普结构完整，标题与主要标签正确，模块分区清晰",
+    "source": "review"
+  },
+  {
+    "case_id": "case-9",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "文字排版出现拼写错误，'Beijing'被错写为'Being'，属于TEXT_WRONG硬伤。 | 整体设计精美，符合国潮风格。包含天坛、长城、鸟巢、什刹海（左下角柳树/水景）、喇叭沟门（绿色山峦）等元素，虽然未明显看到“京味相声”人物形象但可视为背景氛围融合",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-10",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "文字逐字准确，三人形象与红领巾元素完整呈现，构图与细节符合八十年代宣传画风格要求。 | 海报风格还原度高，标语及人名拼写准确，人物特征（如Sam的西装、Dario的红领巾、Musk的皮衣）符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-11",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "标题及左上角店名存在明显错字（如“台州”写成“台卅”，“椒江”写成“椒红”），右下角图例文字模糊无法辨识，违反文字准确性要求。 | 图例文字为乱码/错字（非提示词内容）；缺少第10个地点‘临海麦油脂’（竹盘薄饼），误画为‘临海麦油脂’但插画不符；且‘仙居八大碗’仅画了8个碗（正确）但‘黄岩麦",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-13",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "标题文字显示为'数学试卷'（错误），且正文文字均为乱码或无法辨识的伪汉字，不符合中文试卷的实际文字要求。 | 图像完美复刻了提示词要求的AI生成瑕疵：标题文字正确且无乱码，但正文内容完全为无意义的乱码/伪文字，符合真实AI生成图特征而非人工伪造；3D几何图形与数学公式符",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-14",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "步骤 4 厨师秘技中将“铲子”错误生成为“铲子”（字形为“铲”而非“铲”），属于明显错字。 | 标题漏掉冒号；步骤2提示词要求手持筷子，但图中画的是打蛋器；步骤5描述要求撒葱花，但图中蛋上撒的是绿色圆点而非葱花。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-15",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美符合提示词要求，人物状态生动自然，手中的啤酒与面前的小龙虾特征明显，背景的夜市氛围浓厚；标题“趁年轻，激爽才够味！”文字逐字准确且极具视觉冲击力，整体审",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-17",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "品牌名再次拼错为“Snapgrane”（应为 Snapdragon）；8 标签与 9 层齐全。连续两版 FAIL，标 STUCK，建议改为纯图标+短品牌字，或后期叠字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-18",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "成都地图结构完整，地名基本正确，熊猫与火锅元素到位",
+    "source": "review"
+  },
+  {
+    "case_id": "case-19",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "六格标题逐字为指定日文，无英文；分镜、箭头、きびだんご分配表与概要栏齐全。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-20",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "六步连续流程+黍团子分配表，日文全部可读且正确，狗猴雉鸡齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-22",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "武術会双人对战构图有张力，动作清晰",
+    "source": "review"
+  },
+  {
+    "case_id": "case-23",
+    "verdict": "FAIL",
+    "gates": [
+      "RELATION_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "L0-L7 八个标签全对、25 级台阶与图例在；但台阶编号自下而上倒置（25 在底、15 在中），焦点步与编号对不上，部分步骤名乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-25",
+    "verdict": "FAIL",
+    "gates": [
+      "UI_INCOMPLETE"
+    ],
+    "note": "输出是三视图像素角色，不是 64×64 皮肤贴图/8×8 网格展开；白 T、牛仔裤、白鞋正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-26",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "室内人像自然，光影与皮肤质感好",
+    "source": "review"
+  },
+  {
+    "case_id": "case-27",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "2 行 5 列共 10 张拍立得，同角色，日文手写“Hanashi”等文字正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-28",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "同一张脸四种职业，身份一致，服装与背景逐格正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-29",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "STYLE_WEAK"
+    ],
+    "note": "仍为原白色开衫+牛仔裤+灰棚；黑发、黑唇、苍白肤色、鼻中隔环、倒十字项链全部未执行。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-30",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "线稿机器人工作台，线条干净，无乱码",
+    "source": "review"
+  },
+  {
+    "case_id": "case-31",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "校园制服人像，蓝天背景干净，姿态自然",
+    "source": "review"
+  },
+  {
+    "case_id": "case-32",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "3x3 九宫格同一女孩九种表情，身份一致",
+    "source": "review"
+  },
+  {
+    "case_id": "case-33",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "3D 云朵图标，哑光黏土质感、渐变边缘、纯白背景，符合电商图标用途",
+    "source": "review"
+  },
+  {
+    "case_id": "case-34",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "恰好 12 个头像、3 行 4 列、无第四行、无重复；12 个英文名全部正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-35",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "红叶和服人像，肤色与布料质感好，背景虚化自然",
+    "source": "review"
+  },
+  {
+    "case_id": "case-36",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "篮球场自拍，黑 T 白钩、绿色球带 OpenAI 标志，光影自然",
+    "source": "review"
+  },
+  {
+    "case_id": "case-37",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "24 张柴犬贴纸（6+6+4+4+4），日文全部正确可读，风格统一",
+    "source": "review"
+  },
+  {
+    "case_id": "case-38",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "24/24 格数已达标，但至少 5 格日文为生造词/乱码（ふぃげう、驕怒、元れた、怒犬 等）。连续两版 FAIL，标 STUCK；建议固定 24 条文案并逐格指定，而非“类似短句”。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-39",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "24 张柴犬贴纸（6x4），日文全部正确，风格统一",
+    "source": "review"
+  },
+  {
+    "case_id": "case-40",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "24 格全满，24 条日文全部为正确可读的日语；网格实际为 6 列 4 行（与提示词 4 列 6 行转置，总数一致）。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-41",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "九个资料字段全部有具体值且逐字正确：紫咲リリー/7月7日/18歳/158cm/お嬢様/わたくし/東京都/VTuber/2023年5月20日；无空栏无乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-42",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "程序员工作台线稿，线条干净、透视正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-43",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "九个英文名全部逐字正确（JON SNOW 至 THEON GREYJOY），全大写单行、版面完整。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-44",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中文字与历史事实严重不符，如洪武皇帝被错误标注为朱元璋（实为朱标），万历皇帝被错误标注为朱翊钧（实为朱翊钧，名字写对了但对应的人物画像可能是朱翊钧，但万历是庙",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-45",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "黑白男性肖像，湿发、肌肉光影与情绪到位",
+    "source": "review"
+  },
+  {
+    "case_id": "case-46",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "后台化妆间 cosplay 女战士，红短发、红金裙甲、白束胸，细节丰富",
+    "source": "review"
+  },
+  {
+    "case_id": "case-47",
+    "verdict": "BLOCKED",
+    "gates": [
+      "CONTENT_POLICY"
+    ],
+    "note": "四格日文广告触发内容审核（content_policy_violation），清洗敏感描述后仍被拦截，待拆分单格重跑",
+    "source": "review"
+  },
+  {
+    "case_id": "case-48",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "直播界面另一版式，中文评论与英文手写牌正确，无缺件",
+    "source": "review"
+  },
+  {
+    "case_id": "case-49",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "直播界面完整：LU Yifei、LIVE 标、手写牌英文正确、观众列表、评论、点赞栏齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-50",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "哥特大厅、白袍跪者、金色祭坛烛台、右侧小提琴、反光地面齐全；额外出现悬挂面具但不冲突",
+    "source": "review"
+  },
+  {
+    "case_id": "case-51",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "一周穿搭指南：标题/副标题/slogan 逐字正确，周一到周日七列齐全，面料价格色卡完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-52",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "宫本武藏线稿，VAGABOND MUSASHI 文字正确，线条干净",
+    "source": "review"
+  },
+  {
+    "case_id": "case-53",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "提示词要素齐全，图像文字与要求一致，复古闪光灯质感和细节都到位。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-54",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "2x2 日式商品目录，座る石/牙刷/云存钱罐/说教石四格齐全，价格 ¥2,980 与 ¥3,500 与提示词一致",
+    "source": "review"
+  },
+  {
+    "case_id": "case-55",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "标题文字“红烧五肉炒与甜清醋”存在明显错别字及乱码，不符合提示词要求的“辣炒猪肉”标题。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-56",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "自助洗衣店里的独角兽摇摇车人像，场景与人物反差成立",
+    "source": "review"
+  },
+  {
+    "case_id": "case-57",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "Twitter 深色 UI 全对：19:28、Emperor Zhu Yuanzhang、@Emperor_Ming、正文与三个话题、1:36 PM · Jan 23, 1368、四项数据、底栏齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-59",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "3D 动画风海报，三个人物与「パンチ軍団」标题正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-60",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "五格拼贴（上3下2），时钟 7:42、五张扑克、酒杯、棋盘、骰子齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-61",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "四格主标题、副标题、项目符号全部正确可读，数据卡 125.6万/23.8% 清晰",
+    "source": "review"
+  },
+  {
+    "case_id": "case-62",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "四格标题、副标题、按钮与三组图标标签全部逐字正确，无乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-63",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "四格标题、副标题、箇条与 CTA 全部逐字正确，无乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-64",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题与副标题正确，9 个面板（8 方法+1 收尾）逐字对应，插画风格统一",
+    "source": "review"
+  },
+  {
+    "case_id": "case-65",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、釋/道/儒三层主句、左側淨靜敬、右側三条年龄备注、底部结语全部逐字正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-66",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题副标题、01–13 步骤、左右六模块与底行四模块短标签、页脚全部清晰正确，无乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-67",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "13 个节点与标题全部可读，器官标注与箭头链路正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-68",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "12 节点与底部因果链全部正确可读，解剖图准确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-69",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "痛风因果链（另一版式），节点与箭头链路可读",
+    "source": "review"
+  },
+  {
+    "case_id": "case-70",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "八大模块与 14 步流程完整，相机爆炸图精细，标签基本可读",
+    "source": "review"
+  },
+  {
+    "case_id": "case-72",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "植物生长路径图，根/茎/叶/花/果分区完整，中文标签可读",
+    "source": "review"
+  },
+  {
+    "case_id": "case-73",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "上海城市系统剖面：标题与英文副标题正确，七层结构、左右编号说明与数据表齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-74",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "大型猫科概览，狮头主视觉、爪/眼/毛细节、评分 9.5/10 齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-75",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "大型猫科动物百科，狮/虎/豹/雪豹/美洲豹分区与足迹对照齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-76",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "英文狮子档案卡，六大分区与 Quick Rating 完整，标签无拼写错误",
+    "source": "review"
+  },
+  {
+    "case_id": "case-77",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "大猫科全景指南，主要物种、分布、食性、保护等级与评分完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-78",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "单个人体白线模型 + 绿色受光区，纯黑底，无脸无身份，姿态与参考一致；英文光源标签为可选，未加不扣分。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-79",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "蹲伏白线模型 + 绿色受光区，黑底单人，姿态可读，无多余元素。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-80",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "白线模型 + 绿色受光区，黑底单人；姿态严格跟随合成参考（T 姿），属参考替换，不计模型错误。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-82",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "光学实验台示意图，532nm 光路与各器件标签正确",
+    "source": "review"
+  },
+  {
+    "case_id": "case-83",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "球员姓名拼写错误，提示词要求 'Harry Kane'，图中显示为 'Harrry Klane'。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-84",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图中存在大量AI生成乱码与错误汉字（如“鬼舞辻無慘”写作“鬼舞辻無慘”但字体错误，“富岡義勇”为“富岡義勇”但实为“富岡義勇”错字，“竈門炭治郎”写作“竈門炭治",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-85",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "所有人物姓名标签全部乱码拼写错误（如Moxnohazl、Ririxololo），不符合'逐字一致'硬门槛。 | 所有角色名称均为乱码，不符合可读性与正确性要求（如Moxnoael实为Nezuko，Raxnctelo实为Zenyu，Fhemiobl实为Tanjuro等），且",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-86",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中标签文字存在严重拼写错误（如“Demor King”应为“Demon King”）及乱码（底部猪头标签等），判定为TEXT_WRONG。 | 图中人物名称标签存在大量错字和拼写错误（如 Inosuke 被写成 'Demoult Gure'、Tanjiro 被写成 'Glnte Bion'、Muzan",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-87",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图中多处关键文字出现乱码或非日文汉字，且角色身份标签存在错配（如炭治郎被标注为雷柱），不符合图文一致性要求。 | 多处角色姓名、标签及关系标注存在明显错字、乱码（如“不死川実弥”写成“不死川実弥”、“炭治郎”名字错乱、“水柱”等标签文字模糊），不符合逐字一致要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-88",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "四位皇帝剪影逐一呈现并各带名牌（秦始皇/漢武帝/唐太宗/康熙），时间轴仅 秦·漢·唐·清，标题副标题正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-89",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "四层四尊浮雕齐全，四个英文名牌 QIN SHI HUANG/HAN WUDI/TANG TAIZONG/KANGXI 全部正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-90",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "四位皇帝印章堆叠排名，Qin Shi Huang/Han Wudi/Tang Taizong/Kangxi 全部正确，标题完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-91",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "v3 收敛 HUD 后通过：Logo 逐字 MINECRAFT 2、无多余 Y；HUD 只保留经验条 16，心/饥饿/物品栏无数量角标，不再零和。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-92",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "粉色 VTuber 直播封面，「雑談配信」与聊天栏、礼物栏齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-93",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-94",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-95",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-96",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-97",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-98",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-99",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-100",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-101",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-102",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-103",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "操作栏五控件全部正确且互异（Subscribe/Like/Dislike/分享/下载/更多），点踩与分享补齐；Premium 与标题逐词正确；扣分项为右侧推荐缩略图反复用同一演奏者、评论区文字为乱码（未指定内容，不判错）",
+    "source": "review"
+  },
+  {
+    "case_id": "case-104",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "聊天区文字乱码",
+    "source": "review"
+  },
+  {
+    "case_id": "case-105",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题、人名与版式文字逐字正确，界面/排版完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-106",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-107",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-108",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-109",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-110",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-111",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-112",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图片共12张卡片但部分文字拼写错误且缺少提示词要求的'12 Golden Saints'标题，且'仙女座瞬'应为'仙女座'相关人物名 | 部分卡牌名称翻译不准确（如“金牛列阿鲁迪巴”、“处女性沙加”），且缺少“双鱼座”对应的黄金圣斗士卡牌。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-113",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-114",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "PULITZER 逐字母正确（PULITZER-WINNING INVESTIGATIONS），四格漫画文字清晰无乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-115",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-116",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-117",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-118",
+    "verdict": "REVIEW",
+    "gates": [
+      "ANATOMY"
+    ],
+    "note": "提示词要素完整，风格统一，手部与面部细节出色 | 画面中左手出现了明显的肢体结构错误，手直接穿模握在护手/刀身上而非刀柄上，且手指形态不自然，违反了ANATOMY的硬门槛要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-119",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-120",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/分镜完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-121",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-122",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-123",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-124",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-125",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-126",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-127",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-128",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-129",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-130",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-131",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-132",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，分镜/设定表完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-133",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-134",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-135",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-136",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-137",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-138",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-139",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-140",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-141",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-142",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-143",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-144",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、品牌版式与文字逐字正确，物料/包装/UI 完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-145",
+    "verdict": "BLOCKED",
+    "gates": [
+      "CONTENT_BLOCKED"
+    ],
+    "note": "生成图触发内容合规拦截，当前读取方式无法查看；需改用局部裁剪/OCR 或换判定通道后再评，本轮不计入 PASS",
+    "source": "review"
+  },
+  {
+    "case_id": "case-146",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中按钮文字出现乱码（Add To 后面变成了不可辨认的符号）且部分功能描述中存在拼写错误（如 assessment 拼写为 assesment，autonom | 'Buy Now'按钮被遮挡变形，且功能面板中存在重复文字（'Modular Upgrades'）和错字（'itamiun'），导致TEXT_WRONG失败。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-147",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图文清晰，三视图与参数面板完整，价格与功能场景标注规范，整体符合产品详情展示要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-148",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "店铺栏/三视图/价格/SKU/参数表/三场景/底部购买栏齐全；扣分为客服位被画成搜索放大镜",
+    "source": "review"
+  },
+  {
+    "case_id": "case-149",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-150",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-151",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-152",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-153",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "标题「元气鲜香 鸡煲汤包」、副标与六堆配料结构成立；配料标签中「五指毛桃」一处乱码，其余五味可读。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-154",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-155",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-156",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-157",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-158",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-159",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-160",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，UI/商品/物料完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-161",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像生成质量极高，完美还原了提示词中的所有场景元素、UI细节及文字信息，文字清晰无乱码，构图与氛围符合游戏截图设定。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-162",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-163",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "提示词要求的主体（李白、月亮、抖音直播界面）均已出现且构图良好，但界面内的文字（包括主播ID、弹幕、输入框）显示为无意义的乱码，未正确渲染为中文，属于严重的文字",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-164",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面元素齐全，特朗普面部特征与宇航服细节表现优秀，铭牌与弹幕文字清晰准确，虚实火箭呼应构图巧妙，虽弹幕区存在少量乱码干扰但不影响核心验收标准。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-165",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT"
+    ],
+    "note": "手持物为剑而非烧烤串，且嘴部未叼串，三刀流元素缺失且计数不符。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-166",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "多处文字错误，如“狮子咩”应为“狮子座”，“处女蟹/天秤蟹/巨蟹”等星座名称错误，且“修罗”出现在处女和山羊两个位置，不符合黄金十二宫唯一性要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-168",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中手写中文部分为无实际语义的乱码/错字（如“超疹海深力表辫”），不满足“逐字一致”的要求，属于 AI 生成文字崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-171",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "25 格图标全部以 A 开头、标签可读、无空格；仅 Arrow/Arrowhead 语义相近，不影响判定",
+    "source": "review"
+  },
+  {
+    "case_id": "case-172",
+    "verdict": "PASS-WEAK",
+    "gates": [],
+    "note": "视觉元素与角色设计出色，构图完美，但宣传语单词 'Legend' 拼写错误（图中显示为 'Lelend'），属于文字瑕疵。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-173",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "准确还原淡冰蓝色齐胸襦裙及袖口繁星亮片刺绣细节，薄纱半透明质感与柔和光影渲染完美契合提示词审美要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-176",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "评论区小字乱码，不涉及点名文字",
+    "source": "review"
+  },
+  {
+    "case_id": "case-177",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "车机六大 Dock 与双温区齐全",
+    "source": "review"
+  },
+  {
+    "case_id": "case-179",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图片中多处关键文字存在明显错误：左侧分层图标题误写为“五层结构”（应为“五层性格结构”），底部对比表标题“Advantages”被截断为“Adv”，且“Rela",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-180",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "TEXT_WRONG"
+    ],
+    "note": "图2中的角色身体悬浮且双脚交叉呈不自然的倒钩状，违反物理规律，属于解剖/透视异常。 | 虽然成功生成了4张海报且画面质感良好，但所有海报下方的播出信息文字出现了明显的错别字，将正确的“毎週土曜”误写为“每週土曜”，不符合文字准确性的硬门槛。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-181",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图像仅为产品静物照，缺乏提示词要求的广告版式、标题与营销文案，不符合商品广告设计需求。 | 图片完美展示了智能手表的精致设计，表盘和表带的细节处理清晰，符合高端产品的视觉要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-182",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面精准呈现了2000年代日剧校园喜剧的风格，人物构图生动，光线温暖，无肢体崩坏等瑕疵。 | 画面生动还原了2000年代日剧校园喜剧场景，人物互动充满喜感，光线温暖自然且细节处理扎实，符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-183",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-184",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "提示词要求发朋友圈吐槽，图中文字变成了第一人称的“屋脊被风刮没了”，与原提示词要求不符，且“屋脊”与“房顶”存在细微差异。 | 提示词要求屋顶被风刮没，但图中显示屋顶仍保留大部分瓦片，未体现被刮没的状态，与描述不符。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-185",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像成功将古代武则天形象与现代微博UI结合，文字清晰无错误，手部细节自然，创意呈现极佳。 | 主体、微博面板及“自拍登记成功”等关键文字清晰无误，符合自拍登记发微博的提示要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-186",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "5×5=25 格全齐，25 个物件互异且标签全部可读；100 件改为 25 格后计数稳定，验证“计数改网格”规律",
+    "source": "review"
+  },
+  {
+    "case_id": "case-187",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图片完美契合提示词要求：9:16竖构图，主体是一位妆容自然的年轻东亚/韩国面孔女性；服装为内搭吊带背心，外罩宽松衬衫（半褪状），搭配高腰短裤；姿态为坐地，一腿弯 | 画面完美契合提示词要求，呈现了柔和的侧光、极简的背景以及细腻的颗粒感；人物造型、坐姿和服装（吊带背心叠穿宽松衬衫）均与描述一致，没有硬伤。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-188",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "右上角标签 'Visual Mood' 存在拼写错误，正确应为 'Visual Mood'。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-189",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "提示词要求电商详情图，图片仅展示了模特试穿图，缺失标题、卖点面板等详情图必须包含的元素。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-190",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "全自动咖啡机主体完整，包含顶部豆仓、触控面板、双出水口和咖啡杯，细节真实，画面美观。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-191",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "构图大气，色调极具电影感，成功营造了科幻氛围，虽缺少具体文字标题但符合视觉海报的通用要求",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-192",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "主体眼镜出现，但电商详情图必须包含的标题、卖点、规格等文字面板全部缺失，不符合‘电商详情图’要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-193",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有指定物品准确无误出现，右下角印章文字清晰且与提示词逐字一致，画面构图工整，细节丰富。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-194",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像准确展示了健身蛋白粉产品，瓶身完整无崩坏，品牌文字 'ProFit' 拼写正确清晰，背景巧克力飞溅效果增强了电商视觉吸引力，光影和材质细节表现优秀。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-195",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美融合了超写实人像与水墨插画，佛像、龙、锦鲤等元素细节丰富且分布得当，构图与光影均达到顶级水准。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-196",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-197",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "缺失'英雄联盟'（League of Legends）的游戏界面（如HUD、技能栏等），仅为游戏风格的原画，未呈现提示词要求的'截图'形式。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-202",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像呈现了一位高质量的美少女形象，完美契合‘宅男必备’的主题风格，画面唯美且无明显瑕疵。 | 图像展示了高质量且符合“美女”描述的动漫角色，无肢体崩坏或解剖学错误，画面整体光影与细节表现优秀。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-203",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "画面清晰展示了杠精与理性两种视角的对比，元素完整，文字清晰无错字，构图与细节表现良好。 | 提示词要求生成“GPT Image 2”相关内容，但图片中完全缺失该关键词或相关标识。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-204",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "中心英文标题与提示词完全一致，四个功能模块逻辑清晰，箭头指向正确，界面美观整洁。 | 中心标题与四个功能模块的英文及中文标签拼写准确无误，结构清晰，无视觉崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-205",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美融合了古代皇宫与未来科技快递站，画面细节极其丰富，'驿站'等文字标识清晰无乱码，无肢体崩坏等硬伤。 | 概念融合极具创意，古建与现代物流设备（传送带、无人机、屏幕）结合完美，文字清晰准确，人物与光影表现细腻逼真。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-206",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中第三个竖排名牌上的文字“韩湘子”出现明显错乱，无法辨识，不符合要求。 | 画面完整呈现八仙人物队列、竖排名牌（汉字清晰准确）及书法标题，构图均衡，细节丰富，完美符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-207",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面元素齐全，标题与副标题文字准确，角色造型还原度高，背景氛围符合游戏介绍画面定位 | 画面成功呈现了黑神话风格下的潘金莲角色，人物形象迷人且契合‘游戏介绍’的主题，文字清晰准确，构图与光影细节俱佳。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-208",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美还原了提示词中描述的所有细节，包括樱花粉渐变紫色双马尾、星星眼高光、JK制服搭配红领结与格裙、粉色蝴蝶结，以及樱花树下害羞前倾的站姿，画风精致且光影层次丰富",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-209",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "画面中两侧悬浮的金色符文/文字内容呈现为乱码（无法辨识为清晰的汉字或英文），不符合'逐字一致'或可读的文本标准，判定为文本错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-210",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美呈现了四个阶段的大语言模型训练流程，文字标签清晰无乱码，整体风格统一可爱，逻辑连贯。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-211",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "虽然整体风格契合提示词且结构清晰，但图中多处标注文字存在明显错字或生造词（如“重棉携尖顶”、“金丝棉木大柱”、“汉白玉项弥壁”等），不符合‘详细’且准确的说明要 | 提示词未指定具体文字，但图片中出现的说明文字存在严重乱码（如“重棉攒尖顶”、“汉白玉须弥座”），不符合“逐字一致”或可读的验收标准。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-212",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "分镜 7 格（要求 6），多出「実朝」格；「図書館」写成「図の力書館」；身份与六场景质感成立。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-213",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "画面缺乏游戏UI（如血条、技能等）且文字为乱码，无法体现ARPG界面特征。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-214",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-215",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-216",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "2×2 四款产品（围巾/托特/连衣裙/外套）四色系齐全，纹样在各产品上连续，英文品类标签正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-217",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "准确还原了老式CCD相机美学与昏暗杂乱的卧室场景，模特回眸动作自然，衣着细节符合要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-218",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-219",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像准确还原了提示词中的 3x3 网格构图，9 个分镜中的姿态、视线及服装（白色衬衫+短装）均符合描述，且面部特征高度一致，无硬性缺陷。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-220",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有关键元素与文字准确无误，金色流光与城市地标的融合极具视觉张力，整体呈现出高级的商业海报质感。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-221",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了日系胶片美学，光影、色调以及服装道具细节均精准匹配提示词，构图自然舒适。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-222",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-224",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了机美少女机甲少女的姿态、背景废墟及光影氛围，所有提示词要求的元素均准确呈现，视觉冲击力极强。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-226",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG",
+      "RELATION_WRONG"
+    ],
+    "note": "4×2 八位皇帝、明制服饰与工笔金线成立；八人首行都写成通用「庙号」，第二行才合并庙号+姓名，未按要求两行分开。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-228",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "春山冷萃海报：主标题、副标、0糖/当日冷萃/原叶现泡、¥15、2026 春季限定、立即尝鲜全部逐字正确，山景与瓶身层次到位。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-229",
+    "verdict": "REVIEW",
+    "gates": [],
+    "note": "画面完整还原了S型书法线条、内部映射建筑群的透明鸟（画眉鸟）、广州塔及古建、前景白鹤与倒影、远景山峦等所有核心元素，色调氛围与构图均符合提示词要求，视觉效果极佳 | 画面核心元素（透明鸟、白鹤、建筑、S型线）表现优秀且构图精美，但中景未完整呈现提示词要求的全部6个广州地标（缺少白云山、双子塔等），细节丰富度略有欠缺。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-230",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面成功融合了抽象几何广州塔、珠江新城双塔、白云山、猎德大桥及岭南骑楼元素，S型构图清晰，色彩搭配（红、青、金）高级且不杂乱，符合新中式极简风格。 | 画面精准包含广州塔、双塔、白云山、猎德大桥及岭南骑楼等核心元素，S型水云构图流畅，国潮极简色彩与烫金质感处理高级，符合所有硬性标准。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-231",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "准确还原了“纵有疾风起”的艺术书法风格与黑底要求，飞白笔触极具张力。 | 字体文字内容准确无误，笔触苍劲有力，飞白与动效符合‘疾风’意境，视觉冲击力极强。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-232",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图片中的书法文字为无意义的乱码或伪造汉字，未正确呈现《兰亭集序》原文，且标题显示为‘蘭亭集序’而非通用的‘兰亭集序’，不满足文字逐字一致的要求。 | 背景意境契合，书法形式正确，但AI生成的汉字字形结构崩坏，无法辨识且并非《兰亭集序》原文，细节质量较低。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-233",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY"
+    ],
+    "note": "人物右手持瓶处的拇指位置严重穿模，不符合人体解剖学结构。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-234",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像准确呈现了朱元璋的X帖子界面，文字清晰无错，头像形象符合明代皇帝特征，交互图标完整。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-235",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "标题文字错误，提示词要求为'8个 tips'，图中误写为'8个tips'（缺少空格且格式不符）。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-236",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "提示词要求的所有地标、人物剪影、书法大字、横排宋体标题与底部日期地点均准确呈现，红蓝对比与祥云水波元素符合国潮高级审美，视觉重点聚焦于发光足球，构图S型动线流畅",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-237",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美展示了PET瓶形状的碳酸饮料，瓶身标签上的'夏柑SODA'文字清晰且无错别字，'立即尝鲜'的CTA按钮设计符合2025年高转化广告风格，夏日海滩背景构图",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-238",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美符合提示词要求，巨大的彩色锦鲤与仰望的小人形成了强烈的视觉冲击力，低角度仰拍视角和星云气泡背景渲染得极具超现实美感，且无明显的解剖结构崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-239",
+    "verdict": "PASS-WEAK",
+    "gates": [],
+    "note": "文字、主体及比例全部符合要求，软分良好。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-240",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美契合35毫米胶片闪光灯摄影风格，姿态、着装及面部特征均高度还原提示词要求，皮肤质感自然无塑料感。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-241",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中反派B的核心动机文字存在乱码（“毁灭秩序”显示为“毀灭秩序”，其中“滅”字为繁体或字形错误），不满足逐字一致要求",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-242",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图中展示了5枚书签设计，包含牡丹、玫瑰、仙鹤、兰花和山水，均带有印章，风格符合工笔画意境，设计美观且无明显错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-243",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完整展示了网页、移动端、卡片、控件及按钮等UI设计元素，符合提示词要求，视觉风格统一且清晰。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-244",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "包装盒上的品牌名称‘Chayan Yuese’被错误生成为‘Chayan’加乱码，且部分说明文字为不可读的伪字符，不符合逐字一致要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-246",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美呈现了上海地标建筑（东方明珠及外滩建筑）与出租车元素，采用了黑色线稿与黄色色块结合的插画风格，构图协调且细节丰富，符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-248",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图中左侧“历史起源”板块下方的时间轴标签文字出现明显乱码（显示为“绝”、“瓷章”等无法辨识的字符），未满足中文解析文字清晰准确的要求。 | 提示词明确要求中文知识解析，但图中“历史起源”模块的时间轴文字出现明显乱码与错字（如“纹”、“演”等无法辨认的字符），导致信息传达错误，判定为TEXT_WRON",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-249",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图片完全符合提示词要求，美女形象、直播间界面元素及手中的文字牌子均正确无误。 | 画面中美女手持的牌子上文字与提示词要求完全一致，且人物面部与手部细节清晰，未见崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-250",
+    "verdict": "REVIEW",
+    "gates": [],
+    "note": "图中小王子形象与火箭元素完美契合联名主题，审美极佳，但火箭上的文字呈现为乱码而非品牌标识，细节扣分。 | 画面成功融合小王子与SpaceX火箭元素，小王子造型特征明显且姿态自然，火箭细节与发射效果符合品牌特征，整体构图平衡，光影质感出色。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-251",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "日历顶部的星期标签（Tuesday, Cross等）为乱码拼写，且2026年4月19日实际上是周日，标签内容错误。 | 图中一周日期栏（周一到周日）出现了大量乱码/错误单词（如Mfirey、CIoss、Wnts、gtriks、Sicous、49L6e），不符合要求，判定为TEXT",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-252",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图片清晰展示了5张符合劳动节主题的手举牌设计，包含标题、人物、图标等元素，文字准确无错漏，风格统一且美观。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-253",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面主体元素齐全，文字‘2026 谷雨’准确无误，节气氛围与视觉美感良好。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-254",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美还原胶片摄影风格，山海元素与奔跑动作构成极具视觉冲击力的‘奔赴山海’主题，光影与颗粒感处理出色。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-255",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完整呈现了指定的场景、人物装束与动作，界面UI和弹幕文字清晰无乱码，符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-256",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "界面元素符合抖音直播场景，包含美女主播、观看人数及底部互动控件，无文字或解剖错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-257",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图中弹幕存在明显错字和乱码（如“爱购下蛋”、“您购了已购”），不符合直播正常语境。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-258",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "标题文字正确，但下方描述文本出现乱码和不可读字符，属于TEXT_WRONG。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-259",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "文字完全正确，布局清晰，无解剖学错误，软分达标。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-260",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有文本与提示词逐字一致，iPhone截图形式正确，画面无崩坏，设计清晰。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-261",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "底部五标签 Home/Explore/Create/Projects/Profile 全部出现且拼写正确，Create 文字已补；四模板卡标题与时长一一对应；扣分项为 7 张缩略图全部复用同一张女性面孔、All 胶囊右侧有紫色残影",
+    "source": "review"
+  },
+  {
+    "case_id": "case-262",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面准确还原了“远处的业余iPhone照片”这一核心设定，舞台、库克剪影及前景观众人群均符合提示词要求，无文字错误及解剖学崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-263",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "缺少提示词要求的“ここに自己紹介”文字段落，且标签将“イメージカラー”错写为“イメージジカラー”（多了一个“ジ”）。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-264",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美契合可爱的Y2K风格，鲜艳的荧光配色和时尚构图非常符合Gen Z审美，且化妆品元素丰富完整。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-266",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了业余手机拍摄打开笔记本的场景，光线柔和自然，手写笔迹风格符合要求，且画面中无明显的AI乱码或肢体崩坏问题。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-267",
+    "verdict": "REVIEW",
+    "gates": [],
+    "note": "所有关键元素如标题、文本、配图、评论及状态栏内容均正确无误，整体设计和谐，但界面图标等细节较为普通，未能完全展现高水准的宋代元素替代，因此软分略低于PASS标准 | 所有文字、元素和布局均与提示词完全一致，界面设计精致，图文质量高。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-268",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图中缺少提示词要求的“X 页面”元素，且文本中出现拼写错误如“Retwlat”等。 | 图片中底部按钮将 Retweet 错误拼写为 'Retwat'，且提示词为韩语但图片混用了英语界面词汇（Reply/Like）未完全本地化，存在文字准确性问题。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-269",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完整还原了提示词中的主题标题，且UI布局、数字标签清晰无错，排版符合iPhone尺寸的视觉逻辑。 | 图像完美还原了视频号界面，中老年夫妻的图片与提示词主题（不要盲目催婚）高度契合，界面文字清晰无乱码，且采用了标准的iPhone尺寸比例。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-270",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG",
+      "UI_INCOMPLETE"
+    ],
+    "note": "三视图/6 表情/装备/色板结构在，但日文标签全部错位到色板下方，世界观两行乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-271",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图片成功展示了提示词要求的角色设定集（Character Sheet），包含了全身立绘、正侧背三视图、面部特写以及手部/局部细节，符合标准格式，且无文字错误，解 | 图像完美实现了角色设定集的要求，包含多角度视图及细节特写，无肢体崩坏，符合提示词描述。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-272",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美契合提示词，人物五官、姿势、服装细节及温泉旅馆背景均准确呈现，且符合35mm胶片摄影的视觉风格。 | 完美符合所有视觉要求，包括发髻、服装姿态（露肩与腿部姿势）、日式旅馆环境与胶片质感，无文字错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-273",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美呈现了电影级极简风格，橙红色渐变背景与反光地面效果出色，对称构图严谨，剪影清晰无瑕疵。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-274",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图里可见文字有误（“人民公即”应为“人民公园”），且美食地点数量明显不足12个，部分地点重复出现；右下角缺少应有的图例说明。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-275",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "画面视觉元素（人物、柴犬、胶片、背景）还原度极高且符合构图要求，但左下角上映日期存在错字，将‘周五’错误生成为‘周五’。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-276",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "双重曝光构图精妙，文字排版清晰准确，完美呈现了广州地标与国潮意境。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-277",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美呈现了奢华电影感，黑人女性模特面容精致自信，红发与深蓝西装质感上乘，背景的海滨逆光（镜头光晕）与柔焦效果营造出神秘张力，对称构图严谨，无解剖学或文字错误",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-278",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美契合提示词要求，前景柠檬树枝构图出色，复古海报风格与手绘质感俱佳，视觉审美极高。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-279",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了新中式纸艺风格，S形构图立体感强，且画面下方所有中英文文字、日期及署名均准确无误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-280",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-281",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像符合所有硬性标准，展示了两个不同配色（水蓝/黄 vs 紫）的未来感曼陀罗，无文字错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-282",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "角色名、两行台词、存档/回想/继续全对；顶部电量 30%（要求 64%），5G 缺失。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-283",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "标题文字拼写错误，'SUPER FAMICOM' 缺少一个字母 'E'，不符合提示词逐字一致的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-284",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了提示词中的所有关键元素：18岁中国女孩、卧室场景、镜子自拍、灰色居家服配白色船袜、侧窗黄金时刻光线以及浅景深散景效果，画面构图优秀，皮肤质感和手指",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-285",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "赛璐璐动画截图成立；日文字幕「もう一度、あの夏へ。」逐字正确，单行无多余文字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-289",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "画面下方的中文UI文字（如礼物栏和输入框）均为无法辨认的乱码/伪汉字，属于典型AI生成文字错误，不满足逐字可读性的验收标准。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-290",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "成功展示了SSR/SR/R分级，中间卡片放大且有镭射质感，文字清晰无误。 | 卡片设计精美且文字准确，完美呈现了SSR镭射质感、分级体系、技能说明及放大展示效果。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-291",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面呈现3:4比例的闪亮豪华风格，包含精致的现代日式女性、三台虚构弹珠机以及立体彩虹标题文字，视觉冲击力强，符合极致奢华的要求。 | 图像完美符合3:4比例要求，主体人物（现代可爱日本女性）绘制精细，面部与肢体无崩坏。画面中并列展示了三款不同配色的虚构弹珠机，文字“新世代弹珠机”与“梦幻系列”",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-292",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像准确还原了X的UI界面，文字清晰无乱码，人物形象与文案完美融合了宝玉的极客身份与明帝设定，创意出色且无结构错误。 | 图像完美契合提示词，将现代科技梗（如漕运算法、智能合约、数据流）与古代皇帝元素（龙袍、玉佩）结合，文案风格既有趣又符合“宝玉”的个人特色。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-293",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "正文段落文字模糊且存在大量乱码，不符合验收标准。 | 报纸大标题及重点文字清晰准确，但正文段落（如“AI 重塑课堂”下方及右下栏）包含大量无意义的伪中文乱码，无法阅读，属于文字生成错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-294",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "菜品名称地道，排版清晰美观，符合潮菜馆风格。 | 菜品名称与价格清晰无误，排版美观且充满潮汕传统风味",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-295",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了老黄历的视觉风格与排版，所有日期、干支及宜忌事项等文字信息准确无误，清晰度高且无任何生成瑕疵。 | 老黄历核心信息完整，日期与星期准确，宜忌及财喜神方位等文字均清晰且无乱码，版式经典。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-296",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-297",
+    "verdict": "PASS-WEAK",
+    "gates": [],
+    "note": "标题「外婆的红烧肉」、六行食材（500g/20g/30ml/10ml/3片/2颗）与 480 kcal 全对；左页正文为不可读填充字，按「不出现乱码」应扣。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-298",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "文字排版错误，提示词明确要求垂直标语（vertical slogan），但图中标语仍为水平多行显示，且部分元素（如灯塔山、公共花园天鹅船）辨识度不足。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-299",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-300",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "提示词要求出师表全文，但图中文字大量乱码且并非出师表原文，且拼音标注拼写/分词错误（Chu Shi Biao写成了Chu 乂 Shi Bi iao）。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-301",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像成功包含提示词要求的所有元素：正/侧/背三视图、价格、细节说明、功能场景，图文对应准确。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-302",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "未生成9位设计师的真实姓名，全部显示为通用占位符“设计师姓名”；且9位头像为同一人重复，未体现“九位知名设计师”特征，属于要素缺失。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-303",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "页面正文、右侧注释区域以及底部词语（如“居林尽染”、“金桂飘零”）均为AI生成的乱码或错误汉字，未能通过文本准确性验收。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-304",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有文本（东方美学、日期、署名）与神兽细节均准确呈现，构图与光影效果完美符合提示词要求。 | 所有关键文字元素准确无误，神兽形象、红白对比色彩及撕纸边框效果均符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-305",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了提示词中的所有关键元素，包括人物外貌、服装、动作姿态、光影氛围及场景背景，且画面质感极高，符合35mm胶片摄影的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-306",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "三视图、6 头像、6 色板齐全，同一角色；但 6 个头像下方误标「正面/侧面/背面」，装备只画 3 件（应 5 件），世界观两行文字乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-308",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "9:16 直播外壳完整、无字面 xxx、手写牌文字正确、商品卡与礼物飘屏齐全；弹幕文字为乱码",
+    "source": "review"
+  },
+  {
+    "case_id": "case-309",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "COUNT_WRONG"
+    ],
+    "note": "角色双臂被完全隐藏（手插口袋状但无手部实体，违反解剖结构），且未满足提示词要求的俯视平铺（top-down flat lay）构图，实际为站立正面视图。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-310",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-314",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "侧脸肖像与城市天际线的双重曝光融合非常成功，蓝红分割布光与破碎纹理完美体现了提示词要求，皮肤与发丝细节丰富，背景干净，未出现多余肢体或解剖错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-315",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有提示词点名的元素（棘龙、女子、幼崽、瀑布、其他恐龙、翼龙等）均完整呈现，细节刻画与画面构图完美符合描述，无硬门槛错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-316",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "构图极具冲击力，写实人物与背景漫画风格的混合效果完美，且人物面部及服装细节高度还原提示词描述。 | 图像完美还原了提示词要求：中心为身穿深色高领毛衣和牛仔裤、戴眼镜的写实卷发男子，正从撕裂的黑白漫画分镜中跨出（一腿一臂在前），背景包含大量震惊表情的漫画人物、对",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-317",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "人物身份保留，深红影棚与广角伸手成立；但提示词要求的产品完全没有出现（手伸出画面外），服装也仍是参考图的白开衫。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-318",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "珊瑚色影棚、白 T 模特、三瓶 CORAL 产品与广角纵深成立；参考人物身份保留，产品占前景比例正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-319",
+    "verdict": "REVIEW",
+    "gates": [
+      "COUNT_WRONG"
+    ],
+    "note": "提示词明确描述礼服由“数百只（Hundreds of）”鸟类构成，但图中礼服主体由羽毛和少量鸟类组成，数量远低于数百，不符合提示词的数量要求。 | 图中女子T台造型、鸟类构成的彩色礼服与飞散的彩色鸟均清晰，表情自信快乐，灯光与虚化观众背景符合描述，无文字与明显崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-320",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美呈现了背靠背的火与冰冲突主题，左侧男战士湿发低头握剑，右侧女战士烈焰吞噬侧影，光影与构图极具电影张力。 | 图像完美契合史诗奇幻电影海报风格，两位战士背靠背的构图张力十足，冰火对立的视觉元素及面部细节均高度还原提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-321",
+    "verdict": "REVIEW",
+    "gates": [
+      "ANATOMY"
+    ],
+    "note": "画面精准还原了黄金时刻、85mm 浅景深以及所有服装细节（棕色麂皮羊羔毛夹克、紧身牛仔裤等），电影级氛围感极佳，人物姿态与光影均达到顶级时尚大片标准。 | 画面中人物右臂（位于头发后方）存在明显的透视与结构崩坏，手臂仿佛被头部遮挡且比例失调（属于透视穿模错误），且图中未体现交通信号灯头，仅有杆子和支架。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-322",
+    "verdict": "FAIL",
+    "gates": [
+      "REF_MISMATCH",
+      "MISSING_ELEMENT"
+    ],
+    "note": "要求街头场景，输出为灰棚+水花；手持瓶为自创品牌 SEQQA，参考里没有该产品。参考是人物，不是街头。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-323",
+    "verdict": "FAIL",
+    "gates": [
+      "UI_INCOMPLETE",
+      "TEXT_WRONG"
+    ],
+    "note": "Instagram 卡片、June、FOLLOW、三点菜单成立；人物没有从卡片中立体探出，仍是平面照片，且多出未要求的英文长文案。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-324",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了提示词中关于服装、配饰及环境的所有细节，红风衣与复古巴士配色形成强烈视觉冲击，光影质感自然。 | 提示词点名的所有元素（红色风衣、蓝色圆镜、波浪金发、剥落漆面的复古巴士等）均准确呈现，无肢体崩坏，电影级光影质感优秀。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-325",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "3D卡通肖像符合要求，短棕发、绿眼、黑西装白T恤，背景蓝绿与粉色渐变柔和，表情友好，渲染精美。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-326",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有主体与服饰细节完整，红蓝配色与姿势符合要求，画面无硬伤。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-327",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图中所有文字均为英文，未包含提示词要求的中文标题和标签（TEXT_WRONG），且香水瓶下方缺失华丽雕花木桌，主体直接置于背景地面（MISSING_ELEMEN",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-328",
+    "verdict": "FAIL",
+    "gates": [
+      "REF_MISMATCH",
+      "RELATION_WRONG"
+    ],
+    "note": "要求俯拍巨女、建筑只到膝盖、镜头贴脸；输出为平视街拍，巨物比例与俯拍全部缺失。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-329",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "火凤与烬甲女战士成立；参考脸型与发色保留，火焰层次与暗色场景完整。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-330",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图像中出现的“太美了”、“跳得太好了”等部分弹幕清晰，但其余大部分弹幕文字（如左侧“狂飙”上方、右侧“来关注”上方）呈现为乱码或无意义的笔画组合，不符合文字清晰",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-331",
+    "verdict": "REVIEW",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT"
+    ],
+    "note": "完美呈现了水彩手绘风格，准确展示了西安的钟楼（大雁塔意象）、城墙，以及肉夹馍、牛肉面、皮影、小鼓等极具代表性的城市特色与美食，细节丰富且构图协调。 | 未生成城市地图，仅呈现了西安元素拼贴；城墙作为地图边界不完整，不符合地图类要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-332",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图片生成了一张高质量的产品静物图，画面清晰，光影自然，产品细节丰富，非常符合产品宣传图的审美标准。 | 符合产品宣传图的要求，画面干净，产品主体清晰，光影质感极佳。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-334",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图片完整展示了RAG技术的详细流程，文字清晰准确，逻辑结构清晰。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-337",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "意境营造优美，但图中诗句文字存在多处错误（如“越陌度阼”被写为“越陌度阼”下方的字形错误、最后一句“周公吐哺”被错写为“周公呒哺”等），不满足逐字一致要求。 | 画面意境优美且包含所有元素，但文字存在多处错别字（如“对”误写为“白”、“朝”误写为“翰”、“杜康”误写为“杜康”等），不符合文本逐字一致的硬门槛。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-338",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "提示词要求包含整篇《赤壁赋》文字，但图中仅有标题及零散乱码文字，缺少完整原文。 | 图中出现的文字均为AI生成的乱码/错字，并非提示词要求的《赤壁赋》原文；且画面布局为横向长卷，但文字并非完整的整篇赋文。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-339",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图像严格还原了模板结构，主体动物（鼠兔）毛发细节与立体感极强，底部信息栏排版清晰，完美符合 Apple 极简科普海报风格。 | 所有文本均显示为未替换的变量占位符（如[中文物种名]、[重点特征1标题]），属于典型的文本缺失/错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-340",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "红妆女子置身彼岸花海，妆容神情凄美且富有张力，唐风服饰细节丰富，画面光影与意境完美契合提示词。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-341",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、结构图与文字逐字正确，信息/设定完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-342",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-343",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "主标题和核心标语正确，但底部辅助文字存在严重乱码（如'Veigaint'等无意义字符），违反逐字一致要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-344",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有硬门槛均通过，文字拼写正确且无崩坏，整体画面极具高级感和氛围感。 | 海报完美还原了高质感的街头氛围，文案NOIR和Wear the Dark拼写准确，卫衣主体展示清晰。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-345",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-346",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了立体刺绣风格，三只小鸟形态生动且无解剖结构错误，丝线质感与花卉配色细节高度符合提示词要求，画面精致优雅。 | 画面完美还原了立体刺绣的丝线堆叠质感，三只小鸟与花枝的构图轻盈优雅，细节丰富且无崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-347",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG"
+    ],
+    "note": "16 格、4×4、同脸同装、动作互异全部成立；仅编号层出错：第三行为 10,12,12,12（缺 9，12 重复三次）。证明“参考图+16 格结构”可解，不可解的是格内多组编号，编号应后期叠。连续两版 FAIL，标 STUCK（仅编号层）。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-348",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "主标题与分析数据正确；6 个胡须标签出现 Anchor Beard/Balbo，缺 Stubble/Clean Shave。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-349",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像高度还原了提示词要求，三面板布局清晰，人物解剖结构准确，所有指定的文本标签（PRECISION, FOCUS, FUEL, DISCIPLINE DRIVE",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-350",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-352",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面成功呈现竖版国风暗黑海报质感，中央“审判”二字占据大部分空间，米白色做旧石刻肌理（颗粒、磨损、裂痕）与纯黑背景形成强烈黑白对比，完美契合神秘、压抑与审判感主",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-353",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG",
+      "COUNT_WRONG"
+    ],
+    "note": "只有 3 个色号列（#12/#80/#86），缺 #21；#80 标题乱码；四列唇色几乎全为正红，未按色号变化。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-354",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-355",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-356",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图中所有文字（包括标题和划掉的单词）拼写均准确无误，人物坐在巨大头部的超现实概念表达清晰，构图与审美符合时尚大片要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-357",
+    "verdict": "FAIL",
+    "gates": [
+      "STYLE_WEAK"
+    ],
+    "note": "场景、青绿瓷砖、黄墨镜、黑 T、青绿杯全对；但无鱼眼畸变，圆镜不等于鱼眼。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-358",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "TEXT_WRONG"
+    ],
+    "note": "背景标题及罐身文字出现乱码与错字（如'CHTEE'），且运动员右小腿与鞋部位存在解剖结构崩坏。 | 图片中的罐体文字清晰可见为“CHTEE MARK”，背景的大号模糊字体疑似为“GIVE”而非提示词要求的品牌词，不符合逐字一致的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-359",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-360",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了提示词要求，包含所有指定的文本标题、分类区块、图标和发色样本；排版清晰整洁，人物面部及长发细节真实且符合特征描述。 | 图文完全符合提示词要求：标题、四大板块（特征、最佳方案、负面方案、长度/颜色）的文本逐字准确，无错字；男士发型与面部特征正常，无崩坏；排版清晰美观，细节丰富。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-361",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像极其逼真地展示了手表的3D爆炸视图，机械细节（如齿轮、擒纵机构）与金属材质质感达到了“极致细节”的要求，且未出现文字错误（图中装饰性刻纹并非乱码）或结构崩坏",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-362",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "品牌元素齐全且排版精美，主要视觉与周边产品（杯子、瓶子、盒子、袋子、菜单）均正确包含，菜单价格与提示词一致，整体符合高端设计展示要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-363",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "参考 Logo（山峰叠太阳）用铁粉/磁粉在托盘上实体化，形状与参考一致；孩子的手与桌面环境合理，无多余文字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-364",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "标题存在严重拼写错误（'LUXURY'显示为'LUXURY'等无法辨识字符），且缺少胶囊衣橱（Panel 8）与部分指定的妆容图谱细节面板，不符合硬门槛要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-365",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-367",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像整体构图精美，光影质感极强，完全符合高端香水广告的调性；图中所有可见文字（标题、标语、特性、香调表）均与提示词逐字一致，无拼写错误，关键元素（模特、香水、配",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-368",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图片主体牛肉烤制完美，文字清晰易读且准确匹配提示词要求，无拼写错误或元素缺失。 | 标题单词拼写错误，'Authentic'（正宗的）被错误拼写为'Authentic'（图中显示为'Authentic'，正确应为'Authentic'，此处指代",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-369",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "地图内各区域的说明文字出现大量乱码、错别字及不存在的日文，严重不符合‘逐字一致’及‘无乱码’的验收标准。 | 图中大量小字内容出现明显乱码和伪文字，无法满足逐字一致的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-370",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图内标题及各阶段（Stage 1-5）的文本内容与提示词完全一致，布局清晰，视觉元素完整，无拼写错误。 | 提示词中的所有阶段、标题和正文内容均被完整且准确地呈现，无错字漏字；版式设计清晰，图文对应正确，无硬伤。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-371",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "中央真人+手账贴纸成立；但出现 4 个 Q 版小人（要求 3 个），并多出「So cute!」等未要求文字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-372",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "主图、3 姿态、5 配饰、6 色板、资料框齐全，资料文字全对；「发夹」写成「发桃」。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-373",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-374",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美呈现了彩色潦草小狗的Doodle风格，线条极具童趣与凌乱感，符合所有提示词要求。 | 完美契合‘彩色潦草’与‘毫无章法’的要求，线条凌乱且童趣十足，画面构图饱满，符合doodle风格特征。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-375",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "完美复刻了三位先哲对话及时间轴元素，细节丰富，构图与提示词要求高度契合。 | 图片中时间轴的第一个图标文字显示为 'Scoratic'，拼写错误，应为 'Socratic'，导致出现乱码/错字。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-376",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "图中绿色液体表面没有明显的泡沫气泡（foam bubbles），不满足提示词要求",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-377",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "樱花咖啡馆外景、粉色套装、草帽与手持杯成立；身份保留，暖光自然。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-378",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美还原了高端3D盲盒手办风格，大头部比例适中，材质纹理和布光均符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-379",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "NORTH 品牌、主标题、人格句与六格漫画结构成立；小格标题出现「Helling a product」「Selling a competit…」，气泡内文全为乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-380",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "在'Atonic Scale'面板下方的关键洞察文本显示为乱码/不可读字符（疑似'Spike protein...'），不符合逐字清晰的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-381",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图中所有硬门槛均已通过：面板标签、底部道具条及页脚文字均与提示词逐字一致，无拼写错误；90年代公寓场景、L型沙发、 lava灯、CRT电视、静态屏幕、海报等元素 | 所有面板标签、底部六个分镜及页脚文字均逐字符合；主体元素（L型沙发、熔岩灯、Nirvana海报、CRT电视、书架等）齐全且无肢体或透视崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-382",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "三格竖排（上/中/下）与指定动作全部对应；同一人同一套服装，涂鸦不遮脸。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-383",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "提示词要求绘制第一人称视角的日常快照，但图中出现了一个明显的'第三人称'电脑屏幕及键盘，且缺失了提示词隐含的第一人称视角或特定主体。 | 构图与光影极佳地还原了‘日常抓拍’的氛围，咖啡的热气与凌乱的书桌细节增强了真实感。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-384",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "5×2 十格齐全、同一张脸、旗帜与服饰对应基本正确；十个国名标签中至少 9 个拼错/难以辨认（AUBTRAIIA、EARNGARY、YENEZUELA、EGRAZIL、W2Y20I 等）。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-385",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "提示词明确要求设计一套酷感女装，但图片中展示的是一套标准的基础款白衬衫配深蓝西裤，完全缺失了设计感元素（如剪裁、材质、色彩）以及与产品（啤酒）相关的视觉关联，未",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-386",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-387",
+    "verdict": "FAIL",
+    "gates": [
+      "UI_INCOMPLETE",
+      "TEXT_WRONG"
+    ],
+    "note": "NETFLIX 字标、导航、主视觉、Watch Now/More Info 正确；下方只有 1 行 5 张（要求 3 行×5），且标题为 ROW01-EP.05/NEW RELEASES/ROW 10，不是 EP.01-EP.05。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-388",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "右上角星形徽章中的文字存在明显拼写错误（'REVOULTION'应为'REVOLUTION'），导致文字校验不通过。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-389",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "TRANSPARENT LABS HYDRATE、产品罐、八项图标与口号成立；巨大数字写成「10%」，要求是「1%」。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-390",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美呈现了日本传统毛毡模型风格，前景街道细节丰富、背景地标清晰，光影温馨且无文字乱码，完全符合高质量立体微缩景观的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-391",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美呈现了2x2网格布局，四个独立的服装设计方案展示了不同文化元素的融合，视觉风格统一且细节丰富，符合所有硬性门槛。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-392",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美展现了微缩城市隐藏于发间的超现实概念，皮肤毛孔与发丝细节极其逼真，无肢体崩坏或文字错误。 | 图像完美符合提示词中微缩城市藏于发丝的创意，皮肤毛孔、发根及建筑细节极尽逼真，景深与光影效果出色，无任何文字错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-393",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美还原提示词要求：金色长发、baby pink丝绒运动服、蝴蝶发夹、棕榈树及黄金时刻光线均准确呈现，光影质感极佳。 | 完美还原提示词：金发年轻女性、蝴蝶发卡、粉色天鹅绒运动装、棕榈树背景以及黄金时刻的暖色调，细节真实自然，无崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-394",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-395",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-396",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "标题“Obsiden”应为“Obsidian”拼写错误，且右侧误重复了“Wing Structure”面板，缺失“Ancient Legends”面板 | 面板个数错误，右侧重复出现“Wing Structure”，缺少提示词要求的“Wing Structure”位置本应只有一个；左侧已包含该信息，导致数量与标签对",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-397",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "卫衣胸前的图案文字出现了明显的AI乱码和变形，无法辨识且与常规字符不符，触发了TEXT_WRONG硬性门槛。 | 图像完美符合提示词要求，包含4个全身舞姿和3个头部特写，布局清晰，光影质感极佳，无解剖或文字错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-398",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "存在多处文字拼写错误（如'Chunky'误拼为'Cunkky'、'Knit'误拼为'Lint'等），且图中人物数量明显超过8个，不符合提示词要求。 | 标签内容错误且数量不符：提示词要求8套，图中仅有7个全身人物；标签拼写及语义错误，如'Wide-Leg Lint'、'Chonky'、'Chinks'等。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-399",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面准确还原了场景、服装细节（西装、T恤、工装裤、胶带）及右下角签名字体，光影氛围与日系胶片感一致。 | 图像完美还原了提示词要求的胶片质感与场景细节，右下角的“BubbleBrain”文字清晰准确，无拼写错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-400",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-401",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "标题逐字保留占位符且图像元素完整，排版精美，符合所有标准。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-402",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "图片中左侧点赞图标下方的文字显示为“点论”（应为“点赞”），右侧评论图标下方的文字显示为“评享”（应为“评论”），文字内容与提示词要求不符。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-403",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "提示词要求手机内显示小红书帖文，但图中手机界面内的文字为乱码且非“小红书”标识，不满足文本一致性要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-404",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "破屏、橙色套装、金色手机边框、白鞋、悬浮图标、BEYOND THE SCREEN、FOLLOW、二维码全部到位。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-405",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "纸艺室内场景：分层纸片、卷纸窗帘、纸雕沙发与蝴蝶成立；参考房间结构保留，无文字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-406",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "TEXT_WRONG"
+    ],
+    "note": "背景文字中间部分乱码/拼接错误，且女孩右手悬空姿态及手部细节存在明显的解剖学崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-407",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图像缺失提示词中点名的多个主体模块（如记忆编码系统、AI增强层、认知信号通路等），且部分已有文本存在拼写错误（如 'cogitive', 'algorithmi",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-408",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "画面美感极佳且构图完美，但背景多处手写涂鸦存在乱码和拼写错误，触发 TEXT_WRONG 硬门槛。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-409",
+    "verdict": "FAIL",
+    "gates": [
+      "STYLE_WEAK"
+    ],
+    "note": "输出仍是写实街景建筑摄影，无白底、抖线、像素锯齿、比例失调；MS Paint 风格完全未执行。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-410",
+    "verdict": "FAIL",
+    "gates": [
+      "STYLE_WEAK"
+    ],
+    "note": "仍是半写实时尚插画；无夸张卡通比例、无线条风格化、无空间扭曲。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-411",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美还原了极简奢华风格，巨大的‘SAIL’字体与悉尼歌剧院的建筑形态形成巧妙的视觉互锁，文字拼写准确，构图层次清晰，无解剖结构错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-412",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "巨型彩色纽扣与橙/青服装成立；构图有节奏，人物身份保留。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-413",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG"
+    ],
+    "note": "分镜 15 格（要求 12 格 01-12），编号到 14；动作互异、黑白铅笔分镜风成立。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-414",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了清晨卧室的真实生活感，侧坐姿态与左手持机（屏幕朝下）的动作准确，光线冷到暖的过渡自然，皮肤纹理与胶片颗粒感细节丰富，无任何崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-415",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/包装/品牌板完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-416",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "TEXT_WRONG"
+    ],
+    "note": "图片中存在明显的文字拼写错误，如 'rooted in beauty' 变成了 'rooted in beauti'，且部分手写字迹模糊难以辨认，属于硬门槛失败",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-418",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-419",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "图内烘焙师出现面部和手部崩坏（THE LAMINATION和THE TEAR中面部模糊/畸变），且文本中存在乱码（TOTAL VIDEO TIME前符号缺失，B",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-420",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "参考人物身份保留；红跑道、白色拱桥、低角度自拍、耳机与白背心全部成立。头发未完全铺地，属小偏差。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-421",
+    "verdict": "FAIL",
+    "gates": [
+      "RELATION_WRONG"
+    ],
+    "note": "身份保留、手机屏幕显示本人实时画面成立；但要求“横持手机遮住眼睛与上半脸”，实际竖持遮住下半脸，方向与遮挡关系都错。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-422",
+    "verdict": "REVIEW",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT"
+    ],
+    "note": "The generated image is an excellent match for the storyboard prompt, successfull | Storyboard 部分仅展示了 7 个镜头，缺少 1-3 和 7-8 共 3 个镜头，且环境地图缺失了提示词要求的 10 个摄像机运动标记（Crane-do",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-423",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美复刻了提示词中要求的风格（墨迹涂鸦、极简背景、日式插画），人物特征与构图均符合要求。 | 图片成功还原了提示词中的半身构图、日式插画风格、黑白墨水飞溅及周围抽象符号，手部细节表现精准，整体风格符合度高。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-424",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "图中标签存在明显拼写错误与缺失：提示词要求'FLAVOR THAT POPS.'但图中'FLAVOR'拼错为'FLAVIOR'；左侧垂直文字要求'FUN · F",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-425",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "海报设计精准匹配提示词：四个黑白横条堆叠，左侧全彩切出的粉紫色衬衫与黑色长裤女性，高级杂志感，细节与构图都极佳。 | 提示词明确要求前景彩图位于左侧（left side），但图像中彩图位于下方/左下且与背景面板大面积重叠，未体现'前景置于左侧'的构图逻辑，属于MISSING_E",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-426",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-427",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "9 格齐全、同一张脸、帽向正反变化；闭眼/侧看/吐舌/挤颊/嘟嘴/挤眼等表情与 01-09 基本对应。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-428",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像高度符合提示词要求，包含所有指定的广播图元（FINAL LAP, 圈数, LIVE, 下三分之一标签）、人物外貌（蓝发、耳机、白色背心）、背景（车库屏幕、模",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-429",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有主要元素如粉色连帽衫、草莓牛奶和蛋糕均正确呈现，背景便利店氛围到位，画面无结构崩坏。 | 画面完美还原了韩国便利店、粉色卫衣、草莓牛奶与蛋糕等提示词要素，光影与质感逼真，文字标签清晰且无乱码。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-430",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美符合提示词要求，单色铅笔素描风格与鲜艳的橙色几何图形背景对比强烈，人物姿态与服装细节（墨镜、衬衫、工装裤、靴子）还原度高，构图具有极简主义杂志美感。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-432",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美契合提示词要求，包含所有指定元素，排版清晰，风格统一。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-433",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面元素齐全且文字拼写正确，水彩手绘风格独特，构图优美，完美契合提示词要求。 | 画面风格、元素、标题及场景布局均符合提示词要求，水彩细节处理得当，整体氛围温馨宁静。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-434",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图片右下角水印拼写错误（显示为BubblеBrain，含西里尔字母），且缺少提示词要求的自动贩卖机。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-435",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美呈现了折纸手工艺风格，角色的Chibi比例（大头小身）、五官细节以及多层次的景深效果都非常出色，色调温馨，符合所有提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-436",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了数码相机的LCD界面与复古噪点质感，人物服装、表情及背景书架细节均准确对应提示词，UI文字清晰且无拼写错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-437",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "版式与 82/100、78/100 评分成立；中文标题与短行大量乱码（滲用蔀、局布疑置、唇形向等）。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-438",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美呈现了提示词要求的所有元素：巨大的红宝石金项链作为建筑核心、周围环绕的微型城市（包含直升机、车辆、人群、广告牌）、深红色背景及顶部清晰的正确标题“EMB",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-440",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "真实笔记本照片质感，菜单栏+Dock+三窗口层级齐全；扣分为菜单与 Finder 侧栏文字乱码",
+    "source": "review"
+  },
+  {
+    "case_id": "case-442",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了提示词要求，色彩鲜艳，构图合理，人物与场景细节丰富且无崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-443",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有层级结构与标签拼写完全符合提示词要求，垂直对齐准确，视觉质感极佳。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-444",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "图标中心区域出现了未提示词要求的品牌名称“Glow”，且底板上的迪斯科球镜面马赛克质感未体现，不满足逐字一致与材质细节要求。 | 图里实际可见文字为“MOM”，而提示词是【品牌名】占位符，严格对应上属于 TEXT_WRONG；其余圆角方形、玻璃铬材质、迪斯科球马赛克小方块、高光、工作室灯光",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-445",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "参考照片的町屋、石板路、五重塔与黄昏氛围保留；水墨明信片风格成立；「京都漫步」「石板路、町屋与黄昏的钟声」「2026.11.16」「京都・日本」全部逐字正确，邮票与邮戳齐全。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-446",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美符合所有提示词要求，低多边形折纸风格质感强烈，细节处理极其出色。 | 图像成功呈现了提示词要求的所有元素：低多边形纸艺风格的年轻男子，卷发、修剪的胡须、几何黑框墨镜以及灰色衬衫，无硬门槛违规，视觉效果出色。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-447",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "TEXT_WRONG"
+    ],
+    "note": "多处文本存在严重拼写错误（如 'Intfructure'、'Conficction'、'Aaart'、'Smart Ventilation'），且未使用真实地铁 | 标题及多个标签文字存在明显乱码/拼写错误（如Urban→Ubran），且多处文本模糊不可读。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-448",
+    "verdict": "REVIEW",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "画面高度还原提示词，‘MISSION START’和‘PLAYER 1 READY.’文字准确，主体、背景与氛围细节丰富，无崩坏。 | 画面中背景云层上的巨大投影文字为 “MISSION START.”（带句号），而提示词要求的是 “MISSION START”（不带句号），逐字不一致判定为文字",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-449",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "文字拼写错误（如Grandmaster Chime显示为Grandmaster Chme）且缺少'宇宙摆轮'核心元素，整体呈现普通机械表而非提示词要求的超稀有奇 | 2x2 布局精准，文本面板清晰且拼写正确，完美呈现了摆轮内部微型宇宙与高级制表工艺细节。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-450",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "画面缺少提示词中明确要求的背景‘矮石台（low stone shelf）’，且未体现‘仅有烛光照亮小侧室’的明确空间限定",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-451",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "提示词明确要求「一字肩」连衣裙（露出双肩），但图中人物穿着的是「单肩」连衣裙（左肩裸露，右肩有袖子遮挡），与提示词细节不符。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-452",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美契合极简手绘童话风格，线条纤细且无崩坏，粉色腮红与点缀星光增强了梦幻氛围，无任何硬门槛问题。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-453",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-454",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY"
+    ],
+    "note": "整体构图精美，但画面中人物比例严重失调（如坐在螺旋上的游客比旁边的车辆和埃菲尔铁塔的基座还大），违反了提示词要求的“通过尺度对比展现电影感叙事”（cinemat",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-456",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-457",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "三联竖幅、三位光轨舞者、标题与三个人名拼写正确；抽象指令转清单规律生效",
+    "source": "review"
+  },
+  {
+    "case_id": "case-458",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美呈现了提示词中的所有服装细节与配饰，风格与构图符合要求，人物姿态自然且无解剖学错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-459",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "品牌元素识别准确，珍珠奶茶质感逼真，广告语排版清晰且风格契合",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-460",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "图中男子手持的白色棋子缺少顶部十字，属于王后（Queen）而非提示词要求的国王（King），关键元素缺失。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-461",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面成功展示了四层剪纸微缩景观风格的四格拼贴，包含自拍、户外公园及游乐设施等场景，人物五官与肢体结构正常，符合提示词的核心视觉要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-462",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT"
+    ],
+    "note": "缺少提示词强调的“50個以上のランダム構成”与“1つ混ぜる蛍光カラー”等关键要素，且包装内消しゴム数量（约10个）远低于预期规格。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-464",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面元素、文字排版（KAO HSIUNG 2026、Sea Breeze Slow Light Southern City、经纬度、Kaohsiung手写字、H",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-466",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "鱼市街拍、蹲姿、猫与鱼、CCD 颗粒成立；参考人物身份保留。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-467",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY"
+    ],
+    "note": "第一排中间图（红色比基尼）的手部明显缺失了手指细节，呈现为肉块状，属于典型的AI生成手部崩坏（ANATOMY错误），尽管整体构图和模特一致性较好，但硬门槛不过关",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-468",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面元素与提示词高度吻合，发型头饰、霓虹涂鸦服装质感及展会背景均符合预期，人像立体感与细节表现优秀。 | 人物神态、古风发饰及霓虹手绘风格服装细节表现出色，背景展会氛围与手机摄影质感还原度高，完全符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-469",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-470",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-471",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了提示词中的所有关键要素：动漫风格、花魁服饰、发间花朵及珊瑚色背景，构图精美且细节丰富。 | 图片完美还原了提示词要求，包括大眼睛少女、发间花朵、精美花卉和服以及珊瑚色渐变背景，整体风格细腻且具有电影感光影。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-472",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "关键元素缺失：提示词要求书籍夹在腋下且书页自然翻开，图中书籍为双手持握；且缺少头顶路线指示牌及列车运动模糊特效。 | 画面构图精准，光影自然，人物神态捕捉到位，无肢体崩坏，符合提示词要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-473",
+    "verdict": "REVIEW",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "Panel 3标签拼写错误（PROTOCOL误写为PROTCOL）以及面板4标签与提示词不符，判定为文字及内容错误。 | 所有主要标签、布局及角色细节均符合提示词要求，视觉风格统一且细节丰富，无明显硬伤。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-474",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "Kyoto 面板中缺少传统河畔建筑，未能满足提示词要求的“传统河畔城镇”元素，其余地点符合描述。 | 提示词要求京都，但图中文字错拼为'Kyoto'，不符合逐字一致要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-475",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "企鹅盒三视图、材质标注（哑光纸板/亮面印刷/塑料提手/食品级内衬）与色板成立；高 180、宽 120 正确，深度标成「宽 150」，顶部标题多行乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-476",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "提示词要求的所有元素（Q版小女孩、奶油色上衣、牛仔裤、咖啡杯、枕头、‘Good Morning’拉花文字）均准确呈现，文字拼写无误，画面细腻且光影质感极佳。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-477",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-478",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "品牌名称为占位符而非实际logo，人物手部及腿部透视崩坏，且关键的车轮层叠与产品遮挡关系缺失。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-479",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "纸艺拼贴室内、粉彩纸纹、手撕边、纸便签/植物/咖啡杯/窗与手写标题「Take a small break」成立。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-480",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美契合‘疯狂的粉丝艺术家’设定，凌乱排布、夸张表情与Q版涂鸦细节丰富，没有明显的肢体崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-482",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像中的所有元素（包括人物特征、超现实概念和文字排版）均准确无误地符合提示词的要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-483",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "提示词要求的黑色运动鞋在图中缺失，实际穿的是黑白休闲帆布鞋（Vans风格），属于关键元素错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-484",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "所有元素均满足，霓虹绿眼与涂鸦背景对比鲜明，整体风格统一。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-485",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像精准还原了酒红色紧身上衣与象牙白西装裤的造型，多帧动态排版与暖色调工作室光影质感俱佳，无解剖结构或文字错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-486",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "身份保留、奖杯、球衣、人群、彩带与「RCB / IPL CHAMPIONS / 2026」主标题全部成立；但左下角手写「Ee Sala Cup Namde!」与左袖文字乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-487",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "产品上的文字出现乱码且拼写错误（如'UVMine-400'而非正确的'UVMune 400'），不满足逐字一致性硬门槛。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-488",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面主体（南亚女性、夕阳天台篮球场）及所有姿势动作细节（单手轻搭夹克边缘、重心偏移）均符合提示词要求，人体结构自然无崩坏，光影与细节质感极佳。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-489",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-490",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "双重曝光成立（左侧半透明侧脸 + 右侧全身）；参考人物的齐刘海、黑发、墨镜、灯芯绒衬衫、黑内搭与牛仔裤全部保留。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-493",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美还原了13格拼贴布局（4-5-4）及东京旅行场景，人像一致性高且细节（如大阪烧、扭蛋、鹿饼）还原准确，仅部分画面风格偏精致，略欠缺提示词要求的粗糙手机随",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-494",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY",
+      "TEXT_WRONG"
+    ],
+    "note": "关键缺陷包括：标题中的变量未被替换且拼写错误（显示为{E_BUS_NAME}和'E BUS NAME'），左侧列表存在多处乱码或拼写错误（如'Caboritn  | 图中未替换占位符 {E_BUS_NAME}，且左下角文字（Construction, Future）出现乱码拼写错误",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-495",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完整呈现了长卷发年轻女性在巴黎街头手持咖啡开心闭眼笑的场景，人物比例正常，手指结构正确，绘本风格与光影氛围极佳。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-496",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "MISSING_ELEMENT"
+    ],
+    "note": "图1和图5重复了完全相同的耐克标志，图3和图6重复了完全相同的带圆圈标志，导致没有达到6个不同标志的要求。 | 图片底部两个面板（Nike和圆环星形）重复了顶部内容，未能展示6个不同的品牌Logo，不满足拼贴画多样性要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-497",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/插画完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-498",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-499",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面元素齐全：粉蓝oversized毛衣、黑色百褶网球裙、白色中筒袜、厚底设计师运动鞋全部出现，背景为高端极简时装店，现代衣架、中性色调服饰、暖色环境光、木质与 | 图像完美还原了提示词中的所有关键元素，包括服装款式、材质、模特神态及高端极简零售店背景，整体光影柔和，构图专业。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-500",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面精美，细节丰富，手指自然且发饰、背景元素均符合提示词要求。 | 画面完美呈现了提示词要求的‘指尖轻触下巴’姿势、灰蓝色眼眸及发间羽毛玫瑰水晶配饰，蝴蝶与光效氛围极佳，且无解剖结构崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-501",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-502",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG"
+    ],
+    "note": "男性身份保留，黑桃国王服饰、王冠、棋子与烟雾氛围到位；但主牌角标是 A♠ 而非 K♠，牌面等级错误。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-503",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面高度还原了提示词中的文字拼写、主体角色、悬浮创意元素以及右下角的Q版手办，光影细节与低视角构图均符合高端海报审美要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-504",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "粗糙马克笔涂鸦风成立；人物可辨、姿态与街景关系保留，随机涂鸦与歪透视到位。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-505",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面精准还原了提示词中所有关键视觉元素，光线氛围和细节质感极佳。 | 图像完美还原了提示词中的所有关键要素，包括发型、眼镜、服装细节、手机冷光与室内暖光对比以及慵懒的表情，无解剖结构错误且无多余文字。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-506",
+    "verdict": "FAIL",
+    "gates": [
+      "ANATOMY"
+    ],
+    "note": "生成的人像与提示词指定主题“柳岩”不符，且下方文字出现非主题相关的“柳岩面包”字样。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-507",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/信息图/人像完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-508",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "高角度俯拍、少女、橘猫、丁达尔光束及薄雾氛围均完美还原，光影质感细腻，人物手部与面部结构无崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-509",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/插画完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-510",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图标主体为比熊犬且风格符合macOS App Store要求，但未包含提示词中的文字名称'Bichon Shop'。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-511",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "海报风格出色，完美呈现巴黎地标（埃菲尔铁塔、卢浮宫金字塔、凯旋门等），且文字准确无误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-512",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG",
+      "TEXT_WRONG"
+    ],
+    "note": "标题、副标题、四视图+3/4+动态与同一角色成立；底部动作画了 7 格（要求 6），中文动作标签多处乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-513",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "提示词中的模板占位符 '{DESTINATION}' 和 '{ONE POINT COLOR}' 未填充，且图片中存在大量无法识别的乱码文字，无法判定是否满足特 | Title is 'DESTINATION' instead of the target location, and specific landmarks/fo",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-514",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面完美还原了硬边波普风格与特定配色，猫尾几何化处理准确，无崩坏。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-515",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG"
+    ],
+    "note": "建筑主体（大教堂）塔楼数量错误，显示为3座塔而非提示词要求的2座",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-516",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "图像生成了黑色的管状物（看似引号或双G），但提示词要求基于[brand]的官方品牌配色，且未指定具体对象，导致缺乏特定的颜色匹配和主体辨识度。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-517",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "巨型正圆杯口占满画幅、圆外纯黑暗角、街景线条明显弧形弯曲、桶形畸变成立，脸部被杯口框住；日文标题正确（带引号，属多余符号，扣 0.5）",
+    "source": "review"
+  },
+  {
+    "case_id": "case-518",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "画面整体呈现出高质量的自然光人像摄影风格，模特姿态自然，服装与场景元素均符合提示词要求，未见明显结构错误。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-519",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "透明玻璃瓶、木质球盖、米色织带、薄荷玫瑰、冷调逆光与 C4D 质感成立；合成参考本身无标签文字，标签保持不可测。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-521",
+    "verdict": "FAIL",
+    "gates": [
+      "REF_MISMATCH",
+      "STYLE_WEAK"
+    ],
+    "note": "四层等分成立；但四层都是城市街景，没有人物互动，也没有青花/敦煌/刺绣的风格递进。参考本身无人物，属替换失真。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-522",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "儿童故事书手绘风成立；参考人物的齐刘海、黑发、白开衫、项链全部保留，身份可辨。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-524",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "纸雕拼贴乡野人像成立；层叠纸边、花朵与远景完整，脸部身份保留。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-525",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "酒红棚拍男士肖像成立；面部、胡须、墨镜与酒红背景统一。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-526",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "构图严格遵循左下至右上对角线，六束光线体积感明确且交汇于人物处；文字“六层光切”清晰无错字，整体质感高级且符合“标本切割”般的视觉分层要求。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-527",
+    "verdict": "FAIL",
+    "gates": [
+      "TEXT_WRONG"
+    ],
+    "note": "卡片上的“COPACABAN”缺少末尾的a，拼写错误（应为Copacabana）导致文字校验失败，尽管画面中的救世主像、街道黄出租车及手绘元素均符合提示词要求。 | 提示词未明确要求卡片上的文字内容，因此卡片上的‘COPACABAN ORGNITLA’虽为拼写错误，但不构成‘必须与提示词逐字一致’的硬性文本要求；主要问题在于",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-528",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "参考人物脸型、齐刘海黑发、白色开衫、项链全部保留；背景转为真实圣诞街景照片，蓝调时刻与暖金圣诞树成立；手绘角色与照片背景分层清楚，无文字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-529",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "云朵气球、山脊、蓝裙与墨镜成立；人物身份保留，天空层次干净。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-530",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "背景保持真实照片质感，人物为手绘涂鸦；替身素材原本没有人物，模型自行补了四个涂鸦孩童，属素材限制而非规则失败。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-531",
+    "verdict": "REVIEW",
+    "gates": [],
+    "note": "文字包含模板占位符，软分较高，但整体属于带占位符的模板图，未给出具体国家。 | 图像完美遵循了模板中的占位符要求，展示了玻璃框架、反射表面、黄金时刻的色调和编辑排版，整体呈现出高端旅行杂志的视觉美感。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-532",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "面板5缺失提示词要求的伞柄装饰（umbrella pick）以及面板4的卡通柠檬生物细节，画面未能完全对应叙事序列中的指定元素。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-533",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "极简铅笔涂鸦风、大头小身比例成立；参考人物的刘海、长发、白开衫与项链全部保留，画面干净无文字。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-534",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/插画完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-535",
+    "verdict": "FAIL",
+    "gates": [
+      "COUNT_WRONG"
+    ],
+    "note": "12 格齐全、3×4、同一张脸、12 款发型互异；仅编号错：第二行为 5,7,9,8（缺 6，9 重复）。与 #347 同因：宫格编号后期叠。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-536",
+    "verdict": "FAIL",
+    "gates": [
+      "MISSING_ELEMENT",
+      "TEXT_WRONG"
+    ],
+    "note": "提示词中明确要求的标题 'WHISPERS OF SPRING' 在图片中完全缺失，不符合 MISSING_ELEMENT 验收标准。 | 图像中没有出现提示词中要求的标题 'WHISPERS OF SPRING'。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-537",
+    "verdict": "REVIEW",
+    "gates": [
+      "MISSING_ELEMENT"
+    ],
+    "note": "画面缺少提示词中明确要求的“细线（threads）”连接红色小门与跪姿人物手部的关键细节。 | 画面精准呈现了提示词要求的所有核心元素：高耸的地下档案馆对称峡谷、冷银光束、跪姿白衣人、空白书籍、无五官且胸口有暗红门的黑烟具象人形，以及两者之间的细线连接，色",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-538",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "左侧原照片、右侧做旧纸张笔记版式成立；文字已填具体值：Location — KYOTO / No. — 07 / TEMPLE / MAPLE / RIVER / 2025，无占位符无乱码。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-539",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/插画完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-540",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "完美契合提示词要求的超现实建筑风格与复古海报美学，视觉重心明确，色彩和谐且细节丰富。",
+    "source": "review-flash"
+  },
+  {
+    "case_id": "case-541",
+    "verdict": "FAIL",
+    "gates": [
+      "COMPOSITION"
+    ],
+    "note": "上下 50/50 的小卡本身成立（照片+纸面+蜡笔简笔+「a quiet afternoon」）；但卡片只占 1:1 画布左上约四分之一，四周大片黑底，违反满版要求。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-542",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "主体、版式与文字逐字正确，海报/插画完整",
+    "source": "review"
+  },
+  {
+    "case_id": "case-543",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "旅行珐琅徽章成立；参考照片的五重塔、町屋、石板路、暖灯与行人全部保留；金色包边、珐琅质感与深蓝底正确。",
+    "source": "review"
+  },
+  {
+    "case_id": "case-544",
+    "verdict": "PASS",
+    "gates": [],
+    "note": "图像完美符合所有提示词要求，包括元素、文字和构图，整体清晰美观。",
+    "source": "review-flash"
+  }
+]

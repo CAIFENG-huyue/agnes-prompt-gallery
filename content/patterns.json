@@ -1,0 +1,477 @@
+{
+  "totals": {
+    "PASS": 337,
+    "PASS-WEAK": 3,
+    "FAIL": 127,
+    "REVIEW": 28,
+    "BLOCKED": 2
+  },
+  "judged": 497,
+  "categories": [
+    {
+      "category": "graphic-communication",
+      "n": 130,
+      "pass": 97,
+      "fail": 26,
+      "review": 7,
+      "pass_rate": 74.6
+    },
+    {
+      "category": "information-diagram",
+      "n": 126,
+      "pass": 69,
+      "fail": 49,
+      "review": 8,
+      "pass_rate": 54.8
+    },
+    {
+      "category": "subject-form",
+      "n": 126,
+      "pass": 90,
+      "fail": 28,
+      "review": 7,
+      "pass_rate": 71.4
+    },
+    {
+      "category": "interface-document",
+      "n": 71,
+      "pass": 54,
+      "fail": 14,
+      "review": 3,
+      "pass_rate": 76.1
+    },
+    {
+      "category": "scene-narrative",
+      "n": 44,
+      "pass": 30,
+      "fail": 10,
+      "review": 3,
+      "pass_rate": 68.2
+    }
+  ],
+  "gates": [
+    {
+      "gate": "TEXT_WRONG",
+      "n": 105,
+      "examples": [
+        {
+          "case_id": 1,
+          "note": "第12个面板英文标签存在明显拼写错误（Governance Dapshboard，应为 Dashboard）。 | 第12号面板标题显示为“治理看板 / Governance Dashboard”，提示词要求为“治理看板 / Governance Dashboard”，存在乱",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 4,
+          "note": "产品标签上的文字显示为“老干购条”，与提示词要求的“老干妈”不符，属于文字错误。 | 核心元素完整，背景科技感与弹幕文字均符合提示词，且瓶身文字清晰准确。",
+          "category": "interface-document"
+        },
+        {
+          "case_id": 9,
+          "note": "文字排版出现拼写错误，'Beijing'被错写为'Being'，属于TEXT_WRONG硬伤。 | 整体设计精美，符合国潮风格。包含天坛、长城、鸟巢、什刹海（左下角柳树/水景）、喇叭沟门（绿色山峦）等元素，虽然未明显看到“京味相声”人物形象但可视为背景氛围融合",
+          "category": "graphic-communication"
+        },
+        {
+          "case_id": 11,
+          "note": "标题及左上角店名存在明显错字（如“台州”写成“台卅”，“椒江”写成“椒红”），右下角图例文字模糊无法辨识，违反文字准确性要求。 | 图例文字为乱码/错字（非提示词内容）；缺少第10个地点‘临海麦油脂’（竹盘薄饼），误画为‘临海麦油脂’但插画不符；且‘仙居八大碗’仅画了8个碗（正确）但‘黄岩麦",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 13,
+          "note": "标题文字显示为'数学试卷'（错误），且正文文字均为乱码或无法辨识的伪汉字，不符合中文试卷的实际文字要求。 | 图像完美复刻了提示词要求的AI生成瑕疵：标题文字正确且无乱码，但正文内容完全为无意义的乱码/伪文字，符合真实AI生成图特征而非人工伪造；3D几何图形与数学公式符",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 14,
+          "note": "步骤 4 厨师秘技中将“铲子”错误生成为“铲子”（字形为“铲”而非“铲”），属于明显错字。 | 标题漏掉冒号；步骤2提示词要求手持筷子，但图中画的是打蛋器；步骤5描述要求撒葱花，但图中蛋上撒的是绿色圆点而非葱花。",
+          "category": "information-diagram"
+        }
+      ],
+      "categories": [
+        [
+          "information-diagram",
+          48
+        ],
+        [
+          "graphic-communication",
+          20
+        ],
+        [
+          "interface-document",
+          15
+        ],
+        [
+          "subject-form",
+          13
+        ],
+        [
+          "scene-narrative",
+          9
+        ]
+      ]
+    },
+    {
+      "gate": "MISSING_ELEMENT",
+      "n": 53,
+      "examples": [
+        {
+          "case_id": 3,
+          "note": "披挂国旗颜色为蓝黄(非波黑蓝白), 背景球场氛围(圣西罗)特征缺失, 且右手五指清晰但左手五指模糊/疑似多指。 | 缺少提示词中明确指出的“国际米兰蓝黑配色”与“圣西罗球场”标识，人物双手均出现多于5根手指的解剖结构错误。",
+          "category": "graphic-communication"
+        },
+        {
+          "case_id": 11,
+          "note": "标题及左上角店名存在明显错字（如“台州”写成“台卅”，“椒江”写成“椒红”），右下角图例文字模糊无法辨识，违反文字准确性要求。 | 图例文字为乱码/错字（非提示词内容）；缺少第10个地点‘临海麦油脂’（竹盘薄饼），误画为‘临海麦油脂’但插画不符；且‘仙居八大碗’仅画了8个碗（正确）但‘黄岩麦",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 14,
+          "note": "步骤 4 厨师秘技中将“铲子”错误生成为“铲子”（字形为“铲”而非“铲”），属于明显错字。 | 标题漏掉冒号；步骤2提示词要求手持筷子，但图中画的是打蛋器；步骤5描述要求撒葱花，但图中蛋上撒的是绿色圆点而非葱花。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 29,
+          "note": "仍为原白色开衫+牛仔裤+灰棚；黑发、黑唇、苍白肤色、鼻中隔环、倒十字项链全部未执行。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 84,
+          "note": "图中存在大量AI生成乱码与错误汉字（如“鬼舞辻無慘”写作“鬼舞辻無慘”但字体错误，“富岡義勇”为“富岡義勇”但实为“富岡義勇”错字，“竈門炭治郎”写作“竈門炭治",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 85,
+          "note": "所有人物姓名标签全部乱码拼写错误（如Moxnohazl、Ririxololo），不符合'逐字一致'硬门槛。 | 所有角色名称均为乱码，不符合可读性与正确性要求（如Moxnoael实为Nezuko，Raxnctelo实为Zenyu，Fhemiobl实为Tanjuro等），且",
+          "category": "information-diagram"
+        }
+      ],
+      "categories": [
+        [
+          "information-diagram",
+          18
+        ],
+        [
+          "subject-form",
+          15
+        ],
+        [
+          "graphic-communication",
+          12
+        ],
+        [
+          "scene-narrative",
+          5
+        ],
+        [
+          "interface-document",
+          3
+        ]
+      ]
+    },
+    {
+      "gate": "COUNT_WRONG",
+      "n": 29,
+      "examples": [
+        {
+          "case_id": 3,
+          "note": "披挂国旗颜色为蓝黄(非波黑蓝白), 背景球场氛围(圣西罗)特征缺失, 且右手五指清晰但左手五指模糊/疑似多指。 | 缺少提示词中明确指出的“国际米兰蓝黑配色”与“圣西罗球场”标识，人物双手均出现多于5根手指的解剖结构错误。",
+          "category": "graphic-communication"
+        },
+        {
+          "case_id": 11,
+          "note": "标题及左上角店名存在明显错字（如“台州”写成“台卅”，“椒江”写成“椒红”），右下角图例文字模糊无法辨识，违反文字准确性要求。 | 图例文字为乱码/错字（非提示词内容）；缺少第10个地点‘临海麦油脂’（竹盘薄饼），误画为‘临海麦油脂’但插画不符；且‘仙居八大碗’仅画了8个碗（正确）但‘黄岩麦",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 87,
+          "note": "图中多处关键文字出现乱码或非日文汉字，且角色身份标签存在错配（如炭治郎被标注为雷柱），不符合图文一致性要求。 | 多处角色姓名、标签及关系标注存在明显错字、乱码（如“不死川実弥”写成“不死川実弥”、“炭治郎”名字错乱、“水柱”等标签文字模糊），不符合逐字一致要求。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 112,
+          "note": "图片共12张卡片但部分文字拼写错误且缺少提示词要求的'12 Golden Saints'标题，且'仙女座瞬'应为'仙女座'相关人物名 | 部分卡牌名称翻译不准确（如“金牛列阿鲁迪巴”、“处女性沙加”），且缺少“双鱼座”对应的黄金圣斗士卡牌。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 165,
+          "note": "手持物为剑而非烧烤串，且嘴部未叼串，三刀流元素缺失且计数不符。",
+          "category": "scene-narrative"
+        },
+        {
+          "case_id": 166,
+          "note": "多处文字错误，如“狮子咩”应为“狮子座”，“处女蟹/天秤蟹/巨蟹”等星座名称错误，且“修罗”出现在处女和山羊两个位置，不符合黄金十二宫唯一性要求。",
+          "category": "information-diagram"
+        }
+      ],
+      "categories": [
+        [
+          "information-diagram",
+          15
+        ],
+        [
+          "subject-form",
+          5
+        ],
+        [
+          "scene-narrative",
+          4
+        ],
+        [
+          "graphic-communication",
+          3
+        ],
+        [
+          "interface-document",
+          2
+        ]
+      ]
+    },
+    {
+      "gate": "ANATOMY",
+      "n": 17,
+      "examples": [
+        {
+          "case_id": 3,
+          "note": "披挂国旗颜色为蓝黄(非波黑蓝白), 背景球场氛围(圣西罗)特征缺失, 且右手五指清晰但左手五指模糊/疑似多指。 | 缺少提示词中明确指出的“国际米兰蓝黑配色”与“圣西罗球场”标识，人物双手均出现多于5根手指的解剖结构错误。",
+          "category": "graphic-communication"
+        },
+        {
+          "case_id": 118,
+          "note": "提示词要素完整，风格统一，手部与面部细节出色 | 画面中左手出现了明显的肢体结构错误，手直接穿模握在护手/刀身上而非刀柄上，且手指形态不自然，违反了ANATOMY的硬门槛要求。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 180,
+          "note": "图2中的角色身体悬浮且双脚交叉呈不自然的倒钩状，违反物理规律，属于解剖/透视异常。 | 虽然成功生成了4张海报且画面质感良好，但所有海报下方的播出信息文字出现了明显的错别字，将正确的“毎週土曜”误写为“每週土曜”，不符合文字准确性的硬门槛。",
+          "category": "graphic-communication"
+        },
+        {
+          "case_id": 233,
+          "note": "人物右手持瓶处的拇指位置严重穿模，不符合人体解剖学结构。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 302,
+          "note": "未生成9位设计师的真实姓名，全部显示为通用占位符“设计师姓名”；且9位头像为同一人重复，未体现“九位知名设计师”特征，属于要素缺失。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 309,
+          "note": "角色双臂被完全隐藏（手插口袋状但无手部实体，违反解剖结构），且未满足提示词要求的俯视平铺（top-down flat lay）构图，实际为站立正面视图。",
+          "category": "subject-form"
+        }
+      ],
+      "categories": [
+        [
+          "graphic-communication",
+          8
+        ],
+        [
+          "information-diagram",
+          5
+        ],
+        [
+          "subject-form",
+          4
+        ]
+      ]
+    },
+    {
+      "gate": "STYLE_WEAK",
+      "n": 5,
+      "examples": [
+        {
+          "case_id": 29,
+          "note": "仍为原白色开衫+牛仔裤+灰棚；黑发、黑唇、苍白肤色、鼻中隔环、倒十字项链全部未执行。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 357,
+          "note": "场景、青绿瓷砖、黄墨镜、黑 T、青绿杯全对；但无鱼眼畸变，圆镜不等于鱼眼。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 409,
+          "note": "输出仍是写实街景建筑摄影，无白底、抖线、像素锯齿、比例失调；MS Paint 风格完全未执行。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 410,
+          "note": "仍是半写实时尚插画；无夸张卡通比例、无线条风格化、无空间扭曲。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 521,
+          "note": "四层等分成立；但四层都是城市街景，没有人物互动，也没有青花/敦煌/刺绣的风格递进。参考本身无人物，属替换失真。",
+          "category": "graphic-communication"
+        }
+      ],
+      "categories": [
+        [
+          "subject-form",
+          4
+        ],
+        [
+          "graphic-communication",
+          1
+        ]
+      ]
+    },
+    {
+      "gate": "RELATION_WRONG",
+      "n": 4,
+      "examples": [
+        {
+          "case_id": 23,
+          "note": "L0-L7 八个标签全对、25 级台阶与图例在；但台阶编号自下而上倒置（25 在底、15 在中），焦点步与编号对不上，部分步骤名乱码。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 226,
+          "note": "4×2 八位皇帝、明制服饰与工笔金线成立；八人首行都写成通用「庙号」，第二行才合并庙号+姓名，未按要求两行分开。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 328,
+          "note": "要求俯拍巨女、建筑只到膝盖、镜头贴脸；输出为平视街拍，巨物比例与俯拍全部缺失。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 421,
+          "note": "身份保留、手机屏幕显示本人实时画面成立；但要求“横持手机遮住眼睛与上半脸”，实际竖持遮住下半脸，方向与遮挡关系都错。",
+          "category": "subject-form"
+        }
+      ],
+      "categories": [
+        [
+          "information-diagram",
+          2
+        ],
+        [
+          "subject-form",
+          2
+        ]
+      ]
+    },
+    {
+      "gate": "UI_INCOMPLETE",
+      "n": 4,
+      "examples": [
+        {
+          "case_id": 25,
+          "note": "输出是三视图像素角色，不是 64×64 皮肤贴图/8×8 网格展开；白 T、牛仔裤、白鞋正确。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 270,
+          "note": "三视图/6 表情/装备/色板结构在，但日文标签全部错位到色板下方，世界观两行乱码。",
+          "category": "information-diagram"
+        },
+        {
+          "case_id": 323,
+          "note": "Instagram 卡片、June、FOLLOW、三点菜单成立；人物没有从卡片中立体探出，仍是平面照片，且多出未要求的英文长文案。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 387,
+          "note": "NETFLIX 字标、导航、主视觉、Watch Now/More Info 正确；下方只有 1 行 5 张（要求 3 行×5），且标题为 ROW01-EP.05/NEW RELEASES/ROW 10，不是 EP.01-EP.05。",
+          "category": "interface-document"
+        }
+      ],
+      "categories": [
+        [
+          "subject-form",
+          2
+        ],
+        [
+          "information-diagram",
+          1
+        ],
+        [
+          "interface-document",
+          1
+        ]
+      ]
+    },
+    {
+      "gate": "REF_MISMATCH",
+      "n": 3,
+      "examples": [
+        {
+          "case_id": 322,
+          "note": "要求街头场景，输出为灰棚+水花；手持瓶为自创品牌 SEQQA，参考里没有该产品。参考是人物，不是街头。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 328,
+          "note": "要求俯拍巨女、建筑只到膝盖、镜头贴脸；输出为平视街拍，巨物比例与俯拍全部缺失。",
+          "category": "subject-form"
+        },
+        {
+          "case_id": 521,
+          "note": "四层等分成立；但四层都是城市街景，没有人物互动，也没有青花/敦煌/刺绣的风格递进。参考本身无人物，属替换失真。",
+          "category": "graphic-communication"
+        }
+      ],
+      "categories": [
+        [
+          "subject-form",
+          2
+        ],
+        [
+          "graphic-communication",
+          1
+        ]
+      ]
+    },
+    {
+      "gate": "COMPOSITION",
+      "n": 1,
+      "examples": [
+        {
+          "case_id": 541,
+          "note": "上下 50/50 的小卡本身成立（照片+纸面+蜡笔简笔+「a quiet afternoon」）；但卡片只占 1:1 画布左上约四分之一，四周大片黑底，违反满版要求。",
+          "category": "information-diagram"
+        }
+      ],
+      "categories": [
+        [
+          "information-diagram",
+          1
+        ]
+      ]
+    },
+    {
+      "gate": "CONTENT_BLOCKED",
+      "n": 1,
+      "examples": [
+        {
+          "case_id": 145,
+          "note": "生成图触发内容合规拦截，当前读取方式无法查看；需改用局部裁剪/OCR 或换判定通道后再评，本轮不计入 PASS",
+          "category": "subject-form"
+        }
+      ],
+      "categories": [
+        [
+          "subject-form",
+          1
+        ]
+      ]
+    },
+    {
+      "gate": "CONTENT_POLICY",
+      "n": 1,
+      "examples": [
+        {
+          "case_id": 47,
+          "note": "四格日文广告触发内容审核（content_policy_violation），清洗敏感描述后仍被拦截，待拆分单格重跑",
+          "category": "scene-narrative"
+        }
+      ],
+      "categories": [
+        [
+          "scene-narrative",
+          1
+        ]
+      ]
+    }
+  ]
+}
