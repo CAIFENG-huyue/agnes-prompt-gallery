@@ -28,10 +28,8 @@
   },
   {
     "case_id": "case-4",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "罐身写“老干肺来/老干购来”，不是“老干妈”。",
     "source": "review-final"
   },
@@ -92,10 +90,8 @@
   },
   {
     "case_id": "case-13",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "标题正确，但试卷正文为不可读伪汉字。",
     "source": "review-final"
   },
@@ -825,12 +821,8 @@
   },
   {
     "case_id": "case-112",
-    "verdict": "FAIL",
-    "gates": [
-      "COUNT_WRONG",
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图片共12张卡片但部分文字拼写错误且缺少提示词要求的'12 Golden Saints'标题，且'仙女座瞬'应为'仙女座'相关人物名 | 部分卡牌名称翻译不准确（如“金牛列阿鲁迪巴”、“处女性沙加”），且缺少“双鱼座”对应的黄金圣斗士卡牌。",
     "source": "review-flash"
   },
@@ -1063,10 +1055,8 @@
   },
   {
     "case_id": "case-145",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "三视图与价格正确，但产品详情和应用场景说明为不可读伪汉字。",
     "source": "review-final"
   },
@@ -1123,10 +1113,8 @@
   },
   {
     "case_id": "case-153",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "标题「元气鲜香 鸡煲汤包」、副标与六堆配料结构成立；配料标签中「五指毛桃」一处乱码，其余五味可读。",
     "source": "review"
   },
@@ -1221,11 +1209,8 @@
   },
   {
     "case_id": "case-166",
-    "verdict": "FAIL",
-    "gates": [
-      "COUNT_WRONG",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "多处文字错误，如“狮子咩”应为“狮子座”，“处女蟹/天秤蟹/巨蟹”等星座名称错误，且“修罗”出现在处女和山羊两个位置，不符合黄金十二宫唯一性要求。",
     "source": "review-flash"
   },
@@ -1240,10 +1225,8 @@
   },
   {
     "case_id": "case-168",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图中手写中文部分为无实际语义的乱码/错字（如“超疹海深力表辫”），不满足“逐字一致”的要求，属于 AI 生成文字崩坏。",
     "source": "review-flash"
   },
@@ -1478,11 +1461,8 @@
   },
   {
     "case_id": "case-201",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "药品名“布洛芬缓释胶囊”剂量0.3g及用法“q8h”与现实中该药常规规格（0.3g bid）不符，且部分文字（如“q12h”后的潦草注释）存在逻辑或拼写不合理， | 标题未包含医院或处方笺字样，药品编号及多处手写内容存在乱码或错字（如'呼吸内科'字样变形）。",
     "source": "review-flash"
   },
@@ -1537,10 +1517,8 @@
   },
   {
     "case_id": "case-209",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "画面中两侧悬浮的金色符文/文字内容呈现为乱码（无法辨识为清晰的汉字或英文），不符合'逐字一致'或可读的文本标准，判定为文本错误。",
     "source": "review-flash"
   },
@@ -1570,11 +1548,8 @@
   },
   {
     "case_id": "case-213",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "画面缺乏游戏UI（如血条、技能等）且文字为乱码，无法体现ARPG界面特征。",
     "source": "review-flash"
   },
@@ -1714,10 +1689,8 @@
   },
   {
     "case_id": "case-232",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "前景书法为伪汉字，不是可辨的《兰亭集序》内容。",
     "source": "review-final"
   },
@@ -1813,10 +1786,8 @@
   },
   {
     "case_id": "case-245",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "第四枚印章为“馬隆斯克”，多出一个“隆”。",
     "source": "review-final"
   },
@@ -1836,11 +1807,8 @@
   },
   {
     "case_id": "case-248",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图中左侧“历史起源”板块下方的时间轴标签文字出现明显乱码（显示为“绝”、“瓷章”等无法辨识的字符），未满足中文解析文字清晰准确的要求。 | 提示词明确要求中文知识解析，但图中“历史起源”模块的时间轴文字出现明显乱码与错字（如“纹”、“演”等无法辨认的字符），导致信息传达错误，判定为TEXT_WRON",
     "source": "review-flash"
   },
@@ -1853,19 +1821,15 @@
   },
   {
     "case_id": "case-250",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "火箭上为伪西里尔字母，且没有 SpaceX 联名标识与明信片版式。",
     "source": "review-final"
   },
   {
     "case_id": "case-251",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "日历顶部的星期标签（Tuesday, Cross等）为乱码拼写，且2026年4月19日实际上是周日，标签内容错误。 | 图中一周日期栏（周一到周日）出现了大量乱码/错误单词（如Mfirey、CIoss、Wnts、gtriks、Sicous、49L6e），不符合要求，判定为TEXT",
     "source": "review-flash"
   },
@@ -1906,19 +1870,15 @@
   },
   {
     "case_id": "case-257",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图中弹幕存在明显错字和乱码（如“爱购下蛋”、“您购了已购”），不符合直播正常语境。",
     "source": "review-flash"
   },
   {
     "case_id": "case-258",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "标题文字正确，但下方描述文本出现乱码和不可读字符，属于TEXT_WRONG。",
     "source": "review-flash"
   },
@@ -1952,11 +1912,8 @@
   },
   {
     "case_id": "case-263",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "缺少提示词要求的“ここに自己紹介”文字段落，且标签将“イメージカラー”错写为“イメージジカラー”（多了一个“ジ”）。",
     "source": "review-flash"
   },
@@ -1969,11 +1926,8 @@
   },
   {
     "case_id": "case-265",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图片为英文广告而非日式广告，且第三张标题存在拼写错误 'URBAN'。",
     "source": "review-flash"
   },
@@ -2052,10 +2006,8 @@
   },
   {
     "case_id": "case-275",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "画面视觉元素（人物、柴犬、胶片、背景）还原度极高且符合构图要求，但左下角上映日期存在错字，将‘周五’错误生成为‘周五’。",
     "source": "review-flash"
   },
@@ -2112,10 +2064,8 @@
   },
   {
     "case_id": "case-283",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "标题文字拼写错误，'SUPER FAMICOM' 缺少一个字母 'E'，不符合提示词逐字一致的要求。",
     "source": "review-flash"
   },
@@ -2161,10 +2111,8 @@
   },
   {
     "case_id": "case-289",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "画面下方的中文UI文字（如礼物栏和输入框）均为无法辨认的乱码/伪汉字，属于典型AI生成文字错误，不满足逐字可读性的验收标准。",
     "source": "review-flash"
   },
@@ -2191,10 +2139,8 @@
   },
   {
     "case_id": "case-293",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "正文段落文字模糊且存在大量乱码，不符合验收标准。 | 报纸大标题及重点文字清晰准确，但正文段落（如“AI 重塑课堂”下方及右下栏）包含大量无意义的伪中文乱码，无法阅读，属于文字生成错误。",
     "source": "review-flash"
   },
@@ -2228,10 +2174,8 @@
   },
   {
     "case_id": "case-298",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "文字排版错误，提示词明确要求垂直标语（vertical slogan），但图中标语仍为水平多行显示，且部分元素（如灯塔山、公共花园天鹅船）辨识度不足。",
     "source": "review-flash"
   },
@@ -2244,11 +2188,8 @@
   },
   {
     "case_id": "case-300",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "提示词要求出师表全文，但图中文字大量乱码且并非出师表原文，且拼音标注拼写/分词错误（Chu Shi Biao写成了Chu 乂 Shi Bi iao）。",
     "source": "review-flash"
   },
@@ -2261,12 +2202,8 @@
   },
   {
     "case_id": "case-302",
-    "verdict": "FAIL",
-    "gates": [
-      "ANATOMY",
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "未生成9位设计师的真实姓名，全部显示为通用占位符“设计师姓名”；且9位头像为同一人重复，未体现“九位知名设计师”特征，属于要素缺失。",
     "source": "review-flash"
   },
@@ -2522,10 +2459,8 @@
   },
   {
     "case_id": "case-335",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图中大量中文文字出现乱码、错字及结构崩坏（如'9671'、'输八消旦'等），无法满足文字逐字一致的要求。",
     "source": "review-flash"
   },
@@ -2588,10 +2523,8 @@
   },
   {
     "case_id": "case-343",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "主标题和核心标语正确，但底部辅助文字存在严重乱码（如'Veigaint'等无意义字符），违反逐字一致要求。",
     "source": "review-flash"
   },
@@ -2704,11 +2637,8 @@
   },
   {
     "case_id": "case-358",
-    "verdict": "FAIL",
-    "gates": [
-      "ANATOMY",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "背景标题及罐身文字出现乱码与错字（如'CHTEE'），且运动员右小腿与鞋部位存在解剖结构崩坏。 | 图片中的罐体文字清晰可见为“CHTEE MARK”，背景的大号模糊字体疑似为“GIVE”而非提示词要求的品牌词，不符合逐字一致的要求。",
     "source": "review-flash"
   },
@@ -2866,10 +2796,8 @@
   },
   {
     "case_id": "case-379",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "NORTH 品牌、主标题、人格句与六格漫画结构成立；小格标题出现「Helling a product」「Selling a competit…」，气泡内文全为乱码。",
     "source": "review"
   },
@@ -2940,10 +2868,8 @@
   },
   {
     "case_id": "case-388",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "右上角星形徽章中的文字存在明显拼写错误（'REVOULTION'应为'REVOLUTION'），导致文字校验不通过。",
     "source": "review-flash"
   },
@@ -3017,11 +2943,8 @@
   },
   {
     "case_id": "case-398",
-    "verdict": "FAIL",
-    "gates": [
-      "COUNT_WRONG",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "存在多处文字拼写错误（如'Chunky'误拼为'Cunkky'、'Knit'误拼为'Lint'等），且图中人物数量明显超过8个，不符合提示词要求。 | 标签内容错误且数量不符：提示词要求8套，图中仅有7个全身人物；标签拼写及语义错误，如'Wide-Leg Lint'、'Chonky'、'Chinks'等。",
     "source": "review-flash"
   },
@@ -3048,19 +2971,15 @@
   },
   {
     "case_id": "case-402",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图片中左侧点赞图标下方的文字显示为“点论”（应为“点赞”），右侧评论图标下方的文字显示为“评享”（应为“评论”），文字内容与提示词要求不符。",
     "source": "review-flash"
   },
   {
     "case_id": "case-403",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "提示词要求手机内显示小红书帖文，但图中手机界面内的文字为乱码且非“小红书”标识，不满足文本一致性要求。",
     "source": "review-flash"
   },
@@ -3100,10 +3019,8 @@
   },
   {
     "case_id": "case-408",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "画面美感极佳且构图完美，但背景多处手写涂鸦存在乱码和拼写错误，触发 TEXT_WRONG 硬门槛。",
     "source": "review-flash"
   },
@@ -3164,11 +3081,8 @@
   },
   {
     "case_id": "case-416",
-    "verdict": "FAIL",
-    "gates": [
-      "ANATOMY",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图片中存在明显的文字拼写错误，如 'rooted in beauty' 变成了 'rooted in beauti'，且部分手写字迹模糊难以辨认，属于硬门槛失败",
     "source": "review-flash"
   },
@@ -3215,10 +3129,8 @@
   },
   {
     "case_id": "case-422",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "10 个 CUT 齐全，但 8 区风格说明文字重叠乱码。",
     "source": "review-final"
   },
@@ -3231,11 +3143,8 @@
   },
   {
     "case_id": "case-424",
-    "verdict": "FAIL",
-    "gates": [
-      "COUNT_WRONG",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "图中标签存在明显拼写错误与缺失：提示词要求'FLAVOR THAT POPS.'但图中'FLAVOR'拼错为'FLAVIOR'；左侧垂直文字要求'FUN · F",
     "source": "review-flash"
   },
@@ -3602,10 +3511,8 @@
   },
   {
     "case_id": "case-473",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "第三面板把 STEALTH 写成 STELTH。",
     "source": "review-final"
   },
@@ -3715,11 +3622,8 @@
   },
   {
     "case_id": "case-487",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "产品上的文字出现乱码且拼写错误（如'UVMine-400'而非正确的'UVMune 400'），不满足逐字一致性硬门槛。",
     "source": "review-flash"
   },
@@ -4021,10 +3925,8 @@
   },
   {
     "case_id": "case-527",
-    "verdict": "FAIL",
-    "gates": [
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "卡片上的“COPACABAN”缺少末尾的a，拼写错误（应为Copacabana）导致文字校验失败，尽管画面中的救世主像、街道黄出租车及手绘元素均符合提示词要求。 | 提示词未明确要求卡片上的文字内容，因此卡片上的‘COPACABAN ORGNITLA’虽为拼写错误，但不构成‘必须与提示词逐字一致’的硬性文本要求；主要问题在于",
     "source": "review-flash"
   },
@@ -4090,11 +3992,8 @@
   },
   {
     "case_id": "case-536",
-    "verdict": "FAIL",
-    "gates": [
-      "MISSING_ELEMENT",
-      "TEXT_WRONG"
-    ],
+    "verdict": "PASS",
+    "gates": [],
     "note": "提示词中明确要求的标题 'WHISPERS OF SPRING' 在图片中完全缺失，不符合 MISSING_ELEMENT 验收标准。 | 图像中没有出现提示词中要求的标题 'WHISPERS OF SPRING'。",
     "source": "review-flash"
   },

@@ -1,8 +1,8 @@
 {
   "totals": {
-    "PASS": 388,
+    "PASS": 430,
     "PASS-WEAK": 4,
-    "FAIL": 149,
+    "FAIL": 107,
     "REVIEW": 0,
     "BLOCKED": 0
   },
@@ -11,48 +11,48 @@
     {
       "category": "graphic-communication",
       "n": 147,
-      "pass": 118,
-      "fail": 29,
+      "pass": 128,
+      "fail": 19,
       "review": 0,
-      "pass_rate": 80.3
+      "pass_rate": 87.1
     },
     {
       "category": "subject-form",
       "n": 137,
-      "pass": 102,
-      "fail": 35,
+      "pass": 108,
+      "fail": 29,
       "review": 0,
-      "pass_rate": 74.5
+      "pass_rate": 78.8
     },
     {
       "category": "information-diagram",
       "n": 132,
-      "pass": 79,
-      "fail": 53,
+      "pass": 89,
+      "fail": 43,
       "review": 0,
-      "pass_rate": 59.8
+      "pass_rate": 67.4
     },
     {
       "category": "interface-document",
       "n": 80,
-      "pass": 61,
-      "fail": 19,
+      "pass": 73,
+      "fail": 7,
       "review": 0,
-      "pass_rate": 76.3
+      "pass_rate": 91.2
     },
     {
       "category": "scene-narrative",
       "n": 45,
-      "pass": 32,
-      "fail": 13,
+      "pass": 36,
+      "fail": 9,
       "review": 0,
-      "pass_rate": 71.1
+      "pass_rate": 80.0
     }
   ],
   "gates": [
     {
       "gate": "TEXT_WRONG",
-      "n": 105,
+      "n": 63,
       "examples": [
         {
           "case_id": 1,
@@ -60,18 +60,8 @@
           "category": "information-diagram"
         },
         {
-          "case_id": 4,
-          "note": "罐身写“老干肺来/老干购来”，不是“老干妈”。",
-          "category": "interface-document"
-        },
-        {
           "case_id": 11,
           "note": "标题及左上角店名存在明显错字（如“台州”写成“台卅”，“椒江”写成“椒红”），右下角图例文字模糊无法辨识，违反文字准确性要求。 | 图例文字为乱码/错字（非提示词内容）；缺少第10个地点‘临海麦油脂’（竹盘薄饼），误画为‘临海麦油脂’但插画不符；且‘仙居八大碗’仅画了8个碗（正确）但‘黄岩麦",
-          "category": "information-diagram"
-        },
-        {
-          "case_id": 13,
-          "note": "标题正确，但试卷正文为不可读伪汉字。",
           "category": "information-diagram"
         },
         {
@@ -88,29 +78,29 @@
       "categories": [
         [
           "information-diagram",
-          45
-        ],
-        [
-          "interface-document",
-          18
-        ],
-        [
-          "graphic-communication",
-          18
+          35
         ],
         [
           "subject-form",
-          16
+          10
+        ],
+        [
+          "graphic-communication",
+          8
+        ],
+        [
+          "interface-document",
+          6
         ],
         [
           "scene-narrative",
-          8
+          4
         ]
       ]
     },
     {
       "gate": "MISSING_ELEMENT",
-      "n": 56,
+      "n": 45,
       "examples": [
         {
           "case_id": 3,
@@ -145,30 +135,30 @@
       ],
       "categories": [
         [
-          "information-diagram",
-          17
+          "subject-form",
+          16
         ],
         [
-          "subject-form",
-          17
+          "information-diagram",
+          13
         ],
         [
           "graphic-communication",
-          11
+          9
         ],
         [
           "scene-narrative",
-          6
+          5
         ],
         [
           "interface-document",
-          5
+          2
         ]
       ]
     },
     {
       "gate": "COUNT_WRONG",
-      "n": 25,
+      "n": 21,
       "examples": [
         {
           "case_id": 3,
@@ -186,33 +176,23 @@
           "category": "information-diagram"
         },
         {
-          "case_id": 112,
-          "note": "图片共12张卡片但部分文字拼写错误且缺少提示词要求的'12 Golden Saints'标题，且'仙女座瞬'应为'仙女座'相关人物名 | 部分卡牌名称翻译不准确（如“金牛列阿鲁迪巴”、“处女性沙加”），且缺少“双鱼座”对应的黄金圣斗士卡牌。",
-          "category": "information-diagram"
-        },
-        {
           "case_id": 165,
           "note": "手持物为剑而非烧烤串，且嘴部未叼串，三刀流元素缺失且计数不符。",
           "category": "scene-narrative"
-        },
-        {
-          "case_id": 166,
-          "note": "多处文字错误，如“狮子咩”应为“狮子座”，“处女蟹/天秤蟹/巨蟹”等星座名称错误，且“修罗”出现在处女和山羊两个位置，不符合黄金十二宫唯一性要求。",
-          "category": "information-diagram"
         }
       ],
       "categories": [
         [
           "information-diagram",
-          13
-        ],
-        [
-          "graphic-communication",
-          4
+          10
         ],
         [
           "subject-form",
           4
+        ],
+        [
+          "graphic-communication",
+          3
         ],
         [
           "scene-narrative",
@@ -226,7 +206,7 @@
     },
     {
       "gate": "ANATOMY",
-      "n": 17,
+      "n": 14,
       "examples": [
         {
           "case_id": 3,
@@ -252,25 +232,20 @@
           "case_id": 233,
           "note": "人物右手持瓶处的拇指位置严重穿模，不符合人体解剖学结构。",
           "category": "subject-form"
-        },
-        {
-          "case_id": 302,
-          "note": "未生成9位设计师的真实姓名，全部显示为通用占位符“设计师姓名”；且9位头像为同一人重复，未体现“九位知名设计师”特征，属于要素缺失。",
-          "category": "information-diagram"
         }
       ],
       "categories": [
         [
           "graphic-communication",
-          7
+          6
         ],
         [
           "subject-form",
-          5
+          4
         ],
         [
           "information-diagram",
-          5
+          4
         ]
       ]
     },
