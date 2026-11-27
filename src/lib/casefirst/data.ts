@@ -277,8 +277,17 @@ export function getPatterns(): Promise<Patterns> {
   return patternsPromise;
 }
 
+const VERDICT_LABELS: Record<string, string> = {
+  PASS: "通过",
+  "PASS-WEAK": "弱通过",
+  FAIL: "失败",
+  REVIEW: "待复核",
+  BLOCKED: "内容拦截",
+  UNREVIEWED: "未评审"
+};
+
 export function verdictLabel(caseItem: CatalogCase): string {
-  return caseItem.verdict === "UNREVIEWED" ? "未评审" : caseItem.verdict;
+  return VERDICT_LABELS[caseItem.verdict] ?? caseItem.verdict;
 }
 
 export function sameGateCases(catalog: Catalog, caseItem: CatalogCase, limit = 5): CatalogCase[] {
