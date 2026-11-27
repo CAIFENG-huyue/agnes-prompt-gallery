@@ -1,4 +1,4 @@
-import { readContentJson } from "../content/read-json.js";
+import { readContentJson, readOptionalContentJson } from "../content/read-json.js";
 
 export type Verdict = "PASS" | "PASS-WEAK" | "FAIL" | "REVIEW" | "BLOCKED" | "UNREVIEWED";
 export type VerdictBucket = "pass" | "fail" | "review" | "unreviewed";
@@ -72,6 +72,11 @@ interface PromptVersionRecord {
   text: string;
 }
 
+interface PromptTranslationRecord {
+  case_id: string;
+  zh: string;
+}
+
 interface ResultVariant {
   file: string;
   width: number;
@@ -108,6 +113,7 @@ export interface CatalogCase {
   topGates: string[];
   note: string;
   promptText: string;
+  promptTextZh: string;
   image: CaseImage | null;
   sourceImage: CaseImage | null;
   sourceLink: string;
@@ -171,13 +177,14 @@ function resultSrcSet(variants: Record<string, ResultVariant>): string {
 let catalogPromise: Promise<Catalog> | null = null;
 
 async function buildCatalog(): Promise<Catalog> {
-  const [cases, classifications, taxonomy, prompts, results, verdicts] = await Promise.all([
+  const [cases, classifications, taxonomy, prompts, results, verdicts, promptZh] = await Promise.all([
     readContentJson<CaseRecord[]>("content", "cases.json"),
     readContentJson<ClassificationRecord[]>("content", "classifications.json"),
     readContentJson<Taxonomy>("content", "taxonomy.json"),
     readContentJson<PromptVersionRecord[]>("content", "prompt-versions/cases.json"),
     readContentJson<ResultEntry[]>("generated", "results.json"),
-    readContentJson<VerdictRecord[]>("content", "verdicts.json")
+    readContentJson<VerdictRecord[]>("content", "verdicts.json"),
+    readOptionalContentJson<PromptTranslationRecord[]>("content", "prompt-zh.json")
   ]);
 
   const categories = taxonomy.categories;
@@ -186,6 +193,7 @@ async function buildCatalog(): Promise<Catalog> {
   const classificationByCase = new Map(classifications.map((item) => [item.case_id, item.primary_category_id]));
   const resultByCase = new Map(results.map((item) => [item.case_id, item]));
   const verdictByCase = new Map(verdicts.map((item) => [item.case_id, item]));
+  const promptZhByCase = new Map((promptZh ?? []).map((item) => [item.case_id, item.zh]));
 
   const latestPrompt = new Map<string, PromptVersionRecord>();
   for (const prompt of prompts) {
@@ -233,6 +241,7 @@ async function buildCatalog(): Promise<Catalog> {
       topGates: (verdict?.gates ?? []).slice(0, 2),
       note: verdict?.note ?? "",
       promptText: latestPrompt.get(item.case_id)?.text ?? "",
+      promptTextZh: promptZhByCase.get(item.case_id) ?? "",
       image,
       sourceImage,
       sourceLink: item.source.github_url || item.source.source_url,

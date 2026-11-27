@@ -132,10 +132,26 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
         <p class="verdict-panel__note">{caseItem.note || "无判定说明。"}</p>
       </section>
 
-      <section class="prompt-block" aria-labelledby="prompt-title">
-        <h2 id="prompt-title">提示词全文</h2>
+      <section class="prompt-block" aria-labelledby="prompt-title" data-prompt-block>
+        <div class="prompt-block__head">
+          <h2 id="prompt-title">提示词</h2>
+          {caseItem.promptTextZh && caseItem.promptText ? (
+            <div class="prompt-lang" role="group" aria-label="提示词语言">
+              <button type="button" class="prompt-lang__btn" data-prompt-lang="zh" aria-pressed="true">中文</button>
+              <button type="button" class="prompt-lang__btn" data-prompt-lang="en" aria-pressed="false">English</button>
+            </div>
+          ) : null}
+        </div>
         {caseItem.promptText ? (
-          <pre>{caseItem.promptText}</pre>
+          <>
+            <p class="prompt-block__note" data-prompt-note>
+              {caseItem.promptTextZh ? "中文为机器译文，英文为原始提示词" : "原始提示词（中文译文生成中）"}
+            </p>
+            {caseItem.promptTextZh ? (
+              <pre data-prompt-text="zh">{caseItem.promptTextZh}</pre>
+            ) : null}
+            <pre data-prompt-text="en" hidden={Boolean(caseItem.promptTextZh)}>{caseItem.promptText}</pre>
+          </>
         ) : (
           <p class="prompt-block__empty">无提示词记录。</p>
         )}
@@ -148,7 +164,7 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
             <li>
               <a href={item.href}>
                 <span>{item.title}</span>
-                <code>{item.gates.slice(0, 2).join(" · ") || item.categoryName}</code>
+                <code>{item.gates.slice(0, 2).map((gate) => gateLabel(gate)).join(" · ") || item.categoryName}</code>
               </a>
             </li>
           ))}
@@ -230,6 +246,42 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     box.addEventListener("click", (e: MouseEvent) => {
       if (e.target === box) box.close();
     });
+  }
+
+  const promptBlock = document.querySelector<HTMLElement>("[data-prompt-block]");
+  if (promptBlock) {
+    const buttons = [...promptBlock.querySelectorAll<HTMLButtonElement>("[data-prompt-lang]")];
+    const panes = new Map(
+      [...promptBlock.querySelectorAll<HTMLElement>("[data-prompt-text]")]
+        .map((el) => [el.dataset.promptText ?? "", el] as const)
+        .filter((entry) => entry[0] !== "")
+    );
+    const note = promptBlock.querySelector<HTMLElement>("[data-prompt-note]");
+    const apply = (lang: string): void => {
+      const target = panes.has(lang) ? lang : panes.has("zh") ? "zh" : "en";
+      for (const [key, el] of panes) el.hidden = key !== target;
+      for (const btn of buttons) btn.setAttribute("aria-pressed", String(btn.dataset.promptLang === target));
+      if (note) {
+        note.textContent = target === "zh"
+          ? "中文为机器译文，英文为原始提示词"
+          : "英文为原始提示词；中文为机器译文";
+      }
+      try {
+        localStorage.setItem("agnes-prompt-lang", target);
+      } catch {
+        /* 隐私模式忽略 */
+      }
+    };
+    for (const btn of buttons) {
+      btn.addEventListener("click", () => apply(btn.dataset.promptLang ?? "zh"));
+    }
+    let saved = "zh";
+    try {
+      saved = localStorage.getItem("agnes-prompt-lang") ?? "zh";
+    } catch {
+      /* 隐私模式忽略 */
+    }
+    apply(saved);
   }
 </script>
 
@@ -499,6 +551,50 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     margin: 0;
     font-size: 0.9375rem;
     line-height: 1.4;
+  }
+
+  .prompt-block__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .prompt-lang {
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-surface-muted);
+  }
+
+  .prompt-lang__btn {
+    min-width: 3.25rem;
+    min-height: 1.75rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+    font-weight: 650;
+    line-height: 1;
+  }
+
+  .prompt-lang__btn[aria-pressed="true"] {
+    background: var(--color-forest-deep);
+    color: #fff;
+  }
+
+  .prompt-block__note {
+    margin: 0.35rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+  }
+
+  .prompt-block pre[hidden] {
+    display: none;
   }
 
   .verdict-badge {
