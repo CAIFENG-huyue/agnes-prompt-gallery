@@ -56,7 +56,7 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
         <p class="source-block__meta">来源：freestylefly/awesome-gpt-image-2</p>
         {caseItem.image && caseItem.sourceImage ? (
           <div class="duo" data-duo>
-            <div class="duo__tabs" role="tablist">
+            <div class="duo__seg" role="tablist" aria-label="对照切换">
               <button type="button" class="duo__tab" role="tab" data-duo-tab="gen" aria-selected="true">
                 本站生成
               </button>
@@ -64,35 +64,38 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
                 开源原图
               </button>
             </div>
-            <figure class="duo__stage">
-              <img
-                class="duo__img"
-                data-duo-pane="gen"
-                src={caseItem.image.src}
-                srcset={caseItem.image.srcSet}
-                sizes="(min-width: 64rem) 44vw, 100vw"
-                width={caseItem.image.width}
-                height={caseItem.image.height}
-                alt={caseItem.image.alt}
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
-              <img
-                class="duo__img"
-                data-duo-pane="src"
-                src={caseItem.sourceImage.src}
-                srcset={caseItem.sourceImage.srcSet}
-                sizes="(min-width: 64rem) 44vw, 100vw"
-                width={caseItem.sourceImage.width}
-                height={caseItem.sourceImage.height}
-                alt={caseItem.sourceImage.alt}
-                loading="lazy"
-                decoding="async"
-                hidden
-              />
-            </figure>
-            <p class="duo__cap" data-duo-cap>本站生成 · agnes-image-2.5-flash</p>
+            <div class="duo__track" data-duo-track>
+              <figure class="duo__item" data-duo-pane="gen">
+                <img
+                  src={caseItem.image.src}
+                  srcset={caseItem.image.srcSet}
+                  sizes="(min-width: 56rem) 44vw, 100vw"
+                  width={caseItem.image.width}
+                  height={caseItem.image.height}
+                  alt={caseItem.image.alt}
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+                <figcaption>本站生成 · agnes-image-2.5-flash</figcaption>
+              </figure>
+              <figure class="duo__item" data-duo-pane="src">
+                <img
+                  src={caseItem.sourceImage.src}
+                  srcset={caseItem.sourceImage.srcSet}
+                  sizes="(min-width: 56rem) 44vw, 100vw"
+                  width={caseItem.sourceImage.width}
+                  height={caseItem.sourceImage.height}
+                  alt={caseItem.sourceImage.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>开源原图 · freestylefly/awesome-gpt-image-2</figcaption>
+              </figure>
+            </div>
+            <button type="button" class="duo__zoom" data-duo-zoom>
+              放大对比
+            </button>
           </div>
         ) : caseItem.image ? (
           <figure class="gen-figure">
@@ -153,39 +156,80 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
         <p class="related__all"><a href="/patterns/">查看全部规律</a></p>
       </nav>
     </div>
+
+    <dialog class="lbox" data-lbox aria-label="放大对比">
+      <div class="lbox__bar">
+        <span class="lbox__title">{caseItem.title}</span>
+        <button type="button" class="lbox__close" data-lbox-close aria-label="关闭">✕</button>
+      </div>
+      <div class="lbox__grid">
+        <figure class="lbox__item">
+          <img src={caseItem.image?.src ?? ""} alt={`${caseItem.title}：本站生成图`} />
+          <figcaption>本站生成 · agnes-image-2.5-flash</figcaption>
+        </figure>
+        <figure class="lbox__item">
+          <img src={caseItem.sourceImage?.src ?? ""} alt={`${caseItem.title}：开源项目原图`} />
+          <figcaption>开源原图 · freestylefly/awesome-gpt-image-2</figcaption>
+        </figure>
+      </div>
+    </dialog>
   </article>
 </BaseLayout>
 
 <script>
   for (const duo of document.querySelectorAll<HTMLElement>("[data-duo]")) {
     const tabs = [...duo.querySelectorAll<HTMLButtonElement>("[data-duo-tab]")];
-    const panes = [...duo.querySelectorAll<HTMLElement>("[data-duo-pane]")];
-    const cap = duo.querySelector<HTMLElement>("[data-duo-cap]");
-    const set = (name: string): void => {
-      for (const t of tabs) {
-        const on = t.dataset.duoTab === name;
+    const track = duo.querySelector<HTMLElement>("[data-duo-track]");
+    if (!track || tabs.length === 0) continue;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mark = (index: number): void => {
+      tabs.forEach((t, j) => {
+        const on = j === index;
         t.setAttribute("aria-selected", String(on));
         t.tabIndex = on ? 0 : -1;
-      }
-      for (const p of panes) p.hidden = p.dataset.duoPane !== name;
-      if (cap) {
-        cap.textContent = name === "gen"
-          ? "本站生成 · agnes-image-2.5-flash"
-          : "开源原图 · freestylefly/awesome-gpt-image-2";
-      }
+      });
+    };
+    const goTo = (index: number): void => {
+      mark(index);
+      track.scrollTo({
+        left: index * track.clientWidth,
+        behavior: reduce ? "auto" : "smooth",
+      });
     };
     tabs.forEach((t, i) => {
-      t.addEventListener("click", () => set(t.dataset.duoTab ?? "gen"));
+      t.addEventListener("click", () => goTo(i));
       t.addEventListener("keydown", (e: KeyboardEvent) => {
         if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
         e.preventDefault();
         const step = e.key === "ArrowRight" ? 1 : -1;
-        const next = tabs[(i + step + tabs.length) % tabs.length];
-        next.focus();
-        set(next.dataset.duoTab ?? "gen");
+        const next = (i + step + tabs.length) % tabs.length;
+        tabs[next].focus();
+        goTo(next);
       });
     });
-    set(tabs[0]?.dataset.duoTab ?? "gen");
+    let frame = 0;
+    track.addEventListener(
+      "scroll",
+      () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const index = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+          mark(index);
+        });
+      },
+      { passive: true },
+    );
+    mark(0);
+  }
+
+  const box = document.querySelector<HTMLDialogElement>("[data-lbox]");
+  const opener = document.querySelector<HTMLButtonElement>("[data-duo-zoom]");
+  if (box && opener) {
+    opener.addEventListener("click", () => box.showModal());
+    box.querySelector("[data-lbox-close]")?.addEventListener("click", () => box.close());
+    box.addEventListener("click", (e: MouseEvent) => {
+      if (e.target === box) box.close();
+    });
   }
 </script>
 
@@ -656,73 +700,203 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     }
   }
 
-  .duo__tabs {
-    display: inline-flex;
-    gap: 0.25rem;
-    padding: 0.2rem;
-    border: 1px solid var(--color-line);
-    border-radius: 999px;
-    background: var(--color-surface);
+  .duo__seg {
+    display: none;
   }
 
-  .duo__tab {
-    padding: 0.35rem 0.8rem;
-    border-radius: 999px;
-    color: var(--color-muted);
-    font-size: 0.78rem;
-    font-weight: 600;
-    line-height: 1.2;
+  .duo__track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
-  .duo__tab:hover {
-    color: var(--color-forest-deep);
-  }
-
-  .duo__tab:focus-visible {
-    outline: 2px solid var(--color-forest);
-    outline-offset: 2px;
-  }
-
-  .duo__tab[aria-selected="true"] {
-    background: var(--color-forest-deep);
-    color: #fff;
-  }
-
-  .duo__stage {
+  .duo__item {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 72vh;
-    margin: 0.45rem 0 0;
-    padding: 0.35rem;
+    flex-direction: column;
+    margin: 0;
     overflow: hidden;
     border: 1px solid var(--color-line);
     border-radius: 0.75rem;
     background: var(--color-surface-muted);
   }
 
-  .duo__img {
+  .duo__item img {
     display: block;
-    width: auto;
-    max-width: 100%;
-    max-height: calc(72vh - 0.7rem);
+    width: 100%;
     height: auto;
+    max-height: min(58vh, 40rem);
+    margin: auto;
     object-fit: contain;
   }
 
-  .duo__img[hidden] {
-    display: none !important;
+  .duo__item figcaption {
+    padding: 0.45rem 0.7rem;
+    border-top: 1px solid var(--color-line);
+    color: var(--color-muted);
+    background: var(--color-surface);
+    font-size: 0.6875rem;
+    line-height: 1.4;
   }
 
-  @media (max-width: 48rem) {
-    .duo__stage {
-      display: block;
-      max-height: none;
+  @media (max-width: 56rem) {
+    .duo__seg {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 0.5rem;
+      padding: 0.2rem;
+      border: 1px solid var(--color-line);
+      border-radius: 999px;
+      background: var(--color-surface);
     }
 
-    .duo__img {
-      width: 100%;
+    .duo__tab {
+      flex: 1;
+      min-height: 2.5rem;
+      border-radius: 999px;
+      color: var(--color-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+    }
+
+    .duo__tab:active {
+      transform: scale(0.985);
+    }
+
+    .duo__tab[aria-selected="true"] {
+      background: var(--color-forest-deep);
+      color: #fff;
+    }
+
+    .duo__track {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+    }
+
+    .duo__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .duo__item {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      border: 0;
+    }
+
+    .duo__item img {
       max-height: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .duo__tab {
+      transition: none;
+    }
+  }
+
+  .duo__zoom {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-forest-deep);
+    font-size: 0.75rem;
+    font-weight: 650;
+    transition: background-color 0.18s ease, transform 0.12s ease;
+  }
+
+  .duo__zoom:hover {
+    background: var(--color-surface-muted);
+  }
+
+  .duo__zoom:active {
+    transform: scale(0.985);
+  }
+
+  .lbox {
+    width: min(96vw, 75rem);
+    max-height: 92vh;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0.75rem;
+    background: #111;
+    color: #eee;
+  }
+
+  .lbox::backdrop {
+    background: rgb(10 10 10 / 78%);
+  }
+
+  .lbox__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .lbox__title {
+    overflow: hidden;
+    color: #ddd;
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lbox__close {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: auto;
+    border-radius: 50%;
+    background: #232323;
+    color: #eee;
+  }
+
+  .lbox__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    max-height: calc(92vh - 3.25rem);
+    padding: 0.5rem;
+    overflow: auto;
+  }
+
+  .lbox__item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .lbox__item img {
+    width: 100%;
+    height: auto;
+    max-height: 78vh;
+    margin: auto;
+    object-fit: contain;
+  }
+
+  .lbox__item figcaption {
+    padding: 0.35rem 0.2rem 0;
+    color: #9a9a9a;
+    font-size: 0.7rem;
+  }
+
+  @media (max-width: 56rem) {
+    .lbox__grid {
+      grid-template-columns: 1fr;
     }
   }
 
