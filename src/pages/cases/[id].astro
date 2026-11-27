@@ -90,7 +90,7 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption>开源原图 · freestylefly/awesome-gpt-image-2</figcaption>
+                <figcaption>开源原图 · awesome-gpt-image-2</figcaption>
               </figure>
             </div>
             <button type="button" class="duo__zoom" data-duo-zoom>
@@ -169,7 +169,7 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
         </figure>
         <figure class="lbox__item">
           <img src={caseItem.sourceImage?.src ?? ""} alt={`${caseItem.title}：开源项目原图`} />
-          <figcaption>开源原图 · freestylefly/awesome-gpt-image-2</figcaption>
+          <figcaption>开源原图 · awesome-gpt-image-2</figcaption>
         </figure>
       </div>
     </dialog>
@@ -713,6 +713,8 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
   .duo__item {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-width: 0;
     margin: 0;
     overflow: hidden;
     border: 1px solid var(--color-line);
@@ -736,6 +738,8 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     background: var(--color-surface);
     font-size: 0.6875rem;
     line-height: 1.4;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
   }
 
   @media (max-width: 56rem) {
@@ -892,6 +896,7 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     padding: 0.35rem 0.2rem 0;
     color: #9a9a9a;
     font-size: 0.7rem;
+    overflow-wrap: anywhere;
   }
 
   @media (max-width: 56rem) {
