@@ -719,16 +719,17 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     overflow: hidden;
     border: 1px solid var(--color-line);
     border-radius: 0.75rem;
-    background: var(--color-surface-muted);
+    background: var(--color-surface);
   }
 
   .duo__item img {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%;
     max-height: min(58vh, 40rem);
     margin: auto;
-    object-fit: contain;
+    border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0;
   }
 
   .duo__item figcaption {
@@ -885,11 +886,12 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
   }
 
   .lbox__item img {
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%;
     max-height: 78vh;
     margin: auto;
-    object-fit: contain;
+    border-radius: 0.5rem;
   }
 
   .lbox__item figcaption {
