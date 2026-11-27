@@ -49,39 +49,38 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
 
     <div class="case-detail__media">
       <section class="gen-block" aria-labelledby="gen-title">
-        <h2 id="gen-title" class="block-label"><span>本站生成</span><span class="block-label__hint">agnes-image-2.5-flash</span></h2>
-        {caseItem.image ? (
-          <figure class="gen-figure">
-            <img
-              src={caseItem.image.src}
-              srcset={caseItem.image.srcSet}
-              sizes="(min-width: 64rem) 44vw, 100vw"
-              width={caseItem.image.width}
-              height={caseItem.image.height}
-              alt={caseItem.image.alt}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-            <figcaption>{caseItem.verdict === "FAIL" ? "本站在同题提示词下的成图（失败样本）" : "本站在同题提示词下的成图"}</figcaption>
-          </figure>
-        ) : (
-          <div class="gen-figure gen-figure--empty">本站未生成这张图（缺图）。</div>
-        )}
-      </section>
-
-      <section class="source-block" aria-labelledby="source-title">
-        <h2 id="source-title" class="block-label">
-          <span>开源项目原图</span>
+        <h2 id="gen-title" class="block-label">
+          <span>对照</span>
           <a href={caseItem.sourceLink} rel="noreferrer">原链接</a>
         </h2>
         <p class="source-block__meta">来源：freestylefly/awesome-gpt-image-2</p>
-
-        {caseItem.sourceImage && caseItem.image ? (
-          <figure class="compare" data-compare>
-            <div class="compare__stage" data-compare-stage>
+        {caseItem.image && caseItem.sourceImage ? (
+          <div class="duo" data-duo>
+            <div class="duo__tabs" role="tablist">
+              <button type="button" class="duo__tab" role="tab" data-duo-tab="gen" aria-selected="true">
+                本站生成
+              </button>
+              <button type="button" class="duo__tab" role="tab" data-duo-tab="src" aria-selected="false">
+                开源原图
+              </button>
+            </div>
+            <figure class="duo__stage">
               <img
-                class="compare__img"
+                class="duo__img"
+                data-duo-pane="gen"
+                src={caseItem.image.src}
+                srcset={caseItem.image.srcSet}
+                sizes="(min-width: 64rem) 44vw, 100vw"
+                width={caseItem.image.width}
+                height={caseItem.image.height}
+                alt={caseItem.image.alt}
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+              <img
+                class="duo__img"
+                data-duo-pane="src"
                 src={caseItem.sourceImage.src}
                 srcset={caseItem.sourceImage.srcSet}
                 sizes="(min-width: 64rem) 44vw, 100vw"
@@ -90,55 +89,18 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
                 alt={caseItem.sourceImage.alt}
                 loading="lazy"
                 decoding="async"
+                hidden
               />
-              <div class="compare__clip" data-compare-clip>
-                <img
-                  class="compare__img"
-                  src={caseItem.image.src}
-                  srcset={caseItem.image.srcSet}
-                  sizes="(min-width: 64rem) 44vw, 100vw"
-                  width={caseItem.image.width}
-                  height={caseItem.image.height}
-                  alt={caseItem.image.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="compare__tag compare__tag--left">本站生成</span>
-              <span class="compare__tag compare__tag--right">开源项目原图</span>
-              <span class="compare__divider" data-compare-divider aria-hidden="true"></span>
-            </div>
-            <input
-              class="compare__range"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              step="1"
-              aria-label="左右拖动比较本站生成图与开源项目原图"
-              data-compare-range
-            />
+            </figure>
+            <p class="duo__cap" data-duo-cap>本站生成 · agnes-image-2.5-flash</p>
+          </div>
+        ) : caseItem.image ? (
+          <figure class="gen-figure">
+            <img src={caseItem.image.src} width={caseItem.image.width} height={caseItem.image.height} alt={caseItem.image.alt} />
+            <figcaption>本站生成 · agnes-image-2.5-flash</figcaption>
           </figure>
         ) : (
-          <div class="compare compare--empty">缺少对照图。</div>
-        )}
-
-        {caseItem.sourceImage ? (
-          <figure class="source-figure">
-            <img
-              src={caseItem.sourceImage.src}
-              srcset={caseItem.sourceImage.srcSet}
-              sizes="(min-width: 64rem) 44vw, 100vw"
-              width={caseItem.sourceImage.width}
-              height={caseItem.sourceImage.height}
-              alt={`${caseItem.title}：开源项目原图`}
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>开源项目原图 · freestylefly/awesome-gpt-image-2 · <a href={caseItem.sourceLink} rel="noreferrer">原链接</a></figcaption>
-          </figure>
-        ) : (
-          <p class="source-block__meta">缺少开源项目原图对照。</p>
+          <div class="gen-figure gen-figure--empty">本站未生成这张图（缺图）。</div>
         )}
       </section>
     </div>
@@ -195,18 +157,16 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
 </BaseLayout>
 
 <script>
-  for (const compare of document.querySelectorAll<HTMLElement>("[data-compare]")) {
-    const range = compare.querySelector<HTMLInputElement>("[data-compare-range]");
-    const clip = compare.querySelector<HTMLElement>("[data-compare-clip]");
-    const divider = compare.querySelector<HTMLElement>("[data-compare-divider]");
-    if (!range || !clip) continue;
-    const sync = (): void => {
-      const value = Number(range.value);
-      clip.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
-      if (divider) divider.style.left = `${value}%`;
+  for (const duo of document.querySelectorAll<HTMLElement>("[data-duo]")) {
+    const tabs = [...duo.querySelectorAll<HTMLButtonElement>("[data-duo-tab]")];
+    const panes = [...duo.querySelectorAll<HTMLElement>("[data-duo-pane]")];
+    const cap = duo.querySelector<HTMLElement>("[data-duo-cap]");
+    const set = (name: string): void => {
+      for (const t of tabs) t.setAttribute("aria-selected", String(t.dataset.duoTab === name));
+      for (const p of panes) p.hidden = p.dataset.duoPane !== name;
+      if (cap) cap.textContent = name === "gen" ? "本站生成 · agnes-image-2.5-flash" : "开源原图 · freestylefly/awesome-gpt-image-2";
     };
-    range.addEventListener("input", sync);
-    sync();
+    for (const t of tabs) t.addEventListener("click", () => set(t.dataset.duoTab ?? "gen"));
   }
 </script>
 
@@ -676,4 +636,48 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
       font-size: 0.75rem;
     }
   }
+
+  .duo__tabs {
+    display: inline-flex;
+    gap: 0.25rem;
+    padding: 0.2rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-surface);
+  }
+
+  .duo__tab {
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .duo__tab[aria-selected="true"] {
+    background: var(--color-forest-deep);
+    color: #fff;
+  }
+
+  .duo__stage {
+    margin: 0.45rem 0 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface-muted);
+  }
+
+  .duo__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .duo__cap {
+    margin: 0.35rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.6875rem;
+  }
+
 </style>
