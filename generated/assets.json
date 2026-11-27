@@ -17859,7 +17859,7 @@
     "sha256": "f682d4f34b4ab76b13eff5a5d5ce2efee1dc0db157878a157835fe0d2c8611cd",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-00a11d19d7.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-00a11d19d7.png",
     "source_asset_id": "h1-00a11d19d7",
     "format": "webp"
   },
@@ -17870,7 +17870,7 @@
     "sha256": "713a445c3a05bc56792eb3541aee09183faaff0fb287043a4a5db6e6f0a78896",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-00a11d19d7.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-00a11d19d7.png",
     "source_asset_id": "h1-00a11d19d7",
     "format": "webp"
   },
@@ -17881,7 +17881,7 @@
     "sha256": "e386f895e76edee7a2d0fd78bd6d0fee0eabaff2cba7d70d0c67b189b52585cb",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-00a11d19d7.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-00a11d19d7.png",
     "source_asset_id": "h1-00a11d19d7",
     "format": "webp"
   },
@@ -17892,7 +17892,7 @@
     "sha256": "010771bb7aba07572e51a3c304425c18dd61d7f0c258a2967fa7888584fed205",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-00d00c74cc.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-00d00c74cc.png",
     "source_asset_id": "h1-00d00c74cc",
     "format": "webp"
   },
@@ -17903,7 +17903,7 @@
     "sha256": "6cf482c257c775224a558ee4dd54555a04283467c8f200987e56548d3f449a56",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-00d00c74cc.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-00d00c74cc.png",
     "source_asset_id": "h1-00d00c74cc",
     "format": "webp"
   },
@@ -17914,7 +17914,7 @@
     "sha256": "208f905728b37f9dedb412285446f3b50a4b9ccc8e80c69b84c06cb9e3a82d53",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-00d00c74cc.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-00d00c74cc.png",
     "source_asset_id": "h1-00d00c74cc",
     "format": "webp"
   },
@@ -17925,7 +17925,7 @@
     "sha256": "dc75466fcd765eb32e160a41ba1ea331c3316b0c4d305c2271c65319d336cc36",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-066eb801d3.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-066eb801d3.png",
     "source_asset_id": "h1-066eb801d3",
     "format": "webp"
   },
@@ -17936,7 +17936,7 @@
     "sha256": "816dc8cb1667db3fabc42e74cde910e99c739b9a00c2090793b3d8ee87433a4e",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-066eb801d3.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-066eb801d3.png",
     "source_asset_id": "h1-066eb801d3",
     "format": "webp"
   },
@@ -17947,7 +17947,7 @@
     "sha256": "6c3a2362f99f23e5c7f7e2a8bcee61526bcc8c38ccbccba94d0ec8e8ada99e41",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-066eb801d3.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-066eb801d3.png",
     "source_asset_id": "h1-066eb801d3",
     "format": "webp"
   },
@@ -17958,7 +17958,7 @@
     "sha256": "af93140c1a8687d8848c738893cb4a7a49304fa2304e29d58e6e7b6792a65238",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-07459a1070.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-07459a1070.png",
     "source_asset_id": "h1-07459a1070",
     "format": "webp"
   },
@@ -17969,7 +17969,7 @@
     "sha256": "2340c208faf7445f9dced6247ef1e468c0861de8365f18766d44ea2c32949eeb",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-07459a1070.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-07459a1070.png",
     "source_asset_id": "h1-07459a1070",
     "format": "webp"
   },
@@ -17980,7 +17980,7 @@
     "sha256": "40dc8c6521fd1d7e56b3fe14e445883dba0480119f13ba612246e5b0a1208cba",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-07459a1070.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-07459a1070.png",
     "source_asset_id": "h1-07459a1070",
     "format": "webp"
   },
@@ -17991,7 +17991,7 @@
     "sha256": "0d3209f661848f9db026e55412d4dc3e5a81ad91688b8191e0376b1d3c28302c",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-09854d0f4f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-09854d0f4f.png",
     "source_asset_id": "h1-09854d0f4f",
     "format": "webp"
   },
@@ -18002,7 +18002,7 @@
     "sha256": "af8884b06811c3b822990f37b7ef90cb5e862a74f84cd782052424e373aba626",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-09854d0f4f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-09854d0f4f.png",
     "source_asset_id": "h1-09854d0f4f",
     "format": "webp"
   },
@@ -18013,7 +18013,7 @@
     "sha256": "b153a59e5465d739ca3054b0c065688cc9f4951fbf4649ee54ee5e5af2289fb2",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-09854d0f4f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-09854d0f4f.png",
     "source_asset_id": "h1-09854d0f4f",
     "format": "webp"
   },
@@ -18024,7 +18024,7 @@
     "sha256": "bbb5d25b34eb9c39f43ba4912ccbd89d02b4a610d2de8fdb7b37018f21a78460",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0ca4b8d8ce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0ca4b8d8ce.png",
     "source_asset_id": "h1-0ca4b8d8ce",
     "format": "webp"
   },
@@ -18035,7 +18035,7 @@
     "sha256": "4c4488970e897dfa1d621b4915bf5fb00d96a513a7e67927866a73bea820b53b",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0ca4b8d8ce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0ca4b8d8ce.png",
     "source_asset_id": "h1-0ca4b8d8ce",
     "format": "webp"
   },
@@ -18046,7 +18046,7 @@
     "sha256": "887bc9fd36f75502101c03bb70ed41f9b5bed55338bdf828f63d6d962126d980",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0ca4b8d8ce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0ca4b8d8ce.png",
     "source_asset_id": "h1-0ca4b8d8ce",
     "format": "webp"
   },
@@ -18057,7 +18057,7 @@
     "sha256": "e0919a04408ab0582c38cae160e4d2d5ea903fc21019614efa46e660d403316c",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0cc3c8dc18.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0cc3c8dc18.png",
     "source_asset_id": "h1-0cc3c8dc18",
     "format": "webp"
   },
@@ -18068,7 +18068,7 @@
     "sha256": "4372c53851ff94b4983e06236038e4039934e3d3aa079522a4f789a59deab41b",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0cc3c8dc18.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0cc3c8dc18.png",
     "source_asset_id": "h1-0cc3c8dc18",
     "format": "webp"
   },
@@ -18079,7 +18079,7 @@
     "sha256": "4247dd610e4eff22dc33138db7f62697fa0fae7ea4dbdb1695c86a0263712ac4",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0cc3c8dc18.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0cc3c8dc18.png",
     "source_asset_id": "h1-0cc3c8dc18",
     "format": "webp"
   },
@@ -18090,7 +18090,7 @@
     "sha256": "ec86e3835d832b59eaa3ebe757917103d4788e8e46107ae1dd039751ae8ad2e5",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0e69dc95ed.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0e69dc95ed.png",
     "source_asset_id": "h1-0e69dc95ed",
     "format": "webp"
   },
@@ -18101,7 +18101,7 @@
     "sha256": "71c7efd420bcf51414bd2274ed2a855d7155b2fed1ed808c8f41d63bc835ab8c",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0e69dc95ed.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0e69dc95ed.png",
     "source_asset_id": "h1-0e69dc95ed",
     "format": "webp"
   },
@@ -18112,7 +18112,7 @@
     "sha256": "3bcbae653a3e5658bc0d7e6a7541130f20f969c5a18a6b099f879610397009b6",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-0e69dc95ed.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-0e69dc95ed.png",
     "source_asset_id": "h1-0e69dc95ed",
     "format": "webp"
   },
@@ -18123,7 +18123,7 @@
     "sha256": "4553bd15be3220cf7289af026f59cc4724daeba97bfc1dfe961cda9f19ce6f15",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-109ee3b885.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-109ee3b885.png",
     "source_asset_id": "h1-109ee3b885",
     "format": "webp"
   },
@@ -18134,7 +18134,7 @@
     "sha256": "2518a74f0516c07f27d485bb92a60f6e1c016e2ee2dd95cdab6d39da6b21e5d1",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-109ee3b885.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-109ee3b885.png",
     "source_asset_id": "h1-109ee3b885",
     "format": "webp"
   },
@@ -18145,7 +18145,7 @@
     "sha256": "a5d08427bd6012fc0bed950b3300e964943424aa3402ccf6a5f07baa6a7518c5",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-109ee3b885.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-109ee3b885.png",
     "source_asset_id": "h1-109ee3b885",
     "format": "webp"
   },
@@ -18156,7 +18156,7 @@
     "sha256": "3e0feffd20a69cb612b94e4e028687403a8146058e449b18f4457fce2131e967",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-1162363500.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-1162363500.png",
     "source_asset_id": "h1-1162363500",
     "format": "webp"
   },
@@ -18167,7 +18167,7 @@
     "sha256": "a4a5ef8d24c878355ecd89b31beceaabcc1a5f6ddc82cc90d05c07fa2261cc85",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-1162363500.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-1162363500.png",
     "source_asset_id": "h1-1162363500",
     "format": "webp"
   },
@@ -18178,7 +18178,7 @@
     "sha256": "195fd0b7f5138150a2673c2cdc745c6af0bd320293c9e13cd573be80a5db407e",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-1162363500.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-1162363500.png",
     "source_asset_id": "h1-1162363500",
     "format": "webp"
   },
@@ -18189,7 +18189,7 @@
     "sha256": "1d47ae57fd9c9a616ea02afa46d1d1b1bb53e5bdde9d45d66b914fb37cde9d25",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-135e7fe228.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-135e7fe228.png",
     "source_asset_id": "h1-135e7fe228",
     "format": "webp"
   },
@@ -18200,7 +18200,7 @@
     "sha256": "27b5857872a55c2b813b4ddbfa7bc676ae3ddf4d1155470943918c9bd12d530e",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-135e7fe228.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-135e7fe228.png",
     "source_asset_id": "h1-135e7fe228",
     "format": "webp"
   },
@@ -18211,7 +18211,7 @@
     "sha256": "4a902298cc69faa8d1f7e47f4ff58b199c3e4b192357b96e44b48093bdcdb41d",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-135e7fe228.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-135e7fe228.png",
     "source_asset_id": "h1-135e7fe228",
     "format": "webp"
   },
@@ -18222,7 +18222,7 @@
     "sha256": "064907bf9ae19fcc96fc520b71c9b1b47418d2418b351cfd3fb325d5bc72c8df",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-14b027ee84.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-14b027ee84.png",
     "source_asset_id": "h1-14b027ee84",
     "format": "webp"
   },
@@ -18233,7 +18233,7 @@
     "sha256": "8dbdf98721adfb6d947a6607cb75af3463aab1374a5bc7b60a7bd3305b1cc78b",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-14b027ee84.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-14b027ee84.png",
     "source_asset_id": "h1-14b027ee84",
     "format": "webp"
   },
@@ -18244,7 +18244,7 @@
     "sha256": "57c26531ec0e68d902fc863d0e57b33e1d3c5c78c5eb1f87ce91f6fd5012e672",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-14b027ee84.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-14b027ee84.png",
     "source_asset_id": "h1-14b027ee84",
     "format": "webp"
   },
@@ -18255,7 +18255,7 @@
     "sha256": "f1d1a4580a015b83cc48ff1470f5d426c2e4afb80cfc48fc2dacaf38681f1833",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-1f565eb3c2.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-1f565eb3c2.png",
     "source_asset_id": "h1-1f565eb3c2",
     "format": "webp"
   },
@@ -18266,7 +18266,7 @@
     "sha256": "b9bd8d5fdc9c41f6f31d13f48f9f315a6700f2f85fe634e9d8f7e67302eea390",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-1f565eb3c2.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-1f565eb3c2.png",
     "source_asset_id": "h1-1f565eb3c2",
     "format": "webp"
   },
@@ -18277,7 +18277,7 @@
     "sha256": "05b8ae8f71b20e9256b516985549010564960c7089088e0826685ec0e539b35d",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-1f565eb3c2.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-1f565eb3c2.png",
     "source_asset_id": "h1-1f565eb3c2",
     "format": "webp"
   },
@@ -18288,7 +18288,7 @@
     "sha256": "78849ff528c5439f5d81fcbcef5172c990495d64161863f14718355952ce095b",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2176c63cc4.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2176c63cc4.png",
     "source_asset_id": "h1-2176c63cc4",
     "format": "webp"
   },
@@ -18299,7 +18299,7 @@
     "sha256": "a2b1ab9f0115e941dcfd36fc0dd18e3d3be697735178b10b9d7e342e83fb72e4",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2176c63cc4.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2176c63cc4.png",
     "source_asset_id": "h1-2176c63cc4",
     "format": "webp"
   },
@@ -18310,7 +18310,7 @@
     "sha256": "c9f50bbade82cd08b9fa13e6ed8e5e69d9831671b4bfabd69ce453d57166d371",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2176c63cc4.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2176c63cc4.png",
     "source_asset_id": "h1-2176c63cc4",
     "format": "webp"
   },
@@ -18321,7 +18321,7 @@
     "sha256": "925314aa7b429600ee82cea941cad4688f2343c7c14f97ff6aeaa03e205bac0e",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-226dc9b555.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-226dc9b555.png",
     "source_asset_id": "h1-226dc9b555",
     "format": "webp"
   },
@@ -18332,7 +18332,7 @@
     "sha256": "7c6438e99e3694d1a5bcc532f1da079496c5c4b1ec8eee05757070094e8e392c",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-226dc9b555.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-226dc9b555.png",
     "source_asset_id": "h1-226dc9b555",
     "format": "webp"
   },
@@ -18343,7 +18343,7 @@
     "sha256": "0fcc36d13566b55428f82ddbe21688d09bfc2bb300641b832ed9ae566c43093d",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-226dc9b555.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-226dc9b555.png",
     "source_asset_id": "h1-226dc9b555",
     "format": "webp"
   },
@@ -18354,7 +18354,7 @@
     "sha256": "775bf8294e023e7cb77f77560452d9a532403a814b054a6721fb92ecfbb3aeb4",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-22e3fa6373.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-22e3fa6373.png",
     "source_asset_id": "h1-22e3fa6373",
     "format": "webp"
   },
@@ -18365,7 +18365,7 @@
     "sha256": "7174b6f8cad3deed73a6e1ab267c7c92e892e9162b247ff71e112dd3b8101e9c",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-22e3fa6373.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-22e3fa6373.png",
     "source_asset_id": "h1-22e3fa6373",
     "format": "webp"
   },
@@ -18376,7 +18376,7 @@
     "sha256": "bc7637a5568e90e3600f5762f6e6e8595255599d318ae8521f8397f4f3d556e8",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-22e3fa6373.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-22e3fa6373.png",
     "source_asset_id": "h1-22e3fa6373",
     "format": "webp"
   },
@@ -18387,7 +18387,7 @@
     "sha256": "7f865c4cceb82ffe6e4cbaf9301e20e783b610e12f959c27a0748c9af30b1542",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2474893851.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2474893851.png",
     "source_asset_id": "h1-2474893851",
     "format": "webp"
   },
@@ -18398,7 +18398,7 @@
     "sha256": "74a30582785b9d942d24496a77ad64c65302551c1417dfdd4476a6b6576d613b",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2474893851.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2474893851.png",
     "source_asset_id": "h1-2474893851",
     "format": "webp"
   },
@@ -18409,7 +18409,7 @@
     "sha256": "2a061baeb1c786b1fbefa5922b6acf897c681200fe32070f52a9e507d02f72e3",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2474893851.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2474893851.png",
     "source_asset_id": "h1-2474893851",
     "format": "webp"
   },
@@ -18420,7 +18420,7 @@
     "sha256": "6b55d4f43d1c5955b2a47f31a31869e15e645c9e00ac452f3f011e3a2e7fe215",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2796e966d0.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2796e966d0.png",
     "source_asset_id": "h1-2796e966d0",
     "format": "webp"
   },
@@ -18431,7 +18431,7 @@
     "sha256": "a88ec8e080019877a06b6c46221c5fe22a7245203c9be09441c975476182b8bf",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2796e966d0.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2796e966d0.png",
     "source_asset_id": "h1-2796e966d0",
     "format": "webp"
   },
@@ -18442,7 +18442,7 @@
     "sha256": "5ca9c0b6f2a2fd2a4b92bd8c107b02ffb3d06404a4f3230a721b288997751378",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-2796e966d0.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-2796e966d0.png",
     "source_asset_id": "h1-2796e966d0",
     "format": "webp"
   },
@@ -18453,7 +18453,7 @@
     "sha256": "cde63e0293bc1cbf0972c6d2386d23448609e41f4b23ebac4a89e6c7c2e910b6",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-3361f86410.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-3361f86410.png",
     "source_asset_id": "h1-3361f86410",
     "format": "webp"
   },
@@ -18464,7 +18464,7 @@
     "sha256": "bb0de4ad6eefe540d961246e6db7d7ee71fd6321d02aeac04695a39e130c2ecc",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-3361f86410.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-3361f86410.png",
     "source_asset_id": "h1-3361f86410",
     "format": "webp"
   },
@@ -18475,7 +18475,7 @@
     "sha256": "3371132ea2440c4edfb2937b1c9dacd9a27939d2e5634963b4c56192406a6ba6",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-3361f86410.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-3361f86410.png",
     "source_asset_id": "h1-3361f86410",
     "format": "webp"
   },
@@ -18486,7 +18486,7 @@
     "sha256": "0963a1545bf8045735bcf0d6b4323243d453482c6f209bd1015d631c04353957",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-34c45cbdce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-34c45cbdce.png",
     "source_asset_id": "h1-34c45cbdce",
     "format": "webp"
   },
@@ -18497,7 +18497,7 @@
     "sha256": "0e3fe51d246c793549308f69b8b967209616346b342b414caae543968496d08a",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-34c45cbdce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-34c45cbdce.png",
     "source_asset_id": "h1-34c45cbdce",
     "format": "webp"
   },
@@ -18508,7 +18508,7 @@
     "sha256": "e700a11f670ef86ddc955515a1a1a217c91141e06f645680ab7eb5d21e0521df",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-34c45cbdce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-34c45cbdce.png",
     "source_asset_id": "h1-34c45cbdce",
     "format": "webp"
   },
@@ -18519,7 +18519,7 @@
     "sha256": "ec1878ed685bda9aad77d3f4f0769d3bacfe4c3fb4d2a2cc0a6042600801e3a1",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-3e903a89f2.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-3e903a89f2.png",
     "source_asset_id": "h1-3e903a89f2",
     "format": "webp"
   },
@@ -18530,7 +18530,7 @@
     "sha256": "56d37a4c4640037dce2f9e52f463fa2db6a3b62e6c3e328b1e6ffe92c529fe0c",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-3e903a89f2.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-3e903a89f2.png",
     "source_asset_id": "h1-3e903a89f2",
     "format": "webp"
   },
@@ -18541,7 +18541,7 @@
     "sha256": "967060b6f7a2cb6a1f223a2537eba6ac0872b9ca97c0c35cbfff7bc6b70b4c33",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-3e903a89f2.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-3e903a89f2.png",
     "source_asset_id": "h1-3e903a89f2",
     "format": "webp"
   },
@@ -18552,7 +18552,7 @@
     "sha256": "94a06b8d02f6920937591622dcff2cc0e2448d5d307934431c66823729c81f4b",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-467a5b3a36.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-467a5b3a36.png",
     "source_asset_id": "h1-467a5b3a36",
     "format": "webp"
   },
@@ -18563,7 +18563,7 @@
     "sha256": "0ee2f044bf18c802c2bd531ca3c67a2692423ab285e326cdd971de1a3c5ccc16",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-467a5b3a36.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-467a5b3a36.png",
     "source_asset_id": "h1-467a5b3a36",
     "format": "webp"
   },
@@ -18574,7 +18574,7 @@
     "sha256": "37734355ad5b47b2a10d3a490784bb9d95d4cdb0bcb33e4b0e6f5a4b30891953",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-467a5b3a36.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-467a5b3a36.png",
     "source_asset_id": "h1-467a5b3a36",
     "format": "webp"
   },
@@ -18585,7 +18585,7 @@
     "sha256": "2d8b5ef83b5dd9ae0d602fb2898538dc9c3d7b999fa3fd1d3c36ecaba0068a28",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-49e0867678.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-49e0867678.png",
     "source_asset_id": "h1-49e0867678",
     "format": "webp"
   },
@@ -18596,7 +18596,7 @@
     "sha256": "03679827e255e5d9c69dfb437cefd7031c97b9c718b7fb25e605f46a1c82149c",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-49e0867678.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-49e0867678.png",
     "source_asset_id": "h1-49e0867678",
     "format": "webp"
   },
@@ -18607,7 +18607,7 @@
     "sha256": "0332b97604373e3067cc32e8589947eb557d224f95d4191f37454f4fb5a6e0ea",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-49e0867678.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-49e0867678.png",
     "source_asset_id": "h1-49e0867678",
     "format": "webp"
   },
@@ -18618,7 +18618,7 @@
     "sha256": "66ef3511b33c4079373a76b9624eac871402144d5f1cd70452ca20ddf18ae242",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-4eb5663d3f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-4eb5663d3f.png",
     "source_asset_id": "h1-4eb5663d3f",
     "format": "webp"
   },
@@ -18629,7 +18629,7 @@
     "sha256": "505c73ce70d775610e1e03ef519b08630048664c2830d84cee2aceaaea3db8a4",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-4eb5663d3f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-4eb5663d3f.png",
     "source_asset_id": "h1-4eb5663d3f",
     "format": "webp"
   },
@@ -18640,7 +18640,7 @@
     "sha256": "5dddfc83406352a24b7c47582b938b35ca1084705ab7043233fdc8a298e05699",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-4eb5663d3f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-4eb5663d3f.png",
     "source_asset_id": "h1-4eb5663d3f",
     "format": "webp"
   },
@@ -18651,7 +18651,7 @@
     "sha256": "46cff660ef5d74f51f684062fd885de7971de553279e8c0c87472ed21c65a155",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-4f95004e9a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-4f95004e9a.png",
     "source_asset_id": "h1-4f95004e9a",
     "format": "webp"
   },
@@ -18662,7 +18662,7 @@
     "sha256": "3225c8c7352c97eb8425f88f555c28e09f5d7f5c0082d755c5bca3d9ca2d3687",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-4f95004e9a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-4f95004e9a.png",
     "source_asset_id": "h1-4f95004e9a",
     "format": "webp"
   },
@@ -18673,7 +18673,7 @@
     "sha256": "f62d3348feb2f1c8609038820db18a882ba7cb2bf505ef50272ea885dce25539",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-4f95004e9a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-4f95004e9a.png",
     "source_asset_id": "h1-4f95004e9a",
     "format": "webp"
   },
@@ -18684,7 +18684,7 @@
     "sha256": "4ac85c774052a8368b445e0952d5534a8d9366ba2d9bb5065869fb2b879ddbab",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-50af972f2d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-50af972f2d.png",
     "source_asset_id": "h1-50af972f2d",
     "format": "webp"
   },
@@ -18695,7 +18695,7 @@
     "sha256": "3ed1412283d3987d7fe83e6df5f19103a57ee74237edc43f959900459ce731b4",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-50af972f2d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-50af972f2d.png",
     "source_asset_id": "h1-50af972f2d",
     "format": "webp"
   },
@@ -18706,7 +18706,7 @@
     "sha256": "cbc24ffb37bb6de0d19df4695dfb4a132bd85c87fcedda6277b90d21e60849e6",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-50af972f2d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-50af972f2d.png",
     "source_asset_id": "h1-50af972f2d",
     "format": "webp"
   },
@@ -18717,7 +18717,7 @@
     "sha256": "3ba7c597fdb4817e34156891aaca22157b766786831311da97178211f693f38f",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-532a4e4509.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-532a4e4509.png",
     "source_asset_id": "h1-532a4e4509",
     "format": "webp"
   },
@@ -18728,7 +18728,7 @@
     "sha256": "068c6b8bd17e7faa29953d4a400f4725fc51bfe513a543dc03c947d5ce9eb7ee",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-532a4e4509.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-532a4e4509.png",
     "source_asset_id": "h1-532a4e4509",
     "format": "webp"
   },
@@ -18739,7 +18739,7 @@
     "sha256": "56dbd5492f64646f8cbd4a8d7098d9736afe79d1a0138b4529f77959c1097945",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-532a4e4509.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-532a4e4509.png",
     "source_asset_id": "h1-532a4e4509",
     "format": "webp"
   },
@@ -18750,7 +18750,7 @@
     "sha256": "04dee738b7b2ce86394dbace4505910cea0f4dc20b98e32154ce52b47a24e0f7",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-56e3ec6e49.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-56e3ec6e49.png",
     "source_asset_id": "h1-56e3ec6e49",
     "format": "webp"
   },
@@ -18761,7 +18761,7 @@
     "sha256": "1c1f21fb55bc0b25682931c0a291606de0a3132a3666802ffb4fc545e4aa7001",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-56e3ec6e49.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-56e3ec6e49.png",
     "source_asset_id": "h1-56e3ec6e49",
     "format": "webp"
   },
@@ -18772,7 +18772,7 @@
     "sha256": "181f2c28ec1b32fa8035c5a57e23eae98d85354a3ed1e76b979b6a3fd6bb29a7",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-56e3ec6e49.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-56e3ec6e49.png",
     "source_asset_id": "h1-56e3ec6e49",
     "format": "webp"
   },
@@ -18783,7 +18783,7 @@
     "sha256": "90d1806ef9204b5f03b32963a775f37aa6cca838fa6d267a94dbc64aecc0d08b",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5bff25fe1d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5bff25fe1d.png",
     "source_asset_id": "h1-5bff25fe1d",
     "format": "webp"
   },
@@ -18794,7 +18794,7 @@
     "sha256": "7ac2307c4807946a01139dfd5e3722223ad3a123cc835f0c378be154b7582001",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5bff25fe1d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5bff25fe1d.png",
     "source_asset_id": "h1-5bff25fe1d",
     "format": "webp"
   },
@@ -18805,7 +18805,7 @@
     "sha256": "2e9430bd849defd3547b3bf9cf918b3b20903dd61d6a2cb08269578e4b616432",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5bff25fe1d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5bff25fe1d.png",
     "source_asset_id": "h1-5bff25fe1d",
     "format": "webp"
   },
@@ -18816,7 +18816,7 @@
     "sha256": "0597f7cff609c7f204825f313827751f3c6f41abd4d5836c2f4964004357effc",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5c292d08a6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5c292d08a6.png",
     "source_asset_id": "h1-5c292d08a6",
     "format": "webp"
   },
@@ -18827,7 +18827,7 @@
     "sha256": "1ee1f5e83f11e019ceedb772e506ea98d5b49cf53ef34ef072fde5fda4bce8fb",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5c292d08a6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5c292d08a6.png",
     "source_asset_id": "h1-5c292d08a6",
     "format": "webp"
   },
@@ -18838,7 +18838,7 @@
     "sha256": "9bfd883777343fa01f5e94ac0edb1957bb0ba6c2a693789e6469c14c99c48baf",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5c292d08a6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5c292d08a6.png",
     "source_asset_id": "h1-5c292d08a6",
     "format": "webp"
   },
@@ -18849,7 +18849,7 @@
     "sha256": "5a5cff9ae2cb76022c6726f6a73ad23370e7c327be03c194e0ebc3559acec219",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5d63acaf13.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5d63acaf13.png",
     "source_asset_id": "h1-5d63acaf13",
     "format": "webp"
   },
@@ -18860,7 +18860,7 @@
     "sha256": "7e1b23ebd544c30e32235d5b42a11909a28527e387f1b78d58fda94bc221fa74",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5d63acaf13.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5d63acaf13.png",
     "source_asset_id": "h1-5d63acaf13",
     "format": "webp"
   },
@@ -18871,7 +18871,7 @@
     "sha256": "b89d31512b7d47bc4d455f7121804d27d7128a06350cc6525171b52dda42bd16",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5d63acaf13.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5d63acaf13.png",
     "source_asset_id": "h1-5d63acaf13",
     "format": "webp"
   },
@@ -18882,7 +18882,7 @@
     "sha256": "ffd3bfae8497b9fa7b78e126ab990b02304eb69f83a2f2cd323a08b94a1a15de",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5e46c572aa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5e46c572aa.png",
     "source_asset_id": "h1-5e46c572aa",
     "format": "webp"
   },
@@ -18893,7 +18893,7 @@
     "sha256": "cf1854c41f36e3d8a3cd3739441bea72fc440869b4ed2af79ae0628892346aec",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5e46c572aa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5e46c572aa.png",
     "source_asset_id": "h1-5e46c572aa",
     "format": "webp"
   },
@@ -18904,7 +18904,7 @@
     "sha256": "4a15bd322672c3f941f9de05bd131c38acf15b8513b527abd68378d730501966",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-5e46c572aa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-5e46c572aa.png",
     "source_asset_id": "h1-5e46c572aa",
     "format": "webp"
   },
@@ -18915,7 +18915,7 @@
     "sha256": "17fba46eea2f23c51c83d22f7c2e964672804faa06bc623f71e16b1cba360edc",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-660c082ff1.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-660c082ff1.png",
     "source_asset_id": "h1-660c082ff1",
     "format": "webp"
   },
@@ -18926,7 +18926,7 @@
     "sha256": "a46711676447f7f9d722085304c62926f91f0725fffba066a87ed23d87105c90",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-660c082ff1.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-660c082ff1.png",
     "source_asset_id": "h1-660c082ff1",
     "format": "webp"
   },
@@ -18937,7 +18937,7 @@
     "sha256": "d03e716798aac9ee1112e453a05344fcadcab1e5a6ed8a3de416612b6350540c",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-660c082ff1.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-660c082ff1.png",
     "source_asset_id": "h1-660c082ff1",
     "format": "webp"
   },
@@ -18948,7 +18948,7 @@
     "sha256": "c2344d690eb7bb1d86b1b95da2ab19d2398969d4f724722a2efacd07ddfb346e",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-66539cc7eb.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-66539cc7eb.png",
     "source_asset_id": "h1-66539cc7eb",
     "format": "webp"
   },
@@ -18959,7 +18959,7 @@
     "sha256": "ca0d0bd1ba50878859fc2312faba2e8af6f50abd5dd59d8240ee4a1bffbf19e5",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-66539cc7eb.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-66539cc7eb.png",
     "source_asset_id": "h1-66539cc7eb",
     "format": "webp"
   },
@@ -18970,7 +18970,7 @@
     "sha256": "d068e4076b9577837676c8bc4ed4daf42ec6cad3de4f688a493944e55dd2cb5d",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-66539cc7eb.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-66539cc7eb.png",
     "source_asset_id": "h1-66539cc7eb",
     "format": "webp"
   },
@@ -18981,7 +18981,7 @@
     "sha256": "b6d004b3a2fd1000afc385129dd8a1cbd7665c4bb1ab89e80474e2d01f47648b",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-66fe6f7848.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-66fe6f7848.png",
     "source_asset_id": "h1-66fe6f7848",
     "format": "webp"
   },
@@ -18992,7 +18992,7 @@
     "sha256": "f454132b22768919306807a52b2ab6b1a16719c89bc21260c3edbb50f8380164",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-66fe6f7848.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-66fe6f7848.png",
     "source_asset_id": "h1-66fe6f7848",
     "format": "webp"
   },
@@ -19003,7 +19003,7 @@
     "sha256": "3cb1e07649cdc0d593a1516a4542b01ecca987e0d2d4d9b27f5b369cad4c0b0f",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-66fe6f7848.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-66fe6f7848.png",
     "source_asset_id": "h1-66fe6f7848",
     "format": "webp"
   },
@@ -19014,7 +19014,7 @@
     "sha256": "13dc69ba1eb19349e4996a0602c6654e2f24f976f08d0291f315cc49bf7c1493",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-676d782a77.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-676d782a77.png",
     "source_asset_id": "h1-676d782a77",
     "format": "webp"
   },
@@ -19025,7 +19025,7 @@
     "sha256": "712c520cb459b60071061070aadfa79c9a1e9f118b57f2a93501a94bdbab52fa",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-676d782a77.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-676d782a77.png",
     "source_asset_id": "h1-676d782a77",
     "format": "webp"
   },
@@ -19036,7 +19036,7 @@
     "sha256": "b78634ad27b5703d9aead37b07381bd04da4988f6dca39aad3f6af09ae9bd495",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-676d782a77.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-676d782a77.png",
     "source_asset_id": "h1-676d782a77",
     "format": "webp"
   },
@@ -19047,7 +19047,7 @@
     "sha256": "3303705ebdaec4699c64566db04b1b7a9705761d6ccc7a910b81f2c1f6c1775f",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6dcbcd97ce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6dcbcd97ce.png",
     "source_asset_id": "h1-6dcbcd97ce",
     "format": "webp"
   },
@@ -19058,7 +19058,7 @@
     "sha256": "d433e173a4f77d0cc83a35e81e3ada612465b1220b169939586dec0f01f364d7",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6dcbcd97ce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6dcbcd97ce.png",
     "source_asset_id": "h1-6dcbcd97ce",
     "format": "webp"
   },
@@ -19069,7 +19069,7 @@
     "sha256": "8c94a6b89d971abe038d22d61b7928a76cd09bdb78503dfb8b96f3269dea00e8",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6dcbcd97ce.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6dcbcd97ce.png",
     "source_asset_id": "h1-6dcbcd97ce",
     "format": "webp"
   },
@@ -19080,7 +19080,7 @@
     "sha256": "d3b4cefb73a6d6b494df48965105c2874e696bcf32863ebb8914ab76150a979a",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6e3e35327e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6e3e35327e.png",
     "source_asset_id": "h1-6e3e35327e",
     "format": "webp"
   },
@@ -19091,7 +19091,7 @@
     "sha256": "6b3667d6a79cf66cffb0b61e83eebab832f31866e608dffd6ef8b9b9e1cc9310",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6e3e35327e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6e3e35327e.png",
     "source_asset_id": "h1-6e3e35327e",
     "format": "webp"
   },
@@ -19102,7 +19102,7 @@
     "sha256": "2f314d6af628bf5f4943b14098bb7f6faef214c909350defbaf244e518d578f7",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6e3e35327e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6e3e35327e.png",
     "source_asset_id": "h1-6e3e35327e",
     "format": "webp"
   },
@@ -19113,7 +19113,7 @@
     "sha256": "e2346e97ada54d7f1c3d8b5717304980b92b6acdbf3a309d79a7598d127acac8",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6f3e2c48ed.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6f3e2c48ed.png",
     "source_asset_id": "h1-6f3e2c48ed",
     "format": "webp"
   },
@@ -19124,7 +19124,7 @@
     "sha256": "f5d8e508a39664de359b7ec0f2af4ab1a200b986bd573e8d79f169a52b926978",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6f3e2c48ed.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6f3e2c48ed.png",
     "source_asset_id": "h1-6f3e2c48ed",
     "format": "webp"
   },
@@ -19135,7 +19135,7 @@
     "sha256": "10853a2c3513e047d4c12ed4fa5961e0788cf2c928c84f56f9f21e0d3a7be275",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6f3e2c48ed.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6f3e2c48ed.png",
     "source_asset_id": "h1-6f3e2c48ed",
     "format": "webp"
   },
@@ -19146,7 +19146,7 @@
     "sha256": "f645765aba94c057374c4be50d63b4c3fa6d113b6b1f6280e88ca68d868d5b4a",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6f650b5747.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6f650b5747.png",
     "source_asset_id": "h1-6f650b5747",
     "format": "webp"
   },
@@ -19157,7 +19157,7 @@
     "sha256": "3709fedba4c4566a37562f1dddc5da2b7efba48d17dc9139de398c5046dfb367",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6f650b5747.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6f650b5747.png",
     "source_asset_id": "h1-6f650b5747",
     "format": "webp"
   },
@@ -19168,7 +19168,7 @@
     "sha256": "e642e66a66cc06d7ba74cbe17ea85a9d9817f457aace2b2cab974e55ae973972",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-6f650b5747.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-6f650b5747.png",
     "source_asset_id": "h1-6f650b5747",
     "format": "webp"
   },
@@ -19179,7 +19179,7 @@
     "sha256": "204745517f6302bbe111fb0318faa8ffc24c80a19c711e86721f5fffd314e96e",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-72c7c0ef3b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-72c7c0ef3b.png",
     "source_asset_id": "h1-72c7c0ef3b",
     "format": "webp"
   },
@@ -19190,7 +19190,7 @@
     "sha256": "0a8d37259b78dfe9014f414a9969031330bd2dc066b30b11f2f671d286e02d62",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-72c7c0ef3b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-72c7c0ef3b.png",
     "source_asset_id": "h1-72c7c0ef3b",
     "format": "webp"
   },
@@ -19201,7 +19201,7 @@
     "sha256": "71527f337c53df22238e779d996a274b5c703acaf85950e9c5b203ce166835d7",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-72c7c0ef3b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-72c7c0ef3b.png",
     "source_asset_id": "h1-72c7c0ef3b",
     "format": "webp"
   },
@@ -19212,7 +19212,7 @@
     "sha256": "237c485c337614ba8793a6663873583d108749418450c264724c915c8fe40216",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-796c28d462.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-796c28d462.png",
     "source_asset_id": "h1-796c28d462",
     "format": "webp"
   },
@@ -19223,7 +19223,7 @@
     "sha256": "c37db9b67583e4cf012713cb5f6a78ea5f7089e17ad3c15c0afc7d58c0563deb",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-796c28d462.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-796c28d462.png",
     "source_asset_id": "h1-796c28d462",
     "format": "webp"
   },
@@ -19234,7 +19234,7 @@
     "sha256": "ba199fb27a9f11969e2970d184dfff5116333c914b2bbfca1eec545124dc94c6",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-796c28d462.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-796c28d462.png",
     "source_asset_id": "h1-796c28d462",
     "format": "webp"
   },
@@ -19245,7 +19245,7 @@
     "sha256": "fb2434d3aa97ee1f7c98fbd13034d8a6dda5fe6e3cb1cfe1c01fb3316e37ca29",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-79df50b2ef.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-79df50b2ef.png",
     "source_asset_id": "h1-79df50b2ef",
     "format": "webp"
   },
@@ -19256,7 +19256,7 @@
     "sha256": "64df6fcb87cb8da53a2e6c3a3f2233f992a80da4d19f1acc441cdce7c2fb51c4",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-79df50b2ef.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-79df50b2ef.png",
     "source_asset_id": "h1-79df50b2ef",
     "format": "webp"
   },
@@ -19267,7 +19267,7 @@
     "sha256": "c72a3c5c774cb6f48b5c1daf73d69a1cf8dd40657a2cc347b9d94763c3274067",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-79df50b2ef.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-79df50b2ef.png",
     "source_asset_id": "h1-79df50b2ef",
     "format": "webp"
   },
@@ -19278,7 +19278,7 @@
     "sha256": "503cf50c911a6f29dddc766a191fefc0ff7ef3d3f09eeacc448e9bb3db2d4e12",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7d324d6e68.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7d324d6e68.png",
     "source_asset_id": "h1-7d324d6e68",
     "format": "webp"
   },
@@ -19289,7 +19289,7 @@
     "sha256": "fc8c5a879c1a2d22c45a742827b38e9533ee5ac627fac2b9eab6ef09045a4c3f",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7d324d6e68.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7d324d6e68.png",
     "source_asset_id": "h1-7d324d6e68",
     "format": "webp"
   },
@@ -19300,7 +19300,7 @@
     "sha256": "667c300ba1f5b1e8e7a5e1c23417ab78606db6650c2a010db1317d177529e3c2",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7d324d6e68.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7d324d6e68.png",
     "source_asset_id": "h1-7d324d6e68",
     "format": "webp"
   },
@@ -19311,7 +19311,7 @@
     "sha256": "f502bf79c4b8a2c2f18610012f38d065e5c7b61db7b70d0ad377105abcd9bd6a",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e4200a3b8.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e4200a3b8.png",
     "source_asset_id": "h1-7e4200a3b8",
     "format": "webp"
   },
@@ -19322,7 +19322,7 @@
     "sha256": "d5e184b3048b4e4f821c5b55b768b15d0f66a8b38385528fe63d4ccef82ebd87",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e4200a3b8.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e4200a3b8.png",
     "source_asset_id": "h1-7e4200a3b8",
     "format": "webp"
   },
@@ -19333,7 +19333,7 @@
     "sha256": "f6c37b49b0e4e35fccf267b8f68bf471aacc4672259d5f7501267d6946b65a31",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e4200a3b8.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e4200a3b8.png",
     "source_asset_id": "h1-7e4200a3b8",
     "format": "webp"
   },
@@ -19344,7 +19344,7 @@
     "sha256": "2c4c041ba5b130a5175040e33c4e29a6947c258cb617c84237ff0f9598456324",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e490b9c46.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e490b9c46.png",
     "source_asset_id": "h1-7e490b9c46",
     "format": "webp"
   },
@@ -19355,7 +19355,7 @@
     "sha256": "58146211e4c1f848223b7f38b9dfa95eba61ec761bc4746e47ab7b518ae1ce1b",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e490b9c46.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e490b9c46.png",
     "source_asset_id": "h1-7e490b9c46",
     "format": "webp"
   },
@@ -19366,7 +19366,7 @@
     "sha256": "76482c89afabccf3ca4ae9fc7ca4219ffd9d6c2e10dc1e9fe5cf10424f36cb3f",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e490b9c46.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e490b9c46.png",
     "source_asset_id": "h1-7e490b9c46",
     "format": "webp"
   },
@@ -19377,7 +19377,7 @@
     "sha256": "effe674d204ea27834e7ba8adf3ae916825c2325ccd3be3e72f115356624cb3e",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e4f904844.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e4f904844.png",
     "source_asset_id": "h1-7e4f904844",
     "format": "webp"
   },
@@ -19388,7 +19388,7 @@
     "sha256": "d15314b294e3af78671e98d5a017cc504d08e0bd992ca7dc7c41d45b6aa69cb6",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e4f904844.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e4f904844.png",
     "source_asset_id": "h1-7e4f904844",
     "format": "webp"
   },
@@ -19399,7 +19399,7 @@
     "sha256": "a07b202134e458e4aa21eae854bdff8a953da21f97957b66a01c5f3fcb839d1d",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-7e4f904844.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-7e4f904844.png",
     "source_asset_id": "h1-7e4f904844",
     "format": "webp"
   },
@@ -19410,7 +19410,7 @@
     "sha256": "7b41f8619b58542b7007f8c2932d66375f2eb545aca4ff2d744443f8a5f6a029",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-818c30f3bd.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-818c30f3bd.png",
     "source_asset_id": "h1-818c30f3bd",
     "format": "webp"
   },
@@ -19421,7 +19421,7 @@
     "sha256": "2bc57b5beb334cf6eecaa67b6f6d21d069c867bec765e46d4aeb9b4274953c59",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-818c30f3bd.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-818c30f3bd.png",
     "source_asset_id": "h1-818c30f3bd",
     "format": "webp"
   },
@@ -19432,7 +19432,7 @@
     "sha256": "7d72f8ffc9a68a8e18e379353f8b6e5801a7d6ceda84a4c4a77dfccc2339f4c7",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-818c30f3bd.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-818c30f3bd.png",
     "source_asset_id": "h1-818c30f3bd",
     "format": "webp"
   },
@@ -19443,7 +19443,7 @@
     "sha256": "65c23a5577af1c6e72ecd2473a86c62b8a5b91b7ffa85ea49f45f1c8d251388c",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-81cff6ff61.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-81cff6ff61.png",
     "source_asset_id": "h1-81cff6ff61",
     "format": "webp"
   },
@@ -19454,7 +19454,7 @@
     "sha256": "0e2d999c301b208dd4b32528ea504f974d73864715e2c395325cac2a998b34a0",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-81cff6ff61.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-81cff6ff61.png",
     "source_asset_id": "h1-81cff6ff61",
     "format": "webp"
   },
@@ -19465,7 +19465,7 @@
     "sha256": "7241e48c30b9d0064d578d6c959275c5940e92c3aa61d077e146ddd7afc77dc4",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-81cff6ff61.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-81cff6ff61.png",
     "source_asset_id": "h1-81cff6ff61",
     "format": "webp"
   },
@@ -19476,7 +19476,7 @@
     "sha256": "e05aa8b831c24ae0d3c0518c4d27c29d6bc45899b8d75a31694359e0d41b8369",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8238ad38ca.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8238ad38ca.png",
     "source_asset_id": "h1-8238ad38ca",
     "format": "webp"
   },
@@ -19487,7 +19487,7 @@
     "sha256": "7bbc7260a2c9e004e985e82fa37131a505a4541b86fc3aefb8757e6ae07290fb",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8238ad38ca.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8238ad38ca.png",
     "source_asset_id": "h1-8238ad38ca",
     "format": "webp"
   },
@@ -19498,7 +19498,7 @@
     "sha256": "1e9789e96618f13da74389c3ecb15fbe2f94bf1086a00859b062a9f9c7d28c9b",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8238ad38ca.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8238ad38ca.png",
     "source_asset_id": "h1-8238ad38ca",
     "format": "webp"
   },
@@ -19509,7 +19509,7 @@
     "sha256": "d568006875109a921142b2b60b8b29ef53343044b93335ad8a408e5fd997627e",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-83ca0a30ab.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-83ca0a30ab.png",
     "source_asset_id": "h1-83ca0a30ab",
     "format": "webp"
   },
@@ -19520,7 +19520,7 @@
     "sha256": "5b20b6515f9901e5b6cb8519009a2ddaae2b19b10a56d0ed11d0c2031f8f60f6",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-83ca0a30ab.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-83ca0a30ab.png",
     "source_asset_id": "h1-83ca0a30ab",
     "format": "webp"
   },
@@ -19531,7 +19531,7 @@
     "sha256": "6f12b211f08b7783efaf33244f509bfb14c0dbeabdb2fb9f9a536a3d5de753b2",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-83ca0a30ab.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-83ca0a30ab.png",
     "source_asset_id": "h1-83ca0a30ab",
     "format": "webp"
   },
@@ -19542,7 +19542,7 @@
     "sha256": "98083b967f25712367a95b2f02705abce674ba2300818bc72b814c34698170b0",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-868be1a807.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-868be1a807.png",
     "source_asset_id": "h1-868be1a807",
     "format": "webp"
   },
@@ -19553,7 +19553,7 @@
     "sha256": "e29e0c56fe8a4417cc526b34e6215f3db07a1c4f9d16be45d47472032061993c",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-868be1a807.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-868be1a807.png",
     "source_asset_id": "h1-868be1a807",
     "format": "webp"
   },
@@ -19564,7 +19564,7 @@
     "sha256": "9f4b5739523a15108a1de53bf267120042bc19e99ae27cddf935f4fce96e0c8b",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-868be1a807.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-868be1a807.png",
     "source_asset_id": "h1-868be1a807",
     "format": "webp"
   },
@@ -19575,7 +19575,7 @@
     "sha256": "c341cb3bcc056e2cb20a4a43822c88dac013f7f6d7e286f52488309b91635aea",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8768647135.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8768647135.png",
     "source_asset_id": "h1-8768647135",
     "format": "webp"
   },
@@ -19586,7 +19586,7 @@
     "sha256": "1079ec3f48d0290ceb1d8cf2ff3e70cf00a01856cad0a119d6e4de5303daad24",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8768647135.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8768647135.png",
     "source_asset_id": "h1-8768647135",
     "format": "webp"
   },
@@ -19597,7 +19597,7 @@
     "sha256": "352e3525a35a22abfc7ede00aa9ab7f1cd09644feb492cdae276a4df08562063",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8768647135.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8768647135.png",
     "source_asset_id": "h1-8768647135",
     "format": "webp"
   },
@@ -19608,7 +19608,7 @@
     "sha256": "45fe04dd45f27e7c06eab68540c62b9213255190802d876e90c2e6b6e30517e1",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-88cac37e29.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-88cac37e29.png",
     "source_asset_id": "h1-88cac37e29",
     "format": "webp"
   },
@@ -19619,7 +19619,7 @@
     "sha256": "3369039822ef7f47b66827a3388e60d64581c5d320097b284d002b50812e7e75",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-88cac37e29.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-88cac37e29.png",
     "source_asset_id": "h1-88cac37e29",
     "format": "webp"
   },
@@ -19630,7 +19630,7 @@
     "sha256": "2fd1b0753d5d4675385a3dc8067116957268fb5ef660502e362099ec7dccc66c",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-88cac37e29.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-88cac37e29.png",
     "source_asset_id": "h1-88cac37e29",
     "format": "webp"
   },
@@ -19641,7 +19641,7 @@
     "sha256": "e529583ebe3285d26442d6b8ecacb47848bfa6fb7128af793672c1d626edab29",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8f40b84457.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8f40b84457.png",
     "source_asset_id": "h1-8f40b84457",
     "format": "webp"
   },
@@ -19652,7 +19652,7 @@
     "sha256": "6535c5ffe4391278f4ae010137a02959e03d3e0aad29285ea440cb7acbd64219",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8f40b84457.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8f40b84457.png",
     "source_asset_id": "h1-8f40b84457",
     "format": "webp"
   },
@@ -19663,7 +19663,7 @@
     "sha256": "8683e681116b0535939df5b26d58547191cc8a5403d726b9db1d556a79f324c5",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8f40b84457.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8f40b84457.png",
     "source_asset_id": "h1-8f40b84457",
     "format": "webp"
   },
@@ -19674,7 +19674,7 @@
     "sha256": "53802926096954c7f1427cf84100b1aa13e1ac34b63988ccbc401ac0777b56ba",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8fbf067ab7.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8fbf067ab7.png",
     "source_asset_id": "h1-8fbf067ab7",
     "format": "webp"
   },
@@ -19685,7 +19685,7 @@
     "sha256": "d9c083a43fa0003d827d9be47e7698bcb65e56bbc219b7ab63f95693b0a4544f",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8fbf067ab7.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8fbf067ab7.png",
     "source_asset_id": "h1-8fbf067ab7",
     "format": "webp"
   },
@@ -19696,7 +19696,7 @@
     "sha256": "1ee942d1b4459681f35f1fd524a4e2f44e5c37130ab4ffc0a53546d7e58c05df",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-8fbf067ab7.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-8fbf067ab7.png",
     "source_asset_id": "h1-8fbf067ab7",
     "format": "webp"
   },
@@ -19707,7 +19707,7 @@
     "sha256": "4bceac7d2865d309f633bb1795b6dc47a49460f2f72bfef7aaa354190b975fb8",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9007c76018.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9007c76018.png",
     "source_asset_id": "h1-9007c76018",
     "format": "webp"
   },
@@ -19718,7 +19718,7 @@
     "sha256": "1a70401faab28466a57319c3a4397e2c1a4cef508c8917997b692d95d93a94c2",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9007c76018.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9007c76018.png",
     "source_asset_id": "h1-9007c76018",
     "format": "webp"
   },
@@ -19729,7 +19729,7 @@
     "sha256": "bfd78d4a84436653a13df206c077856779466a04edd6b5708f6879f6f3fe3664",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9007c76018.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9007c76018.png",
     "source_asset_id": "h1-9007c76018",
     "format": "webp"
   },
@@ -19740,7 +19740,7 @@
     "sha256": "fec5ac0f2586ce95fa834fd2222c11f670eb31da3a36cb653774a000f6cbba3c",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9060712cde.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9060712cde.png",
     "source_asset_id": "h1-9060712cde",
     "format": "webp"
   },
@@ -19751,7 +19751,7 @@
     "sha256": "d2d2847aaa9655fa1da966fde66974d4fe3d7efbf46917fbede1e71d4462e042",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9060712cde.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9060712cde.png",
     "source_asset_id": "h1-9060712cde",
     "format": "webp"
   },
@@ -19762,7 +19762,7 @@
     "sha256": "acaf57bf7282c2e628732b5e9d2a9407731e55216f1c3b4547ce71ff9f1ae0c5",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9060712cde.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9060712cde.png",
     "source_asset_id": "h1-9060712cde",
     "format": "webp"
   },
@@ -19773,7 +19773,7 @@
     "sha256": "854ba98f35c060a5d0d053672864dde5145add5bc4720156fbf1c5b371609864",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9a4d668cc8.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9a4d668cc8.png",
     "source_asset_id": "h1-9a4d668cc8",
     "format": "webp"
   },
@@ -19784,7 +19784,7 @@
     "sha256": "50010422871f5df4346654b674f76ced6aa90f2b34e34b86e375daad1d04d276",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9a4d668cc8.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9a4d668cc8.png",
     "source_asset_id": "h1-9a4d668cc8",
     "format": "webp"
   },
@@ -19795,7 +19795,7 @@
     "sha256": "bc47ac82d4908e9a306fbf9c24532c50a647cce16bcef12160e2a32da2939f86",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9a4d668cc8.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9a4d668cc8.png",
     "source_asset_id": "h1-9a4d668cc8",
     "format": "webp"
   },
@@ -19806,7 +19806,7 @@
     "sha256": "9e25098c7ff937a2ed7ae397dde6ab60a61f9306b08bd40ae092d383d6df0753",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9ac55ab0aa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9ac55ab0aa.png",
     "source_asset_id": "h1-9ac55ab0aa",
     "format": "webp"
   },
@@ -19817,7 +19817,7 @@
     "sha256": "0477bcd5f463c43e1b509334176b9b1b2ad54495b170eb948d0963201855aaad",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9ac55ab0aa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9ac55ab0aa.png",
     "source_asset_id": "h1-9ac55ab0aa",
     "format": "webp"
   },
@@ -19828,7 +19828,7 @@
     "sha256": "918fa79fbf77fa05794d9b9523c6004c62985076618b2c6d67de2f20adef98b8",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9ac55ab0aa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9ac55ab0aa.png",
     "source_asset_id": "h1-9ac55ab0aa",
     "format": "webp"
   },
@@ -19839,7 +19839,7 @@
     "sha256": "54c2fae46ec0b1bb0645e70a6054af674425cdb035ae7e49361816b22c24a232",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9e1e3ee466.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9e1e3ee466.png",
     "source_asset_id": "h1-9e1e3ee466",
     "format": "webp"
   },
@@ -19850,7 +19850,7 @@
     "sha256": "8ad2f090c5fd9ffa8bc604fef9022218b5856483ead0735b2245df9d6a1f369f",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9e1e3ee466.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9e1e3ee466.png",
     "source_asset_id": "h1-9e1e3ee466",
     "format": "webp"
   },
@@ -19861,7 +19861,7 @@
     "sha256": "59fff8856ad19e92d222ce8d19919460c24a92fc4c21f4be0a7340dca18da388",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-9e1e3ee466.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-9e1e3ee466.png",
     "source_asset_id": "h1-9e1e3ee466",
     "format": "webp"
   },
@@ -19872,7 +19872,7 @@
     "sha256": "ec0b7c61cbe49a72c8d25fac84920663c194938f38427e6b2675c96f820513f0",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a1f323c080.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a1f323c080.png",
     "source_asset_id": "h1-a1f323c080",
     "format": "webp"
   },
@@ -19883,7 +19883,7 @@
     "sha256": "f631f6344e1ead404261aa7659e5a109bbf0b93398a399a86d1cb254d2465382",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a1f323c080.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a1f323c080.png",
     "source_asset_id": "h1-a1f323c080",
     "format": "webp"
   },
@@ -19894,7 +19894,7 @@
     "sha256": "e7a7fe8b6cea2afc3db2f908a581f1df0cd3bf54e0863093ceed02fb690ce93a",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a1f323c080.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a1f323c080.png",
     "source_asset_id": "h1-a1f323c080",
     "format": "webp"
   },
@@ -19905,7 +19905,7 @@
     "sha256": "d49df4362a69da981e71653eab548a14c3bb43a3a20048f2c7b08d27ef510bee",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a49bedca22.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a49bedca22.png",
     "source_asset_id": "h1-a49bedca22",
     "format": "webp"
   },
@@ -19916,7 +19916,7 @@
     "sha256": "0be3ca1c13d29358188172065781944135a4ffcffccf58c52aa09f969fc94138",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a49bedca22.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a49bedca22.png",
     "source_asset_id": "h1-a49bedca22",
     "format": "webp"
   },
@@ -19927,7 +19927,7 @@
     "sha256": "4f00117003c25f45ef7650cad75f2055878eed9797a8d34ff121e3c7be406b38",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a49bedca22.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a49bedca22.png",
     "source_asset_id": "h1-a49bedca22",
     "format": "webp"
   },
@@ -19938,7 +19938,7 @@
     "sha256": "6122d5dbd05ae4fedf4dff2b232aca3e82863a3e613e3f4eb2258b281e027edf",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a56ebc369b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a56ebc369b.png",
     "source_asset_id": "h1-a56ebc369b",
     "format": "webp"
   },
@@ -19949,7 +19949,7 @@
     "sha256": "693aca2a0b4ed97c99917efea1fa8fc090e91406db9787f1d2bd56278a2afaff",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a56ebc369b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a56ebc369b.png",
     "source_asset_id": "h1-a56ebc369b",
     "format": "webp"
   },
@@ -19960,7 +19960,7 @@
     "sha256": "210c41baea0825eeaa166cc303589011508dbc991ab41e2a496ab161eb73a6cc",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a56ebc369b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a56ebc369b.png",
     "source_asset_id": "h1-a56ebc369b",
     "format": "webp"
   },
@@ -19971,7 +19971,7 @@
     "sha256": "4ef2dd3ecfa5bfe63a1d8062ee9aff6656f7b6df0221ffac5696139758d443a2",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a58ea76ab1.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a58ea76ab1.png",
     "source_asset_id": "h1-a58ea76ab1",
     "format": "webp"
   },
@@ -19982,7 +19982,7 @@
     "sha256": "9d904a5ec645b0bd4b8a429964fb020dea8fb0f876f56a4dbedbbe7b92b6359e",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a58ea76ab1.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a58ea76ab1.png",
     "source_asset_id": "h1-a58ea76ab1",
     "format": "webp"
   },
@@ -19993,7 +19993,7 @@
     "sha256": "73cb103c0afad2649ed192fa60271ca72ed8edefe802c65860fb91cfb9a677bc",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a58ea76ab1.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a58ea76ab1.png",
     "source_asset_id": "h1-a58ea76ab1",
     "format": "webp"
   },
@@ -20004,7 +20004,7 @@
     "sha256": "bd9598c6de9e56ba70318fd72a1d06e3e0683afa7dccb69c9252e7c3cfc6bb0e",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a8581974bc.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a8581974bc.png",
     "source_asset_id": "h1-a8581974bc",
     "format": "webp"
   },
@@ -20015,7 +20015,7 @@
     "sha256": "dcef3ad343f921edb5e49de6f2a6c8c99d309b32a738036c1a410a5a5058d832",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a8581974bc.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a8581974bc.png",
     "source_asset_id": "h1-a8581974bc",
     "format": "webp"
   },
@@ -20026,7 +20026,7 @@
     "sha256": "2f204f3e5e8b2018a9f111cbc89395d0560765c31e456ad7128374b2d43b2013",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a8581974bc.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a8581974bc.png",
     "source_asset_id": "h1-a8581974bc",
     "format": "webp"
   },
@@ -20037,7 +20037,7 @@
     "sha256": "d37d6796bfa9ce872e31e913a8085a87ef4b93f76dfc30f67856570b9eb1473f",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a8b20f6aa6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a8b20f6aa6.png",
     "source_asset_id": "h1-a8b20f6aa6",
     "format": "webp"
   },
@@ -20048,7 +20048,7 @@
     "sha256": "02c37155d4ed77058e0e77880ab43beb751f4f4bec44f24ea3c3f16e942e4c21",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a8b20f6aa6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a8b20f6aa6.png",
     "source_asset_id": "h1-a8b20f6aa6",
     "format": "webp"
   },
@@ -20059,7 +20059,7 @@
     "sha256": "3fdeaf625ab25730ba14b6e270035be48cb6f2962b259cf70c758e92ba2d1ac5",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a8b20f6aa6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a8b20f6aa6.png",
     "source_asset_id": "h1-a8b20f6aa6",
     "format": "webp"
   },
@@ -20070,7 +20070,7 @@
     "sha256": "1e454eeb79569723d540c62b68cde00ee5b2c93f32c5eb2fa6180b157e17f612",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a95e3e352a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a95e3e352a.png",
     "source_asset_id": "h1-a95e3e352a",
     "format": "webp"
   },
@@ -20081,7 +20081,7 @@
     "sha256": "e8da24f6fc4c7cd8045bf89ea717d2ad21529466aad4e5121d41b315eee63adc",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a95e3e352a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a95e3e352a.png",
     "source_asset_id": "h1-a95e3e352a",
     "format": "webp"
   },
@@ -20092,7 +20092,7 @@
     "sha256": "bf1aa772b9d67cd0cc09520c12e808603781a31671b2dd9a177c10b857914d48",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a95e3e352a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a95e3e352a.png",
     "source_asset_id": "h1-a95e3e352a",
     "format": "webp"
   },
@@ -20103,7 +20103,7 @@
     "sha256": "5a98726f4b3f16963ebed7586ef8a847723b61f3ba450bd64413545609f3d689",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a9f75c7993.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a9f75c7993.png",
     "source_asset_id": "h1-a9f75c7993",
     "format": "webp"
   },
@@ -20114,7 +20114,7 @@
     "sha256": "7c422f4d38e87b5fc0785bc4506c0b8ad43084eaeb9dd900750790e49b7d16b0",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a9f75c7993.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a9f75c7993.png",
     "source_asset_id": "h1-a9f75c7993",
     "format": "webp"
   },
@@ -20125,7 +20125,7 @@
     "sha256": "0a59c33ecea0f3c403022357e557d4244f6337747bbea25349759c1ab75083b4",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-a9f75c7993.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-a9f75c7993.png",
     "source_asset_id": "h1-a9f75c7993",
     "format": "webp"
   },
@@ -20136,7 +20136,7 @@
     "sha256": "6f93e465a128e8838196783e8df7ad01de69b6228c422a507223116efb62ad02",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-adb13c8d3e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-adb13c8d3e.png",
     "source_asset_id": "h1-adb13c8d3e",
     "format": "webp"
   },
@@ -20147,7 +20147,7 @@
     "sha256": "bc7af096d9e6ea757a07229b21d69e2f35e2b1122f8be56ade4d5659a8780bd0",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-adb13c8d3e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-adb13c8d3e.png",
     "source_asset_id": "h1-adb13c8d3e",
     "format": "webp"
   },
@@ -20158,7 +20158,7 @@
     "sha256": "97844688304b70970007bd42ce8271e2da244aef34ca7f9c215c80cbb715fed9",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-adb13c8d3e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-adb13c8d3e.png",
     "source_asset_id": "h1-adb13c8d3e",
     "format": "webp"
   },
@@ -20169,7 +20169,7 @@
     "sha256": "53b1ad8dad54840802174e0372166e787e23e4edb62475b838aec2597017f155",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-b516d84118.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-b516d84118.png",
     "source_asset_id": "h1-b516d84118",
     "format": "webp"
   },
@@ -20180,7 +20180,7 @@
     "sha256": "82120de188db269988117c44c725162411c1b80a9158f8c160c3652c6054bf27",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-b516d84118.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-b516d84118.png",
     "source_asset_id": "h1-b516d84118",
     "format": "webp"
   },
@@ -20191,7 +20191,7 @@
     "sha256": "6b8bfd60de1ab619e08dc19f935e8b1f927bac11679bfaec484e2c00663bd9d3",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-b516d84118.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-b516d84118.png",
     "source_asset_id": "h1-b516d84118",
     "format": "webp"
   },
@@ -20202,7 +20202,7 @@
     "sha256": "86c49eb65b7544161563e22e06bece861e5de0f084b0ea78639b9bb0fbdfeea6",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-b89e5730b4.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-b89e5730b4.png",
     "source_asset_id": "h1-b89e5730b4",
     "format": "webp"
   },
@@ -20213,7 +20213,7 @@
     "sha256": "5c792072ef7659ef5add97ef5787da22de41153c5f4085a4801020ec4562a0b7",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-b89e5730b4.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-b89e5730b4.png",
     "source_asset_id": "h1-b89e5730b4",
     "format": "webp"
   },
@@ -20224,7 +20224,7 @@
     "sha256": "f013bde985b12e1cf5b03a3badb617998374932d67e1b9bdd3f52de578991d21",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-b89e5730b4.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-b89e5730b4.png",
     "source_asset_id": "h1-b89e5730b4",
     "format": "webp"
   },
@@ -20235,7 +20235,7 @@
     "sha256": "b1410ea3690d9eacf91df44e232718e0e7e4b53e7c2a1fa4c53a79c22da816b5",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bb6f915e59.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bb6f915e59.png",
     "source_asset_id": "h1-bb6f915e59",
     "format": "webp"
   },
@@ -20246,7 +20246,7 @@
     "sha256": "ce2ed6420ba838853b9521b55edd12bc4fa125373af8dbe855293dd294a6f090",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bb6f915e59.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bb6f915e59.png",
     "source_asset_id": "h1-bb6f915e59",
     "format": "webp"
   },
@@ -20257,7 +20257,7 @@
     "sha256": "1e3d1ffb2dad5286804288c8f6e95f3a3047fe78b2864a2cab9b784433ae1531",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bb6f915e59.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bb6f915e59.png",
     "source_asset_id": "h1-bb6f915e59",
     "format": "webp"
   },
@@ -20268,7 +20268,7 @@
     "sha256": "9072837f56fa897fd31f6061280fd5dea5fb896d109b617c83a19dbcad12c38d",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bbf091614e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bbf091614e.png",
     "source_asset_id": "h1-bbf091614e",
     "format": "webp"
   },
@@ -20279,7 +20279,7 @@
     "sha256": "fcf7ce5418b4ce652be554ed4bb0ca7be1bd17af908fb1400dd674e74c971863",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bbf091614e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bbf091614e.png",
     "source_asset_id": "h1-bbf091614e",
     "format": "webp"
   },
@@ -20290,7 +20290,7 @@
     "sha256": "0da4248b5057c54f32233dfe099120cbae528144fc13f11d4457662f3f44f320",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bbf091614e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bbf091614e.png",
     "source_asset_id": "h1-bbf091614e",
     "format": "webp"
   },
@@ -20301,7 +20301,7 @@
     "sha256": "a8f626d2ccd3c85e5a903235bf3c7ef7fcf060f8f45e1e25ed37f458fe49fa01",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-be39c5faaa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-be39c5faaa.png",
     "source_asset_id": "h1-be39c5faaa",
     "format": "webp"
   },
@@ -20312,7 +20312,7 @@
     "sha256": "cb3ad599125911c326e06881398f8dc12bcf25d34b55f56f95ed26b6d3c62406",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-be39c5faaa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-be39c5faaa.png",
     "source_asset_id": "h1-be39c5faaa",
     "format": "webp"
   },
@@ -20323,7 +20323,7 @@
     "sha256": "b5ad21e39f1e7926df6ab5bbb869c3a414909dc7b6b1480b5f42ce3e1d5c5a30",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-be39c5faaa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-be39c5faaa.png",
     "source_asset_id": "h1-be39c5faaa",
     "format": "webp"
   },
@@ -20334,7 +20334,7 @@
     "sha256": "f1ddc71b8270a5086e1e5a3c5287f46a2ec9f3764f9426ad1a504013cce37289",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bf2659d56f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bf2659d56f.png",
     "source_asset_id": "h1-bf2659d56f",
     "format": "webp"
   },
@@ -20345,7 +20345,7 @@
     "sha256": "139f2a104c10f64f166b59ab12c4e1602e3093b3dfe0cfeb4fb18397c0becc3c",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bf2659d56f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bf2659d56f.png",
     "source_asset_id": "h1-bf2659d56f",
     "format": "webp"
   },
@@ -20356,7 +20356,7 @@
     "sha256": "a94fcaa8df554782cff9230a9d77bf7ed7acecda7cf30b3051ab2efc766d2ca6",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bf2659d56f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bf2659d56f.png",
     "source_asset_id": "h1-bf2659d56f",
     "format": "webp"
   },
@@ -20367,7 +20367,7 @@
     "sha256": "fdb1baa11e8d9f502de0e2aed87672466cfa7a596e1a79cd66f478af3ad02dd7",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bf33572982.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bf33572982.png",
     "source_asset_id": "h1-bf33572982",
     "format": "webp"
   },
@@ -20378,7 +20378,7 @@
     "sha256": "b483f40220b40d1d5b6277f0dd0d73faba56f5b328e31fc6d816f17d9d59c045",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bf33572982.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bf33572982.png",
     "source_asset_id": "h1-bf33572982",
     "format": "webp"
   },
@@ -20389,7 +20389,7 @@
     "sha256": "914adfc77e553124ef087612674584b3720d0570eec6d63b145773fe75525692",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-bf33572982.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-bf33572982.png",
     "source_asset_id": "h1-bf33572982",
     "format": "webp"
   },
@@ -20400,7 +20400,7 @@
     "sha256": "bd8e8017e754051c1bfb7150994011d312a347775e9ee91c6d7074f160f1dece",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c215cf1a3d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c215cf1a3d.png",
     "source_asset_id": "h1-c215cf1a3d",
     "format": "webp"
   },
@@ -20411,7 +20411,7 @@
     "sha256": "4edd207714f8638a3f70f76c8f282c89f2484a8fdb364c2a8e231272f0a802fe",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c215cf1a3d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c215cf1a3d.png",
     "source_asset_id": "h1-c215cf1a3d",
     "format": "webp"
   },
@@ -20422,7 +20422,7 @@
     "sha256": "b5ee792b963af4dc1b7d17881ac8631f1a004c0452990f933ad5d5e3a3162a45",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c215cf1a3d.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c215cf1a3d.png",
     "source_asset_id": "h1-c215cf1a3d",
     "format": "webp"
   },
@@ -20433,7 +20433,7 @@
     "sha256": "106f2f3a03d6aea7b7ffcc04691090265f342d84376e8c6352a15390b5f91000",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c58b3efe3e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c58b3efe3e.png",
     "source_asset_id": "h1-c58b3efe3e",
     "format": "webp"
   },
@@ -20444,7 +20444,7 @@
     "sha256": "43f48f3133da239e03450334de88378e5eccf99c8975202690192f79e13c58bf",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c58b3efe3e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c58b3efe3e.png",
     "source_asset_id": "h1-c58b3efe3e",
     "format": "webp"
   },
@@ -20455,7 +20455,7 @@
     "sha256": "b60caea6e5c7db4aaeef1b76fe3fd2118b68b2b3e09c4d1825ec10854093ad8d",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c58b3efe3e.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c58b3efe3e.png",
     "source_asset_id": "h1-c58b3efe3e",
     "format": "webp"
   },
@@ -20466,7 +20466,7 @@
     "sha256": "21ae7c278defe01522526506ef01e8e3fe93ede2b710091d5ded87c82bda4c09",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c58d12a429.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c58d12a429.png",
     "source_asset_id": "h1-c58d12a429",
     "format": "webp"
   },
@@ -20477,7 +20477,7 @@
     "sha256": "d22d4eb841cb33385d24bb9a5c831ef5a3c8a319706ae0021932f110189654d4",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c58d12a429.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c58d12a429.png",
     "source_asset_id": "h1-c58d12a429",
     "format": "webp"
   },
@@ -20488,7 +20488,7 @@
     "sha256": "6c732382d8de8ee05407c199b654050a13c5799beab774d527a6c79442ac8503",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c58d12a429.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c58d12a429.png",
     "source_asset_id": "h1-c58d12a429",
     "format": "webp"
   },
@@ -20499,7 +20499,7 @@
     "sha256": "632bd8ca9ab04e6edd458c9613bd26ffbcebb363677f70af04a6999d040c1811",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c6233752fa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c6233752fa.png",
     "source_asset_id": "h1-c6233752fa",
     "format": "webp"
   },
@@ -20510,7 +20510,7 @@
     "sha256": "2aec473ce36e8456153b64b152a47ae4856f992070d06e114da0fb7e4ae49f3d",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c6233752fa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c6233752fa.png",
     "source_asset_id": "h1-c6233752fa",
     "format": "webp"
   },
@@ -20521,7 +20521,7 @@
     "sha256": "2e3a2b0333f692e9e2291cf48fbbcc87cd5a3ae728a5607dc9b95972de26a3d2",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-c6233752fa.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-c6233752fa.png",
     "source_asset_id": "h1-c6233752fa",
     "format": "webp"
   },
@@ -20532,7 +20532,7 @@
     "sha256": "9d2b33277bc856a1146e58abd4465ca328cb76a520a0b3b90aec12f7f80fbd5d",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ca97bdd148.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ca97bdd148.png",
     "source_asset_id": "h1-ca97bdd148",
     "format": "webp"
   },
@@ -20543,7 +20543,7 @@
     "sha256": "89262da848d7f84d322962475b6c469c0ff15a83aa6bccc5cdab41d57eabaa2e",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ca97bdd148.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ca97bdd148.png",
     "source_asset_id": "h1-ca97bdd148",
     "format": "webp"
   },
@@ -20554,7 +20554,7 @@
     "sha256": "12d3802253bde318d337f9ed7a26bbfa0e1a7ad719ead04d3fd9cb5e8adf2016",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ca97bdd148.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ca97bdd148.png",
     "source_asset_id": "h1-ca97bdd148",
     "format": "webp"
   },
@@ -20565,7 +20565,7 @@
     "sha256": "7b9de47a870f066812e2e98728a20773703b5d7c231d4f7c6f56b2e594800c01",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-caa1254dca.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-caa1254dca.png",
     "source_asset_id": "h1-caa1254dca",
     "format": "webp"
   },
@@ -20576,7 +20576,7 @@
     "sha256": "fceacf5b98f7a988aff2e7601aebf8f1aa642c03a0314e92badaf20675b167d4",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-caa1254dca.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-caa1254dca.png",
     "source_asset_id": "h1-caa1254dca",
     "format": "webp"
   },
@@ -20587,7 +20587,7 @@
     "sha256": "c95251313f5b4d9351f96bcd98b44d7d61ff86ec0bebeb7fc33ac7674da894e3",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-caa1254dca.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-caa1254dca.png",
     "source_asset_id": "h1-caa1254dca",
     "format": "webp"
   },
@@ -20598,7 +20598,7 @@
     "sha256": "93b51c6cd3211c000101bab7af1e6e09d9c4b8b759a681ec0c3fbcbce56115fe",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ccc54cefe9.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ccc54cefe9.png",
     "source_asset_id": "h1-ccc54cefe9",
     "format": "webp"
   },
@@ -20609,7 +20609,7 @@
     "sha256": "1b8a5e8c48d739139aa2b77698266a154c350ae9c317c6c442c79dd0e898f94b",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ccc54cefe9.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ccc54cefe9.png",
     "source_asset_id": "h1-ccc54cefe9",
     "format": "webp"
   },
@@ -20620,7 +20620,7 @@
     "sha256": "b5e81760d20f6f59263c5d414db056b1a7cf43d0ddc9121ea08a0b108ec446e3",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ccc54cefe9.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ccc54cefe9.png",
     "source_asset_id": "h1-ccc54cefe9",
     "format": "webp"
   },
@@ -20631,7 +20631,7 @@
     "sha256": "d6a20bc29dadc5d3f28e2beaf464641b0900bf1b592d2d5949f88289d77f32e5",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-cee464f241.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-cee464f241.png",
     "source_asset_id": "h1-cee464f241",
     "format": "webp"
   },
@@ -20642,7 +20642,7 @@
     "sha256": "64fdadf4839ef401cd39688d0d80ba813e1b49e62fff654f8f3f30fce1cf639d",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-cee464f241.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-cee464f241.png",
     "source_asset_id": "h1-cee464f241",
     "format": "webp"
   },
@@ -20653,7 +20653,7 @@
     "sha256": "b691f864cb37d5957cc9c8f6b82a8a1bf3f6a80c8e45dfbd18b4bc9405f54bbd",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-cee464f241.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-cee464f241.png",
     "source_asset_id": "h1-cee464f241",
     "format": "webp"
   },
@@ -20664,7 +20664,7 @@
     "sha256": "50f45faf3113018d22230eea1dbc09a5498e07805f6531a572a268ad551fe427",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d12048a6da.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d12048a6da.png",
     "source_asset_id": "h1-d12048a6da",
     "format": "webp"
   },
@@ -20675,7 +20675,7 @@
     "sha256": "cbd6d86f845084ee068c7bccefd194831fdcd5f40d009fe221043f8a2bf72cea",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d12048a6da.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d12048a6da.png",
     "source_asset_id": "h1-d12048a6da",
     "format": "webp"
   },
@@ -20686,7 +20686,7 @@
     "sha256": "8bd6ebc9253fdfad9224bc4e7df87c0baeba401645ecced4853dd392b29347c4",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d12048a6da.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d12048a6da.png",
     "source_asset_id": "h1-d12048a6da",
     "format": "webp"
   },
@@ -20697,7 +20697,7 @@
     "sha256": "2f55a6b1f3fff991cc7c05ce062e17801fc919ead7b74e1996dfba9ea254643e",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d50663005f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d50663005f.png",
     "source_asset_id": "h1-d50663005f",
     "format": "webp"
   },
@@ -20708,7 +20708,7 @@
     "sha256": "395782eb0fb2d5a6b115aa8b4ce701629389308a73bfe033e2764d9eba5af2e1",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d50663005f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d50663005f.png",
     "source_asset_id": "h1-d50663005f",
     "format": "webp"
   },
@@ -20719,7 +20719,7 @@
     "sha256": "afe362ccc3e72612756dfee3242b416a9c1bc41b5d7f4283e27d149c5923b0c2",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d50663005f.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d50663005f.png",
     "source_asset_id": "h1-d50663005f",
     "format": "webp"
   },
@@ -20730,7 +20730,7 @@
     "sha256": "b8f4ebc6fd09db34623c07f1c8cd5068203112790fb3576c73510f6ee4b1f27d",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d70be1b80b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d70be1b80b.png",
     "source_asset_id": "h1-d70be1b80b",
     "format": "webp"
   },
@@ -20741,7 +20741,7 @@
     "sha256": "c85a544c8e232b8156155e4bb1944080cb7eccb6e9c06037cb192605d9e301a2",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d70be1b80b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d70be1b80b.png",
     "source_asset_id": "h1-d70be1b80b",
     "format": "webp"
   },
@@ -20752,7 +20752,7 @@
     "sha256": "7c48ec20dd47b22fe42b19e934f9235121d85820d8323b28896cd423bb305f98",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d70be1b80b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d70be1b80b.png",
     "source_asset_id": "h1-d70be1b80b",
     "format": "webp"
   },
@@ -20763,7 +20763,7 @@
     "sha256": "aae2e1949f977923731a127af0bf82e2671b28cd360f459e6c495e2265145f03",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d8f3a035fe.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d8f3a035fe.png",
     "source_asset_id": "h1-d8f3a035fe",
     "format": "webp"
   },
@@ -20774,7 +20774,7 @@
     "sha256": "9d2975ca32a21996328f638ed8f0db1ad8e3f96c1425d3b4033716ec31197e32",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d8f3a035fe.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d8f3a035fe.png",
     "source_asset_id": "h1-d8f3a035fe",
     "format": "webp"
   },
@@ -20785,7 +20785,7 @@
     "sha256": "e336b381f09b0baea20782086c59fbf5b67c1a4666936b12138dfdb1d80d9b12",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d8f3a035fe.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d8f3a035fe.png",
     "source_asset_id": "h1-d8f3a035fe",
     "format": "webp"
   },
@@ -20796,7 +20796,7 @@
     "sha256": "ba8dc6669fe67c7817a8a4c7156b68ed1d0e99c1872e6c6144e11f8ca9a48457",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d9b4f2ce3a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d9b4f2ce3a.png",
     "source_asset_id": "h1-d9b4f2ce3a",
     "format": "webp"
   },
@@ -20807,7 +20807,7 @@
     "sha256": "d18c8ebe0418610a7859b522bda32ecb546fe2795eac2224601baf7de614fbfb",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d9b4f2ce3a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d9b4f2ce3a.png",
     "source_asset_id": "h1-d9b4f2ce3a",
     "format": "webp"
   },
@@ -20818,7 +20818,7 @@
     "sha256": "873eea2291123ae654e879cab00a374f27f9411b50d7877f5fe3becea1cc43ea",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-d9b4f2ce3a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-d9b4f2ce3a.png",
     "source_asset_id": "h1-d9b4f2ce3a",
     "format": "webp"
   },
@@ -20829,7 +20829,7 @@
     "sha256": "189a82df0fcb709f1824cdeb0fae7cde43f2b7338dd5c22031005caa4bc09105",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-db5d84aaef.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-db5d84aaef.png",
     "source_asset_id": "h1-db5d84aaef",
     "format": "webp"
   },
@@ -20840,7 +20840,7 @@
     "sha256": "d94087d7d0b21f9789e3eb8d49e82ab76c52624175e7d843d284d1d377d3a8ae",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-db5d84aaef.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-db5d84aaef.png",
     "source_asset_id": "h1-db5d84aaef",
     "format": "webp"
   },
@@ -20851,7 +20851,7 @@
     "sha256": "5095d069088bca213b1ba89c9c43c6393c23a17e28a98db4688ce0208129ee08",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-db5d84aaef.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-db5d84aaef.png",
     "source_asset_id": "h1-db5d84aaef",
     "format": "webp"
   },
@@ -20862,7 +20862,7 @@
     "sha256": "583b62b528cdeb01fd004b312b4508e77fc35e529c926e6f1eb9a81ffa1996f6",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-dfa5e02640.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-dfa5e02640.png",
     "source_asset_id": "h1-dfa5e02640",
     "format": "webp"
   },
@@ -20873,7 +20873,7 @@
     "sha256": "8c4fe41f81b023c603be869df69d9559dbc3d0695d3ab18057c01ea44a10f2ec",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-dfa5e02640.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-dfa5e02640.png",
     "source_asset_id": "h1-dfa5e02640",
     "format": "webp"
   },
@@ -20884,7 +20884,7 @@
     "sha256": "040dc9045afa23485a63b797fb7fe2c74949408de8fcecacba0c0e5e142ce130",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-dfa5e02640.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-dfa5e02640.png",
     "source_asset_id": "h1-dfa5e02640",
     "format": "webp"
   },
@@ -20895,7 +20895,7 @@
     "sha256": "00293009c0b2ac05ada0dbb17aebf6fee93379d06ccfc5a13c0785f77cd20164",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e3d15c10f5.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e3d15c10f5.png",
     "source_asset_id": "h1-e3d15c10f5",
     "format": "webp"
   },
@@ -20906,7 +20906,7 @@
     "sha256": "4f430b37fa9db50d324097b0297b77132537ba31f583ff9334a6872e9bd7d84e",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e3d15c10f5.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e3d15c10f5.png",
     "source_asset_id": "h1-e3d15c10f5",
     "format": "webp"
   },
@@ -20917,7 +20917,7 @@
     "sha256": "56868fba8ae9c679171e01db12797a661173a258ed16d635efef40faf6de0999",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e3d15c10f5.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e3d15c10f5.png",
     "source_asset_id": "h1-e3d15c10f5",
     "format": "webp"
   },
@@ -20928,7 +20928,7 @@
     "sha256": "9c16ed077ba44082082fd81460088a6f7df13f3c5ec9c439234b277cb7b9b88e",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e453b6d22b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e453b6d22b.png",
     "source_asset_id": "h1-e453b6d22b",
     "format": "webp"
   },
@@ -20939,7 +20939,7 @@
     "sha256": "b0f2a7e97011f6f97d166220b711118bd15b24e39b8cd55978e94ca666c67df6",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e453b6d22b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e453b6d22b.png",
     "source_asset_id": "h1-e453b6d22b",
     "format": "webp"
   },
@@ -20950,7 +20950,7 @@
     "sha256": "0e7fdd70aafe7292f0d9d4f8f24411012bcd736502e3045be7c88b5724494bcf",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e453b6d22b.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e453b6d22b.png",
     "source_asset_id": "h1-e453b6d22b",
     "format": "webp"
   },
@@ -20961,7 +20961,7 @@
     "sha256": "d3ac7f47a17c185bfdf4c1cb6e7fb5e22adfadc61735ac25e2a150886e8a6356",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e68fa3d243.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e68fa3d243.png",
     "source_asset_id": "h1-e68fa3d243",
     "format": "webp"
   },
@@ -20972,7 +20972,7 @@
     "sha256": "d0cceda241275d381e2c2422e78328af237ab9b92233912b023be554f7031e29",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e68fa3d243.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e68fa3d243.png",
     "source_asset_id": "h1-e68fa3d243",
     "format": "webp"
   },
@@ -20983,7 +20983,7 @@
     "sha256": "c6aca01e01f76660be7ef7947e0aa23ead2fb62fdedba93f1e2d37e129800f31",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-e68fa3d243.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-e68fa3d243.png",
     "source_asset_id": "h1-e68fa3d243",
     "format": "webp"
   },
@@ -20994,7 +20994,7 @@
     "sha256": "fcb09c99165d9632b7fc6d4e3fb5c41e22c84adedd9f79eb450fbf1d0cbfa6d7",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ed46cddbdd.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ed46cddbdd.png",
     "source_asset_id": "h1-ed46cddbdd",
     "format": "webp"
   },
@@ -21005,7 +21005,7 @@
     "sha256": "b3ab4da8497a5deff33efab8a1e63e4d2401677572797aaf6073ad5b4c45dc0d",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ed46cddbdd.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ed46cddbdd.png",
     "source_asset_id": "h1-ed46cddbdd",
     "format": "webp"
   },
@@ -21016,7 +21016,7 @@
     "sha256": "72365f69aadc72b0de26ac5e90d149ab2082e0a4f9fa8d96bf54cebcc61c7dd5",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-ed46cddbdd.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-ed46cddbdd.png",
     "source_asset_id": "h1-ed46cddbdd",
     "format": "webp"
   },
@@ -21027,7 +21027,7 @@
     "sha256": "1afc1adce104d752fd6ca281d4dcd3433d92bb83f0d382f7ed6b26f591b65574",
     "width": 360,
     "height": 642,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-efa1ff5fc6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-efa1ff5fc6.png",
     "source_asset_id": "h1-efa1ff5fc6",
     "format": "webp"
   },
@@ -21038,7 +21038,7 @@
     "sha256": "c60f2693e5518b951558c9e0be2d6a6fad3d236507456ad4b3afa2fd0068a50c",
     "width": 640,
     "height": 1141,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-efa1ff5fc6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-efa1ff5fc6.png",
     "source_asset_id": "h1-efa1ff5fc6",
     "format": "webp"
   },
@@ -21049,7 +21049,7 @@
     "sha256": "6dae599957eb3419699481048af607c0f6e0c9cb848b413aa4940322370dd852",
     "width": 960,
     "height": 1711,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-efa1ff5fc6.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-efa1ff5fc6.png",
     "source_asset_id": "h1-efa1ff5fc6",
     "format": "webp"
   },
@@ -21060,7 +21060,7 @@
     "sha256": "07d6b95809f973b2bef1da56ba2dfb446f018a63495514bdb6b96b81aef19913",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f44759fc37.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f44759fc37.png",
     "source_asset_id": "h1-f44759fc37",
     "format": "webp"
   },
@@ -21071,7 +21071,7 @@
     "sha256": "f80f85712ad7d0975bc748f802c37fe002ab7651d2e29f70d28ee4348614e8c1",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f44759fc37.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f44759fc37.png",
     "source_asset_id": "h1-f44759fc37",
     "format": "webp"
   },
@@ -21082,7 +21082,7 @@
     "sha256": "23a77a1508eb7a15ae32ce425e4bfbea1a3716171e75049a64567acece496106",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f44759fc37.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f44759fc37.png",
     "source_asset_id": "h1-f44759fc37",
     "format": "webp"
   },
@@ -21093,7 +21093,7 @@
     "sha256": "5a0437d43d293239bafb1ebd08dde69b0b0dbc89129aa5f7f44c58f3ea94f4d1",
     "width": 360,
     "height": 480,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f540f6265a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f540f6265a.png",
     "source_asset_id": "h1-f540f6265a",
     "format": "webp"
   },
@@ -21104,7 +21104,7 @@
     "sha256": "c5fb2c2257f0e0b096a1463d6abeee10e0886d7d16e3895f1703581ad6754fa4",
     "width": 640,
     "height": 853,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f540f6265a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f540f6265a.png",
     "source_asset_id": "h1-f540f6265a",
     "format": "webp"
   },
@@ -21115,7 +21115,7 @@
     "sha256": "ad48fae744a69391e7bad5385d0ad84fe2d016870973604fbf88a62e3da00863",
     "width": 960,
     "height": 1280,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f540f6265a.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f540f6265a.png",
     "source_asset_id": "h1-f540f6265a",
     "format": "webp"
   },
@@ -21126,7 +21126,7 @@
     "sha256": "f2b33416ab7678ed7c97ce9aa7d5c3b07059bc69c448c42d5ce4565890fb9b8a",
     "width": 360,
     "height": 202,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f5d7e04cb5.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f5d7e04cb5.png",
     "source_asset_id": "h1-f5d7e04cb5",
     "format": "webp"
   },
@@ -21137,7 +21137,7 @@
     "sha256": "a0f22e79efcb2d97f68497df350aca1ef2f84797cf7138eaa4f55b0de1c355e2",
     "width": 640,
     "height": 359,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f5d7e04cb5.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f5d7e04cb5.png",
     "source_asset_id": "h1-f5d7e04cb5",
     "format": "webp"
   },
@@ -21148,7 +21148,7 @@
     "sha256": "b6a6548472ef4fea938e673a9f6b2e8de84a78a38afe061dbfaabd1b4840170d",
     "width": 960,
     "height": 539,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h1/h1-f5d7e04cb5.png",
+    "source_url": "file://agent/agnes/experiments/images/h1/h1-f5d7e04cb5.png",
     "source_asset_id": "h1-f5d7e04cb5",
     "format": "webp"
   },
@@ -21159,7 +21159,7 @@
     "sha256": "74d32ca5720fcf1e9527049e4e6ffe33a8aeb5a023b80cef80df2b3f5bdca2a0",
     "width": 360,
     "height": 77,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/bg-montage.jpg",
+    "source_url": "file://agent/agnes/experiments/images/h2/bg-montage.jpg",
     "source_asset_id": "bg-montage",
     "format": "webp"
   },
@@ -21170,7 +21170,7 @@
     "sha256": "6de25f21efe28afc886154ce6428f4ce5bdeab69e2515471f9336c56760fc15c",
     "width": 640,
     "height": 138,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/bg-montage.jpg",
+    "source_url": "file://agent/agnes/experiments/images/h2/bg-montage.jpg",
     "source_asset_id": "bg-montage",
     "format": "webp"
   },
@@ -21181,7 +21181,7 @@
     "sha256": "ea92bdd6c89cfaa80c09f9b12defdc5ddc6b11984bc6f0780c8b379bdf869a89",
     "width": 960,
     "height": 206,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/bg-montage.jpg",
+    "source_url": "file://agent/agnes/experiments/images/h2/bg-montage.jpg",
     "source_asset_id": "bg-montage",
     "format": "webp"
   },
@@ -21192,7 +21192,7 @@
     "sha256": "628cd5bb8025a079d42b037a1429561b06fa82924c31abea4f23667a86cb8e48",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r2-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r2-overlay.png",
     "source_asset_id": "h2-226-r2-overlay",
     "format": "webp"
   },
@@ -21203,7 +21203,7 @@
     "sha256": "d4b8e8bd937914a60b0b9f1393e394a2fb1eed4bdb46e0f9438cac1ca8a51e81",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r2-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r2-overlay.png",
     "source_asset_id": "h2-226-r2-overlay",
     "format": "webp"
   },
@@ -21214,7 +21214,7 @@
     "sha256": "42f045d50855c2a0585ab5e44b91c1a3f134f85e89ab91df10673b1fa2d9ea83",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r2-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r2-overlay.png",
     "source_asset_id": "h2-226-r2-overlay",
     "format": "webp"
   },
@@ -21225,7 +21225,7 @@
     "sha256": "6e93d191fdcd9436bfc088f8d91f014db5dd19b9b59ee0cf9e7f721bed73097c",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r2.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r2.png",
     "source_asset_id": "h2-226-r2",
     "format": "webp"
   },
@@ -21236,7 +21236,7 @@
     "sha256": "9810b26bc5e0fa884b37d95587a8364b3c474f3d0c3d36366841846037efc860",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r2.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r2.png",
     "source_asset_id": "h2-226-r2",
     "format": "webp"
   },
@@ -21247,7 +21247,7 @@
     "sha256": "90efd0bba3036e68c0556f47864ac3f58437da0b9f75b4781092d5390f2fab5d",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r2.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r2.png",
     "source_asset_id": "h2-226-r2",
     "format": "webp"
   },
@@ -21258,7 +21258,7 @@
     "sha256": "48bc9178d4fcbc63aa912ca8899f8f7d50e0eaa7d632f67146ba8aae30471e51",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r3-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r3-overlay.png",
     "source_asset_id": "h2-226-r3-overlay",
     "format": "webp"
   },
@@ -21269,7 +21269,7 @@
     "sha256": "18266d1e7ac929351cb791026901bfcbf7711e0d59af5ae1a540bf2c91944266",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r3-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r3-overlay.png",
     "source_asset_id": "h2-226-r3-overlay",
     "format": "webp"
   },
@@ -21280,7 +21280,7 @@
     "sha256": "68d8c99b168d5557b7592e912281a7cd49431ba37c20f74a6aadff037912654d",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r3-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r3-overlay.png",
     "source_asset_id": "h2-226-r3-overlay",
     "format": "webp"
   },
@@ -21291,7 +21291,7 @@
     "sha256": "1c4980dc5bd75f861ed47db7ed87f199cafe6fbdb6fd0882db1de4ac63a97f8f",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r3.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r3.png",
     "source_asset_id": "h2-226-r3",
     "format": "webp"
   },
@@ -21302,7 +21302,7 @@
     "sha256": "77984be18a67a7cbe672f094c0a6e59c40ff33db41db5bb158a14cd9b0d61443",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r3.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r3.png",
     "source_asset_id": "h2-226-r3",
     "format": "webp"
   },
@@ -21313,7 +21313,7 @@
     "sha256": "1331feec995a7f56314e2fc17280c67dca5d108b21ca9ffc2a6096be26d5facb",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r3.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r3.png",
     "source_asset_id": "h2-226-r3",
     "format": "webp"
   },
@@ -21324,7 +21324,7 @@
     "sha256": "50b98862aa4e43d59f370a208c57f006120463e3c7788a8dda66ad229befdf91",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r4-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r4-overlay.png",
     "source_asset_id": "h2-226-r4-overlay",
     "format": "webp"
   },
@@ -21335,7 +21335,7 @@
     "sha256": "d372cdbf38b914b42317a25466d8c5ee3ef5beb146fa8b4cedcb5b769c9111ca",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r4-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r4-overlay.png",
     "source_asset_id": "h2-226-r4-overlay",
     "format": "webp"
   },
@@ -21346,7 +21346,7 @@
     "sha256": "3eb41079236afa1b406f3693b0912ea578219552a4b8b99f853deaa81645b45b",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r4-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r4-overlay.png",
     "source_asset_id": "h2-226-r4-overlay",
     "format": "webp"
   },
@@ -21357,7 +21357,7 @@
     "sha256": "c1e7d3e7ece0d68792fad7c5c280f45c26c1727a03fbc86cf1a08b783515b936",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r4.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r4.png",
     "source_asset_id": "h2-226-r4",
     "format": "webp"
   },
@@ -21368,7 +21368,7 @@
     "sha256": "5b6150adce81466788eb6dc00965c82fa8d27468285e5f760fe824078fd07607",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r4.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r4.png",
     "source_asset_id": "h2-226-r4",
     "format": "webp"
   },
@@ -21379,7 +21379,7 @@
     "sha256": "01c294dc39236553cf2f70e6c33f8c4f065b40f22b0235499ed78dfcaa7aa49d",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r4.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r4.png",
     "source_asset_id": "h2-226-r4",
     "format": "webp"
   },
@@ -21390,7 +21390,7 @@
     "sha256": "5ca3803762a4dc3a6dc658e2de2a2bb1b4cce2ea73aa556b4e32f37dd3ccec0d",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r5-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r5-overlay.png",
     "source_asset_id": "h2-226-r5-overlay",
     "format": "webp"
   },
@@ -21401,7 +21401,7 @@
     "sha256": "c240189e2f73fc8d7addedaf1f17c28272d4b3aeabb197578ccebf8b181d9d55",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r5-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r5-overlay.png",
     "source_asset_id": "h2-226-r5-overlay",
     "format": "webp"
   },
@@ -21412,7 +21412,7 @@
     "sha256": "ea3c19fd69d7ae3cc4068c45311927f491c60bbf44861b5bc8cdc88ed4b2a086",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r5-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r5-overlay.png",
     "source_asset_id": "h2-226-r5-overlay",
     "format": "webp"
   },
@@ -21423,7 +21423,7 @@
     "sha256": "b4fe722759e6c0846a998dffbc689621598c80c42a8eac61320e1e061aa5f4db",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r5.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r5.png",
     "source_asset_id": "h2-226-r5",
     "format": "webp"
   },
@@ -21434,7 +21434,7 @@
     "sha256": "105603928e236d04064e367c9ea1cf41d432185f96ccf9146a9fb8351ef28962",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r5.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r5.png",
     "source_asset_id": "h2-226-r5",
     "format": "webp"
   },
@@ -21445,7 +21445,7 @@
     "sha256": "c37c11f76195f4830c49ffa2ea1f10c718ebe7e4af6e8e129c5465bf692d0545",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r5.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r5.png",
     "source_asset_id": "h2-226-r5",
     "format": "webp"
   },
@@ -21456,7 +21456,7 @@
     "sha256": "c3a77c2bcebc2f613bd5a236524f2528cbe12b62cf5cb3e27e169243af121522",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r6-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r6-overlay.png",
     "source_asset_id": "h2-226-r6-overlay",
     "format": "webp"
   },
@@ -21467,7 +21467,7 @@
     "sha256": "1c5e37f7d723a66848986574fae284c000d952bc4e8dc6b99bb207728ebfd627",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r6-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r6-overlay.png",
     "source_asset_id": "h2-226-r6-overlay",
     "format": "webp"
   },
@@ -21478,7 +21478,7 @@
     "sha256": "70be7ab1d4e5c716fe9bb6839517cdffbe9da26785c228ed12cb384b994a59bf",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r6-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r6-overlay.png",
     "source_asset_id": "h2-226-r6-overlay",
     "format": "webp"
   },
@@ -21489,7 +21489,7 @@
     "sha256": "24fb21dacb1e0a729dc47ba0f8da260d65758f70e19a91aff57f145ccedf1aea",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r6.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r6.png",
     "source_asset_id": "h2-226-r6",
     "format": "webp"
   },
@@ -21500,7 +21500,7 @@
     "sha256": "c9c2a3df30de4b50d82bd8e159a784832a30f3ebf73c9c0a52a0e0aae5d6aca8",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r6.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r6.png",
     "source_asset_id": "h2-226-r6",
     "format": "webp"
   },
@@ -21511,7 +21511,7 @@
     "sha256": "a3dfdc22fa138162d909fd9cb2a2580dd6c7ad940d416d7e04f54aeeac0ec678",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-226-r6.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-226-r6.png",
     "source_asset_id": "h2-226-r6",
     "format": "webp"
   },
@@ -21522,7 +21522,7 @@
     "sha256": "51068ac980966ce1fd7eabd5a9ec1dd3e1c0848cf998750594aa8bca3f45e143",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r1-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r1-overlay.png",
     "source_asset_id": "h2-353-r1-overlay",
     "format": "webp"
   },
@@ -21533,7 +21533,7 @@
     "sha256": "8211e038e8d7fbdf93176946d240f9e2e53922ab1f31c7791f2574939e3e5842",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r1-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r1-overlay.png",
     "source_asset_id": "h2-353-r1-overlay",
     "format": "webp"
   },
@@ -21544,7 +21544,7 @@
     "sha256": "a5541a631a43400cf9dcad09ad51a3c27745e3403ac99c1077cdf2b29c238be2",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r1-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r1-overlay.png",
     "source_asset_id": "h2-353-r1-overlay",
     "format": "webp"
   },
@@ -21555,7 +21555,7 @@
     "sha256": "d9787db64d608a702df5e0386729c831767c123638577602cd71be85ff6847ac",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r1.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r1.png",
     "source_asset_id": "h2-353-r1",
     "format": "webp"
   },
@@ -21566,7 +21566,7 @@
     "sha256": "0b280520eb0be3e46497fd389fd23875a575fbcc2ebfb64a0c2609d8e0a82e5f",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r1.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r1.png",
     "source_asset_id": "h2-353-r1",
     "format": "webp"
   },
@@ -21577,7 +21577,7 @@
     "sha256": "15e466de54050b66c1659b0f32ef8a1c4f2c5a93b70450149f7ae157a9aac916",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r1.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r1.png",
     "source_asset_id": "h2-353-r1",
     "format": "webp"
   },
@@ -21588,7 +21588,7 @@
     "sha256": "64b729375e0514697ba4c5a33d76f5f143e18e5592993dd3d62b62c730653ed3",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r2-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r2-overlay.png",
     "source_asset_id": "h2-353-r2-overlay",
     "format": "webp"
   },
@@ -21599,7 +21599,7 @@
     "sha256": "181249d68b480e764beb6e001cb2f596e7943840c057b7bfa9247542f2008aff",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r2-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r2-overlay.png",
     "source_asset_id": "h2-353-r2-overlay",
     "format": "webp"
   },
@@ -21610,7 +21610,7 @@
     "sha256": "e70ae91b18c922825ae833e17d80506a51b9f4a3436645cd066f5874865a505a",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r2-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r2-overlay.png",
     "source_asset_id": "h2-353-r2-overlay",
     "format": "webp"
   },
@@ -21621,7 +21621,7 @@
     "sha256": "1d630be5a856b0a18e87ef6eb7a648c1e79b1055942b597cbcfd58ddd7bd508e",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r2.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r2.png",
     "source_asset_id": "h2-353-r2",
     "format": "webp"
   },
@@ -21632,7 +21632,7 @@
     "sha256": "3d768483e54233254c6d8e5f67433259c0b912805767f67a86c3758dc2cc6054",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r2.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r2.png",
     "source_asset_id": "h2-353-r2",
     "format": "webp"
   },
@@ -21643,7 +21643,7 @@
     "sha256": "56f566ebb1df29b634ddb1235877ff6ac1cc07f9a0e3706dcdc08ab9afc2d2e3",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r2.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r2.png",
     "source_asset_id": "h2-353-r2",
     "format": "webp"
   },
@@ -21654,7 +21654,7 @@
     "sha256": "0c7064a74e8e6c2d2d7950625c6738b828c960770b4e147ae1593fb48ebc4f74",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r3-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r3-overlay.png",
     "source_asset_id": "h2-353-r3-overlay",
     "format": "webp"
   },
@@ -21665,7 +21665,7 @@
     "sha256": "b920283cba1d6381e08942da944af93a9b4e75c57c52a86ab4ca4315c2eb18be",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r3-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r3-overlay.png",
     "source_asset_id": "h2-353-r3-overlay",
     "format": "webp"
   },
@@ -21676,7 +21676,7 @@
     "sha256": "8df7224a6101f91d8e36196d5cd64ff75b0d1bc27904247ee24a7971d71a6a66",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r3-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r3-overlay.png",
     "source_asset_id": "h2-353-r3-overlay",
     "format": "webp"
   },
@@ -21687,7 +21687,7 @@
     "sha256": "5c487892c3ec4b598ea169efe29bcbed4522202202627f2d4747f20208d0bc5c",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r3.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r3.png",
     "source_asset_id": "h2-353-r3",
     "format": "webp"
   },
@@ -21698,7 +21698,7 @@
     "sha256": "8c30aacd21b6599d455669426481feeb5b4970861ae26a84b0d09e810fc93186",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r3.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r3.png",
     "source_asset_id": "h2-353-r3",
     "format": "webp"
   },
@@ -21709,7 +21709,7 @@
     "sha256": "6bf2dac265e79eaad636615f08851e66739633787dbbcd07c85a71a08226e016",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r3.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r3.png",
     "source_asset_id": "h2-353-r3",
     "format": "webp"
   },
@@ -21720,7 +21720,7 @@
     "sha256": "f861eae482c222a9180bdc09ee4ff7ae36720219c346f9fdc5e9566f07522000",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r4-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r4-overlay.png",
     "source_asset_id": "h2-353-r4-overlay",
     "format": "webp"
   },
@@ -21731,7 +21731,7 @@
     "sha256": "4b01e917a09e8d5c7e0d52e4725ac274f5bbd94ca672b4217ce71529a217564c",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r4-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r4-overlay.png",
     "source_asset_id": "h2-353-r4-overlay",
     "format": "webp"
   },
@@ -21742,7 +21742,7 @@
     "sha256": "20efeeee821b8ef9a5131cf8d437c4e55ef77ae978c46ae66e62bc56de1fda1e",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r4-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r4-overlay.png",
     "source_asset_id": "h2-353-r4-overlay",
     "format": "webp"
   },
@@ -21753,7 +21753,7 @@
     "sha256": "a7af3bba42528b0c0e5845762c3d8079ed5dd55446274fd092919341b26f8a12",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r4.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r4.png",
     "source_asset_id": "h2-353-r4",
     "format": "webp"
   },
@@ -21764,7 +21764,7 @@
     "sha256": "c39a83304d63a871aaf8be3171e523dbaad05a111df33ec47219a7485b61345b",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r4.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r4.png",
     "source_asset_id": "h2-353-r4",
     "format": "webp"
   },
@@ -21775,7 +21775,7 @@
     "sha256": "e103f97945868757c446a28a79f306bc52305f8c486323c19a9c7b51fbe60614",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r4.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r4.png",
     "source_asset_id": "h2-353-r4",
     "format": "webp"
   },
@@ -21786,7 +21786,7 @@
     "sha256": "45492b61fa9e9f41d0eb4c6fc5bed8207a88571d9d548f1a0b1d3b0e9f17640f",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r5-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r5-overlay.png",
     "source_asset_id": "h2-353-r5-overlay",
     "format": "webp"
   },
@@ -21797,7 +21797,7 @@
     "sha256": "cef316b4320e65e5a03f0317f819faaddb4658f719ffd63e86cf7b7cd5a1dd11",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r5-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r5-overlay.png",
     "source_asset_id": "h2-353-r5-overlay",
     "format": "webp"
   },
@@ -21808,7 +21808,7 @@
     "sha256": "2bf94e4706c9d2a4263b02faf0b071da2d81565b22ed21d21e840104acb27966",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r5-overlay.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r5-overlay.png",
     "source_asset_id": "h2-353-r5-overlay",
     "format": "webp"
   },
@@ -21819,7 +21819,7 @@
     "sha256": "7f34e62568978b78284eecd6dc2e43fd79eb6f1b894fbaa259013d859bf89f0d",
     "width": 360,
     "height": 540,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r5.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r5.png",
     "source_asset_id": "h2-353-r5",
     "format": "webp"
   },
@@ -21830,7 +21830,7 @@
     "sha256": "658f3504e364536569edd06df0da64988241e230a1b823a43445e8768bc170ca",
     "width": 640,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r5.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r5.png",
     "source_asset_id": "h2-353-r5",
     "format": "webp"
   },
@@ -21841,7 +21841,7 @@
     "sha256": "da0a7d2d2885cf16103541823361a514a28ebbe56d943e95632ea27561705f25",
     "width": 960,
     "height": 1440,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-353-r5.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-353-r5.png",
     "source_asset_id": "h2-353-r5",
     "format": "webp"
   },
@@ -21852,7 +21852,7 @@
     "sha256": "59d75a0d21084158faddf7289814046b769d7af5e309b2a8a894ed3556444f70",
     "width": 360,
     "height": 360,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-pilot-226-1.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-pilot-226-1.png",
     "source_asset_id": "h2-pilot-226-1",
     "format": "webp"
   },
@@ -21863,7 +21863,7 @@
     "sha256": "00fe2b025e18c82cc4731586a082685b544c3596e5167ced0cc51fe54f5b1874",
     "width": 640,
     "height": 640,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-pilot-226-1.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-pilot-226-1.png",
     "source_asset_id": "h2-pilot-226-1",
     "format": "webp"
   },
@@ -21874,7 +21874,7 @@
     "sha256": "4fd7c1f14e50a52bb1006cd7874120acd03e31b08c0be7eefa3fb84de9a0781b",
     "width": 960,
     "height": 960,
-    "source_url": "file:///workspace/agent/agnes/experiments/images/h2/h2-pilot-226-1.png",
+    "source_url": "file://agent/agnes/experiments/images/h2/h2-pilot-226-1.png",
     "source_asset_id": "h2-pilot-226-1",
     "format": "webp"
   }

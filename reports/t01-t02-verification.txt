@@ -1,6 +1,6 @@
 T01/T02 验收记录
 日期：2026-11-21
-工作目录：/workspace/agent/agnes-bench
+工作目录：agent/agnes-bench
 
 node tools/validate-contracts.mjs
 退出码：0

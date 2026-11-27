@@ -4,8 +4,8 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const caseImagesRoot = "/workspace/repos/awesome-gpt-image-2/data/images";
-const experimentImagesRoot = "/workspace/agent/agnes/experiments/images";
+const caseImagesRoot = "repos/awesome-gpt-image-2/data/images";
+const experimentImagesRoot = "agent/agnes/experiments/images";
 const assetRoot = path.join(projectRoot, "public/assets");
 const manifestPath = path.join(projectRoot, "generated/assets.json");
 const reportPath = path.join(projectRoot, "reports/assets.json");

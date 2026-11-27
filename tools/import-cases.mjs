@@ -4,8 +4,8 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 export const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-export const sourceRoot = "/workspace/repos/awesome-gpt-image-2/data";
-export const mappingPath = "/workspace/agent/agnes/experiments/mapping-h1.jsonl";
+export const sourceRoot = "repos/awesome-gpt-image-2/data";
+export const mappingPath = "agent/agnes/experiments/mapping-h1.jsonl";
 export const outputPaths = [
   "content/cases.json",
   "content/prompt-versions/cases.json",

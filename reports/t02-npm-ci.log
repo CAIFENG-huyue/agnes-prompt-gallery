@@ -1,8 +1,0 @@
-(node:203603) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
-(Use `node --trace-warnings ...` to show where the warning was created)
-npm warn deprecated tsconfck@3.1.6: unmaintained
-
-added 485 packages in 6s
-
-188 packages are looking for funding
-  run `npm fund` for details

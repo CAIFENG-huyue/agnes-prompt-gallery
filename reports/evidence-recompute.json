@@ -9,7 +9,7 @@
     "score_revisions": "content/score-revisions.json",
     "quarantine": "content/evidence-quarantine.json",
     "reported_reference": "content/experiment-versions.json design.reported（由 migrate-experiments.mjs 从 E/results-h1.md 与 E/results-h2.md 解析）",
-    "experiments_root": "/workspace/agent/agnes/experiments"
+    "experiments_root": "agent/agnes/experiments"
   },
   "score_snapshot_hash": "7b13f2915a4191f80cf97b801cfe2c7192c95ea85f401196b1b017d57cbce0b0",
   "recompute": {

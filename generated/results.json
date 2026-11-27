@@ -664,7 +664,7 @@
       "verdict": "PASS",
       "note": "8 个 callout 齐全，日文标签可读且与题面一致；模型误判",
       "reviewed_by": "human",
-      "source_image": "/workspace/library/agnes/v2_17.png"
+      "source_image": "library/agnes/v2_17.png"
     }
   },
   {
@@ -1527,7 +1527,7 @@
       "verdict": "PASS",
       "note": "bc_38 为24张贴纸，日文标签可读，手绘风格成立；与先前 v2_38（20张、伪日文）不是同一张图",
       "reviewed_by": "human",
-      "source_image": "/workspace/library/agnes/bc_38.png"
+      "source_image": "library/agnes/bc_38.png"
     }
   },
   {
@@ -7732,45 +7732,6 @@
     }
   },
   {
-    "case_id": "case-200",
-    "width": 736,
-    "height": 1312,
-    "main": {
-      "file": "case-200.webp",
-      "width": 736,
-      "height": 1312,
-      "bytes": 83786,
-      "sha256": "688adffbb9ebc1297dd237a1dff02b24b5f337e45a94d258711b88218998b1ab",
-      "quality": 82
-    },
-    "variants": {
-      "-640": {
-        "file": "case-200-640.webp",
-        "width": 640,
-        "height": 1141,
-        "bytes": 69286,
-        "sha256": "c1433ff7268af874b74def92d61ad1b6fe43490b0ba9d83e781f9bbf2bd1509e",
-        "quality": 82
-      },
-      "-960": {
-        "file": "case-200-960.webp",
-        "width": 736,
-        "height": 1312,
-        "bytes": 83786,
-        "sha256": "688adffbb9ebc1297dd237a1dff02b24b5f337e45a94d258711b88218998b1ab",
-        "quality": 82
-      },
-      "1200": {
-        "file": "case-200.webp",
-        "width": 736,
-        "height": 1312,
-        "bytes": 83786,
-        "sha256": "688adffbb9ebc1297dd237a1dff02b24b5f337e45a94d258711b88218998b1ab",
-        "quality": 82
-      }
-    }
-  },
-  {
     "case_id": "case-201",
     "width": 1024,
     "height": 1024,
@@ -11009,7 +10970,7 @@
       "verdict": "PASS",
       "note": "状态栏、对话框、角色名与台词成立；电量差异非硬门槛",
       "reviewed_by": "human",
-      "source_image": "/workspace/library/agnes/c2_282.png"
+      "source_image": "library/agnes/c2_282.png"
     }
   },
   {
@@ -11871,45 +11832,6 @@
     }
   },
   {
-    "case_id": "case-305",
-    "width": 832,
-    "height": 1248,
-    "main": {
-      "file": "case-305.webp",
-      "width": 832,
-      "height": 1248,
-      "bytes": 69870,
-      "sha256": "aae2d9ee070b3184fb4d902e7aa09cd87a788ce7c24b1f8a52ac2ac19997998e",
-      "quality": 82
-    },
-    "variants": {
-      "-640": {
-        "file": "case-305-640.webp",
-        "width": 640,
-        "height": 960,
-        "bytes": 50428,
-        "sha256": "c4a44c42d063c290e0090f50007711c1339eb53b9e74940d705286218a812bdb",
-        "quality": 82
-      },
-      "-960": {
-        "file": "case-305-960.webp",
-        "width": 832,
-        "height": 1248,
-        "bytes": 69870,
-        "sha256": "aae2d9ee070b3184fb4d902e7aa09cd87a788ce7c24b1f8a52ac2ac19997998e",
-        "quality": 82
-      },
-      "1200": {
-        "file": "case-305.webp",
-        "width": 832,
-        "height": 1248,
-        "bytes": 69870,
-        "sha256": "aae2d9ee070b3184fb4d902e7aa09cd87a788ce7c24b1f8a52ac2ac19997998e",
-        "quality": 82
-      }
-    }
-  },
-  {
     "case_id": "case-306",
     "width": 864,
     "height": 1152,
@@ -12652,7 +12574,7 @@
       "verdict": "PASS",
       "note": "原题明确写了完整 caption“It’s built in the quiet moments where discipline meets belief.”，图中逐字一致；模型误判",
       "reviewed_by": "human",
-      "source_image": "/workspace/library/agnes/c3_323.png"
+      "source_image": "library/agnes/c3_323.png"
     }
   },
   {
@@ -13632,7 +13554,7 @@
       "verdict": "PASS",
       "note": "4×4 共16格齐全，编号1-16，英文标题与3-4行说明可读，灰阶3D、箭头到位",
       "reviewed_by": "human",
-      "source_image": "/workspace/library/agnes/stress_347.png"
+      "source_image": "library/agnes/stress_347.png"
     }
   },
   {
@@ -15119,7 +15041,7 @@
       "verdict": "PASS",
       "note": "5×2 共10格，同一女性、10国服饰与国旗齐全，标签逐字正确",
       "reviewed_by": "human",
-      "source_image": "/workspace/library/agnes/stress_384.png"
+      "source_image": "library/agnes/stress_384.png"
     }
   },
   {

@@ -2,7 +2,7 @@
 
 ## 0. 产出
 
-读本文件与 `plan.md`（你上一版方案），写 `/workspace/agent/agnes-bench/plan-v2.md`。
+读本文件与 `plan.md`（你上一版方案），写 `agent/agnes-bench/plan-v2.md`。
 
 不写代码。这份方案的目标是：**能直接拆成任务派给码道 worker 执行**。每个任务都要能被一个"只看任务书、看不到本对话"的 worker 独立完成。
 
@@ -44,9 +44,9 @@
 
 ## 4. 环境事实（写方案必须遵守，不要假设）
 
-- **541 条案例与图片全部在本地**：`/workspace/repos/awesome-gpt-image-2/data/cases.json`；图片 `data/images/case<id>.jpg` 共 541 张、160MB、无缺图。
+- **541 条案例与图片全部在本地**：`repos/awesome-gpt-image-2/data/cases.json`；图片 `data/images/case<id>.jpg` 共 541 张、160MB、无缺图。
   字段：`id,title,image,imageAlt,sourceLabel,sourceUrl,prompt,promptPreview,category,styles,scenes,featured,githubUrl`；原分类 13 个、styles 19 个、scenes 10 个；prompt 平均约 1250 字符。
-- **实验数据**：`/workspace/agent/agnes/experiments/` 下
+- **实验数据**：`agent/agnes/experiments/` 下
   `mapping-h1.jsonl`（100 行，blind_id → case_id/variant/rep，完整可用）、
   `scores-h1.csv`（100 行评分）、`images/h1/`（100 张）、`images/h2/`（22 张）、
   `results-h1.md`、`results-h2.md`、`specs/h1/*.json`。

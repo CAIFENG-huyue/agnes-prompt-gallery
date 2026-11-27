@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 export const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-export const defaultExperimentsRoot = "/workspace/agent/agnes/experiments";
+export const defaultExperimentsRoot = "agent/agnes/experiments";
 const H1_CASE_NUMBERS = [23, 153, 226, 270, 353, 371, 379, 387, 389, 475];
 const H2_OVERLAY_REPS = [2, 3, 4, 5, 6];
 const SCHEMA_FILES = [

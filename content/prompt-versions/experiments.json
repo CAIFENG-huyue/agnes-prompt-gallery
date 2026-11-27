@@ -10,7 +10,7 @@
     "spec": {
       "ratio": "9:16",
       "refs": [
-        "/workspace/library/agnes/syn_23.png"
+        "library/agnes/syn_23.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容与具体品牌",
       "canvas": "9:16 竖版信息图，旧纸纹理背景，平面矢量结构转高度写实 3D 信息图",
@@ -159,7 +159,7 @@
     "spec": {
       "ratio": "9:16",
       "refs": [
-        "/workspace/library/agnes/syn_23.png"
+        "library/agnes/syn_23.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容与具体品牌",
       "canvas": "9:16 竖版信息图，旧纸纹理背景，平面矢量结构转高度写实 3D 信息图",
@@ -308,7 +308,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/syn_153.png"
+        "library/agnes/syn_153.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容与具体品牌",
       "canvas": "3:4 竖版草本汤包产品标签海报，顶部两行毛笔标题、橙色圆形徽章与底部橙色横幅",
@@ -461,7 +461,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/syn_153.png"
+        "library/agnes/syn_153.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容与具体品牌",
       "canvas": "3:4 竖版草本汤包产品标签海报，顶部两行毛笔标题、橙色圆形徽章与底部橙色横幅",
@@ -614,7 +614,7 @@
     "spec": {
       "ratio": "1:1",
       "refs": [
-        "/workspace/library/agnes/syn_226.png"
+        "library/agnes/syn_226.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容、具体品牌与人物身份",
       "canvas": "1:1 正方形宫格群像，旧绢底色，四列两行共八格",
@@ -748,7 +748,7 @@
     "spec": {
       "ratio": "1:1",
       "refs": [
-        "/workspace/library/agnes/syn_226.png"
+        "library/agnes/syn_226.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容、具体品牌与人物身份",
       "canvas": "1:1 正方形宫格群像，旧绢底色，四列两行共八格",
@@ -882,7 +882,7 @@
     "spec": {
       "ratio": "16:9",
       "refs": [
-        "/workspace/library/agnes/chr_C00.png"
+        "library/agnes/chr_C00.png"
       ],
       "ref_contract": "图 1 为角色与背景参考，仅提供角色外观、服装、装备与世界观元素；不提供设定卡版式",
       "canvas": "16:9 横版角色设定卡，白色背景、图解风、整体排版有序",
@@ -994,7 +994,7 @@
     "spec": {
       "ratio": "16:9",
       "refs": [
-        "/workspace/library/agnes/chr_C00.png"
+        "library/agnes/chr_C00.png"
       ],
       "ref_contract": "图 1 为角色与背景参考，仅提供角色外观、服装、装备与世界观元素；不提供设定卡版式",
       "canvas": "16:9 横版角色设定卡，白色背景、图解风、整体排版有序",
@@ -1106,7 +1106,7 @@
     "spec": {
       "ratio": "2:3",
       "refs": [
-        "/workspace/library/agnes/chr_C0.png"
+        "library/agnes/chr_C0.png"
       ],
       "ref_contract": "图 1 为用户自拍，仅提供脸型、肤色、唇形与气质；不提供妆容、版式与品牌视觉",
       "canvas": "2:3 竖版信息结构图，YSL 黑金主色，强对比，时尚编辑感",
@@ -1281,7 +1281,7 @@
     "spec": {
       "ratio": "2:3",
       "refs": [
-        "/workspace/library/agnes/chr_C0.png"
+        "library/agnes/chr_C0.png"
       ],
       "ref_contract": "图 1 为用户自拍，仅提供脸型、肤色、唇形与气质；不提供妆容、版式与品牌视觉",
       "canvas": "2:3 竖版信息结构图，YSL 黑金主色，强对比，时尚编辑感",
@@ -1456,7 +1456,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/chr_C00.png"
+        "library/agnes/chr_C00.png"
       ],
       "ref_contract": "图 1 仅提供人物的外观与身份",
       "canvas": "3:4 竖版 Instagram scrapbook 真人拼贴图，灰棚基调上叠加拼贴层",
@@ -1521,7 +1521,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/chr_C00.png"
+        "library/agnes/chr_C00.png"
       ],
       "ref_contract": "图 1 仅提供人物的外观与身份",
       "canvas": "3:4 竖版 Instagram scrapbook 真人拼贴图，灰棚基调上叠加拼贴层",
@@ -1586,7 +1586,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/cref_logo.png"
+        "library/agnes/cref_logo.png"
       ],
       "ref_contract": "图 1 仅提供产品的外观、材质、配色与品牌色、图形语言；不提供文字与背景",
       "canvas": "3:4 竖版品牌人格漫画信息图，漫画+信息图混合，略夸张但高级",
@@ -1723,7 +1723,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/cref_logo.png"
+        "library/agnes/cref_logo.png"
       ],
       "ref_contract": "图 1 仅提供产品的外观、材质、配色与品牌色、图形语言；不提供文字与背景",
       "canvas": "3:4 竖版品牌人格漫画信息图，漫画+信息图混合，略夸张但高级",
@@ -1860,7 +1860,7 @@
     "spec": {
       "ratio": "16:9",
       "refs": [
-        "/workspace/library/agnes/cref_street.png"
+        "library/agnes/cref_street.png"
       ],
       "ref_contract": "图 1 仅提供场景的外观与身份；不提供构图、姿态、光线、背景与文字",
       "canvas": "16:9 横版流媒体首页界面，深色背景，上半部为首屏主视觉，下半部为三行缩略图网格",
@@ -1988,7 +1988,7 @@
     "spec": {
       "ratio": "16:9",
       "refs": [
-        "/workspace/library/agnes/cref_street.png"
+        "library/agnes/cref_street.png"
       ],
       "ref_contract": "图 1 仅提供场景的外观与身份；不提供构图、姿态、光线、背景与文字",
       "canvas": "16:9 横版流媒体首页界面，深色背景，上半部为首屏主视觉，下半部为三行缩略图网格",
@@ -2116,7 +2116,7 @@
     "spec": {
       "ratio": "2:3",
       "refs": [
-        "/workspace/library/agnes/chr_C00.png"
+        "library/agnes/chr_C00.png"
       ],
       "ref_contract": "图 1 仅提供人物的外观与身份",
       "canvas": "2:3 竖版健身补剂 campaign 海报，黑与深电蓝背景，强对比、轻烟、亮面反射、硬朗商业光",
@@ -2233,7 +2233,7 @@
     "spec": {
       "ratio": "2:3",
       "refs": [
-        "/workspace/library/agnes/chr_C00.png"
+        "library/agnes/chr_C00.png"
       ],
       "ref_contract": "图 1 仅提供人物的外观与身份",
       "canvas": "2:3 竖版健身补剂 campaign 海报，黑与深电蓝背景，强对比、轻烟、亮面反射、硬朗商业光",
@@ -2350,7 +2350,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/syn_475.png"
+        "library/agnes/syn_475.png"
       ],
       "ref_contract": "图 1 仅提供产品的外观、材质与配色；不提供文字与背景",
       "canvas": "3:4 竖版企鹅造型儿童饼干礼盒包装结构板，干净速写本背景，写实渲染 + 铅笔草图",
@@ -2454,7 +2454,7 @@
     "spec": {
       "ratio": "3:4",
       "refs": [
-        "/workspace/library/agnes/syn_475.png"
+        "library/agnes/syn_475.png"
       ],
       "ref_contract": "图 1 仅提供产品的外观、材质与配色；不提供文字与背景",
       "canvas": "3:4 竖版企鹅造型儿童饼干礼盒包装结构板，干净速写本背景，写实渲染 + 铅笔草图",
@@ -2558,7 +2558,7 @@
     "spec": {
       "ratio": "1:1",
       "refs": [
-        "/workspace/library/agnes/syn_226.png"
+        "library/agnes/syn_226.png"
       ],
       "ref_contract": "图 1 仅提供版式结构、配色与视觉气质；不提供文字内容、具体品牌与人物身份",
       "canvas": "1:1 正方形宫格群像，旧绢底色，四列两行共八格",

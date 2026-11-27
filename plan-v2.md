@@ -6,7 +6,7 @@
 
 不同意上一版“10 个案例深拆，其余案例仅有基础数据”即可满足案例页要求的隐含假设。改为：**541 条全部有轻量自解释卡，10 个 H1 案例再有证据深拆**。轻量卡的结论只能标 `inferred`，不得借实验口吻包装。
 
-路径约定：`P=/workspace/agent/agnes-bench`（站点仓库根），`R=/workspace/repos/awesome-gpt-image-2`，`E=/workspace/agent/agnes/experiments`，`B=/workspace/agent/agnes-bench`（方案与需求文档）；命令工作目录均为 `P`。每个任务只能写自己的输出路径，其他产物只读；`node_modules/`、`.astro/`、`dist/` 是不提交的临时构建产物，各 worker 在独立 worktree 构建。集成失败退回文件所有任务，不由他人顺手修改。
+路径约定：`P=agent/agnes-bench`（站点仓库根），`R=repos/awesome-gpt-image-2`，`E=agent/agnes/experiments`，`B=agent/agnes-bench`（方案与需求文档）；命令工作目录均为 `P`。每个任务只能写自己的输出路径，其他产物只读；`node_modules/`、`.astro/`、`dist/` 是不提交的临时构建产物，各 worker 在独立 worktree 构建。集成失败退回文件所有任务，不由他人顺手修改。
 
 ## 2. 自助结构与分类落地
 

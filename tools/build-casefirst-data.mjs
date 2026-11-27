@@ -4,10 +4,11 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REVIEW_FILES = [
-  { file: "/workspace/agent/agnes/pipeline/review.jsonl", source: "review" },
-  { file: "/workspace/agent/agnes/pipeline/review-flash.jsonl", source: "review-flash" }
+  { file: "agent/agnes/pipeline/review.jsonl", source: "review" },
+  { file: "agent/agnes/pipeline/review-flash.jsonl", source: "review-flash" },
+  { file: "agent/agnes/pipeline/review-final.jsonl", source: "review-final" }
 ];
-const PATTERNS_FILE = "/workspace/agent/agnes/pipeline/patterns.json";
+const PATTERNS_FILE = "agent/agnes/pipeline/patterns.json";
 
 async function readJson(relativePath) {
   return JSON.parse(await readFile(path.join(projectRoot, relativePath), "utf8"));

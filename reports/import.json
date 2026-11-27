@@ -10,9 +10,9 @@
     "unique_case_id_count": 541
   },
   "source": {
-    "cases_path": "/workspace/repos/awesome-gpt-image-2/data/cases.json",
-    "images_directory": "/workspace/repos/awesome-gpt-image-2/data/images",
-    "mapping_path": "/workspace/agent/agnes/experiments/mapping-h1.jsonl",
+    "cases_path": "repos/awesome-gpt-image-2/data/cases.json",
+    "images_directory": "repos/awesome-gpt-image-2/data/images",
+    "mapping_path": "agent/agnes/experiments/mapping-h1.jsonl",
     "cases_sha256": "a9ef652dffdac0802c656e4770f9793315292fa78e955d3e8c6e0e6346eb7da8",
     "mapping_sha256": "20603eeb8df9bf6adb9a68fcc62d5a6db3bc48c1c9ce153ad4955880245a0116",
     "mapping_records": 100,

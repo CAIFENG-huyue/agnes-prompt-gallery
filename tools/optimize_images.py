@@ -8,8 +8,8 @@ from urllib.parse import unquote, urlparse
 from PIL import Image, ImageOps
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-CASE_IMAGES_ROOT = Path("/workspace/repos/awesome-gpt-image-2/data/images")
-EXPERIMENT_IMAGES_ROOT = Path("/workspace/agent/agnes/experiments/images")
+CASE_IMAGES_ROOT = Path("repos/awesome-gpt-image-2/data/images")
+EXPERIMENT_IMAGES_ROOT = Path("agent/agnes/experiments/images")
 SOURCE_ASSETS_PATH = PROJECT_ROOT / "content/source-assets.json"
 PUBLIC_ROOT = PROJECT_ROOT / "public"
 ASSET_ROOT = PUBLIC_ROOT / "assets"
