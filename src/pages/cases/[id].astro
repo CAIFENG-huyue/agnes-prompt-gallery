@@ -162,11 +162,30 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     const panes = [...duo.querySelectorAll<HTMLElement>("[data-duo-pane]")];
     const cap = duo.querySelector<HTMLElement>("[data-duo-cap]");
     const set = (name: string): void => {
-      for (const t of tabs) t.setAttribute("aria-selected", String(t.dataset.duoTab === name));
+      for (const t of tabs) {
+        const on = t.dataset.duoTab === name;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+      }
       for (const p of panes) p.hidden = p.dataset.duoPane !== name;
-      if (cap) cap.textContent = name === "gen" ? "本站生成 · agnes-image-2.5-flash" : "开源原图 · freestylefly/awesome-gpt-image-2";
+      if (cap) {
+        cap.textContent = name === "gen"
+          ? "本站生成 · agnes-image-2.5-flash"
+          : "开源原图 · freestylefly/awesome-gpt-image-2";
+      }
     };
-    for (const t of tabs) t.addEventListener("click", () => set(t.dataset.duoTab ?? "gen"));
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => set(t.dataset.duoTab ?? "gen"));
+      t.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        e.preventDefault();
+        const step = e.key === "ArrowRight" ? 1 : -1;
+        const next = tabs[(i + step + tabs.length) % tabs.length];
+        next.focus();
+        set(next.dataset.duoTab ?? "gen");
+      });
+    });
+    set(tabs[0]?.dataset.duoTab ?? "gen");
   }
 </script>
 
@@ -655,13 +674,27 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
     line-height: 1.2;
   }
 
+  .duo__tab:hover {
+    color: var(--color-forest-deep);
+  }
+
+  .duo__tab:focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
+  }
+
   .duo__tab[aria-selected="true"] {
     background: var(--color-forest-deep);
     color: #fff;
   }
 
   .duo__stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 72vh;
     margin: 0.45rem 0 0;
+    padding: 0.35rem;
     overflow: hidden;
     border: 1px solid var(--color-line);
     border-radius: 0.75rem;
@@ -670,8 +703,27 @@ const description = `${caseItem.title}：本站生成图与开源项目原图对
 
   .duo__img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: calc(72vh - 0.7rem);
     height: auto;
+    object-fit: contain;
+  }
+
+  .duo__img[hidden] {
+    display: none !important;
+  }
+
+  @media (max-width: 48rem) {
+    .duo__stage {
+      display: block;
+      max-height: none;
+    }
+
+    .duo__img {
+      width: 100%;
+      max-height: none;
+    }
   }
 
   .duo__cap {
